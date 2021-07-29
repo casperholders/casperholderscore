@@ -1,5 +1,5 @@
 {
-  "name": "casperholderslib",
+  "name": "@casperholders/core",
   "version": "1.0.0",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
@@ -7,8 +7,23 @@
     "build": "babel -d dist/ src/",
     "docs": "esdoc"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KillianH/casperholderscore.git"
+  },
+  "keywords": [
+    "casper",
+    "blockchain",
+    "smartcontract",
+    "devxdao",
+    "casperlabs"
+  ],
   "author": "Killian Hascoet",
   "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/KillianH/casperholderscore/issues"
+  },
+  "homepage": "https://github.com/KillianH/casperholderscore",
   "dependencies": {
     "casper-js-sdk": "^2.2.3"
   },
