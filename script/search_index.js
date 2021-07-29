@@ -1,194 +1,194 @@
 window.esdocSearchIndex = [
   [
-    "casperholderslib/src/services/keys/abstractkeymanager.js~abstractkeymanager",
+    "@casperholders/core/src/services/keys/abstractkeymanager.js~abstractkeymanager",
     "class/src/services/keys/abstractKeyManager.js~AbstractKeyManager.html",
-    "<span>AbstractKeyManager</span> <span class=\"search-result-import-path\">casperholderslib/src/services/keys/abstractKeyManager.js</span>",
+    "<span>AbstractKeyManager</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/keys/abstractKeyManager.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/signers/abstractsigner.js~abstractsigner",
+    "@casperholders/core/src/services/signers/abstractsigner.js~abstractsigner",
     "class/src/services/signers/abstractSigner.js~AbstractSigner.html",
-    "<span>AbstractSigner</span> <span class=\"search-result-import-path\">casperholderslib/src/services/signers/abstractSigner.js</span>",
+    "<span>AbstractSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/abstractSigner.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/abstractsmartcontractdeployparameters.js~abstractsmartcontractdeployparameters",
+    "@casperholders/core/src/services/deploys/abstractsmartcontractdeployparameters.js~abstractsmartcontractdeployparameters",
     "class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html",
-    "<span>AbstractSmartContractDeployParameters</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/abstractSmartContractDeployParameters.js</span>",
+    "<span>AbstractSmartContractDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/abstractSmartContractDeployParameters.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/abstractsmartcontractstoredbyhashdeployparameters.js~abstractsmartcontractstoredbyhashdeployparameters",
+    "@casperholders/core/src/services/deploys/abstractsmartcontractstoredbyhashdeployparameters.js~abstractsmartcontractstoredbyhashdeployparameters",
     "class/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters.html",
-    "<span>AbstractSmartContractStoredByHashDeployParameters</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</span>",
+    "<span>AbstractSmartContractStoredByHashDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/auction/actions/addbid.js~addbid",
+    "@casperholders/core/src/services/deploys/auction/actions/addbid.js~addbid",
     "class/src/services/deploys/auction/actions/addBid.js~AddBid.html",
-    "<span>AddBid</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/auction/actions/addBid.js</span>",
+    "<span>AddBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/addBid.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/addbidresult.js~addbidresult",
+    "@casperholders/core/src/services/results/addbidresult.js~addbidresult",
     "class/src/services/results/addBidResult.js~AddBidResult.html",
-    "<span>AddBidResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/addBidResult.js</span>",
+    "<span>AddBidResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/addBidResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/balance/balance.js~balance",
+    "@casperholders/core/src/services/balance/balance.js~balance",
     "class/src/services/balance/balance.js~Balance.html",
-    "<span>Balance</span> <span class=\"search-result-import-path\">casperholderslib/src/services/balance/balance.js</span>",
+    "<span>Balance</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/balance/balance.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/signers/caspersigner.js~caspersigner",
+    "@casperholders/core/src/services/signers/caspersigner.js~caspersigner",
     "class/src/services/signers/casperSigner.js~CasperSigner.html",
-    "<span>CasperSigner</span> <span class=\"search-result-import-path\">casperholderslib/src/services/signers/casperSigner.js</span>",
+    "<span>CasperSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/casperSigner.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/clients/clientcasper.js~clientcasper",
+    "@casperholders/core/src/services/clients/clientcasper.js~clientcasper",
     "class/src/services/clients/clientCasper.js~ClientCasper.html",
-    "<span>ClientCasper</span> <span class=\"search-result-import-path\">casperholderslib/src/services/clients/clientCasper.js</span>",
+    "<span>ClientCasper</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/clients/clientCasper.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/helpers/currencyutils.js~currencyutils",
+    "@casperholders/core/src/services/helpers/currencyutils.js~currencyutils",
     "class/src/services/helpers/currencyUtils.js~CurrencyUtils.html",
-    "<span>CurrencyUtils</span> <span class=\"search-result-import-path\">casperholderslib/src/services/helpers/currencyUtils.js</span>",
+    "<span>CurrencyUtils</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/helpers/currencyUtils.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/auction/actions/delegate.js~delegate",
+    "@casperholders/core/src/services/deploys/auction/actions/delegate.js~delegate",
     "class/src/services/deploys/auction/actions/delegate.js~Delegate.html",
-    "<span>Delegate</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/auction/actions/delegate.js</span>",
+    "<span>Delegate</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/delegate.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/delegateresult.js~delegateresult",
+    "@casperholders/core/src/services/results/delegateresult.js~delegateresult",
     "class/src/services/results/delegateResult.js~DelegateResult.html",
-    "<span>DelegateResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/delegateResult.js</span>",
+    "<span>DelegateResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/delegateResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/deploymanager.js~deploymanager",
+    "@casperholders/core/src/services/deploys/deploymanager.js~deploymanager",
     "class/src/services/deploys/deployManager.js~DeployManager.html",
-    "<span>DeployManager</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/deployManager.js</span>",
+    "<span>DeployManager</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/deployManager.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/deployresult.js~deployresult",
+    "@casperholders/core/src/services/results/deployresult.js~deployresult",
     "class/src/services/results/deployResult.js~DeployResult.html",
-    "<span>DeployResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/deployResult.js</span>",
+    "<span>DeployResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/errors/extendableerror.js~extendableerror",
+    "@casperholders/core/src/services/errors/extendableerror.js~extendableerror",
     "class/src/services/errors/extendableError.js~ExtendableError.html",
-    "<span>ExtendableError</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/extendableError.js</span>",
+    "<span>ExtendableError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/extendableError.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/errors/insufficientfunds.js~insufficientfunds",
+    "@casperholders/core/src/services/errors/insufficientfunds.js~insufficientfunds",
     "class/src/services/errors/insufficientFunds.js~InsufficientFunds.html",
-    "<span>InsufficientFunds</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/insufficientFunds.js</span>",
+    "<span>InsufficientFunds</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/insufficientFunds.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/signers/localsigner.js~localsigner",
+    "@casperholders/core/src/services/signers/localsigner.js~localsigner",
     "class/src/services/signers/localSigner.js~LocalSigner.html",
-    "<span>LocalSigner</span> <span class=\"search-result-import-path\">casperholderslib/src/services/signers/localSigner.js</span>",
+    "<span>LocalSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/localSigner.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/errors/noactivekeyerror.js~noactivekeyerror",
+    "@casperholders/core/src/services/errors/noactivekeyerror.js~noactivekeyerror",
     "class/src/services/errors/noActiveKeyError.js~NoActiveKeyError.html",
-    "<span>NoActiveKeyError</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/noActiveKeyError.js</span>",
+    "<span>NoActiveKeyError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/noActiveKeyError.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/errors/nostakebalanceerror.js~nostakebalanceerror",
+    "@casperholders/core/src/services/errors/nostakebalanceerror.js~nostakebalanceerror",
     "class/src/services/errors/noStakeBalanceError.js~NoStakeBalanceError.html",
-    "<span>NoStakeBalanceError</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/noStakeBalanceError.js</span>",
+    "<span>NoStakeBalanceError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/noStakeBalanceError.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/errors/novalidatorbalanceerror.js~novalidatorbalanceerror",
+    "@casperholders/core/src/services/errors/novalidatorbalanceerror.js~novalidatorbalanceerror",
     "class/src/services/errors/noValidatorBalanceError.js~NoValidatorBalanceError.html",
-    "<span>NoValidatorBalanceError</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/noValidatorBalanceError.js</span>",
+    "<span>NoValidatorBalanceError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/noValidatorBalanceError.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/deployresult.js~status_ko",
+    "@casperholders/core/src/services/results/deployresult.js~status_ko",
     "variable/index.html#static-variable-STATUS_KO",
-    "<span>STATUS_KO</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/deployResult.js</span>",
+    "<span>STATUS_KO</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
     "variable"
   ],
   [
-    "casperholderslib/src/services/results/deployresult.js~status_ok",
+    "@casperholders/core/src/services/results/deployresult.js~status_ok",
     "variable/index.html#static-variable-STATUS_OK",
-    "<span>STATUS_OK</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/deployResult.js</span>",
+    "<span>STATUS_OK</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
     "variable"
   ],
   [
-    "casperholderslib/src/services/results/deployresult.js~status_unknown",
+    "@casperholders/core/src/services/results/deployresult.js~status_unknown",
     "variable/index.html#static-variable-STATUS_UNKNOWN",
-    "<span>STATUS_UNKNOWN</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/deployResult.js</span>",
+    "<span>STATUS_UNKNOWN</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
     "variable"
   ],
   [
-    "casperholderslib/src/services/errors/signerror.js~signerror",
+    "@casperholders/core/src/services/errors/signerror.js~signerror",
     "class/src/services/errors/signError.js~SignError.html",
-    "<span>SignError</span> <span class=\"search-result-import-path\">casperholderslib/src/services/errors/signError.js</span>",
+    "<span>SignError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/signError.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/smartcontract/smartcontractdeployparameters.js~smartcontractdeployparameters",
+    "@casperholders/core/src/services/deploys/smartcontract/smartcontractdeployparameters.js~smartcontractdeployparameters",
     "class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html",
-    "<span>SmartContractDeployParameters</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/smartContract/smartContractDeployParameters.js</span>",
+    "<span>SmartContractDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/smartContract/smartContractDeployParameters.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/smartcontractresult.js~smartcontractresult",
+    "@casperholders/core/src/services/results/smartcontractresult.js~smartcontractresult",
     "class/src/services/results/smartContractResult.js~SmartContractResult.html",
-    "<span>SmartContractResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/smartContractResult.js</span>",
+    "<span>SmartContractResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/smartContractResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/transfer/transferdeployparameters.js~transferdeployparameters",
+    "@casperholders/core/src/services/deploys/transfer/transferdeployparameters.js~transferdeployparameters",
     "class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html",
-    "<span>TransferDeployParameters</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/transfer/TransferDeployParameters.js</span>",
+    "<span>TransferDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/transfer/TransferDeployParameters.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/transferresult.js~transferresult",
+    "@casperholders/core/src/services/results/transferresult.js~transferresult",
     "class/src/services/results/transferResult.js~TransferResult.html",
-    "<span>TransferResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/transferResult.js</span>",
+    "<span>TransferResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/transferResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/auction/actions/undelegate.js~undelegate",
+    "@casperholders/core/src/services/deploys/auction/actions/undelegate.js~undelegate",
     "class/src/services/deploys/auction/actions/undelegate.js~Undelegate.html",
-    "<span>Undelegate</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/auction/actions/undelegate.js</span>",
+    "<span>Undelegate</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/undelegate.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/undelegateresult.js~undelegateresult",
+    "@casperholders/core/src/services/results/undelegateresult.js~undelegateresult",
     "class/src/services/results/undelegateResult.js~UndelegateResult.html",
-    "<span>UndelegateResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/undelegateResult.js</span>",
+    "<span>UndelegateResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/undelegateResult.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/deploys/auction/actions/withdrawbid.js~withdrawbid",
+    "@casperholders/core/src/services/deploys/auction/actions/withdrawbid.js~withdrawbid",
     "class/src/services/deploys/auction/actions/withdrawBid.js~WithdrawBid.html",
-    "<span>WithdrawBid</span> <span class=\"search-result-import-path\">casperholderslib/src/services/deploys/auction/actions/withdrawBid.js</span>",
+    "<span>WithdrawBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js</span>",
     "class"
   ],
   [
-    "casperholderslib/src/services/results/withdrawbidresult.js~withdrawbidresult",
+    "@casperholders/core/src/services/results/withdrawbidresult.js~withdrawbidresult",
     "class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html",
-    "<span>WithdrawBidResult</span> <span class=\"search-result-import-path\">casperholderslib/src/services/results/withdrawBidResult.js</span>",
+    "<span>WithdrawBidResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/withdrawBidResult.js</span>",
     "class"
   ],
   [
