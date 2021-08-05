@@ -16,12 +16,21 @@ jobs:
         uses: actions/setup-node@v2.1.5
         with:
           node-version: 14.17
+          registry-url: 'https://registry.npmjs.org'
 
       - name: before_script
         run: yarn install --non-interactive
 
       - name: Generate documentation
         run: yarn docs
+
+      - name: Build
+        run: yarn build
+
+      - name: Publish npm
+        run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
