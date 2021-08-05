@@ -1,6 +1,6 @@
 # CasperHolders Core
 
-![Documentation](docs/badge.svg)
+![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)
 
 The CasperHolders website use this library to handle any interaction with the CasperNetwork.
 
