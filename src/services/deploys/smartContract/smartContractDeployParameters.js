@@ -1,7 +1,7 @@
 import {AbstractSmartContractDeployParameters} from "../abstractSmartContractDeployParameters";
 import {CLPublicKey, DeployUtil, RuntimeArgs} from "casper-js-sdk";
-import {SmartContractResult} from "../../results/smartContractResult";
-import {CurrencyUtils} from "../../helpers/currencyUtils";
+import {SmartContractResult} from "../../results";
+import {CurrencyUtils} from "../../helpers";
 
 /**
  * SmartContractDeployParameters class

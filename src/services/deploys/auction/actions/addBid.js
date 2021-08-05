@@ -1,6 +1,6 @@
 import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from "casper-js-sdk";
-import {CurrencyUtils} from "../../../helpers/currencyUtils";
-import {AddBidResult} from "../../../results/addBidResult";
+import {CurrencyUtils} from "../../../helpers";
+import {AddBidResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
 
 /**

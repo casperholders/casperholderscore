@@ -1,5 +1,5 @@
-import {CurrencyUtils} from "../helpers/currencyUtils";
-import {STATUS_KO, STATUS_OK} from "../results/deployResult";
+import {CurrencyUtils} from "../helpers";
+import {STATUS_KO, STATUS_OK} from "../results";
 
 /**
  * DeployManager class

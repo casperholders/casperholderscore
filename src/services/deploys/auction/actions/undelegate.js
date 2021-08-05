@@ -1,6 +1,6 @@
 import {CLPublicKey, CLU512, RuntimeArgs} from "casper-js-sdk";
-import {CurrencyUtils} from "../../../helpers/currencyUtils";
-import {UndelegateResult} from "../../../results/undelegateResult";
+import {CurrencyUtils} from "../../../helpers";
+import {UndelegateResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
 
 /**
