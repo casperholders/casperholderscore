@@ -1,6 +1,6 @@
 {
   "name": "@casperholders/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
   "scripts": {
@@ -26,11 +26,6 @@
   "homepage": "https://github.com/KillianH/casperholderscore",
   "dependencies": {
     "casper-js-sdk": "^2.4.0"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
