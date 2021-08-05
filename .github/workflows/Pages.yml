@@ -1,4 +1,4 @@
-name: Publish
+name: GitHub Pages
 
 on:
   push:
@@ -21,10 +21,12 @@ jobs:
       - name: before_script
         run: yarn install --non-interactive
 
-      - name: Build
-        run: yarn build
+      - name: Generate documentation
+        run: yarn docs
 
-      - name: Publish npm
-        run: yarn publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
