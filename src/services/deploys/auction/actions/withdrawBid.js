@@ -12,7 +12,7 @@ const entrypoint = 'withdraw_bid'
  * @constant
  * @type {number}
  */
-const fee = 220000000
+const fee = 10000
 
 /**
  * WithdrawBid

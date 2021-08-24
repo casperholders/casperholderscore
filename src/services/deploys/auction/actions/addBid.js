@@ -12,7 +12,7 @@ const entrypoint = 'add_bid'
  * @constant
  * @type {number}
  */
-const fee = 2800000000
+const fee = 2500000000
 
 /**
  * AddBid class

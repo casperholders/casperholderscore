@@ -12,7 +12,7 @@ const entrypoint = 'delegate'
  * @constant
  * @type {number}
  */
-const fee = 3000000000
+const fee = 2500000000
 
 /**
  * Delegate class

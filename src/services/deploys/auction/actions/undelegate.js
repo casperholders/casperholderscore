@@ -12,7 +12,7 @@ const entrypoint = 'undelegate'
  * @constant
  * @type {number}
  */
-const fee = 500000000
+const fee = 10000
 
 /**
  * Undelegate class
