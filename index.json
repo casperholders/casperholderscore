@@ -4330,7 +4330,7 @@
   },
   {
     "kind": "index",
-    "content": "# CasperHolders Core\n\n![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)\n\nThe CasperHolders website use this library to handle any interaction with the CasperNetwork.\n\nIt contains a huge portion of the website logic.\n\nDocumentation : [Link]()\n\n## Installation\n\n### NPM\n\n```bash\nnpm install @casperholders/core\n```\n\n### Yarn\n\n```bash\nyarn add @casperholders/core\n```\n",
+    "content": "# CasperHolders Core\n\n![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)\n\nThe CasperHolders website use this library to handle any interaction with the CasperNetwork.\n\nIt contains a huge portion of the website logic.\n\nDocumentation : [Link](https://casperholders.github.io/casperholderscore/)\n\n## Installation\n\n### NPM\n\n```bash\nnpm install @casperholders/core\n```\n\n### Yarn\n\n```bash\nyarn add @casperholders/core\n```\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/README.md",
     "name": "./README.md",
     "static": true,
