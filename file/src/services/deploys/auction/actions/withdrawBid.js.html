@@ -71,7 +71,6 @@
 import {CurrencyUtils} from &quot;../../../helpers&quot;;
 import {WithdrawBidResult} from &quot;../../../results&quot;;
 import {AbstractSmartContractStoredByHashDeployParameters} from &quot;../../abstractSmartContractStoredByHashDeployParameters&quot;;
-import {BigNumber} from &quot;ethers&quot;;
 
 
 /**
@@ -102,7 +101,7 @@ export class WithdrawBid extends AbstractSmartContractStoredByHashDeployParamete
     constructor(amount, activeKey, network, hash) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
         })
         super(activeKey, network, hash, entrypoint, args, fee);
     }

@@ -1308,7 +1308,7 @@
     "__docId__": 94,
     "kind": "file",
     "name": "src/services/deploys/auction/actions/addBid.js",
-    "content": "import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {AddBidResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'add_bid'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 2500010000\n\n/**\n * AddBid class\n * Class used to create DeployParameters for a AddBid operation\n */\nexport class AddBid extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to the bid\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {number} commission - Set the commission of the validator to the given percentage\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, commission, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            public_key: CLPublicKey.fromHex(activeKey),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),\n            delegation_rate: new CLU8(commission)\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return AddBidResult\n    }\n}",
+    "content": "import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {AddBidResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'add_bid'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 2500010000\n\n/**\n * AddBid class\n * Class used to create DeployParameters for a AddBid operation\n */\nexport class AddBid extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to the bid\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {number} commission - Set the commission of the validator to the given percentage\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, commission, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            public_key: CLPublicKey.fromHex(activeKey),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),\n            delegation_rate: new CLU8(commission)\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return AddBidResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/auction/actions/addBid.js",
     "access": "public",
@@ -1327,7 +1327,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/addBid.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1356,7 +1356,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/addBid.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 17,
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1385,7 +1385,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/addBid.js",
     "importStyle": "{AddBid}",
     "description": "AddBid class\nClass used to create DeployParameters for a AddBid operation",
-    "lineNumber": 23,
+    "lineNumber": 22,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
@@ -1402,7 +1402,7 @@
     "longname": "src/services/deploys/auction/actions/addBid.js~AddBid#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 34,
+    "lineNumber": 33,
     "params": [
       {
         "nullable": null,
@@ -1467,7 +1467,7 @@
     "longname": "src/services/deploys/auction/actions/addBid.js~AddBid#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 48,
+    "lineNumber": 47,
     "return": {
       "nullable": null,
       "types": [
@@ -1486,7 +1486,7 @@
     "__docId__": 100,
     "kind": "file",
     "name": "src/services/deploys/auction/actions/delegate.js",
-    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {DelegateResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'delegate'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 2500010000\n\n/**\n * Delegate class\n * Class used to create DeployParameters for a Delegate operation\n */\nexport class Delegate extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to delegate\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} validator - Public key in the hex format of the validator\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, validator, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            delegator: CLPublicKey.fromHex(activeKey),\n            validator: CLPublicKey.fromHex(validator),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount)))\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return DelegateResult\n    }\n}",
+    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {DelegateResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'delegate'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 2500010000\n\n/**\n * Delegate class\n * Class used to create DeployParameters for a Delegate operation\n */\nexport class Delegate extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to delegate\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} validator - Public key in the hex format of the validator\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, validator, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            delegator: CLPublicKey.fromHex(activeKey),\n            validator: CLPublicKey.fromHex(validator),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return DelegateResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/auction/actions/delegate.js",
     "access": "public",
@@ -1505,7 +1505,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/delegate.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1534,7 +1534,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/delegate.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 17,
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1563,7 +1563,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/delegate.js",
     "importStyle": "{Delegate}",
     "description": "Delegate class\nClass used to create DeployParameters for a Delegate operation",
-    "lineNumber": 23,
+    "lineNumber": 22,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
@@ -1580,7 +1580,7 @@
     "longname": "src/services/deploys/auction/actions/delegate.js~Delegate#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 34,
+    "lineNumber": 33,
     "params": [
       {
         "nullable": null,
@@ -1645,7 +1645,7 @@
     "longname": "src/services/deploys/auction/actions/delegate.js~Delegate#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 48,
+    "lineNumber": 47,
     "return": {
       "nullable": null,
       "types": [
@@ -1675,7 +1675,7 @@
     "__docId__": 107,
     "kind": "file",
     "name": "src/services/deploys/auction/actions/undelegate.js",
-    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {UndelegateResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'undelegate'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * Undelegate class\n * Class used to create DeployParameters for a Undelegate operation\n */\nexport class Undelegate extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to undelegate\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} validator - Public key in the hex format of the validator\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, validator, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            delegator: CLPublicKey.fromHex(activeKey),\n            validator: CLPublicKey.fromHex(validator),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount)))\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return UndelegateResult\n    }\n}",
+    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {UndelegateResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'undelegate'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * Undelegate class\n * Class used to create DeployParameters for a Undelegate operation\n */\nexport class Undelegate extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to add to undelegate\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} validator - Public key in the hex format of the validator\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, validator, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            delegator: CLPublicKey.fromHex(activeKey),\n            validator: CLPublicKey.fromHex(validator),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return UndelegateResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/auction/actions/undelegate.js",
     "access": "public",
@@ -1694,7 +1694,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/undelegate.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1723,7 +1723,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/undelegate.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 17,
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1752,7 +1752,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/undelegate.js",
     "importStyle": "{Undelegate}",
     "description": "Undelegate class\nClass used to create DeployParameters for a Undelegate operation",
-    "lineNumber": 23,
+    "lineNumber": 22,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
@@ -1769,7 +1769,7 @@
     "longname": "src/services/deploys/auction/actions/undelegate.js~Undelegate#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 34,
+    "lineNumber": 33,
     "params": [
       {
         "nullable": null,
@@ -1834,7 +1834,7 @@
     "longname": "src/services/deploys/auction/actions/undelegate.js~Undelegate#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 48,
+    "lineNumber": 47,
     "return": {
       "nullable": null,
       "types": [
@@ -1853,7 +1853,7 @@
     "__docId__": 113,
     "kind": "file",
     "name": "src/services/deploys/auction/actions/withdrawBid.js",
-    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {WithdrawBidResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'withdraw_bid'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * WithdrawBid\n * Class used to create DeployParameters for a WithdrawBid operation\n */\nexport class WithdrawBid extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to withdraw to the bid\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            public_key: CLPublicKey.fromHex(activeKey),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return WithdrawBidResult\n    }\n}",
+    "content": "import {CLPublicKey, CLU512, RuntimeArgs} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../../helpers\";\nimport {WithdrawBidResult} from \"../../../results\";\nimport {AbstractSmartContractStoredByHashDeployParameters} from \"../../abstractSmartContractStoredByHashDeployParameters\";\n\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'withdraw_bid'\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * WithdrawBid\n * Class used to create DeployParameters for a WithdrawBid operation\n */\nexport class WithdrawBid extends AbstractSmartContractStoredByHashDeployParameters {\n\n    /**\n     * Constructor\n     *\n     * @param {string} amount - Amount of casper to withdraw to the bid\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} hash - Current hash of the stored SmartContract\n     */\n    constructor(amount, activeKey, network, hash) {\n        const args = RuntimeArgs.fromMap({\n            public_key: CLPublicKey.fromHex(activeKey),\n            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),\n        })\n        super(activeKey, network, hash, entrypoint, args, fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return WithdrawBidResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/auction/actions/withdrawBid.js",
     "access": "public",
@@ -1872,7 +1872,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1901,7 +1901,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 17,
+    "lineNumber": 16,
     "unknown": [
       {
         "tagName": "@constant",
@@ -1930,7 +1930,7 @@
     "importPath": "@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js",
     "importStyle": "{WithdrawBid}",
     "description": "WithdrawBid\nClass used to create DeployParameters for a WithdrawBid operation",
-    "lineNumber": 23,
+    "lineNumber": 22,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
@@ -1947,7 +1947,7 @@
     "longname": "src/services/deploys/auction/actions/withdrawBid.js~WithdrawBid#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 33,
+    "lineNumber": 32,
     "params": [
       {
         "nullable": null,
@@ -2002,7 +2002,7 @@
     "longname": "src/services/deploys/auction/actions/withdrawBid.js~WithdrawBid#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 46,
+    "lineNumber": 45,
     "return": {
       "nullable": null,
       "types": [
@@ -2254,7 +2254,7 @@
     "__docId__": 129,
     "kind": "file",
     "name": "src/services/deploys/smartContract/smartContractDeployParameters.js",
-    "content": "import {AbstractSmartContractDeployParameters} from \"../abstractSmartContractDeployParameters\";\nimport {CLPublicKey, DeployUtil, RuntimeArgs} from \"casper-js-sdk\";\nimport {SmartContractResult} from \"../../results\";\nimport {CurrencyUtils} from \"../../helpers\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * SmartContractDeployParameters class\n * Class used to define the parameters of a deployment to send a smart contract on the network\n */\nexport class SmartContractDeployParameters extends AbstractSmartContractDeployParameters {\n    /** @type {string} */\n    activeKey;\n    /** @type {string} */\n    network;\n    /** @type {Buffer} */\n    smartContractBuffer;\n    /** @type {string} */\n    fee;\n\n    /**\n     * Constructor\n     *\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read\n     * @param {string} fee - Runtime fee for the given SmartContract operation\n     */\n    constructor(activeKey, network, smartContractBuffer, fee) {\n        super()\n        this.activeKey = activeKey;\n        this.network = network;\n        this.smartContractBuffer = smartContractBuffer;\n        this.fee = fee;\n    }\n\n    /**\n     * Get the deployParams deploy argument\n     *\n     * @return {DeployUtil.DeployParams} - Return a DeployParams\n     */\n    get deployParams() {\n        return new DeployUtil.DeployParams(\n            CLPublicKey.fromHex(this.activeKey),\n            this.network\n        );\n    }\n\n    /**\n     * Get the session deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n     */\n    get session() {\n        return DeployUtil.ExecutableDeployItem.newModuleBytes(new Uint8Array(this.smartContractBuffer), RuntimeArgs.fromMap({}));\n    }\n\n    /**\n     * Get the payment deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n     */\n    get payment() {\n        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(BigNumber.from(this.fee)));\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return SmartContractResult\n    }\n}",
+    "content": "import {AbstractSmartContractDeployParameters} from \"../abstractSmartContractDeployParameters\";\nimport {CLPublicKey, DeployUtil, RuntimeArgs} from \"casper-js-sdk\";\nimport {SmartContractResult} from \"../../results\";\nimport {CurrencyUtils} from \"../../helpers\";\n\n\n/**\n * SmartContractDeployParameters class\n * Class used to define the parameters of a deployment to send a smart contract on the network\n */\nexport class SmartContractDeployParameters extends AbstractSmartContractDeployParameters {\n    /** @type {string} */\n    activeKey;\n    /** @type {string} */\n    network;\n    /** @type {Buffer} */\n    smartContractBuffer;\n    /** @type {string} */\n    fee;\n\n    /**\n     * Constructor\n     *\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read\n     * @param {string} fee - Runtime fee for the given SmartContract operation\n     */\n    constructor(activeKey, network, smartContractBuffer, fee) {\n        super()\n        this.activeKey = activeKey;\n        this.network = network;\n        this.smartContractBuffer = smartContractBuffer;\n        this.fee = fee;\n    }\n\n    /**\n     * Get the deployParams deploy argument\n     *\n     * @return {DeployUtil.DeployParams} - Return a DeployParams\n     */\n    get deployParams() {\n        return new DeployUtil.DeployParams(\n            CLPublicKey.fromHex(this.activeKey),\n            this.network\n        );\n    }\n\n    /**\n     * Get the session deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n     */\n    get session() {\n        return DeployUtil.ExecutableDeployItem.newModuleBytes(new Uint8Array(this.smartContractBuffer), RuntimeArgs.fromMap({}));\n    }\n\n    /**\n     * Get the payment deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n     */\n    get payment() {\n        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(this.fee));\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return SmartContractResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/smartContract/smartContractDeployParameters.js",
     "access": "public",
@@ -2273,7 +2273,7 @@
     "importPath": "@casperholders/core/src/services/deploys/smartContract/smartContractDeployParameters.js",
     "importStyle": "{SmartContractDeployParameters}",
     "description": "SmartContractDeployParameters class\nClass used to define the parameters of a deployment to send a smart contract on the network",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters"
@@ -2288,7 +2288,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#activeKey",
     "access": "public",
     "description": null,
-    "lineNumber": 14,
+    "lineNumber": 13,
     "type": {
       "nullable": null,
       "types": [
@@ -2307,7 +2307,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#network",
     "access": "public",
     "description": null,
-    "lineNumber": 16,
+    "lineNumber": 15,
     "type": {
       "nullable": null,
       "types": [
@@ -2326,7 +2326,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#smartContractBuffer",
     "access": "public",
     "description": null,
-    "lineNumber": 18,
+    "lineNumber": 17,
     "type": {
       "nullable": null,
       "types": [
@@ -2345,7 +2345,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#fee",
     "access": "public",
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 19,
     "type": {
       "nullable": null,
       "types": [
@@ -2366,7 +2366,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 30,
+    "lineNumber": 29,
     "params": [
       {
         "nullable": null,
@@ -2421,7 +2421,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#deployParams",
     "access": "public",
     "description": "Get the deployParams deploy argument",
-    "lineNumber": 43,
+    "lineNumber": 42,
     "return": {
       "nullable": null,
       "types": [
@@ -2447,7 +2447,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#session",
     "access": "public",
     "description": "Get the session deploy argument",
-    "lineNumber": 55,
+    "lineNumber": 54,
     "return": {
       "nullable": null,
       "types": [
@@ -2473,7 +2473,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#payment",
     "access": "public",
     "description": "Get the payment deploy argument",
-    "lineNumber": 64,
+    "lineNumber": 63,
     "return": {
       "nullable": null,
       "types": [
@@ -2499,7 +2499,7 @@
     "longname": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 73,
+    "lineNumber": 72,
     "return": {
       "nullable": null,
       "types": [
@@ -2518,7 +2518,7 @@
     "__docId__": 144,
     "kind": "file",
     "name": "src/services/deploys/transfer/TransferDeployParameters.js",
-    "content": "import {AbstractSmartContractDeployParameters} from \"../abstractSmartContractDeployParameters\";\nimport {CLPublicKey, DeployUtil} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../helpers\";\nimport {TransferResult} from \"../../results\";\nimport {BigNumber} from \"ethers\";\n\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * TransferDeployParameters class\n * Class used to create DeployParameters for a Transfer operation\n */\nexport class TransferDeployParameters extends AbstractSmartContractDeployParameters {\n    /** @type {string} */\n    activeKey;\n    /** @type {string} */\n    network;\n    /** @type {string} */\n    amount;\n    /** @type {string} */\n    target;\n    /** @type {string} */\n    transferID;\n\n    /**\n     * Constructor\n     *\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} amount - Amount to transfer in casper\n     * @param {string} target - Public key in the hex format of the receiver\n     * @param {string} transferID - TransferID of the transfer operation\n     */\n    constructor(activeKey, network, amount, target, transferID) {\n        super()\n        this.activeKey = activeKey;\n        this.network = network;\n        this.amount = amount;\n        this.target = target;\n        this.transferID = transferID;\n    }\n\n    /**\n     * Get the deployParams deploy argument\n     *\n     * @return {DeployUtil.DeployParams} - Return a DeployParams\n     */\n    get deployParams() {\n        return new DeployUtil.DeployParams(\n            CLPublicKey.fromHex(this.activeKey),\n            this.network\n        );\n    }\n\n    /**\n     * Get the session deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n     */\n    get session() {\n        return DeployUtil.ExecutableDeployItem.newTransfer(\n            CurrencyUtils.convertCasperToMotes(BigNumber.from(this.amount)),\n            CLPublicKey.fromHex(this.target),\n            undefined,\n            this.transferID\n        );\n    }\n\n    /**\n     * Get the payment deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n     */\n    get payment() {\n        return DeployUtil.standardPayment(fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {TransferResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return TransferResult\n    }\n}",
+    "content": "import {AbstractSmartContractDeployParameters} from \"../abstractSmartContractDeployParameters\";\nimport {CLPublicKey, DeployUtil} from \"casper-js-sdk\";\nimport {CurrencyUtils} from \"../../helpers\";\nimport {TransferResult} from \"../../results\";\n\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 10000\n\n/**\n * TransferDeployParameters class\n * Class used to create DeployParameters for a Transfer operation\n */\nexport class TransferDeployParameters extends AbstractSmartContractDeployParameters {\n    /** @type {string} */\n    activeKey;\n    /** @type {string} */\n    network;\n    /** @type {string} */\n    amount;\n    /** @type {string} */\n    target;\n    /** @type {string} */\n    transferID;\n\n    /**\n     * Constructor\n     *\n     * @param {string} activeKey - Current active key in the public hex format\n     * @param {string} network - Current network to execute the deployment\n     * @param {string} amount - Amount to transfer in casper\n     * @param {string} target - Public key in the hex format of the receiver\n     * @param {string} transferID - TransferID of the transfer operation\n     */\n    constructor(activeKey, network, amount, target, transferID) {\n        super()\n        this.activeKey = activeKey;\n        this.network = network;\n        this.amount = amount;\n        this.target = target;\n        this.transferID = transferID;\n    }\n\n    /**\n     * Get the deployParams deploy argument\n     *\n     * @return {DeployUtil.DeployParams} - Return a DeployParams\n     */\n    get deployParams() {\n        return new DeployUtil.DeployParams(\n            CLPublicKey.fromHex(this.activeKey),\n            this.network\n        );\n    }\n\n    /**\n     * Get the session deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n     */\n    get session() {\n        return DeployUtil.ExecutableDeployItem.newTransfer(\n            CurrencyUtils.convertCasperToMotes(this.amount),\n            CLPublicKey.fromHex(this.target),\n            undefined,\n            this.transferID\n        );\n    }\n\n    /**\n     * Get the payment deploy argument\n     *\n     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n     */\n    get payment() {\n        return DeployUtil.standardPayment(fee);\n    }\n\n    /**\n     * Get a DeployResult constructor\n     *\n     * @return {TransferResult.constructor} - Return the constructor of a given DeployResult\n     */\n    get deployResult() {\n        return TransferResult\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/transfer/TransferDeployParameters.js",
     "access": "public",
@@ -2537,7 +2537,7 @@
     "importPath": "@casperholders/core/src/services/deploys/transfer/TransferDeployParameters.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -2566,7 +2566,7 @@
     "importPath": "@casperholders/core/src/services/deploys/transfer/TransferDeployParameters.js",
     "importStyle": "{TransferDeployParameters}",
     "description": "TransferDeployParameters class\nClass used to create DeployParameters for a Transfer operation",
-    "lineNumber": 18,
+    "lineNumber": 17,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters"
@@ -2581,7 +2581,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#activeKey",
     "access": "public",
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 19,
     "type": {
       "nullable": null,
       "types": [
@@ -2600,7 +2600,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#network",
     "access": "public",
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 21,
     "type": {
       "nullable": null,
       "types": [
@@ -2619,7 +2619,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#amount",
     "access": "public",
     "description": null,
-    "lineNumber": 24,
+    "lineNumber": 23,
     "type": {
       "nullable": null,
       "types": [
@@ -2638,7 +2638,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#target",
     "access": "public",
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 25,
     "type": {
       "nullable": null,
       "types": [
@@ -2657,7 +2657,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#transferID",
     "access": "public",
     "description": null,
-    "lineNumber": 28,
+    "lineNumber": 27,
     "type": {
       "nullable": null,
       "types": [
@@ -2678,7 +2678,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 39,
+    "lineNumber": 38,
     "params": [
       {
         "nullable": null,
@@ -2743,7 +2743,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#deployParams",
     "access": "public",
     "description": "Get the deployParams deploy argument",
-    "lineNumber": 53,
+    "lineNumber": 52,
     "return": {
       "nullable": null,
       "types": [
@@ -2769,7 +2769,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#session",
     "access": "public",
     "description": "Get the session deploy argument",
-    "lineNumber": 65,
+    "lineNumber": 64,
     "return": {
       "nullable": null,
       "types": [
@@ -2795,7 +2795,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#payment",
     "access": "public",
     "description": "Get the payment deploy argument",
-    "lineNumber": 79,
+    "lineNumber": 78,
     "return": {
       "nullable": null,
       "types": [
@@ -2821,7 +2821,7 @@
     "longname": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 88,
+    "lineNumber": 87,
     "return": {
       "nullable": null,
       "types": [
@@ -3165,7 +3165,7 @@
     "__docId__": 185,
     "kind": "file",
     "name": "src/services/helpers/currencyUtils.js",
-    "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport {BigNumber} from \"ethers\";\n\n\nexport class CurrencyUtils {\n\n    /**\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {BigNumber}\n     */\n    static convertMotesToCasper(motesAmount) {\n        return BigNumber.from(motesAmount).div(1000000000);\n    }\n\n    /**\n     * Convert casper to motes\n     *\n     * @param {BigNumber} casperAmount - Amount in casper\n     * @return {BigNumber}\n     */\n    static convertCasperToMotes(casperAmount) {\n        return BigNumber.from(casperAmount).mul(1000000000);\n    }\n}",
+    "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport {BigNumber} from \"ethers\";\nimport Big from \"big.js\";\n\n\nexport class CurrencyUtils {\n\n    /**\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {String}\n     */\n    static convertMotesToCasper(motesAmount) {\n        return Big(motesAmount.toString()).div(1000000000).toString();\n    }\n\n    /**\n     * Convert casper to motes\n     *\n     * @param {String} casperAmount - Amount in casper\n     * @return {BigNumber}\n     */\n    static convertCasperToMotes(casperAmount) {\n        return BigNumber.from(Big(casperAmount).times(1000000000).toString());\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/helpers/currencyUtils.js",
     "access": "public",
@@ -3184,7 +3184,7 @@
     "importPath": "@casperholders/core/src/services/helpers/currencyUtils.js",
     "importStyle": "{CurrencyUtils}",
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 9,
     "undocument": true,
     "interface": false
   },
@@ -3199,7 +3199,7 @@
     "longname": "src/services/helpers/currencyUtils.js~CurrencyUtils.convertMotesToCasper",
     "access": "public",
     "description": "Convert motes to casper",
-    "lineNumber": 16,
+    "lineNumber": 17,
     "params": [
       {
         "nullable": null,
@@ -3215,7 +3215,7 @@
     "return": {
       "nullable": null,
       "types": [
-        "BigNumber"
+        "String"
       ],
       "spread": false,
       "description": ""
@@ -3232,12 +3232,12 @@
     "longname": "src/services/helpers/currencyUtils.js~CurrencyUtils.convertCasperToMotes",
     "access": "public",
     "description": "Convert casper to motes",
-    "lineNumber": 26,
+    "lineNumber": 27,
     "params": [
       {
         "nullable": null,
         "types": [
-          "BigNumber"
+          "String"
         ],
         "spread": false,
         "optional": false,
@@ -4331,7 +4331,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.1.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"casper-js-sdk\": \"^2.4.0\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.1.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.4.0\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,

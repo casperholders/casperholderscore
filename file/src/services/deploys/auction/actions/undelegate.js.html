@@ -71,7 +71,6 @@
 import {CurrencyUtils} from &quot;../../../helpers&quot;;
 import {UndelegateResult} from &quot;../../../results&quot;;
 import {AbstractSmartContractStoredByHashDeployParameters} from &quot;../../abstractSmartContractStoredByHashDeployParameters&quot;;
-import {BigNumber} from &quot;ethers&quot;;
 
 
 /**
@@ -104,7 +103,7 @@ export class Undelegate extends AbstractSmartContractStoredByHashDeployParameter
         const args = RuntimeArgs.fromMap({
             delegator: CLPublicKey.fromHex(activeKey),
             validator: CLPublicKey.fromHex(validator),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount)))
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))
         })
         super(activeKey, network, hash, entrypoint, args, fee);
     }
