@@ -2,7 +2,6 @@ import {AbstractSmartContractDeployParameters} from "../abstractSmartContractDep
 import {CLPublicKey, DeployUtil} from "casper-js-sdk";
 import {CurrencyUtils} from "../../helpers";
 import {TransferResult} from "../../results";
-import {BigNumber} from "ethers";
 
 
 /**
@@ -64,7 +63,7 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
      */
     get session() {
         return DeployUtil.ExecutableDeployItem.newTransfer(
-            CurrencyUtils.convertCasperToMotes(BigNumber.from(this.amount)),
+            CurrencyUtils.convertCasperToMotes(this.amount),
             CLPublicKey.fromHex(this.target),
             undefined,
             this.transferID

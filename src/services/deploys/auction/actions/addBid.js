@@ -2,7 +2,6 @@ import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from "casper-js-sdk";
 import {CurrencyUtils} from "../../../helpers";
 import {AddBidResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
-import {BigNumber} from "ethers";
 
 
 /**
@@ -34,7 +33,7 @@ export class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
     constructor(amount, activeKey, commission, network, hash) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
             delegation_rate: new CLU8(commission)
         })
         super(activeKey, network, hash, entrypoint, args, fee);

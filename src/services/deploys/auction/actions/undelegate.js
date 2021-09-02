@@ -2,7 +2,6 @@ import {CLPublicKey, CLU512, RuntimeArgs} from "casper-js-sdk";
 import {CurrencyUtils} from "../../../helpers";
 import {UndelegateResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
-import {BigNumber} from "ethers";
 
 
 /**
@@ -35,7 +34,7 @@ export class Undelegate extends AbstractSmartContractStoredByHashDeployParameter
         const args = RuntimeArgs.fromMap({
             delegator: CLPublicKey.fromHex(activeKey),
             validator: CLPublicKey.fromHex(validator),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount)))
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))
         })
         super(activeKey, network, hash, entrypoint, args, fee);
     }

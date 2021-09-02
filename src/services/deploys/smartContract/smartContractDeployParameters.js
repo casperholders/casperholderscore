@@ -2,7 +2,6 @@ import {AbstractSmartContractDeployParameters} from "../abstractSmartContractDep
 import {CLPublicKey, DeployUtil, RuntimeArgs} from "casper-js-sdk";
 import {SmartContractResult} from "../../results";
 import {CurrencyUtils} from "../../helpers";
-import {BigNumber} from "ethers";
 
 
 /**
@@ -62,7 +61,7 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
      * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
      */
     get payment() {
-        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(BigNumber.from(this.fee)));
+        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(this.fee));
     }
 
     /**

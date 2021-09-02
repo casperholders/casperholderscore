@@ -3,6 +3,7 @@
  * Used to convert from/to casper/motes
  */
 import {BigNumber} from "ethers";
+import Big from "big.js";
 
 
 export class CurrencyUtils {
@@ -11,19 +12,19 @@ export class CurrencyUtils {
      * Convert motes to casper
      *
      * @param {BigNumber} motesAmount - Amount in motes
-     * @return {BigNumber}
+     * @return {String}
      */
     static convertMotesToCasper(motesAmount) {
-        return BigNumber.from(motesAmount).div(1000000000);
+        return Big(motesAmount.toString()).div(1000000000).toString();
     }
 
     /**
      * Convert casper to motes
      *
-     * @param {BigNumber} casperAmount - Amount in casper
+     * @param {String} casperAmount - Amount in casper
      * @return {BigNumber}
      */
     static convertCasperToMotes(casperAmount) {
-        return BigNumber.from(casperAmount).mul(1000000000);
+        return BigNumber.from(Big(casperAmount).times(1000000000).toString());
     }
 }
