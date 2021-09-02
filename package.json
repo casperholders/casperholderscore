@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel -d dist/ src/",
-    "docs": "esdoc"
+    "docs": "esdoc",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,19 @@
     "babel-loader": "^8.2.2",
     "core-js": "3",
     "esdoc": "^1.1.0",
-    "esdoc-standard-plugin": "^1.0.0"
+    "esdoc-standard-plugin": "^1.0.0",
+    "jest": "^27.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage":true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "abstract*",
+      "index.js",
+      "/src/services/results/",
+      "/src/services/errors/",
+      "casperSigner.js"
+    ]
   }
 }
