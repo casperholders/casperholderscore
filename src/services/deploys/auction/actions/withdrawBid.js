@@ -2,6 +2,8 @@ import {CLPublicKey, CLU512, RuntimeArgs} from "casper-js-sdk";
 import {CurrencyUtils} from "../../../helpers";
 import {WithdrawBidResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
+import {BigNumber} from "ethers";
+
 
 /**
  * @constant
@@ -23,7 +25,7 @@ export class WithdrawBid extends AbstractSmartContractStoredByHashDeployParamete
     /**
      * Constructor
      *
-     * @param {number} amount - Amount of casper to withdraw to the bid
+     * @param {string} amount - Amount of casper to withdraw to the bid
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} network - Current network to execute the deployment
      * @param {string} hash - Current hash of the stored SmartContract
@@ -31,7 +33,7 @@ export class WithdrawBid extends AbstractSmartContractStoredByHashDeployParamete
     constructor(amount, activeKey, network, hash) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),
         })
         super(activeKey, network, hash, entrypoint, args, fee);
     }

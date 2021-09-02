@@ -2,6 +2,8 @@ import {AbstractSmartContractDeployParameters} from "../abstractSmartContractDep
 import {CLPublicKey, DeployUtil, RuntimeArgs} from "casper-js-sdk";
 import {SmartContractResult} from "../../results";
 import {CurrencyUtils} from "../../helpers";
+import {BigNumber} from "ethers";
+
 
 /**
  * SmartContractDeployParameters class
@@ -14,7 +16,7 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
     network;
     /** @type {Buffer} */
     smartContractBuffer;
-    /** @type {number} */
+    /** @type {string} */
     fee;
 
     /**
@@ -23,7 +25,7 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} network - Current network to execute the deployment
      * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read
-     * @param {number} fee - Runtime fee for the given SmartContract operation
+     * @param {string} fee - Runtime fee for the given SmartContract operation
      */
     constructor(activeKey, network, smartContractBuffer, fee) {
         super()
@@ -60,7 +62,7 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
      * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
      */
     get payment() {
-        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(this.fee));
+        return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(BigNumber.from(this.fee)));
     }
 
     /**

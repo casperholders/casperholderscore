@@ -2,6 +2,9 @@
  * @constant
  * @type {string}
  */
+import {BigNumber} from "ethers";
+
+
 export const STATUS_UNKNOWN = "Unknown";
 /**
  * @constant
@@ -21,13 +24,13 @@ export const STATUS_KO = "Failure";
 export class DeployResult {
     /** @type {string} */
     hash;
-    /** @type {number} */
+    /** @type {BigNumber} */
     cost;
     /** @type {string} */
     status;
     /** @type {string} */
     message;
-    /** @type {number} */
+    /** @type {BigNumber} */
     amount;
     /** @type {string} */
     name;
@@ -40,10 +43,10 @@ export class DeployResult {
      */
     constructor(hash, name) {
         this.hash = hash;
-        this.cost = 0;
+        this.cost = BigNumber.from(0);
         this.status = STATUS_UNKNOWN;
         this.message = "";
-        this.amount = 0;
+        this.amount = BigNumber.from(0);
         this.name = name;
     }
 

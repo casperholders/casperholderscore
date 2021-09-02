@@ -1,5 +1,7 @@
 import {CurrencyUtils} from "../helpers";
 import {STATUS_KO, STATUS_OK} from "../results";
+import {BigNumber} from "ethers";
+
 
 /**
  * DeployManager class
@@ -57,15 +59,15 @@ export class DeployManager {
             execResult = execResult[0].result;
         }
         if (deploy.session.getArgByName("amount")) {
-            deployResult.amount = CurrencyUtils.convertMotesToCasper(deploy.session.getArgByName("amount").value().toString())
+            deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName("amount").value().toString()))
         }
         if (STATUS_OK in execResult) {
-            deployResult.cost = CurrencyUtils.convertMotesToCasper(execResult[STATUS_OK].cost)
+            deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_OK].cost))
             deployResult.status = STATUS_OK
             return deployResult
         }
         if (STATUS_KO in execResult) {
-            deployResult.cost = CurrencyUtils.convertMotesToCasper(execResult[STATUS_KO].cost)
+            deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_KO].cost))
             deployResult.status = STATUS_KO
             deployResult.message = execResult[STATUS_KO].error_message
         }

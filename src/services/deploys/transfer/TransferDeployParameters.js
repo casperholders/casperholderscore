@@ -2,6 +2,8 @@ import {AbstractSmartContractDeployParameters} from "../abstractSmartContractDep
 import {CLPublicKey, DeployUtil} from "casper-js-sdk";
 import {CurrencyUtils} from "../../helpers";
 import {TransferResult} from "../../results";
+import {BigNumber} from "ethers";
+
 
 /**
  * @constant
@@ -18,7 +20,7 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
     activeKey;
     /** @type {string} */
     network;
-    /** @type {number} */
+    /** @type {string} */
     amount;
     /** @type {string} */
     target;
@@ -30,7 +32,7 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
      *
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} network - Current network to execute the deployment
-     * @param {number} amount - Amount to transfer in casper
+     * @param {string} amount - Amount to transfer in casper
      * @param {string} target - Public key in the hex format of the receiver
      * @param {string} transferID - TransferID of the transfer operation
      */
@@ -62,7 +64,7 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
      */
     get session() {
         return DeployUtil.ExecutableDeployItem.newTransfer(
-            CurrencyUtils.convertCasperToMotes(this.amount),
+            CurrencyUtils.convertCasperToMotes(BigNumber.from(this.amount)),
             CLPublicKey.fromHex(this.target),
             undefined,
             this.transferID

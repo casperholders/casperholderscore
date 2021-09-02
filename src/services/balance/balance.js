@@ -1,6 +1,8 @@
 import {NoStakeBalanceError, NoValidatorBalanceError} from "../errors";
 import {CLPublicKey} from "casper-js-sdk";
 import {CurrencyUtils} from "../helpers";
+import {BigNumber} from "ethers";
+
 
 /**
  * Balance class
@@ -31,18 +33,16 @@ export class Balance {
     /**
      * Retrieve current user balance from the network.
      *
-     * @return {Promise<number>} - Current balance of the user
+     * @return {Promise<BigNumber>} - Current balance of the user
      */
     async fetchBalance() {
-        return CurrencyUtils.convertMotesToCasper(
-            (await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toNumber()
-        );
+        return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toString()));
     }
 
     /**
      * Retrieve current user stake balance from the network.
      *
-     * @return {Promise<number>} - Current stake balance of the user
+     * @return {Promise<BigNumber>} - Current stake balance of the user
      */
     async fetchStakeBalance() {
         const validatorsInfo = await this.client.casperRPC.getValidatorsInfo()
@@ -54,7 +54,7 @@ export class Balance {
             return delegator.public_key === this.keyManager.activeKey
         })
         if (stakingBalance.length > 0) {
-            return CurrencyUtils.convertMotesToCasper(parseInt(stakingBalance[0].staked_amount))
+            return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount))
         }
         throw new NoStakeBalanceError();
     }
@@ -71,7 +71,7 @@ export class Balance {
         })[0]
         if (validator) {
             return {
-                balance: CurrencyUtils.convertMotesToCasper(parseInt(validator.bid.staked_amount)),
+                balance: CurrencyUtils.convertMotesToCasper(BigNumber.from(validator.bid.staked_amount)),
                 commission: validator.bid.delegation_rate,
             }
         }

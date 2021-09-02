@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/KillianH/casperholderscore",
   "dependencies": {
-    "casper-js-sdk": "^2.4.0"
+    "casper-js-sdk": "^2.4.0",
+    "ethers": "^5.4.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
@@ -41,7 +42,7 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "collectCoverage":true,
+    "collectCoverage": true,
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "abstract*",

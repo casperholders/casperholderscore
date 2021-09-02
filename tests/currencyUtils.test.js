@@ -1,9 +1,10 @@
 import {CurrencyUtils} from "../src";
+import {BigNumber} from "ethers";
 
 test('Convert casper to motes', () => {
-    expect(CurrencyUtils.convertCasperToMotes(1)).toBe(1000000000);
+    expect(BigNumber.from(CurrencyUtils.convertCasperToMotes(BigNumber.from(1))).eq(BigNumber.from(1000000000))).toBe(true);
 });
 
 test('Convert casper to motes', () => {
-    expect(CurrencyUtils.convertMotesToCasper(1000000000)).toBe(1);
+    expect(BigNumber.from(CurrencyUtils.convertMotesToCasper(BigNumber.from(1000000000))).eq(BigNumber.from(1))).toBe(true);
 });

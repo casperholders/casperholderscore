@@ -2,6 +2,8 @@ import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from "casper-js-sdk";
 import {CurrencyUtils} from "../../../helpers";
 import {AddBidResult} from "../../../results";
 import {AbstractSmartContractStoredByHashDeployParameters} from "../../abstractSmartContractStoredByHashDeployParameters";
+import {BigNumber} from "ethers";
+
 
 /**
  * @constant
@@ -23,7 +25,7 @@ export class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
     /**
      * Constructor
      *
-     * @param {number} amount - Amount of casper to add to the bid
+     * @param {string} amount - Amount of casper to add to the bid
      * @param {string} activeKey - Current active key in the public hex format
      * @param {number} commission - Set the commission of the validator to the given percentage
      * @param {string} network - Current network to execute the deployment
@@ -32,7 +34,7 @@ export class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
     constructor(amount, activeKey, commission, network, hash) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount))),
             delegation_rate: new CLU8(commission)
         })
         super(activeKey, network, hash, entrypoint, args, fee);
