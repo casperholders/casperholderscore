@@ -1,6 +1,7 @@
 # CasperHolders Core
 
 ![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)
+[![codecov](https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U)](https://codecov.io/gh/casperholders/casperholderscore)
 
 The CasperHolders website use this library to handle any interaction with the CasperNetwork.
 
