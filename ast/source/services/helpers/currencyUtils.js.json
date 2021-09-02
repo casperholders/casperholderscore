@@ -1,461 +1,119 @@
 {
   "type": "File",
   "start": 0,
-  "end": 557,
+  "end": 643,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 26,
+      "line": 29,
       "column": 1
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 557,
+    "end": 643,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 26,
+        "line": 29,
         "column": 1
       }
     },
     "sourceType": "module",
     "body": [
       {
-        "type": "ExportNamedDeclaration",
+        "type": "ImportDeclaration",
         "start": 71,
-        "end": 557,
+        "end": 104,
         "loc": {
           "start": {
             "line": 5,
             "column": 0
           },
           "end": {
-            "line": 26,
-            "column": 1
+            "line": 5,
+            "column": 33
           }
         },
-        "specifiers": [],
-        "source": null,
-        "declaration": {
-          "type": "ClassDeclaration",
-          "start": 78,
-          "end": 557,
+        "specifiers": [
+          {
+            "type": "ImportSpecifier",
+            "start": 79,
+            "end": 88,
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 8
+              },
+              "end": {
+                "line": 5,
+                "column": 17
+              }
+            },
+            "imported": {
+              "type": "Identifier",
+              "start": 79,
+              "end": 88,
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 8
+                },
+                "end": {
+                  "line": 5,
+                  "column": 17
+                },
+                "identifierName": "BigNumber"
+              },
+              "name": "BigNumber",
+              "leadingComments": null
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 79,
+              "end": 88,
+              "loc": {
+                "start": {
+                  "line": 5,
+                  "column": 8
+                },
+                "end": {
+                  "line": 5,
+                  "column": 17
+                },
+                "identifierName": "BigNumber"
+              },
+              "name": "BigNumber"
+            },
+            "leadingComments": null
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 95,
+          "end": 103,
           "loc": {
             "start": {
               "line": 5,
-              "column": 7
+              "column": 24
             },
             "end": {
-              "line": 26,
-              "column": 1
+              "line": 5,
+              "column": 32
             }
           },
-          "id": {
-            "type": "Identifier",
-            "start": 84,
-            "end": 97,
-            "loc": {
-              "start": {
-                "line": 5,
-                "column": 13
-              },
-              "end": {
-                "line": 5,
-                "column": 26
-              },
-              "identifierName": "CurrencyUtils"
-            },
-            "name": "CurrencyUtils",
-            "leadingComments": null
+          "extra": {
+            "rawValue": "ethers",
+            "raw": "\"ethers\""
           },
-          "superClass": null,
-          "body": {
-            "type": "ClassBody",
-            "start": 98,
-            "end": 557,
-            "loc": {
-              "start": {
-                "line": 5,
-                "column": 27
-              },
-              "end": {
-                "line": 26,
-                "column": 1
-              }
-            },
-            "body": [
-              {
-                "type": "ClassMethod",
-                "start": 236,
-                "end": 325,
-                "loc": {
-                  "start": {
-                    "line": 13,
-                    "column": 4
-                  },
-                  "end": {
-                    "line": 15,
-                    "column": 5
-                  }
-                },
-                "static": true,
-                "computed": false,
-                "key": {
-                  "type": "Identifier",
-                  "start": 243,
-                  "end": 263,
-                  "loc": {
-                    "start": {
-                      "line": 13,
-                      "column": 11
-                    },
-                    "end": {
-                      "line": 13,
-                      "column": 31
-                    },
-                    "identifierName": "convertMotesToCasper"
-                  },
-                  "name": "convertMotesToCasper"
-                },
-                "kind": "method",
-                "id": null,
-                "generator": false,
-                "expression": false,
-                "async": false,
-                "params": [
-                  {
-                    "type": "Identifier",
-                    "start": 264,
-                    "end": 275,
-                    "loc": {
-                      "start": {
-                        "line": 13,
-                        "column": 32
-                      },
-                      "end": {
-                        "line": 13,
-                        "column": 43
-                      },
-                      "identifierName": "motesAmount"
-                    },
-                    "name": "motesAmount"
-                  }
-                ],
-                "body": {
-                  "type": "BlockStatement",
-                  "start": 277,
-                  "end": 325,
-                  "loc": {
-                    "start": {
-                      "line": 13,
-                      "column": 45
-                    },
-                    "end": {
-                      "line": 15,
-                      "column": 5
-                    }
-                  },
-                  "body": [
-                    {
-                      "type": "ReturnStatement",
-                      "start": 287,
-                      "end": 319,
-                      "loc": {
-                        "start": {
-                          "line": 14,
-                          "column": 8
-                        },
-                        "end": {
-                          "line": 14,
-                          "column": 40
-                        }
-                      },
-                      "argument": {
-                        "type": "BinaryExpression",
-                        "start": 294,
-                        "end": 318,
-                        "loc": {
-                          "start": {
-                            "line": 14,
-                            "column": 15
-                          },
-                          "end": {
-                            "line": 14,
-                            "column": 39
-                          }
-                        },
-                        "left": {
-                          "type": "Identifier",
-                          "start": 294,
-                          "end": 305,
-                          "loc": {
-                            "start": {
-                              "line": 14,
-                              "column": 15
-                            },
-                            "end": {
-                              "line": 14,
-                              "column": 26
-                            },
-                            "identifierName": "motesAmount"
-                          },
-                          "name": "motesAmount"
-                        },
-                        "operator": "/",
-                        "right": {
-                          "type": "NumericLiteral",
-                          "start": 308,
-                          "end": 318,
-                          "loc": {
-                            "start": {
-                              "line": 14,
-                              "column": 29
-                            },
-                            "end": {
-                              "line": 14,
-                              "column": 39
-                            }
-                          },
-                          "extra": {
-                            "rawValue": 1000000000,
-                            "raw": "1000000000"
-                          },
-                          "value": 1000000000
-                        }
-                      }
-                    }
-                  ],
-                  "directives": [],
-                  "trailingComments": null
-                },
-                "leadingComments": [
-                  {
-                    "type": "CommentBlock",
-                    "value": "*\n     * Convert motes to casper\n     *\n     * @param {number} motesAmount - Amount in motes\n     * @return {number}\n     ",
-                    "start": 105,
-                    "end": 231,
-                    "loc": {
-                      "start": {
-                        "line": 7,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 12,
-                        "column": 7
-                      }
-                    }
-                  }
-                ],
-                "trailingComments": [
-                  {
-                    "type": "CommentBlock",
-                    "value": "*\n     * Convert casper to motes\n     *\n     * @param {number} casperAmount - Amount in casper\n     * @return {number}\n     ",
-                    "start": 331,
-                    "end": 459,
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 22,
-                        "column": 7
-                      }
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "ClassMethod",
-                "start": 464,
-                "end": 555,
-                "loc": {
-                  "start": {
-                    "line": 23,
-                    "column": 4
-                  },
-                  "end": {
-                    "line": 25,
-                    "column": 5
-                  }
-                },
-                "static": true,
-                "computed": false,
-                "key": {
-                  "type": "Identifier",
-                  "start": 471,
-                  "end": 491,
-                  "loc": {
-                    "start": {
-                      "line": 23,
-                      "column": 11
-                    },
-                    "end": {
-                      "line": 23,
-                      "column": 31
-                    },
-                    "identifierName": "convertCasperToMotes"
-                  },
-                  "name": "convertCasperToMotes"
-                },
-                "kind": "method",
-                "id": null,
-                "generator": false,
-                "expression": false,
-                "async": false,
-                "params": [
-                  {
-                    "type": "Identifier",
-                    "start": 492,
-                    "end": 504,
-                    "loc": {
-                      "start": {
-                        "line": 23,
-                        "column": 32
-                      },
-                      "end": {
-                        "line": 23,
-                        "column": 44
-                      },
-                      "identifierName": "casperAmount"
-                    },
-                    "name": "casperAmount"
-                  }
-                ],
-                "body": {
-                  "type": "BlockStatement",
-                  "start": 506,
-                  "end": 555,
-                  "loc": {
-                    "start": {
-                      "line": 23,
-                      "column": 46
-                    },
-                    "end": {
-                      "line": 25,
-                      "column": 5
-                    }
-                  },
-                  "body": [
-                    {
-                      "type": "ReturnStatement",
-                      "start": 516,
-                      "end": 549,
-                      "loc": {
-                        "start": {
-                          "line": 24,
-                          "column": 8
-                        },
-                        "end": {
-                          "line": 24,
-                          "column": 41
-                        }
-                      },
-                      "argument": {
-                        "type": "BinaryExpression",
-                        "start": 523,
-                        "end": 548,
-                        "loc": {
-                          "start": {
-                            "line": 24,
-                            "column": 15
-                          },
-                          "end": {
-                            "line": 24,
-                            "column": 40
-                          }
-                        },
-                        "left": {
-                          "type": "Identifier",
-                          "start": 523,
-                          "end": 535,
-                          "loc": {
-                            "start": {
-                              "line": 24,
-                              "column": 15
-                            },
-                            "end": {
-                              "line": 24,
-                              "column": 27
-                            },
-                            "identifierName": "casperAmount"
-                          },
-                          "name": "casperAmount"
-                        },
-                        "operator": "*",
-                        "right": {
-                          "type": "NumericLiteral",
-                          "start": 538,
-                          "end": 548,
-                          "loc": {
-                            "start": {
-                              "line": 24,
-                              "column": 30
-                            },
-                            "end": {
-                              "line": 24,
-                              "column": 40
-                            }
-                          },
-                          "extra": {
-                            "rawValue": 1000000000,
-                            "raw": "1000000000"
-                          },
-                          "value": 1000000000
-                        }
-                      }
-                    }
-                  ],
-                  "directives": []
-                },
-                "leadingComments": [
-                  {
-                    "type": "CommentBlock",
-                    "value": "*\n     * Convert casper to motes\n     *\n     * @param {number} casperAmount - Amount in casper\n     * @return {number}\n     ",
-                    "start": 331,
-                    "end": 459,
-                    "loc": {
-                      "start": {
-                        "line": 17,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 22,
-                        "column": 7
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          "leadingComments": [
-            {
-              "type": "CommentBlock",
-              "value": "*\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n ",
-              "start": 0,
-              "end": 70,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 0
-                },
-                "end": {
-                  "line": 4,
-                  "column": 3
-                }
-              }
-            }
-          ],
-          "trailingComments": []
+          "value": "ethers"
         },
         "leadingComments": [
           {
@@ -475,6 +133,620 @@
             }
           }
         ]
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 107,
+        "end": 643,
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 0
+          },
+          "end": {
+            "line": 29,
+            "column": 1
+          }
+        },
+        "specifiers": [],
+        "source": null,
+        "declaration": {
+          "type": "ClassDeclaration",
+          "start": 114,
+          "end": 643,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 7
+            },
+            "end": {
+              "line": 29,
+              "column": 1
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 120,
+            "end": 133,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 13
+              },
+              "end": {
+                "line": 8,
+                "column": 26
+              },
+              "identifierName": "CurrencyUtils"
+            },
+            "name": "CurrencyUtils"
+          },
+          "superClass": null,
+          "body": {
+            "type": "ClassBody",
+            "start": 134,
+            "end": 643,
+            "loc": {
+              "start": {
+                "line": 8,
+                "column": 27
+              },
+              "end": {
+                "line": 29,
+                "column": 1
+              }
+            },
+            "body": [
+              {
+                "type": "ClassMethod",
+                "start": 278,
+                "end": 386,
+                "loc": {
+                  "start": {
+                    "line": 16,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 18,
+                    "column": 5
+                  }
+                },
+                "static": true,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 285,
+                  "end": 305,
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 11
+                    },
+                    "end": {
+                      "line": 16,
+                      "column": 31
+                    },
+                    "identifierName": "convertMotesToCasper"
+                  },
+                  "name": "convertMotesToCasper"
+                },
+                "kind": "method",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 306,
+                    "end": 317,
+                    "loc": {
+                      "start": {
+                        "line": 16,
+                        "column": 32
+                      },
+                      "end": {
+                        "line": 16,
+                        "column": 43
+                      },
+                      "identifierName": "motesAmount"
+                    },
+                    "name": "motesAmount"
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 319,
+                  "end": 386,
+                  "loc": {
+                    "start": {
+                      "line": 16,
+                      "column": 45
+                    },
+                    "end": {
+                      "line": 18,
+                      "column": 5
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 329,
+                      "end": 380,
+                      "loc": {
+                        "start": {
+                          "line": 17,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 17,
+                          "column": 59
+                        }
+                      },
+                      "argument": {
+                        "type": "CallExpression",
+                        "start": 336,
+                        "end": 379,
+                        "loc": {
+                          "start": {
+                            "line": 17,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 17,
+                            "column": 58
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 336,
+                          "end": 367,
+                          "loc": {
+                            "start": {
+                              "line": 17,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 17,
+                              "column": 46
+                            }
+                          },
+                          "object": {
+                            "type": "CallExpression",
+                            "start": 336,
+                            "end": 363,
+                            "loc": {
+                              "start": {
+                                "line": 17,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 17,
+                                "column": 42
+                              }
+                            },
+                            "callee": {
+                              "type": "MemberExpression",
+                              "start": 336,
+                              "end": 350,
+                              "loc": {
+                                "start": {
+                                  "line": 17,
+                                  "column": 15
+                                },
+                                "end": {
+                                  "line": 17,
+                                  "column": 29
+                                }
+                              },
+                              "object": {
+                                "type": "Identifier",
+                                "start": 336,
+                                "end": 345,
+                                "loc": {
+                                  "start": {
+                                    "line": 17,
+                                    "column": 15
+                                  },
+                                  "end": {
+                                    "line": 17,
+                                    "column": 24
+                                  },
+                                  "identifierName": "BigNumber"
+                                },
+                                "name": "BigNumber"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "start": 346,
+                                "end": 350,
+                                "loc": {
+                                  "start": {
+                                    "line": 17,
+                                    "column": 25
+                                  },
+                                  "end": {
+                                    "line": 17,
+                                    "column": 29
+                                  },
+                                  "identifierName": "from"
+                                },
+                                "name": "from"
+                              },
+                              "computed": false
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 351,
+                                "end": 362,
+                                "loc": {
+                                  "start": {
+                                    "line": 17,
+                                    "column": 30
+                                  },
+                                  "end": {
+                                    "line": 17,
+                                    "column": 41
+                                  },
+                                  "identifierName": "motesAmount"
+                                },
+                                "name": "motesAmount"
+                              }
+                            ]
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 364,
+                            "end": 367,
+                            "loc": {
+                              "start": {
+                                "line": 17,
+                                "column": 43
+                              },
+                              "end": {
+                                "line": 17,
+                                "column": 46
+                              },
+                              "identifierName": "div"
+                            },
+                            "name": "div"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "NumericLiteral",
+                            "start": 368,
+                            "end": 378,
+                            "loc": {
+                              "start": {
+                                "line": 17,
+                                "column": 47
+                              },
+                              "end": {
+                                "line": 17,
+                                "column": 57
+                              }
+                            },
+                            "extra": {
+                              "rawValue": 1000000000,
+                              "raw": "1000000000"
+                            },
+                            "value": 1000000000
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "directives": [],
+                  "trailingComments": null
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {BigNumber}\n     ",
+                    "start": 141,
+                    "end": 273,
+                    "loc": {
+                      "start": {
+                        "line": 10,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 15,
+                        "column": 7
+                      }
+                    }
+                  }
+                ],
+                "trailingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Convert casper to motes\n     *\n     * @param {BigNumber} casperAmount - Amount in casper\n     * @return {BigNumber}\n     ",
+                    "start": 392,
+                    "end": 526,
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 25,
+                        "column": 7
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ClassMethod",
+                "start": 531,
+                "end": 641,
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 28,
+                    "column": 5
+                  }
+                },
+                "static": true,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 538,
+                  "end": 558,
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 11
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 31
+                    },
+                    "identifierName": "convertCasperToMotes"
+                  },
+                  "name": "convertCasperToMotes"
+                },
+                "kind": "method",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 559,
+                    "end": 571,
+                    "loc": {
+                      "start": {
+                        "line": 26,
+                        "column": 32
+                      },
+                      "end": {
+                        "line": 26,
+                        "column": 44
+                      },
+                      "identifierName": "casperAmount"
+                    },
+                    "name": "casperAmount"
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 573,
+                  "end": 641,
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 46
+                    },
+                    "end": {
+                      "line": 28,
+                      "column": 5
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 583,
+                      "end": 635,
+                      "loc": {
+                        "start": {
+                          "line": 27,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 27,
+                          "column": 60
+                        }
+                      },
+                      "argument": {
+                        "type": "CallExpression",
+                        "start": 590,
+                        "end": 634,
+                        "loc": {
+                          "start": {
+                            "line": 27,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 27,
+                            "column": 59
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 590,
+                          "end": 622,
+                          "loc": {
+                            "start": {
+                              "line": 27,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 27,
+                              "column": 47
+                            }
+                          },
+                          "object": {
+                            "type": "CallExpression",
+                            "start": 590,
+                            "end": 618,
+                            "loc": {
+                              "start": {
+                                "line": 27,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 27,
+                                "column": 43
+                              }
+                            },
+                            "callee": {
+                              "type": "MemberExpression",
+                              "start": 590,
+                              "end": 604,
+                              "loc": {
+                                "start": {
+                                  "line": 27,
+                                  "column": 15
+                                },
+                                "end": {
+                                  "line": 27,
+                                  "column": 29
+                                }
+                              },
+                              "object": {
+                                "type": "Identifier",
+                                "start": 590,
+                                "end": 599,
+                                "loc": {
+                                  "start": {
+                                    "line": 27,
+                                    "column": 15
+                                  },
+                                  "end": {
+                                    "line": 27,
+                                    "column": 24
+                                  },
+                                  "identifierName": "BigNumber"
+                                },
+                                "name": "BigNumber"
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "start": 600,
+                                "end": 604,
+                                "loc": {
+                                  "start": {
+                                    "line": 27,
+                                    "column": 25
+                                  },
+                                  "end": {
+                                    "line": 27,
+                                    "column": 29
+                                  },
+                                  "identifierName": "from"
+                                },
+                                "name": "from"
+                              },
+                              "computed": false
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "start": 605,
+                                "end": 617,
+                                "loc": {
+                                  "start": {
+                                    "line": 27,
+                                    "column": 30
+                                  },
+                                  "end": {
+                                    "line": 27,
+                                    "column": 42
+                                  },
+                                  "identifierName": "casperAmount"
+                                },
+                                "name": "casperAmount"
+                              }
+                            ]
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 619,
+                            "end": 622,
+                            "loc": {
+                              "start": {
+                                "line": 27,
+                                "column": 44
+                              },
+                              "end": {
+                                "line": 27,
+                                "column": 47
+                              },
+                              "identifierName": "mul"
+                            },
+                            "name": "mul"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "NumericLiteral",
+                            "start": 623,
+                            "end": 633,
+                            "loc": {
+                              "start": {
+                                "line": 27,
+                                "column": 48
+                              },
+                              "end": {
+                                "line": 27,
+                                "column": 58
+                              }
+                            },
+                            "extra": {
+                              "rawValue": 1000000000,
+                              "raw": "1000000000"
+                            },
+                            "value": 1000000000
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "directives": []
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Convert casper to motes\n     *\n     * @param {BigNumber} casperAmount - Amount in casper\n     * @return {BigNumber}\n     ",
+                    "start": 392,
+                    "end": 526,
+                    "loc": {
+                      "start": {
+                        "line": 20,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 25,
+                        "column": 7
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "leadingComments": [],
+          "trailingComments": []
+        }
       }
     ],
     "directives": []
@@ -498,32 +770,32 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Convert motes to casper\n     *\n     * @param {number} motesAmount - Amount in motes\n     * @return {number}\n     ",
-      "start": 105,
-      "end": 231,
+      "value": "*\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {BigNumber}\n     ",
+      "start": 141,
+      "end": 273,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 4
         },
         "end": {
-          "line": 12,
+          "line": 15,
           "column": 7
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Convert casper to motes\n     *\n     * @param {number} casperAmount - Amount in casper\n     * @return {number}\n     ",
-      "start": 331,
-      "end": 459,
+      "value": "*\n     * Convert casper to motes\n     *\n     * @param {BigNumber} casperAmount - Amount in casper\n     * @return {BigNumber}\n     ",
+      "start": 392,
+      "end": 526,
       "loc": {
         "start": {
-          "line": 17,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 22,
+          "line": 25,
           "column": 7
         }
       }
@@ -548,6 +820,189 @@
     },
     {
       "type": {
+        "label": "import",
+        "keyword": "import",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "import",
+      "start": 71,
+      "end": 77,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 78,
+      "end": 79,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 7
+        },
+        "end": {
+          "line": 5,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "BigNumber",
+      "start": 79,
+      "end": 88,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 8
+        },
+        "end": {
+          "line": 5,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 88,
+      "end": 89,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 17
+        },
+        "end": {
+          "line": 5,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 90,
+      "end": 94,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 19
+        },
+        "end": {
+          "line": 5,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "ethers",
+      "start": 95,
+      "end": 103,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 24
+        },
+        "end": {
+          "line": 5,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 103,
+      "end": 104,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 32
+        },
+        "end": {
+          "line": 5,
+          "column": 33
+        }
+      }
+    },
+    {
+      "type": {
         "label": "export",
         "keyword": "export",
         "beforeExpr": false,
@@ -561,15 +1016,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 71,
-      "end": 77,
+      "start": 107,
+      "end": 113,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 0
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 6
         }
       }
@@ -589,15 +1044,15 @@
         "updateContext": null
       },
       "value": "class",
-      "start": 78,
-      "end": 83,
+      "start": 114,
+      "end": 119,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 7
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 12
         }
       }
@@ -615,15 +1070,15 @@
         "binop": null
       },
       "value": "CurrencyUtils",
-      "start": 84,
-      "end": 97,
+      "start": 120,
+      "end": 133,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 13
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 26
         }
       }
@@ -640,31 +1095,31 @@
         "postfix": false,
         "binop": null
       },
-      "start": 98,
-      "end": 99,
+      "start": 134,
+      "end": 135,
       "loc": {
         "start": {
-          "line": 5,
+          "line": 8,
           "column": 27
         },
         "end": {
-          "line": 5,
+          "line": 8,
           "column": 28
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Convert motes to casper\n     *\n     * @param {number} motesAmount - Amount in motes\n     * @return {number}\n     ",
-      "start": 105,
-      "end": 231,
+      "value": "*\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {BigNumber}\n     ",
+      "start": 141,
+      "end": 273,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 10,
           "column": 4
         },
         "end": {
-          "line": 12,
+          "line": 15,
           "column": 7
         }
       }
@@ -682,15 +1137,15 @@
         "binop": null
       },
       "value": "static",
-      "start": 236,
-      "end": 242,
+      "start": 278,
+      "end": 284,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 4
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 10
         }
       }
@@ -708,15 +1163,15 @@
         "binop": null
       },
       "value": "convertMotesToCasper",
-      "start": 243,
-      "end": 263,
+      "start": 285,
+      "end": 305,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 11
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 31
         }
       }
@@ -733,15 +1188,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 263,
-      "end": 264,
+      "start": 305,
+      "end": 306,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 31
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 32
         }
       }
@@ -759,15 +1214,15 @@
         "binop": null
       },
       "value": "motesAmount",
-      "start": 264,
-      "end": 275,
+      "start": 306,
+      "end": 317,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 32
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 43
         }
       }
@@ -784,15 +1239,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 275,
-      "end": 276,
+      "start": 317,
+      "end": 318,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 43
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 44
         }
       }
@@ -809,15 +1264,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 277,
-      "end": 278,
+      "start": 319,
+      "end": 320,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 16,
           "column": 45
         },
         "end": {
-          "line": 13,
+          "line": 16,
           "column": 46
         }
       }
@@ -837,15 +1292,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 287,
-      "end": 293,
+      "start": 329,
+      "end": 335,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 17,
           "column": 8
         },
         "end": {
-          "line": 14,
+          "line": 17,
           "column": 14
         }
       }
@@ -862,44 +1317,222 @@
         "postfix": false,
         "binop": null
       },
-      "value": "motesAmount",
-      "start": 294,
-      "end": 305,
+      "value": "BigNumber",
+      "start": 336,
+      "end": 345,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 17,
           "column": 15
         },
         "end": {
-          "line": 14,
-          "column": 26
+          "line": 17,
+          "column": 24
         }
       }
     },
     {
       "type": {
-        "label": "/",
-        "beforeExpr": true,
+        "label": ".",
+        "beforeExpr": false,
         "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": 10,
+        "binop": null,
         "updateContext": null
       },
-      "value": "/",
-      "start": 306,
-      "end": 307,
+      "start": 345,
+      "end": 346,
       "loc": {
         "start": {
-          "line": 14,
-          "column": 27
+          "line": 17,
+          "column": 24
         },
         "end": {
-          "line": 14,
-          "column": 28
+          "line": 17,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 346,
+      "end": 350,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 25
+        },
+        "end": {
+          "line": 17,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 350,
+      "end": 351,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 29
+        },
+        "end": {
+          "line": 17,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "motesAmount",
+      "start": 351,
+      "end": 362,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 30
+        },
+        "end": {
+          "line": 17,
+          "column": 41
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 362,
+      "end": 363,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 41
+        },
+        "end": {
+          "line": 17,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 363,
+      "end": 364,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 42
+        },
+        "end": {
+          "line": 17,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "div",
+      "start": 364,
+      "end": 367,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 43
+        },
+        "end": {
+          "line": 17,
+          "column": 46
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 367,
+      "end": 368,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 46
+        },
+        "end": {
+          "line": 17,
+          "column": 47
         }
       }
     },
@@ -917,16 +1550,41 @@
         "updateContext": null
       },
       "value": 1000000000,
-      "start": 308,
-      "end": 318,
+      "start": 368,
+      "end": 378,
       "loc": {
         "start": {
-          "line": 14,
-          "column": 29
+          "line": 17,
+          "column": 47
         },
         "end": {
-          "line": 14,
-          "column": 39
+          "line": 17,
+          "column": 57
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 378,
+      "end": 379,
+      "loc": {
+        "start": {
+          "line": 17,
+          "column": 57
+        },
+        "end": {
+          "line": 17,
+          "column": 58
         }
       }
     },
@@ -943,16 +1601,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 318,
-      "end": 319,
+      "start": 379,
+      "end": 380,
       "loc": {
         "start": {
-          "line": 14,
-          "column": 39
+          "line": 17,
+          "column": 58
         },
         "end": {
-          "line": 14,
-          "column": 40
+          "line": 17,
+          "column": 59
         }
       }
     },
@@ -968,31 +1626,31 @@
         "postfix": false,
         "binop": null
       },
-      "start": 324,
-      "end": 325,
+      "start": 385,
+      "end": 386,
       "loc": {
         "start": {
-          "line": 15,
+          "line": 18,
           "column": 4
         },
         "end": {
-          "line": 15,
+          "line": 18,
           "column": 5
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Convert casper to motes\n     *\n     * @param {number} casperAmount - Amount in casper\n     * @return {number}\n     ",
-      "start": 331,
-      "end": 459,
+      "value": "*\n     * Convert casper to motes\n     *\n     * @param {BigNumber} casperAmount - Amount in casper\n     * @return {BigNumber}\n     ",
+      "start": 392,
+      "end": 526,
       "loc": {
         "start": {
-          "line": 17,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 22,
+          "line": 25,
           "column": 7
         }
       }
@@ -1010,15 +1668,15 @@
         "binop": null
       },
       "value": "static",
-      "start": 464,
-      "end": 470,
+      "start": 531,
+      "end": 537,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 4
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 10
         }
       }
@@ -1036,15 +1694,15 @@
         "binop": null
       },
       "value": "convertCasperToMotes",
-      "start": 471,
-      "end": 491,
+      "start": 538,
+      "end": 558,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 11
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 31
         }
       }
@@ -1061,15 +1719,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 491,
-      "end": 492,
+      "start": 558,
+      "end": 559,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 31
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 32
         }
       }
@@ -1087,15 +1745,15 @@
         "binop": null
       },
       "value": "casperAmount",
-      "start": 492,
-      "end": 504,
+      "start": 559,
+      "end": 571,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 32
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 44
         }
       }
@@ -1112,15 +1770,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 504,
-      "end": 505,
+      "start": 571,
+      "end": 572,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 44
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 45
         }
       }
@@ -1137,15 +1795,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 506,
-      "end": 507,
+      "start": 573,
+      "end": 574,
       "loc": {
         "start": {
-          "line": 23,
+          "line": 26,
           "column": 46
         },
         "end": {
-          "line": 23,
+          "line": 26,
           "column": 47
         }
       }
@@ -1165,15 +1823,15 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 516,
-      "end": 522,
+      "start": 583,
+      "end": 589,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 8
         },
         "end": {
-          "line": 24,
+          "line": 27,
           "column": 14
         }
       }
@@ -1190,44 +1848,222 @@
         "postfix": false,
         "binop": null
       },
-      "value": "casperAmount",
-      "start": 523,
-      "end": 535,
+      "value": "BigNumber",
+      "start": 590,
+      "end": 599,
       "loc": {
         "start": {
-          "line": 24,
+          "line": 27,
           "column": 15
         },
         "end": {
-          "line": 24,
-          "column": 27
+          "line": 27,
+          "column": 24
         }
       }
     },
     {
       "type": {
-        "label": "*",
-        "beforeExpr": true,
+        "label": ".",
+        "beforeExpr": false,
         "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": 10,
+        "binop": null,
         "updateContext": null
       },
-      "value": "*",
-      "start": 536,
-      "end": 537,
+      "start": 599,
+      "end": 600,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 28
+          "line": 27,
+          "column": 24
         },
         "end": {
-          "line": 24,
+          "line": 27,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 600,
+      "end": 604,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 25
+        },
+        "end": {
+          "line": 27,
           "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 604,
+      "end": 605,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 29
+        },
+        "end": {
+          "line": 27,
+          "column": 30
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "casperAmount",
+      "start": 605,
+      "end": 617,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 30
+        },
+        "end": {
+          "line": 27,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 617,
+      "end": 618,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 42
+        },
+        "end": {
+          "line": 27,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 618,
+      "end": 619,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 43
+        },
+        "end": {
+          "line": 27,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "mul",
+      "start": 619,
+      "end": 622,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 44
+        },
+        "end": {
+          "line": 27,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 622,
+      "end": 623,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 47
+        },
+        "end": {
+          "line": 27,
+          "column": 48
         }
       }
     },
@@ -1245,16 +2081,41 @@
         "updateContext": null
       },
       "value": 1000000000,
-      "start": 538,
-      "end": 548,
+      "start": 623,
+      "end": 633,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 30
+          "line": 27,
+          "column": 48
         },
         "end": {
-          "line": 24,
-          "column": 40
+          "line": 27,
+          "column": 58
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 633,
+      "end": 634,
+      "loc": {
+        "start": {
+          "line": 27,
+          "column": 58
+        },
+        "end": {
+          "line": 27,
+          "column": 59
         }
       }
     },
@@ -1271,16 +2132,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 548,
-      "end": 549,
+      "start": 634,
+      "end": 635,
       "loc": {
         "start": {
-          "line": 24,
-          "column": 40
+          "line": 27,
+          "column": 59
         },
         "end": {
-          "line": 24,
-          "column": 41
+          "line": 27,
+          "column": 60
         }
       }
     },
@@ -1296,15 +2157,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 554,
-      "end": 555,
+      "start": 640,
+      "end": 641,
       "loc": {
         "start": {
-          "line": 25,
+          "line": 28,
           "column": 4
         },
         "end": {
-          "line": 25,
+          "line": 28,
           "column": 5
         }
       }
@@ -1321,15 +2182,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 556,
-      "end": 557,
+      "start": 642,
+      "end": 643,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 0
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 1
         }
       }
@@ -1347,15 +2208,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 557,
-      "end": 557,
+      "start": 643,
+      "end": 643,
       "loc": {
         "start": {
-          "line": 26,
+          "line": 29,
           "column": 1
         },
         "end": {
-          "line": 26,
+          "line": 29,
           "column": 1
         }
       }

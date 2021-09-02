@@ -71,6 +71,8 @@
 import {CurrencyUtils} from &quot;../../../helpers&quot;;
 import {DelegateResult} from &quot;../../../results&quot;;
 import {AbstractSmartContractStoredByHashDeployParameters} from &quot;../../abstractSmartContractStoredByHashDeployParameters&quot;;
+import {BigNumber} from &quot;ethers&quot;;
+
 
 /**
  * @constant
@@ -92,7 +94,7 @@ export class Delegate extends AbstractSmartContractStoredByHashDeployParameters 
     /**
      * Constructor
      *
-     * @param {number} amount - Amount of casper to add to delegate
+     * @param {string} amount - Amount of casper to add to delegate
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} validator - Public key in the hex format of the validator
      * @param {string} network - Current network to execute the deployment
@@ -102,7 +104,7 @@ export class Delegate extends AbstractSmartContractStoredByHashDeployParameters 
         const args = RuntimeArgs.fromMap({
             delegator: CLPublicKey.fromHex(activeKey),
             validator: CLPublicKey.fromHex(validator),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))
+            amount: new CLU512(CurrencyUtils.convertCasperToMotes(BigNumber.from(amount)))
         })
         super(activeKey, network, hash, entrypoint, args, fee);
     }
