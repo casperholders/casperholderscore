@@ -3093,7 +3093,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<number>} - Current balance of the validator\n     ",
+                    "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<Object>} - Current balance of the validator\n     ",
                     "start": 1951,
                     "end": 2097,
                     "loc": {
@@ -4269,7 +4269,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<number>} - Current balance of the validator\n     ",
+                    "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<Object>} - Current balance of the validator\n     ",
                     "start": 1951,
                     "end": 2097,
                     "loc": {
@@ -4444,7 +4444,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<number>} - Current balance of the validator\n     ",
+      "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<Object>} - Current balance of the validator\n     ",
       "start": 1951,
       "end": 2097,
       "loc": {
@@ -9760,7 +9760,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<number>} - Current balance of the validator\n     ",
+      "value": "*\n     * Retrieve current validator balance from the network.\n     *\n     * @return {Promise<Object>} - Current balance of the validator\n     ",
       "start": 1951,
       "end": 2097,
       "loc": {

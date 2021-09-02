@@ -131,7 +131,7 @@ export class Balance {
     /**
      * Retrieve current validator balance from the network.
      *
-     * @return {Promise&lt;number&gt;} - Current balance of the validator
+     * @return {Promise&lt;Object&gt;} - Current balance of the validator
      */
     async fetchValidatorBalance() {
         const validatorsInfo = await this.client.casperRPC.getValidatorsInfo()
