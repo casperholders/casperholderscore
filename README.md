@@ -9,6 +9,32 @@ It contains a huge portion of the website logic.
 
 Documentation : [Link](https://casperholders.github.io/casperholderscore/)
 
+## Development
+
+Install dependencies
+
+```bash
+yarn install
+```
+
+Build
+
+```bash
+yarn build
+```
+
+Generate documentation
+
+```bash
+yarn docs
+```
+
+Run tests
+
+```bash
+yarn test
+```
+
 ## Installation
 
 ### NPM
