@@ -67,10 +67,10 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/balance/balance.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {NoStakeBalanceError, NoValidatorBalanceError} from &quot;../errors&quot;;
-import {CLPublicKey} from &quot;casper-js-sdk&quot;;
-import {CurrencyUtils} from &quot;../helpers&quot;;
-import {BigNumber} from &quot;ethers&quot;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { NoStakeBalanceError, NoValidatorBalanceError } from &apos;../errors&apos;;
+import { CLPublicKey } from &apos;casper-js-sdk&apos;;
+import { CurrencyUtils } from &apos;../helpers&apos;;
+import { BigNumber } from &apos;ethers&apos;;
 
 
 /**
@@ -79,73 +79,97 @@ import {BigNumber} from &quot;ethers&quot;;
  */
 export class Balance {
 
-    /** @type {AbstractKeyManager} */
-    keyManager
-    /** @type {ClientCasper} */
-    client
-    /** @type {string} */
-    validator
+  /** @type {AbstractKeyManager} */
+  keyManager;
 
-    /**
-     * Constructor
-     *
-     * @param {AbstractKeyManager} keyManager - Instance of a KeyManager
-     * @param {ClientCasper} client - Instance of CasperClient
-     * @param {string} validator - Hash of the main validator
-     */
-    constructor(keyManager, client, validator) {
-        this.keyManager = keyManager;
-        this.client = client;
-        this.validator = validator
+  /** @type {ClientCasper} */
+  client;
+
+  /**
+   * Constructor
+   *
+   * @param {AbstractKeyManager} keyManager - Instance of a KeyManager
+   * @param {ClientCasper} client - Instance of CasperClient
+   */
+  constructor(keyManager, client) {
+    this.keyManager = keyManager;
+    this.client = client;
+  }
+
+  /**
+   * Retrieve current user balance from the network.
+   *
+   * @return {Promise&lt;BigNumber&gt;} - Current balance of the user
+   */
+  async fetchBalance() {
+    return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toString()));
+  }
+
+  /**
+   * Retrieve current user stake balance from the network for a given validator.
+   *
+   * @return {Promise&lt;BigNumber&gt;} - Current stake balance of the user
+   * @param {string} validatorPublicKey - Public key of the validator
+   */
+  async fetchStakeBalance(validatorPublicKey) {
+    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    let validator = validatorsInfo.auction_state.bids.filter(validator =&gt; {
+      return validator.public_key === validatorPublicKey;
+    })[0];
+
+    let stakingBalance = validator.bid.delegators.filter(delegator =&gt; {
+      return delegator.public_key === this.keyManager.activeKey;
+    });
+    if (stakingBalance.length &gt; 0) {
+      return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount));
     }
+    throw new NoStakeBalanceError();
+  }
 
-    /**
-     * Retrieve current user balance from the network.
-     *
-     * @return {Promise&lt;BigNumber&gt;} - Current balance of the user
-     */
-    async fetchBalance() {
-        return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toString()));
-    }
-
-    /**
-     * Retrieve current user stake balance from the network.
-     *
-     * @return {Promise&lt;BigNumber&gt;} - Current stake balance of the user
-     */
-    async fetchStakeBalance() {
-        const validatorsInfo = await this.client.casperRPC.getValidatorsInfo()
-        let validator = validatorsInfo.auction_state.bids.filter(validator =&gt; {
-            return validator.public_key === this.validator
+  /**
+   * Retrieve current user stake balance from the network from all validators.
+   *
+   * @return {Promise&lt;*[]&gt;} - Current stake balance of the user
+   */
+  async fetchAllStakeBalance() {
+    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    let validators = validatorsInfo.auction_state.bids.filter(validator =&gt; {
+      return validator.bid.delegators.some((delegator) =&gt; delegator.public_key === this.keyManager.activeKey);
+    });
+    if (validators.length &gt; 0) {
+      let stakeBalances = [];
+      validators.forEach((validator) =&gt; {
+        const delegator = validator.bid.delegators.filter((delegation) =&gt; {
+          return delegation.public_key === this.keyManager.activeKey
         })[0]
-
-        let stakingBalance = validator.bid.delegators.filter(delegator =&gt; {
-            return delegator.public_key === this.keyManager.activeKey
-        })
-        if (stakingBalance.length &gt; 0) {
-            return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount))
-        }
-        throw new NoStakeBalanceError();
+        stakeBalances.push({
+          validator: validator.public_key,
+          stakedTokens: CurrencyUtils.convertMotesToCasper(BigNumber.from(delegator.staked_amount)),
+        });
+      });
+      return stakeBalances;
     }
+    throw new NoStakeBalanceError();
+  }
 
-    /**
-     * Retrieve current validator balance from the network.
-     *
-     * @return {Promise&lt;Object&gt;} - Current balance of the validator
-     */
-    async fetchValidatorBalance() {
-        const validatorsInfo = await this.client.casperRPC.getValidatorsInfo()
-        let validator = validatorsInfo.auction_state.bids.filter(validator =&gt; {
-            return validator.public_key === this.keyManager.activeKey
-        })[0]
-        if (validator) {
-            return {
-                balance: CurrencyUtils.convertMotesToCasper(BigNumber.from(validator.bid.staked_amount)),
-                commission: validator.bid.delegation_rate,
-            }
-        }
-        throw new NoValidatorBalanceError()
+  /**
+   * Retrieve current validator balance from the network.
+   *
+   * @return {Promise&lt;Object&gt;} - Current balance of the validator
+   */
+  async fetchValidatorBalance() {
+    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    let validator = validatorsInfo.auction_state.bids.filter(validator =&gt; {
+      return validator.public_key === this.keyManager.activeKey;
+    })[0];
+    if (validator) {
+      return {
+        balance: CurrencyUtils.convertMotesToCasper(BigNumber.from(validator.bid.staked_amount)),
+        commission: validator.bid.delegation_rate,
+      };
     }
+    throw new NoValidatorBalanceError();
+  }
 }</code></pre>
 
 </div>

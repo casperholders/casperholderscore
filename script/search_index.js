@@ -498,6 +498,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/balance/balance.js~balance#fetchallstakebalance",
+    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchAllStakeBalance",
+    "src/services/balance/balance.js~Balance#fetchAllStakeBalance",
+    "method"
+  ],
+  [
     "src/services/balance/balance.js~balance#fetchbalance",
     "class/src/services/balance/balance.js~Balance.html#instance-method-fetchBalance",
     "src/services/balance/balance.js~Balance#fetchBalance",
@@ -519,12 +525,6 @@ window.esdocSearchIndex = [
     "src/services/balance/balance.js~balance#keymanager",
     "class/src/services/balance/balance.js~Balance.html#instance-member-keyManager",
     "src/services/balance/balance.js~Balance#keyManager",
-    "member"
-  ],
-  [
-    "src/services/balance/balance.js~balance#validator",
-    "class/src/services/balance/balance.js~Balance.html#instance-member-validator",
-    "src/services/balance/balance.js~Balance#validator",
     "member"
   ],
   [
