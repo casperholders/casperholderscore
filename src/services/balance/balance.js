@@ -1,4 +1,4 @@
-import { NoStakeBalanceError, NoValidatorBalanceError } from '../errors';
+import { NoActiveKeyError, NoStakeBalanceError, NoValidatorBalanceError } from '../errors';
 import { CLPublicKey } from 'casper-js-sdk';
 import { CurrencyUtils } from '../helpers';
 import { BigNumber } from 'ethers';
@@ -33,6 +33,9 @@ export class Balance {
    * @return {Promise<BigNumber>} - Current balance of the user
    */
   async fetchBalance() {
+    if (this.keyManager.activeKey === null) {
+      throw new NoActiveKeyError();
+    }
     return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toString()));
   }
 
@@ -43,6 +46,9 @@ export class Balance {
    * @param {string} validatorPublicKey - Public key of the validator
    */
   async fetchStakeBalance(validatorPublicKey) {
+    if (this.keyManager.activeKey === null) {
+      throw new NoActiveKeyError();
+    }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.public_key === validatorPublicKey;
@@ -63,6 +69,9 @@ export class Balance {
    * @return {Promise<*[]>} - Current stake balance of the user
    */
   async fetchAllStakeBalance() {
+    if (this.keyManager.activeKey === null) {
+      throw new NoActiveKeyError();
+    }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validators = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.bid.delegators.some((delegator) => delegator.public_key === this.keyManager.activeKey);
@@ -89,6 +98,9 @@ export class Balance {
    * @return {Promise<Object>} - Current balance of the validator
    */
   async fetchValidatorBalance() {
+    if (this.keyManager.activeKey === null) {
+      throw new NoActiveKeyError();
+    }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.public_key === this.keyManager.activeKey;
