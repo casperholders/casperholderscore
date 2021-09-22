@@ -1,6 +1,10 @@
 import { CLPublicKey } from 'casper-js-sdk';
 import { NoValidatorInfos } from '../errors/noValidatorInfos';
 
+/**
+ * Validators Class
+ * Used to retrieve validator metadata
+ */
 export class Validators {
 
   /** @type {ClientCasper} */

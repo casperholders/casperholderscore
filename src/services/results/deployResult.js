@@ -1,10 +1,9 @@
+import {BigNumber} from "ethers";
+
 /**
  * @constant
  * @type {string}
  */
-import {BigNumber} from "ethers";
-
-
 export const STATUS_UNKNOWN = "Unknown";
 /**
  * @constant
