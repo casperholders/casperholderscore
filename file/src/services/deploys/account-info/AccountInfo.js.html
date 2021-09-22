@@ -72,7 +72,8 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/account-info/AccountInfo.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { CLString, RuntimeArgs } from &apos;casper-js-sdk&apos;;
-import { AccountInfoResult } from &apos;../../results/accountInfoResult&apos;;
+import { AccountInfoResult } from &apos;../../results&apos;;
+import { Validators } from &apos;../../validators&apos;;
 import { AbstractSmartContractStoredByHashDeployParameters } from &apos;../abstractSmartContractStoredByHashDeployParameters&apos;;
 
 /**
@@ -80,11 +81,6 @@ import { AbstractSmartContractStoredByHashDeployParameters } from &apos;../abstr
  * @type {string}
  */
 const entrypoint = &apos;set_url&apos;;
-/**
- * @constant
- * @type {number}
- */
-const fee = 500000000;
 
 /**
  * AccountInfo class
@@ -94,12 +90,15 @@ export class AccountInfo extends AbstractSmartContractStoredByHashDeployParamete
   /**
    * Constructor
    *
+   * @param {ClientCasper} clientCasper - Used to calculate fee
    * @param {string} url - Base url to a website that host the account info file. See https://github.com/make-software/casper-account-info-standard#how-does-it-work
    * @param {string} activeKey - Current active key in the public hex format
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
    */
-  constructor(url, activeKey, network, hash) {
+  constructor(clientCasper, url, activeKey, network, hash) {
+    const validatorService = new Validators(clientCasper);
+    const fee = validatorService.isUrlSet(activeKey, hash, network) ? 500000000 : 10000000000
     const args = RuntimeArgs.fromMap({
       url: new CLString(url),
     });

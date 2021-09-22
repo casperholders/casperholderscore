@@ -24,8 +24,8 @@
       "undocumentLines": []
     },
     "src/services/deploys/account-info/AccountInfo.js": {
-      "expectCount": 5,
-      "actualCount": 5,
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     },
     "src/services/deploys/auction/actions/addBid.js": {
@@ -166,8 +166,8 @@
       "undocumentLines": []
     },
     "src/services/validators/validators.js": {
-      "expectCount": 4,
-      "actualCount": 4,
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     }
   }
