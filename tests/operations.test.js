@@ -9,6 +9,7 @@ import {
     WithdrawBid,
 } from "../src";
 import {DeployUtil, Keys} from "casper-js-sdk";
+import { AccountInfo } from '../src/services/deploys/account-info/AccountInfo';
 
 test('Add bid operation', async () => {
     const addBid = new AddBid("1", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", 1, "casper-test", "3c0c3884a1f853de3cc3b77ce2f1146f8e6e2ec83583a8f17c98710b20cadc8a")
@@ -48,6 +49,13 @@ test('Smart Contract operation', async () => {
 test('Transfer operation', async () => {
     const transferDeployParameters = new TransferDeployParameters( "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "1", "017d96b9a63abcb61c870a4f55187a0a7ac24096bdb5fc585c12a686a4d892009e", "0")
     const deploy = transferDeployParameters.makeDeploy
+    const result = DeployUtil.validateDeploy(deploy)
+    expect(result.ok).toBe(true);
+});
+
+test('Account Info operation', async () => {
+    const accountInfoDeployParameters = new AccountInfo( "test", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8")
+    const deploy = accountInfoDeployParameters.makeDeploy
     const result = DeployUtil.validateDeploy(deploy)
     expect(result.ok).toBe(true);
 });
