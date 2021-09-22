@@ -702,6 +702,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/account-info/index.js",
+    "file/src/services/deploys/account-info/index.js.html",
+    "src/services/deploys/account-info/index.js",
+    "file"
+  ],
+  [
     "src/services/deploys/auction/actions/addbid.js",
     "file/src/services/deploys/auction/actions/addBid.js.html",
     "src/services/deploys/auction/actions/addBid.js",
@@ -1336,6 +1342,12 @@ window.esdocSearchIndex = [
     "class/src/services/signers/localSigner.js~LocalSigner.html#static-method-sign",
     "src/services/signers/localSigner.js~LocalSigner.sign",
     "method"
+  ],
+  [
+    "src/services/validators/index.js",
+    "file/src/services/validators/index.js.html",
+    "src/services/validators/index.js",
+    "file"
   ],
   [
     "src/services/validators/validators.js",
