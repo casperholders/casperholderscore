@@ -3781,7 +3781,7 @@
     "__docId__": 215,
     "kind": "file",
     "name": "src/services/results/deployResult.js",
-    "content": "/**\n * @constant\n * @type {string}\n */\nimport {BigNumber} from \"ethers\";\n\n\nexport const STATUS_UNKNOWN = \"Unknown\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_OK = \"Success\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_KO = \"Failure\";\n\n/**\n * DeployResult class\n * Object used to keep the track of a deploy result.\n */\nexport class DeployResult {\n    /** @type {string} */\n    hash;\n    /** @type {BigNumber} */\n    cost;\n    /** @type {string} */\n    status;\n    /** @type {string} */\n    message;\n    /** @type {BigNumber} */\n    amount;\n    /** @type {string} */\n    name;\n\n    /**\n     * Constructor\n     *\n     * @param {string} hash - DeployHash of the deployment\n     * @param {string} name - Name of the operation\n     */\n    constructor(hash, name) {\n        this.hash = hash;\n        this.cost = BigNumber.from(0);\n        this.status = STATUS_UNKNOWN;\n        this.message = \"\";\n        this.amount = BigNumber.from(0);\n        this.name = name;\n    }\n\n    /**\n     * Retrieve the name of the operation behind the deployment\n     * Must return the name of the operation behind the deployment\n     */\n    static getName() {\n        throw \"You must implement this method\"\n    }\n}",
+    "content": "import {BigNumber} from \"ethers\";\n\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_UNKNOWN = \"Unknown\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_OK = \"Success\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_KO = \"Failure\";\n\n/**\n * DeployResult class\n * Object used to keep the track of a deploy result.\n */\nexport class DeployResult {\n    /** @type {string} */\n    hash;\n    /** @type {BigNumber} */\n    cost;\n    /** @type {string} */\n    status;\n    /** @type {string} */\n    message;\n    /** @type {BigNumber} */\n    amount;\n    /** @type {string} */\n    name;\n\n    /**\n     * Constructor\n     *\n     * @param {string} hash - DeployHash of the deployment\n     * @param {string} name - Name of the operation\n     */\n    constructor(hash, name) {\n        this.hash = hash;\n        this.cost = BigNumber.from(0);\n        this.status = STATUS_UNKNOWN;\n        this.message = \"\";\n        this.amount = BigNumber.from(0);\n        this.name = name;\n    }\n\n    /**\n     * Retrieve the name of the operation behind the deployment\n     * Must return the name of the operation behind the deployment\n     */\n    static getName() {\n        throw \"You must implement this method\"\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/deployResult.js",
     "access": "public",
@@ -3799,13 +3799,21 @@
     "export": true,
     "importPath": "@casperholders/core/src/services/results/deployResult.js",
     "importStyle": "{STATUS_UNKNOWN}",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
     "type": {
+      "nullable": null,
       "types": [
         "string"
-      ]
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
@@ -3820,7 +3828,7 @@
     "importPath": "@casperholders/core/src/services/results/deployResult.js",
     "importStyle": "{STATUS_OK}",
     "description": "",
-    "lineNumber": 13,
+    "lineNumber": 12,
     "unknown": [
       {
         "tagName": "@constant",
@@ -3848,7 +3856,7 @@
     "importPath": "@casperholders/core/src/services/results/deployResult.js",
     "importStyle": "{STATUS_KO}",
     "description": "",
-    "lineNumber": 18,
+    "lineNumber": 17,
     "unknown": [
       {
         "tagName": "@constant",
@@ -3876,7 +3884,7 @@
     "importPath": "@casperholders/core/src/services/results/deployResult.js",
     "importStyle": "{DeployResult}",
     "description": "DeployResult class\nObject used to keep the track of a deploy result.",
-    "lineNumber": 24,
+    "lineNumber": 23,
     "interface": false
   },
   {
@@ -3888,7 +3896,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#hash",
     "access": "public",
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 25,
     "type": {
       "nullable": null,
       "types": [
@@ -3907,7 +3915,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#cost",
     "access": "public",
     "description": null,
-    "lineNumber": 28,
+    "lineNumber": 27,
     "type": {
       "nullable": null,
       "types": [
@@ -3926,7 +3934,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#status",
     "access": "public",
     "description": null,
-    "lineNumber": 30,
+    "lineNumber": 29,
     "type": {
       "nullable": null,
       "types": [
@@ -3945,7 +3953,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#message",
     "access": "public",
     "description": null,
-    "lineNumber": 32,
+    "lineNumber": 31,
     "type": {
       "nullable": null,
       "types": [
@@ -3964,7 +3972,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#amount",
     "access": "public",
     "description": null,
-    "lineNumber": 34,
+    "lineNumber": 33,
     "type": {
       "nullable": null,
       "types": [
@@ -3983,7 +3991,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#name",
     "access": "public",
     "description": null,
-    "lineNumber": 36,
+    "lineNumber": 35,
     "type": {
       "nullable": null,
       "types": [
@@ -4004,7 +4012,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 44,
+    "lineNumber": 43,
     "params": [
       {
         "nullable": null,
@@ -4039,7 +4047,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult.getName",
     "access": "public",
     "description": "Retrieve the name of the operation behind the deployment\nMust return the name of the operation behind the deployment",
-    "lineNumber": 57,
+    "lineNumber": 56,
     "params": [],
     "return": null
   },
@@ -4615,7 +4623,7 @@
     "__docId__": 262,
     "kind": "file",
     "name": "src/services/validators/validators.js",
-    "content": "import { CLPublicKey } from 'casper-js-sdk';\nimport { NoValidatorInfos } from '../errors/noValidatorInfos';\n\nexport class Validators {\n\n  /** @type {ClientCasper} */\n  client;\n\n  /**\n   * Constructor\n   *\n   * @param {ClientCasper} client - Instance of CasperClient\n   */\n  constructor(client) {\n    this.client = client;\n  }\n\n  /**\n   * Retrieve validator metadata\n   * @param {String} publicKey - Public key of the validator\n   * @param contractHash - Hash of the Account Info contract\n   * @param network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async getValidatorInfo(publicKey, contractHash, network) {\n    try {\n      const clpublicKey = CLPublicKey.fromHex(publicKey);\n      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');\n      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);\n      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;\n      const url = (await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data + '/.well-known/casper/account-info.' + network + '.json';\n      return await (await fetch(url)).json();\n    } catch (e) {\n      throw new NoValidatorInfos()\n    }\n  }\n}",
+    "content": "import { CLPublicKey } from 'casper-js-sdk';\nimport { NoValidatorInfos } from '../errors/noValidatorInfos';\n\n/**\n * Validators Class\n * Used to retrieve validator metadata\n */\nexport class Validators {\n\n  /** @type {ClientCasper} */\n  client;\n\n  /**\n   * Constructor\n   *\n   * @param {ClientCasper} client - Instance of CasperClient\n   */\n  constructor(client) {\n    this.client = client;\n  }\n\n  /**\n   * Retrieve validator metadata\n   * @param {String} publicKey - Public key of the validator\n   * @param contractHash - Hash of the Account Info contract\n   * @param network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async getValidatorInfo(publicKey, contractHash, network) {\n    try {\n      const clpublicKey = CLPublicKey.fromHex(publicKey);\n      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');\n      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);\n      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;\n      const url = (await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data + '/.well-known/casper/account-info.' + network + '.json';\n      return await (await fetch(url)).json();\n    } catch (e) {\n      throw new NoValidatorInfos()\n    }\n  }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/validators/validators.js",
     "access": "public",
@@ -4633,9 +4641,8 @@
     "export": true,
     "importPath": "@casperholders/core/src/services/validators/validators.js",
     "importStyle": "{Validators}",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Validators Class\nUsed to retrieve validator metadata",
+    "lineNumber": 8,
     "interface": false
   },
   {
@@ -4647,7 +4654,7 @@
     "longname": "src/services/validators/validators.js~Validators#client",
     "access": "public",
     "description": null,
-    "lineNumber": 7,
+    "lineNumber": 11,
     "type": {
       "nullable": null,
       "types": [
@@ -4668,7 +4675,7 @@
     "longname": "src/services/validators/validators.js~Validators#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 14,
+    "lineNumber": 18,
     "params": [
       {
         "nullable": null,
@@ -4693,7 +4700,7 @@
     "longname": "src/services/validators/validators.js~Validators#getValidatorInfo",
     "access": "public",
     "description": "Retrieve validator metadata",
-    "lineNumber": 25,
+    "lineNumber": 29,
     "params": [
       {
         "nullable": null,

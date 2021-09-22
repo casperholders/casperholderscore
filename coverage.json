@@ -1,7 +1,7 @@
 {
-  "coverage": "97.94%",
+  "coverage": "99.31%",
   "expectCount": 146,
-  "actualCount": 143,
+  "actualCount": 145,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -127,10 +127,8 @@
     },
     "src/services/results/deployResult.js": {
       "expectCount": 12,
-      "actualCount": 11,
-      "undocumentLines": [
-        8
-      ]
+      "actualCount": 12,
+      "undocumentLines": []
     },
     "src/services/results/smartContractResult.js": {
       "expectCount": 3,
@@ -169,10 +167,8 @@
     },
     "src/services/validators/validators.js": {
       "expectCount": 4,
-      "actualCount": 3,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 4,
+      "undocumentLines": []
     }
   }
 }
