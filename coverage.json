@@ -1,7 +1,7 @@
 {
-  "coverage": "98.48%",
-  "expectCount": 132,
-  "actualCount": 130,
+  "coverage": "97.94%",
+  "expectCount": 146,
+  "actualCount": 143,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -21,6 +21,11 @@
     "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js": {
       "expectCount": 11,
       "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/services/deploys/account-info/AccountInfo.js": {
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     },
     "src/services/deploys/auction/actions/addBid.js": {
@@ -83,6 +88,11 @@
       "actualCount": 2,
       "undocumentLines": []
     },
+    "src/services/errors/noValidatorInfos.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
     "src/services/errors/signError.js": {
       "expectCount": 2,
       "actualCount": 2,
@@ -98,6 +108,11 @@
     "src/services/keys/abstractKeyManager.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/services/results/accountInfoResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "src/services/results/addBidResult.js": {
@@ -151,6 +166,13 @@
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
+    },
+    "src/services/validators/validators.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        4
+      ]
     }
   }
 }
