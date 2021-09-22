@@ -5,3 +5,4 @@ export * from './smartContractResult';
 export * from './transferResult';
 export * from './undelegateResult';
 export * from './withdrawBidResult';
+export * from './accountInfoResult';

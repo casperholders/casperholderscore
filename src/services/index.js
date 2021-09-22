@@ -6,3 +6,4 @@ export * from './keys';
 export * from './results';
 export * from './signers';
 export * from './balance/balance';
+export * from './validators';
