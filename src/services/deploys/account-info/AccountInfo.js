@@ -1,5 +1,6 @@
 import { CLString, RuntimeArgs } from 'casper-js-sdk';
-import { AccountInfoResult } from '../../results/accountInfoResult';
+import { AccountInfoResult } from '../../results';
+import { Validators } from '../../validators';
 import { AbstractSmartContractStoredByHashDeployParameters } from '../abstractSmartContractStoredByHashDeployParameters';
 
 /**
@@ -7,11 +8,6 @@ import { AbstractSmartContractStoredByHashDeployParameters } from '../abstractSm
  * @type {string}
  */
 const entrypoint = 'set_url';
-/**
- * @constant
- * @type {number}
- */
-const fee = 500000000;
 
 /**
  * AccountInfo class
@@ -21,12 +17,15 @@ export class AccountInfo extends AbstractSmartContractStoredByHashDeployParamete
   /**
    * Constructor
    *
+   * @param {ClientCasper} clientCasper - Used to calculate fee
    * @param {string} url - Base url to a website that host the account info file. See https://github.com/make-software/casper-account-info-standard#how-does-it-work
    * @param {string} activeKey - Current active key in the public hex format
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
    */
-  constructor(url, activeKey, network, hash) {
+  constructor(clientCasper, url, activeKey, network, hash) {
+    const validatorService = new Validators(clientCasper);
+    const fee = validatorService.isUrlSet(activeKey, hash, network) ? 500000000 : 10000000000
     const args = RuntimeArgs.fromMap({
       url: new CLString(url),
     });

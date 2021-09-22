@@ -38,4 +38,23 @@ export class Validators {
       throw new NoValidatorInfos()
     }
   }
+
+  /**
+   * Test if user have set url of their accounts
+   * @param {String} publicKey - Public key of the validator
+   * @param contractHash - Hash of the Account Info contract
+   * @param network - Name of the network to query
+   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised
+   */
+  async isUrlSet(publicKey, contractHash, network) {
+    try {
+      const clpublicKey = CLPublicKey.fromHex(publicKey);
+      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');
+      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);
+      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
+      return !!(await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data
+    } catch (e) {
+      return false
+    }
+  }
 }

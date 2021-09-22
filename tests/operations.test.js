@@ -1,15 +1,16 @@
 import {
-    AddBid,
+    AddBid, ClientCasper,
     Delegate,
     LocalSigner,
-    SignError,
     SmartContractDeployParameters,
     TransferDeployParameters,
     Undelegate,
     WithdrawBid,
-} from "../src";
+} from '../src';
 import {DeployUtil, Keys} from "casper-js-sdk";
 import { AccountInfo } from '../src/services/deploys/account-info/AccountInfo';
+
+const casperClient = new ClientCasper('https://node.testnet.casperholders.com');
 
 test('Add bid operation', async () => {
     const addBid = new AddBid("1", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", 1, "casper-test", "3c0c3884a1f853de3cc3b77ce2f1146f8e6e2ec83583a8f17c98710b20cadc8a")
@@ -54,7 +55,7 @@ test('Transfer operation', async () => {
 });
 
 test('Account Info operation', async () => {
-    const accountInfoDeployParameters = new AccountInfo( "test", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8")
+    const accountInfoDeployParameters = new AccountInfo( casperClient, "test", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8")
     const deploy = accountInfoDeployParameters.makeDeploy
     const result = DeployUtil.validateDeploy(deploy)
     expect(result.ok).toBe(true);
