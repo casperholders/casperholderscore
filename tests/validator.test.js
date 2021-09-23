@@ -40,14 +40,14 @@ test('Should retrieve url', async () => {
     expect(true).toBe(false);
   }
 });
-/*
+
 test('Should retrieve validator infos', async () => {
   try {
     const validatorsService = new Validators(casperClient);
 
-    await validatorsService.getValidatorInfo('0124bfdae2ed128fa5e4057bc398e4933329570e47240e57fc92f5611a6178eba5', '2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8', 'casper-test');
-    expect(true).toBe(true);
+    const res = await validatorsService.getValidatorInfo('0124bfdae2ed128fa5e4057bc398e4933329570e47240e57fc92f5611a6178eba5', '2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8', 'casper-test');
+    expect(res.owner.name).toBe("CasperHolders");
   } catch (e) {
     expect(true).toBe(false);
   }
-}); */
+});
