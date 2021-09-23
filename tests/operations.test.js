@@ -55,7 +55,8 @@ test('Transfer operation', async () => {
 });
 
 test('Account Info operation', async () => {
-    const accountInfoDeployParameters = new AccountInfo( casperClient, "test", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8")
+    const accountInfoDeployParameters = new AccountInfo("test", "0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21", "casper-test", "2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8")
+    await accountInfoDeployParameters.init(casperClient)
     const deploy = accountInfoDeployParameters.makeDeploy
     const result = DeployUtil.validateDeploy(deploy)
     expect(result.ok).toBe(true);
