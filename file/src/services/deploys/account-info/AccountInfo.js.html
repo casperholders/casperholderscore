@@ -90,19 +90,26 @@ export class AccountInfo extends AbstractSmartContractStoredByHashDeployParamete
   /**
    * Constructor
    *
-   * @param {ClientCasper} clientCasper - Used to calculate fee
    * @param {string} url - Base url to a website that host the account info file. See https://github.com/make-software/casper-account-info-standard#how-does-it-work
    * @param {string} activeKey - Current active key in the public hex format
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
    */
-  constructor(clientCasper, url, activeKey, network, hash) {
-    const validatorService = new Validators(clientCasper);
-    const fee = validatorService.isUrlSet(activeKey, hash, network) ? 500000000 : 10000000000
+  constructor(url, activeKey, network, hash) {
     const args = RuntimeArgs.fromMap({
       url: new CLString(url),
     });
-    super(activeKey, network, hash, entrypoint, args, fee);
+    super(activeKey, network, hash, entrypoint, args, 0);
+  }
+
+  /**
+   * Set correct fee
+   * @param {ClientCasper} clientCasper
+   * @returns {Promise&lt;void&gt;}
+   */
+  async init(clientCasper){
+    const validatorService = new Validators(clientCasper);
+    super.fee = await validatorService.isUrlSet(super.activeKey, super.hash, super.network) ? 500000000 : 10000000000
   }
 
   /**

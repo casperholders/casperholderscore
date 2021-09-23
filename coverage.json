@@ -1,7 +1,7 @@
 {
   "coverage": "99.31%",
-  "expectCount": 146,
-  "actualCount": 145,
+  "expectCount": 147,
+  "actualCount": 146,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -24,8 +24,8 @@
       "undocumentLines": []
     },
     "src/services/deploys/account-info/AccountInfo.js": {
-      "expectCount": 4,
-      "actualCount": 4,
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     },
     "src/services/deploys/auction/actions/addBid.js": {

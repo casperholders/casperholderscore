@@ -702,6 +702,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/account-info/accountinfo.js~accountinfo#init",
+    "class/src/services/deploys/account-info/AccountInfo.js~AccountInfo.html#instance-method-init",
+    "src/services/deploys/account-info/AccountInfo.js~AccountInfo#init",
+    "method"
+  ],
+  [
     "src/services/deploys/account-info/index.js",
     "file/src/services/deploys/account-info/index.js.html",
     "src/services/deploys/account-info/index.js",
