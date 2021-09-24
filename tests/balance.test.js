@@ -87,7 +87,7 @@ test('Test failed validator balance', async () => {
         await balanceService.fetchValidatorBalance()
         expect(true).toBe(false)
     } catch (e) {
-        expect(e.message).toBe("Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network.");
+        expect(e.message).toBe("Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network and the correct wallet for your validator is selected in the Casper Signer.");
     }
 });
 
