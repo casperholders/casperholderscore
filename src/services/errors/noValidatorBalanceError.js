@@ -9,6 +9,6 @@ export class NoValidatorBalanceError extends ExtendableError {
      * Constructor
      */
     constructor() {
-        super("Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network.");
+        super("Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network and the correct wallet for your validator is selected in the Casper Signer.");
     }
 }
