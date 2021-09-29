@@ -5,7 +5,9 @@
 import {BigNumber} from "ethers";
 import Big from "big.js";
 
-
+/**
+ * CurrencyUtils class. Helper to convert CSPR and motes.
+ */
 export class CurrencyUtils {
 
     /**
