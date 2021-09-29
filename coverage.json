@@ -1,7 +1,7 @@
 {
-  "coverage": "99.31%",
-  "expectCount": 147,
-  "actualCount": 146,
+  "coverage": "100%",
+  "expectCount": 148,
+  "actualCount": 148,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -100,10 +100,8 @@
     },
     "src/services/helpers/currencyUtils.js": {
       "expectCount": 3,
-      "actualCount": 2,
-      "undocumentLines": [
-        9
-      ]
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "src/services/keys/abstractKeyManager.js": {
       "expectCount": 2,
@@ -166,8 +164,8 @@
       "undocumentLines": []
     },
     "src/services/validators/validators.js": {
-      "expectCount": 5,
-      "actualCount": 5,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     }
   }

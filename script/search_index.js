@@ -1380,6 +1380,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/validators/validators.js~validators#getvalidatorurl",
+    "class/src/services/validators/validators.js~Validators.html#instance-method-getValidatorUrl",
+    "src/services/validators/validators.js~Validators#getValidatorUrl",
+    "method"
+  ],
+  [
     "src/services/validators/validators.js~validators#isurlset",
     "class/src/services/validators/validators.js~Validators.html#instance-method-isUrlSet",
     "src/services/validators/validators.js~Validators#isUrlSet",

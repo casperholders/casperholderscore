@@ -3400,7 +3400,7 @@
     "__docId__": 194,
     "kind": "file",
     "name": "src/services/helpers/currencyUtils.js",
-    "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport {BigNumber} from \"ethers\";\nimport Big from \"big.js\";\n\n\nexport class CurrencyUtils {\n\n    /**\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {String}\n     */\n    static convertMotesToCasper(motesAmount) {\n        return Big(motesAmount.toString()).div(1000000000).toString();\n    }\n\n    /**\n     * Convert casper to motes\n     *\n     * @param {String} casperAmount - Amount in casper\n     * @return {BigNumber}\n     */\n    static convertCasperToMotes(casperAmount) {\n        return BigNumber.from(Big(casperAmount).times(1000000000).toString());\n    }\n}",
+    "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport {BigNumber} from \"ethers\";\nimport Big from \"big.js\";\n\n/**\n * CurrencyUtils class. Helper to convert CSPR and motes.\n */\nexport class CurrencyUtils {\n\n    /**\n     * Convert motes to casper\n     *\n     * @param {BigNumber} motesAmount - Amount in motes\n     * @return {String}\n     */\n    static convertMotesToCasper(motesAmount) {\n        return Big(motesAmount.toString()).div(1000000000).toString();\n    }\n\n    /**\n     * Convert casper to motes\n     *\n     * @param {String} casperAmount - Amount in casper\n     * @return {BigNumber}\n     */\n    static convertCasperToMotes(casperAmount) {\n        return BigNumber.from(Big(casperAmount).times(1000000000).toString());\n    }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/helpers/currencyUtils.js",
     "access": "public",
@@ -3418,9 +3418,8 @@
     "export": true,
     "importPath": "@casperholders/core/src/services/helpers/currencyUtils.js",
     "importStyle": "{CurrencyUtils}",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "description": "CurrencyUtils class. Helper to convert CSPR and motes.",
+    "lineNumber": 11,
     "interface": false
   },
   {
@@ -3434,7 +3433,7 @@
     "longname": "src/services/helpers/currencyUtils.js~CurrencyUtils.convertMotesToCasper",
     "access": "public",
     "description": "Convert motes to casper",
-    "lineNumber": 17,
+    "lineNumber": 19,
     "params": [
       {
         "nullable": null,
@@ -3467,7 +3466,7 @@
     "longname": "src/services/helpers/currencyUtils.js~CurrencyUtils.convertCasperToMotes",
     "access": "public",
     "description": "Convert casper to motes",
-    "lineNumber": 27,
+    "lineNumber": 29,
     "params": [
       {
         "nullable": null,
@@ -4655,7 +4654,7 @@
     "__docId__": 264,
     "kind": "file",
     "name": "src/services/validators/validators.js",
-    "content": "import { CLPublicKey } from 'casper-js-sdk';\nimport { NoValidatorInfos } from '../errors/noValidatorInfos';\n\n/**\n * Validators Class\n * Used to retrieve validator metadata\n */\nexport class Validators {\n\n  /** @type {ClientCasper} */\n  client;\n\n  /**\n   * Constructor\n   *\n   * @param {ClientCasper} client - Instance of CasperClient\n   */\n  constructor(client) {\n    this.client = client;\n  }\n\n  /**\n   * Retrieve validator metadata\n   * @param {String} publicKey - Public key of the validator\n   * @param contractHash - Hash of the Account Info contract\n   * @param network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async getValidatorInfo(publicKey, contractHash, network) {\n    try {\n      const clpublicKey = CLPublicKey.fromHex(publicKey);\n      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');\n      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);\n      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;\n      const url = (await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data + '/.well-known/casper/account-info.' + network + '.json';\n      return await (await fetch(url)).json();\n    } catch (e) {\n      throw new NoValidatorInfos()\n    }\n  }\n\n  /**\n   * Test if user have set url of their accounts\n   * @param {String} publicKey - Public key of the validator\n   * @param contractHash - Hash of the Account Info contract\n   * @param network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async isUrlSet(publicKey, contractHash, network) {\n    try {\n      const clpublicKey = CLPublicKey.fromHex(publicKey);\n      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');\n      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);\n      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;\n      return !!(await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data\n    } catch (e) {\n      return false\n    }\n  }\n}",
+    "content": "import { CLPublicKey } from 'casper-js-sdk';\nimport { NoValidatorInfos } from '../errors/noValidatorInfos';\n\n/**\n * Validators Class\n * Used to retrieve validator metadata\n */\nexport class Validators {\n\n  /** @type {ClientCasper} */\n  client;\n\n  /**\n   * Constructor\n   *\n   * @param {ClientCasper} client - Instance of CasperClient\n   */\n  constructor(client) {\n    this.client = client;\n  }\n\n  /**\n   * Retrieve validator metadata\n   * @param {String} publicKey - Public key of the validator\n   * @param {String} contractHash - Hash of the Account Info contract\n   * @param {String} network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async getValidatorInfo(publicKey, contractHash, network) {\n    try {\n      const url = (await this.getValidatorUrl(publicKey, contractHash, network)) + '/.well-known/casper/account-info.' + network + '.json';\n      return await (await fetch(url)).json();\n    } catch (e) {\n      throw new NoValidatorInfos();\n    }\n  }\n\n  /**\n   * Retrieve validator url\n   * @param {String} publicKey - Public key of the validator\n   * @param {String} contractHash - Hash of the Account Info contract\n   * @param {String} network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async getValidatorUrl(publicKey, contractHash, network) {\n    try {\n      const clpublicKey = CLPublicKey.fromHex(publicKey);\n      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');\n      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);\n      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;\n      return (await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data;\n    } catch (e) {\n      throw new NoValidatorInfos();\n    }\n  }\n\n  /**\n   * Test if user have set url of their accounts\n   * @param {String} publicKey - Public key of the validator\n   * @param {String} contractHash - Hash of the Account Info contract\n   * @param {String} network - Name of the network to query\n   * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised\n   */\n  async isUrlSet(publicKey, contractHash, network) {\n    try {\n      return !!(await this.getValidatorUrl(publicKey, contractHash, network));\n    } catch (e) {\n      return false;\n    }\n  }\n}",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/validators/validators.js",
     "access": "public",
@@ -4747,7 +4746,7 @@
       {
         "nullable": null,
         "types": [
-          "*"
+          "String"
         ],
         "spread": false,
         "optional": false,
@@ -4757,7 +4756,7 @@
       {
         "nullable": null,
         "types": [
-          "*"
+          "String"
         ],
         "spread": false,
         "optional": false,
@@ -4782,15 +4781,15 @@
   {
     "__docId__": 270,
     "kind": "method",
-    "name": "isUrlSet",
+    "name": "getValidatorUrl",
     "memberof": "src/services/validators/validators.js~Validators",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/services/validators/validators.js~Validators#isUrlSet",
+    "longname": "src/services/validators/validators.js~Validators#getValidatorUrl",
     "access": "public",
-    "description": "Test if user have set url of their accounts",
-    "lineNumber": 49,
+    "description": "Retrieve validator url",
+    "lineNumber": 45,
     "params": [
       {
         "nullable": null,
@@ -4805,7 +4804,7 @@
       {
         "nullable": null,
         "types": [
-          "*"
+          "String"
         ],
         "spread": false,
         "optional": false,
@@ -4815,7 +4814,65 @@
       {
         "nullable": null,
         "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Name of the network to query"
+      }
+    ],
+    "throws": [
+      {
+        "types": [
           "*"
+        ],
+        "description": "NoValidatorInfos - If we can't retrieve the Validator infos this error is raised"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 271,
+    "kind": "method",
+    "name": "isUrlSet",
+    "memberof": "src/services/validators/validators.js~Validators",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/services/validators/validators.js~Validators#isUrlSet",
+    "access": "public",
+    "description": "Test if user have set url of their accounts",
+    "lineNumber": 64,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "publicKey",
+        "description": "Public key of the validator"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "contractHash",
+        "description": "Hash of the Account Info contract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "String"
         ],
         "spread": false,
         "optional": false,
@@ -4847,7 +4904,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.5.1\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.4.0\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.6.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.4.0\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,
