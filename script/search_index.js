@@ -198,12 +198,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@casperholders/core/src/services/validators/validators.js~validators",
-    "class/src/services/validators/validators.js~Validators.html",
-    "<span>Validators</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/validators/validators.js</span>",
-    "class"
-  ],
-  [
     "@casperholders/core/src/services/deploys/auction/actions/withdrawbid.js~withdrawbid",
     "class/src/services/deploys/auction/actions/withdrawBid.js~WithdrawBid.html",
     "<span>WithdrawBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js</span>",
@@ -1354,41 +1348,5 @@ window.esdocSearchIndex = [
     "file/src/services/validators/index.js.html",
     "src/services/validators/index.js",
     "file"
-  ],
-  [
-    "src/services/validators/validators.js",
-    "file/src/services/validators/validators.js.html",
-    "src/services/validators/validators.js",
-    "file"
-  ],
-  [
-    "src/services/validators/validators.js~validators#client",
-    "class/src/services/validators/validators.js~Validators.html#instance-member-client",
-    "src/services/validators/validators.js~Validators#client",
-    "member"
-  ],
-  [
-    "src/services/validators/validators.js~validators#constructor",
-    "class/src/services/validators/validators.js~Validators.html#instance-constructor-constructor",
-    "src/services/validators/validators.js~Validators#constructor",
-    "method"
-  ],
-  [
-    "src/services/validators/validators.js~validators#getvalidatorinfo",
-    "class/src/services/validators/validators.js~Validators.html#instance-method-getValidatorInfo",
-    "src/services/validators/validators.js~Validators#getValidatorInfo",
-    "method"
-  ],
-  [
-    "src/services/validators/validators.js~validators#getvalidatorurl",
-    "class/src/services/validators/validators.js~Validators.html#instance-method-getValidatorUrl",
-    "src/services/validators/validators.js~Validators#getValidatorUrl",
-    "method"
-  ],
-  [
-    "src/services/validators/validators.js~validators#isurlset",
-    "class/src/services/validators/validators.js~Validators.html#instance-method-isUrlSet",
-    "src/services/validators/validators.js~Validators#isUrlSet",
-    "method"
   ]
 ]

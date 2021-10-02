@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 148,
-  "actualCount": 148,
+  "expectCount": 142,
+  "actualCount": 142,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -161,11 +161,6 @@
     "src/services/signers/localSigner.js": {
       "expectCount": 2,
       "actualCount": 2,
-      "undocumentLines": []
-    },
-    "src/services/validators/validators.js": {
-      "expectCount": 6,
-      "actualCount": 6,
       "undocumentLines": []
     }
   }
