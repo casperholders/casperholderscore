@@ -10,6 +10,18 @@ export class Validators {
   /** @type {ClientCasper} */
   client;
 
+  /** @type {Number} */
+  lastFetch = 0;
+
+  /** @type {String} */
+  stateRootHash;
+
+  /** @type {string} */
+  dictUref;
+
+  /** @type {Number} */
+  CACHE_TIMEOUT = 60;
+
   /**
    * Constructor
    *
@@ -46,11 +58,23 @@ export class Validators {
     try {
       const clpublicKey = CLPublicKey.fromHex(publicKey);
       const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');
-      const stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);
-      const dictURef = (await this.client.casperRPC.getBlockState(stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
-      return (await this.client.casperRPC.getDictionaryItemByURef(stateRootHash, accountHash, dictURef)).CLValue.data;
+      await this.getDictUref(contractHash);
+      return (await this.client.casperRPC.getDictionaryItemByURef(this.stateRootHash, accountHash, this.dictUref)).CLValue.data;
     } catch (e) {
       throw new NoValidatorInfos();
+    }
+  }
+
+  /**
+   * Update cached stateroothash & dicturef to optimize call to the blockchain for mass request.
+   * @param contractHash
+   * @returns {Promise<void>}
+   */
+  async getDictUref(contractHash) {
+    if (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT) {
+      this.stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);
+      this.dictUref = (await this.client.casperRPC.getBlockState(this.stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
+      this.lastFetch = Math.floor(Date.now() / 1000);
     }
   }
 

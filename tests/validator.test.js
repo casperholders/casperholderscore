@@ -1,6 +1,6 @@
 import { ClientCasper } from '../src';
-import { NoValidatorInfos } from '../src/services/errors/noValidatorInfos';
-import { Validators } from '../src/services/validators/validators';
+import { NoValidatorInfos } from '../src';
+import { Validators } from '../src';
 
 const casperClient = new ClientCasper('https://node.testnet.casperholders.com');
 
