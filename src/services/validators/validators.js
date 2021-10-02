@@ -10,6 +10,9 @@ export class Validators {
   /** @type {ClientCasper} */
   client;
 
+  /** @type {Boolean} */
+  fetching = false;
+
   /** @type {Number} */
   lastFetch = 0;
 
@@ -71,10 +74,12 @@ export class Validators {
    * @returns {Promise<void>}
    */
   async getDictUref(contractHash) {
-    if (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT) {
+    if (!this.fetching && (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT)) {
+      this.fetching = true;
       this.stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);
       this.dictUref = (await this.client.casperRPC.getBlockState(this.stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
       this.lastFetch = Math.floor(Date.now() / 1000);
+      this.fetching = false;
     }
   }
 
