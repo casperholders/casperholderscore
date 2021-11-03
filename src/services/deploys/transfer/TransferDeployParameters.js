@@ -8,7 +8,7 @@ import {TransferResult} from "../../results";
  * @constant
  * @type {number}
  */
-const fee = 10000
+const fee = 100000000
 
 /**
  * TransferDeployParameters class
