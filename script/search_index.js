@@ -1338,6 +1338,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/services/signers/localsigner.js~asymmetrickey",
+    "typedef/index.html#static-typedef-AsymmetricKey",
+    "src/services/signers/localSigner.js~AsymmetricKey",
+    "typedef"
+  ],
+  [
     "src/services/signers/localsigner.js~localsigner.sign",
     "class/src/services/signers/localSigner.js~LocalSigner.html#static-method-sign",
     "src/services/signers/localSigner.js~LocalSigner.sign",

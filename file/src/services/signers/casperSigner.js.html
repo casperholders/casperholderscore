@@ -65,6 +65,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/localSigner.js~LocalSigner.html">LocalSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AsymmetricKey">AsymmetricKey</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -85,8 +86,8 @@ export class CasperSigner extends AbstractSigner {
      *
      * @param {DeployUtil.Deploy} deploy - Deploy object
      * @param {Object} options - Options object
-     *      Must contains the public key of the user in the activeKey property
-     *      Must contains the public key of the targeted wallet
+     * @param {string} options.activeKey - Public key of the user.
+     * @param {string} options.to - Public key of the targeted wallet.
      * @returns {Promise&lt;DeployUtil.Deploy&gt;} - Signed deploy object
      */
     static async sign(deploy, options = {}) {
@@ -103,7 +104,8 @@ export class CasperSigner extends AbstractSigner {
             throw new SignError();
         }
     }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 

@@ -65,6 +65,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/localSigner.js~LocalSigner.html">LocalSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AsymmetricKey">AsymmetricKey</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -75,6 +76,10 @@ import {SignError} from &quot;../errors&quot;;
 import {AbstractSigner} from &quot;./abstractSigner&quot;;
 
 /**
+ * @typedef { import(&quot;casper-js-sdk/dist/lib/Keys&quot;).AsymmetricKey } AsymmetricKey
+ */
+
+/**
  * LocalSigner class
  * Used to sign a deployment with local keys
  */
@@ -83,7 +88,8 @@ export class LocalSigner extends AbstractSigner {
      * Sign a given Deploy Object with the corresponding key.
      *
      * @param {DeployUtil.Deploy} deploy - Deploy object
-     * @param {Object} options - Options object. Must contains the AsymmetricKey object in the key property
+     * @param {Object} options - Options object
+     * @param {AsymmetricKey} options.key - AsymmetricKey of the user.
      * @returns {Promise&lt;DeployUtil.Deploy&gt;} - Signed deploy object
      */
     static async sign(deploy, options = {}) {
@@ -94,7 +100,8 @@ export class LocalSigner extends AbstractSigner {
             throw new SignError();
         }
     }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 
