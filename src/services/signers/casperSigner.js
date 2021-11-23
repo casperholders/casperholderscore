@@ -13,8 +13,8 @@ export class CasperSigner extends AbstractSigner {
      *
      * @param {DeployUtil.Deploy} deploy - Deploy object
      * @param {Object} options - Options object
-     *      Must contains the public key of the user in the activeKey property
-     *      Must contains the public key of the targeted wallet
+     * @param {string} options.activeKey - Public key of the user.
+     * @param {string} options.to - Public key of the targeted wallet.
      * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object
      */
     static async sign(deploy, options = {}) {

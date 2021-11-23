@@ -3,6 +3,10 @@ import {SignError} from "../errors";
 import {AbstractSigner} from "./abstractSigner";
 
 /**
+ * @typedef { import("casper-js-sdk/dist/lib/Keys").AsymmetricKey } AsymmetricKey
+ */
+
+/**
  * LocalSigner class
  * Used to sign a deployment with local keys
  */
@@ -11,7 +15,8 @@ export class LocalSigner extends AbstractSigner {
      * Sign a given Deploy Object with the corresponding key.
      *
      * @param {DeployUtil.Deploy} deploy - Deploy object
-     * @param {Object} options - Options object. Must contains the AsymmetricKey object in the key property
+     * @param {Object} options - Options object
+     * @param {AsymmetricKey} options.key - AsymmetricKey of the user.
      * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object
      */
     static async sign(deploy, options = {}) {
