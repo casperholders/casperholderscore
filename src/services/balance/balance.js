@@ -51,11 +51,11 @@ export class Balance {
     }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.public_key === validatorPublicKey;
+      return validator.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
     })[0];
 
     let stakingBalance = validator.bid.delegators.filter(delegator => {
-      return delegator.public_key === this.keyManager.activeKey;
+      return delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
     });
     if (stakingBalance.length > 0) {
       return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount));
@@ -74,13 +74,13 @@ export class Balance {
     }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validators = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.bid.delegators.some((delegator) => delegator.public_key === this.keyManager.activeKey);
+      return validator.bid.delegators.some((delegator) => delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase());
     });
     if (validators.length > 0) {
       let stakeBalances = [];
       validators.forEach((validator) => {
         const delegator = validator.bid.delegators.filter((delegation) => {
-          return delegation.public_key === this.keyManager.activeKey
+          return delegation.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase()
         })[0]
         stakeBalances.push({
           validator: validator.public_key,
@@ -103,7 +103,7 @@ export class Balance {
     }
     const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.public_key === this.keyManager.activeKey;
+      return validator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
     })[0];
     if (validator) {
       return {
