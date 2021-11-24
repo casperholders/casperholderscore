@@ -93,11 +93,11 @@ export class LedgerSigner extends AbstractSigner {
      */
     static async sign(deploy, options = {}) {
         try {
-            const responseDeploy = await app.sign(&apos;m/44\&apos;/506\&apos;/0\&apos;/0/0&apos;, DeployUtil.deployToBytes(deploy));
+            const responseDeploy = await options.app.sign(&apos;m/44\&apos;/506\&apos;/0\&apos;/0/0&apos;, DeployUtil.deployToBytes(deploy));
             let signedDeploy = DeployUtil.setSignature(
               deploy,
               responseDeploy.signatureRS,
-              CLPublicKey.fromHex(publicKey),
+              CLPublicKey.fromHex(options.publicKey),
             );
             signedDeploy = DeployUtil.validateDeploy(signedDeploy);
             if (signedDeploy.ok) {
