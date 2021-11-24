@@ -108,6 +108,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/signers/ledgersigner.js~ledgersigner",
+    "class/src/services/signers/ledgerSigner.js~LedgerSigner.html",
+    "<span>LedgerSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/ledgerSigner.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/signers/localsigner.js~localsigner",
     "class/src/services/signers/localSigner.js~LocalSigner.html",
     "<span>LocalSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/localSigner.js</span>",
@@ -1330,6 +1336,18 @@ window.esdocSearchIndex = [
     "file/src/services/signers/index.js.html",
     "src/services/signers/index.js",
     "file"
+  ],
+  [
+    "src/services/signers/ledgersigner.js",
+    "file/src/services/signers/ledgerSigner.js.html",
+    "src/services/signers/ledgerSigner.js",
+    "file"
+  ],
+  [
+    "src/services/signers/ledgersigner.js~ledgersigner.sign",
+    "class/src/services/signers/ledgerSigner.js~LedgerSigner.html#static-method-sign",
+    "src/services/signers/ledgerSigner.js~LedgerSigner.sign",
+    "method"
   ],
   [
     "src/services/signers/localsigner.js",

@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 142,
-  "actualCount": 142,
+  "expectCount": 144,
+  "actualCount": 144,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 8,
@@ -154,6 +154,11 @@
       "undocumentLines": []
     },
     "src/services/signers/casperSigner.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/services/signers/ledgerSigner.js": {
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []

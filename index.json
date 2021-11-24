@@ -4574,7 +4574,7 @@
     "__docId__": 259,
     "kind": "file",
     "name": "src/services/signers/index.js",
-    "content": "export * from './casperSigner';\nexport * from './localSigner';",
+    "content": "export * from './casperSigner';\nexport * from './localSigner';\nexport * from './ledgerSigner';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/signers/index.js",
     "access": "public",
@@ -4583,6 +4583,104 @@
   },
   {
     "__docId__": 260,
+    "kind": "file",
+    "name": "src/services/signers/ledgerSigner.js",
+    "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport {AbstractSigner} from \"./abstractSigner\";\nimport {SignError} from \"../errors\";\n\n/**\n * LedgerSigner class\n * Used to sign a deployment with Ledger\n */\nexport class LedgerSigner extends AbstractSigner {\n    /**\n     * Sign a given Deploy Object with the corresponding public key.\n     * You must pass the active public key from the user and the public key where the deploy is going to be used.\n     *\n     * @param {DeployUtil.Deploy} deploy - Deploy object\n     * @param {Object} options - Options object\n     * @param {CasperApp} options.app - CasperApp instance.\n     * @param {string} options.publicKey - Public key that sign the deploy.\n     * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n     */\n    static async sign(deploy, options = {}) {\n        try {\n            const responseDeploy = await app.sign('m/44\\'/506\\'/0\\'/0/0', DeployUtil.deployToBytes(deploy));\n            let signedDeploy = DeployUtil.setSignature(\n              deploy,\n              responseDeploy.signatureRS,\n              CLPublicKey.fromHex(publicKey),\n            );\n            signedDeploy = DeployUtil.validateDeploy(signedDeploy);\n            if (signedDeploy.ok) {\n                return signedDeploy.val;\n            } else {\n                throw signedDeploy.val;\n            }\n        } catch (e) {\n            console.log(e);\n            throw new SignError();\n        }\n    }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/signers/ledgerSigner.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 261,
+    "kind": "class",
+    "name": "LedgerSigner",
+    "memberof": "src/services/signers/ledgerSigner.js",
+    "static": true,
+    "longname": "src/services/signers/ledgerSigner.js~LedgerSigner",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/signers/ledgerSigner.js",
+    "importStyle": "{LedgerSigner}",
+    "description": "LedgerSigner class\nUsed to sign a deployment with Ledger",
+    "lineNumber": 9,
+    "interface": false,
+    "extends": [
+      "src/services/signers/abstractSigner.js~AbstractSigner"
+    ]
+  },
+  {
+    "__docId__": 262,
+    "kind": "method",
+    "name": "sign",
+    "memberof": "src/services/signers/ledgerSigner.js~LedgerSigner",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/services/signers/ledgerSigner.js~LedgerSigner.sign",
+    "access": "public",
+    "description": "Sign a given Deploy Object with the corresponding public key.\nYou must pass the active public key from the user and the public key where the deploy is going to be used.",
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<DeployUtil.Deploy>} - Signed deploy object"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "DeployUtil.Deploy"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "deploy",
+        "description": "Deploy object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Options object"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "CasperApp"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.app",
+        "description": "CasperApp instance."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.publicKey",
+        "description": "Public key that sign the deploy."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<DeployUtil.Deploy>"
+      ],
+      "spread": false,
+      "description": "Signed deploy object"
+    }
+  },
+  {
+    "__docId__": 263,
     "kind": "file",
     "name": "src/services/signers/localSigner.js",
     "content": "import {DeployUtil} from \"casper-js-sdk\";\nimport {SignError} from \"../errors\";\nimport {AbstractSigner} from \"./abstractSigner\";\n\n/**\n * @typedef { import(\"casper-js-sdk/dist/lib/Keys\").AsymmetricKey } AsymmetricKey\n */\n\n/**\n * LocalSigner class\n * Used to sign a deployment with local keys\n */\nexport class LocalSigner extends AbstractSigner {\n    /**\n     * Sign a given Deploy Object with the corresponding key.\n     *\n     * @param {DeployUtil.Deploy} deploy - Deploy object\n     * @param {Object} options - Options object\n     * @param {AsymmetricKey} options.key - AsymmetricKey of the user.\n     * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n     */\n    static async sign(deploy, options = {}) {\n        try {\n            return await DeployUtil.signDeploy(deploy, options.key)\n        } catch (e) {\n            console.log(e);\n            throw new SignError();\n        }\n    }\n}\n",
@@ -4593,7 +4691,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 261,
+    "__docId__": 264,
     "kind": "typedef",
     "name": "AsymmetricKey",
     "memberof": "src/services/signers/localSigner.js",
@@ -4610,7 +4708,7 @@
     }
   },
   {
-    "__docId__": 262,
+    "__docId__": 265,
     "kind": "class",
     "name": "LocalSigner",
     "memberof": "src/services/signers/localSigner.js",
@@ -4628,7 +4726,7 @@
     ]
   },
   {
-    "__docId__": 263,
+    "__docId__": 266,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/localSigner.js~LocalSigner",
@@ -4687,7 +4785,7 @@
     }
   },
   {
-    "__docId__": 264,
+    "__docId__": 267,
     "kind": "file",
     "name": "src/services/validators/index.js",
     "content": "export * from './validators';",
@@ -4707,7 +4805,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.8.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.7.1\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.9.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.7.1\",\n    \"ethers\": \"^5.4.6\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"casperSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,
