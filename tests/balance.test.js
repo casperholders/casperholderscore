@@ -53,7 +53,7 @@ test('Test failed balance', async () => {
         await balanceService.fetchBalance()
         expect(true).toBe(false)
     } catch (e) {
-        expect(e.message).toBe("Not connected on Signer.");
+        expect(e.message).toBe("Not connected.");
     }
 });
 
@@ -97,7 +97,7 @@ test('Test failed stake balance', async () => {
         await balanceService.fetchStakeBalance('0124BFDae2Ed128fa5e4057BC398E4933329570E47240e57fc92F5611A6178EBA5')
         expect(true).toBe(false)
     } catch (e) {
-        expect(e.message).toBe("Not connected on Signer.");
+        expect(e.message).toBe("Not connected.");
     }
 });
 
@@ -108,7 +108,7 @@ test('Test failed all stake balance', async () => {
         await balanceService.fetchAllStakeBalance()
         expect(true).toBe(false)
     } catch (e) {
-        expect(e.message).toBe("Not connected on Signer.");
+        expect(e.message).toBe("Not connected.");
     }
 });
 
@@ -119,6 +119,6 @@ test('Test failed validator balance', async () => {
         await balanceService.fetchValidatorBalance()
         expect(true).toBe(false)
     } catch (e) {
-        expect(e.message).toBe("Not connected on Signer.");
+        expect(e.message).toBe("Not connected.");
     }
 });
