@@ -1,29 +1,29 @@
 {
   "type": "File",
   "start": 0,
-  "end": 325,
+  "end": 285,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 14,
-      "column": 1
+      "line": 15,
+      "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 325,
+    "end": 285,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 14,
-        "column": 1
+        "line": 15,
+        "column": 0
       }
     },
     "sourceType": "module",
@@ -116,9 +116,9 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected to the Casper signer extension\n ",
+            "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n ",
             "start": 52,
-            "end": 163,
+            "end": 132,
             "loc": {
               "start": {
                 "line": 3,
@@ -134,8 +134,8 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 164,
-        "end": 325,
+        "start": 133,
+        "end": 284,
         "loc": {
           "start": {
             "line": 7,
@@ -150,8 +150,8 @@
         "source": null,
         "declaration": {
           "type": "ClassDeclaration",
-          "start": 171,
-          "end": 325,
+          "start": 140,
+          "end": 284,
           "loc": {
             "start": {
               "line": 7,
@@ -164,8 +164,8 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 177,
-            "end": 193,
+            "start": 146,
+            "end": 162,
             "loc": {
               "start": {
                 "line": 7,
@@ -182,8 +182,8 @@
           },
           "superClass": {
             "type": "Identifier",
-            "start": 202,
-            "end": 217,
+            "start": 171,
+            "end": 186,
             "loc": {
               "start": {
                 "line": 7,
@@ -199,8 +199,8 @@
           },
           "body": {
             "type": "ClassBody",
-            "start": 218,
-            "end": 325,
+            "start": 187,
+            "end": 284,
             "loc": {
               "start": {
                 "line": 7,
@@ -214,8 +214,8 @@
             "body": [
               {
                 "type": "ClassMethod",
-                "start": 259,
-                "end": 323,
+                "start": 228,
+                "end": 282,
                 "loc": {
                   "start": {
                     "line": 11,
@@ -230,8 +230,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 259,
-                  "end": 270,
+                  "start": 228,
+                  "end": 239,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -254,8 +254,8 @@
                 "params": [],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 273,
-                  "end": 323,
+                  "start": 242,
+                  "end": 282,
                   "loc": {
                     "start": {
                       "line": 11,
@@ -269,8 +269,8 @@
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 283,
-                      "end": 317,
+                      "start": 252,
+                      "end": 276,
                       "loc": {
                         "start": {
                           "line": 12,
@@ -278,13 +278,13 @@
                         },
                         "end": {
                           "line": 12,
-                          "column": 42
+                          "column": 32
                         }
                       },
                       "expression": {
                         "type": "CallExpression",
-                        "start": 283,
-                        "end": 316,
+                        "start": 252,
+                        "end": 275,
                         "loc": {
                           "start": {
                             "line": 12,
@@ -292,13 +292,13 @@
                           },
                           "end": {
                             "line": 12,
-                            "column": 41
+                            "column": 31
                           }
                         },
                         "callee": {
                           "type": "Super",
-                          "start": 283,
-                          "end": 288,
+                          "start": 252,
+                          "end": 257,
                           "loc": {
                             "start": {
                               "line": 12,
@@ -313,8 +313,8 @@
                         "arguments": [
                           {
                             "type": "StringLiteral",
-                            "start": 289,
-                            "end": 315,
+                            "start": 258,
+                            "end": 274,
                             "loc": {
                               "start": {
                                 "line": 12,
@@ -322,14 +322,14 @@
                               },
                               "end": {
                                 "line": 12,
-                                "column": 40
+                                "column": 30
                               }
                             },
                             "extra": {
-                              "rawValue": "Not connected on Signer.",
-                              "raw": "\"Not connected on Signer.\""
+                              "rawValue": "Not connected.",
+                              "raw": "\"Not connected.\""
                             },
-                            "value": "Not connected on Signer."
+                            "value": "Not connected."
                           }
                         ]
                       }
@@ -341,8 +341,8 @@
                   {
                     "type": "CommentBlock",
                     "value": "*\n     * Constructor\n     ",
-                    "start": 224,
-                    "end": 254,
+                    "start": 193,
+                    "end": 223,
                     "loc": {
                       "start": {
                         "line": 8,
@@ -361,9 +361,9 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected to the Casper signer extension\n ",
+              "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n ",
               "start": 52,
-              "end": 163,
+              "end": 132,
               "loc": {
                 "start": {
                   "line": 3,
@@ -381,9 +381,9 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected to the Casper signer extension\n ",
+            "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n ",
             "start": 52,
-            "end": 163,
+            "end": 132,
             "loc": {
               "start": {
                 "line": 3,
@@ -403,9 +403,9 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected to the Casper signer extension\n ",
+      "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n ",
       "start": 52,
-      "end": 163,
+      "end": 132,
       "loc": {
         "start": {
           "line": 3,
@@ -420,8 +420,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n     * Constructor\n     ",
-      "start": 224,
-      "end": 254,
+      "start": 193,
+      "end": 223,
       "loc": {
         "start": {
           "line": 8,
@@ -620,9 +620,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected to the Casper signer extension\n ",
+      "value": "*\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n ",
       "start": 52,
-      "end": 163,
+      "end": 132,
       "loc": {
         "start": {
           "line": 3,
@@ -649,8 +649,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 164,
-      "end": 170,
+      "start": 133,
+      "end": 139,
       "loc": {
         "start": {
           "line": 7,
@@ -677,8 +677,8 @@
         "updateContext": null
       },
       "value": "class",
-      "start": 171,
-      "end": 176,
+      "start": 140,
+      "end": 145,
       "loc": {
         "start": {
           "line": 7,
@@ -703,8 +703,8 @@
         "binop": null
       },
       "value": "NoActiveKeyError",
-      "start": 177,
-      "end": 193,
+      "start": 146,
+      "end": 162,
       "loc": {
         "start": {
           "line": 7,
@@ -731,8 +731,8 @@
         "updateContext": null
       },
       "value": "extends",
-      "start": 194,
-      "end": 201,
+      "start": 163,
+      "end": 170,
       "loc": {
         "start": {
           "line": 7,
@@ -757,8 +757,8 @@
         "binop": null
       },
       "value": "ExtendableError",
-      "start": 202,
-      "end": 217,
+      "start": 171,
+      "end": 186,
       "loc": {
         "start": {
           "line": 7,
@@ -782,8 +782,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 218,
-      "end": 219,
+      "start": 187,
+      "end": 188,
       "loc": {
         "start": {
           "line": 7,
@@ -798,8 +798,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n     * Constructor\n     ",
-      "start": 224,
-      "end": 254,
+      "start": 193,
+      "end": 223,
       "loc": {
         "start": {
           "line": 8,
@@ -824,8 +824,8 @@
         "binop": null
       },
       "value": "constructor",
-      "start": 259,
-      "end": 270,
+      "start": 228,
+      "end": 239,
       "loc": {
         "start": {
           "line": 11,
@@ -849,8 +849,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 270,
-      "end": 271,
+      "start": 239,
+      "end": 240,
       "loc": {
         "start": {
           "line": 11,
@@ -874,8 +874,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 271,
-      "end": 272,
+      "start": 240,
+      "end": 241,
       "loc": {
         "start": {
           "line": 11,
@@ -899,8 +899,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 273,
-      "end": 274,
+      "start": 242,
+      "end": 243,
       "loc": {
         "start": {
           "line": 11,
@@ -927,8 +927,8 @@
         "updateContext": null
       },
       "value": "super",
-      "start": 283,
-      "end": 288,
+      "start": 252,
+      "end": 257,
       "loc": {
         "start": {
           "line": 12,
@@ -952,8 +952,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 288,
-      "end": 289,
+      "start": 257,
+      "end": 258,
       "loc": {
         "start": {
           "line": 12,
@@ -978,9 +978,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "Not connected on Signer.",
-      "start": 289,
-      "end": 315,
+      "value": "Not connected.",
+      "start": 258,
+      "end": 274,
       "loc": {
         "start": {
           "line": 12,
@@ -988,7 +988,7 @@
         },
         "end": {
           "line": 12,
-          "column": 40
+          "column": 30
         }
       }
     },
@@ -1004,16 +1004,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 315,
-      "end": 316,
+      "start": 274,
+      "end": 275,
       "loc": {
         "start": {
           "line": 12,
-          "column": 40
+          "column": 30
         },
         "end": {
           "line": 12,
-          "column": 41
+          "column": 31
         }
       }
     },
@@ -1030,16 +1030,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 316,
-      "end": 317,
+      "start": 275,
+      "end": 276,
       "loc": {
         "start": {
           "line": 12,
-          "column": 41
+          "column": 31
         },
         "end": {
           "line": 12,
-          "column": 42
+          "column": 32
         }
       }
     },
@@ -1055,8 +1055,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 322,
-      "end": 323,
+      "start": 281,
+      "end": 282,
       "loc": {
         "start": {
           "line": 13,
@@ -1080,8 +1080,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 324,
-      "end": 325,
+      "start": 283,
+      "end": 284,
       "loc": {
         "start": {
           "line": 14,
@@ -1106,16 +1106,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 325,
-      "end": 325,
+      "start": 285,
+      "end": 285,
       "loc": {
         "start": {
-          "line": 14,
-          "column": 1
+          "line": 15,
+          "column": 0
         },
         "end": {
-          "line": 14,
-          "column": 1
+          "line": 15,
+          "column": 0
         }
       }
     }
