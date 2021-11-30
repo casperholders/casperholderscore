@@ -1,5 +1,5 @@
 import {CurrencyUtils} from "../src";
-import {BigNumber} from "ethers";
+import { BigNumber } from '@ethersproject/bignumber';
 
 test('Convert casper to motes', () => {
     expect(CurrencyUtils.convertCasperToMotes("1").eq(BigNumber.from(1000000000))).toBe(true);

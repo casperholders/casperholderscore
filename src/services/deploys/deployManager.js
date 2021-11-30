@@ -1,6 +1,6 @@
 import {CurrencyUtils} from "../helpers";
 import {STATUS_KO, STATUS_OK} from "../results";
-import {BigNumber} from "ethers";
+import { BigNumber } from '@ethersproject/bignumber';
 
 
 /**

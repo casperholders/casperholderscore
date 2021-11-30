@@ -1,7 +1,7 @@
 import { NoActiveKeyError, NoStakeBalanceError, NoValidatorBalanceError } from '../errors';
 import { CLPublicKey } from 'casper-js-sdk';
 import { CurrencyUtils } from '../helpers';
-import { BigNumber } from 'ethers';
+import { BigNumber } from '@ethersproject/bignumber';
 
 
 /**

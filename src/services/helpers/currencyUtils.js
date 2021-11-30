@@ -2,7 +2,7 @@
  * CurrencyUtils class
  * Used to convert from/to casper/motes
  */
-import {BigNumber} from "ethers";
+import { BigNumber } from '@ethersproject/bignumber';
 import Big from "big.js";
 
 /**
