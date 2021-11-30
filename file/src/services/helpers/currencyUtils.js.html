@@ -76,7 +76,7 @@
  * CurrencyUtils class
  * Used to convert from/to casper/motes
  */
-import {BigNumber} from &quot;ethers&quot;;
+import { BigNumber } from &apos;@ethersproject/bignumber&apos;;
 import Big from &quot;big.js&quot;;
 
 /**
@@ -103,7 +103,8 @@ export class CurrencyUtils {
     static convertCasperToMotes(casperAmount) {
         return BigNumber.from(Big(casperAmount).times(1000000000).toString());
     }
-}</code></pre>
+}
+</code></pre>
 
 </div>
 
