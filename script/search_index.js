@@ -534,6 +534,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/balance/balance.js~balance#fetchbalanceofpublickey",
+    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchBalanceOfPublicKey",
+    "src/services/balance/balance.js~Balance#fetchBalanceOfPublicKey",
+    "method"
+  ],
+  [
     "src/services/balance/balance.js~balance#fetchstakebalance",
     "class/src/services/balance/balance.js~Balance.html#instance-method-fetchStakeBalance",
     "src/services/balance/balance.js~Balance#fetchStakeBalance",
