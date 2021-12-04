@@ -30,13 +30,22 @@ export class Balance {
   /**
    * Retrieve current user balance from the network.
    *
-   * @return {Promise<BigNumber>} - Current balance of the user
+   * @return {Promise<String>} - Current balance of the user in CSPR
    */
   async fetchBalance() {
     if (this.keyManager.activeKey === null) {
       throw new NoActiveKeyError();
     }
-    return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(this.keyManager.activeKey))).toString()));
+    return await this.fetchBalanceOfPublicKey(this.keyManager.activeKey);
+  }
+
+  /**
+   * Retrieve balance of a public key from the network.
+   *
+   * @return {Promise<String>} - Current balance of the public key in CSPR
+   */
+  async fetchBalanceOfPublicKey(publicKey) {
+    return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()));
   }
 
   /**
