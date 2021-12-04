@@ -15,11 +15,12 @@ export class LedgerSigner extends AbstractSigner {
      * @param {Object} options - Options object
      * @param {CasperApp} options.app - CasperApp instance.
      * @param {string} options.publicKey - Public key that sign the deploy.
+     * @param {string} options.keyPath - Public key that sign the deploy.
      * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object
      */
     static async sign(deploy, options = {}) {
         try {
-            const responseDeploy = await options.app.sign('m/44\'/506\'/0\'/0/0', DeployUtil.deployToBytes(deploy));
+            const responseDeploy = await options.app.sign(`m/44'/506'/0'/0/${options.keyPath}`, DeployUtil.deployToBytes(deploy));
             let signedDeploy = DeployUtil.setSignature(
               deploy,
               responseDeploy.signatureRS,
