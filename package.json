@@ -1,6 +1,6 @@
 {
   "name": "@casperholders/core",
-  "version": "1.11.0-torus3",
+  "version": "1.12.0",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
   "scripts": {
