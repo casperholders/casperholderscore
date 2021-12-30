@@ -35,7 +35,7 @@ test('Test all stake balance', async () => {
     const balanceService = new Balance(keyManager, casperClient)
     const balance = await balanceService.fetchAllStakeBalance()
     expect(balance.length).toBe(1);
-    expect(balance[0].validator).toBe('0124BFDae2Ed128fa5e4057BC398E4933329570E47240e57fc92F5611A6178EBA5');
+    expect(balance[0].validator).toBe('0124bFDaE2ED128fA5E4057bC398E4933329570E47240e57fC92F5611A6178EBA5');
     expect(Number(balance[0].stakedTokens)).toBeGreaterThan(1);
 });
 
