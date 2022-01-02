@@ -50,7 +50,9 @@
       "index.js",
       "/src/services/results/",
       "/src/services/errors/",
-      "casperSigner.js"
+      "ledgerSigner.js",
+      "casperSigner.js",
+      "torusSigner.js"
     ]
   }
 }
