@@ -1,6 +1,6 @@
 {
   "name": "@casperholders/core",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   "dependencies": {
     "@ethersproject/bignumber": "^5.5.0",
     "big.js": "^6.1.1",
-    "casper-js-sdk": "^2.7.2"
+    "casper-js-sdk": "^2.7.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
