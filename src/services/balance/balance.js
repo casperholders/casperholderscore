@@ -28,6 +28,22 @@ export class Balance {
   }
 
   /**
+   * Retrieve validator info with cache era based
+   * @returns {Promise<*>}
+   */
+  async getValidatorsInfo() {
+    if(this.validatorsInfo === undefined) {
+      this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+      return this.validatorsInfo;
+    }
+    const lastBlock = await this.client.casperRPC.getLatestBlockInfo();
+    if(lastBlock.block.header.era_id !== this.validatorsInfo.auction_state.era_validators[0].era_id) {
+      this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    }
+    return this.validatorsInfo;
+  }
+
+  /**
    * Retrieve current user balance from the network.
    *
    * @return {Promise<String>} - Current balance of the user in CSPR
@@ -58,7 +74,7 @@ export class Balance {
     if (this.keyManager.activeKey === null) {
       throw new NoActiveKeyError();
     }
-    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    const validatorsInfo = await this.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
     })[0];
@@ -81,7 +97,7 @@ export class Balance {
     if (this.keyManager.activeKey === null) {
       throw new NoActiveKeyError();
     }
-    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    const validatorsInfo = await this.getValidatorsInfo();
     let validators = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.bid.delegators.some((delegator) => delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase());
     });
@@ -110,7 +126,7 @@ export class Balance {
     if (this.keyManager.activeKey === null) {
       throw new NoActiveKeyError();
     }
-    const validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
+    const validatorsInfo = await this.getValidatorsInfo();
     let validator = validatorsInfo.auction_state.bids.filter(validator => {
       return validator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
     })[0];
