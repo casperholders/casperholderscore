@@ -552,9 +552,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/balance/balance.js~balance#getvalidatorsinfo",
+    "class/src/services/balance/balance.js~Balance.html#instance-method-getValidatorsInfo",
+    "src/services/balance/balance.js~Balance#getValidatorsInfo",
+    "method"
+  ],
+  [
     "src/services/balance/balance.js~balance#keymanager",
     "class/src/services/balance/balance.js~Balance.html#instance-member-keyManager",
     "src/services/balance/balance.js~Balance#keyManager",
+    "member"
+  ],
+  [
+    "src/services/balance/balance.js~balance#validatorsinfo",
+    "class/src/services/balance/balance.js~Balance.html#instance-member-validatorsInfo",
+    "src/services/balance/balance.js~Balance#validatorsInfo",
     "member"
   ],
   [
