@@ -85,7 +85,7 @@ export class AbstractSmartContractDeployParameters {
      * @return {DeployUtil.DeployParams} - Return a DeployParams
      */
     get deployParams() {
-        throw &quot;You must implement this method&quot;
+        throw new Error(&quot;You must implement this method&quot;);
     }
 
     /**
@@ -94,7 +94,7 @@ export class AbstractSmartContractDeployParameters {
      * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
      */
     get session() {
-        throw &quot;You must implement this method&quot;
+        throw new Error(&quot;You must implement this method&quot;);
     }
 
     /**
@@ -103,7 +103,7 @@ export class AbstractSmartContractDeployParameters {
      * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
      */
     get payment() {
-        throw &quot;You must implement this method&quot;
+        throw new Error(&quot;You must implement this method&quot;);
     }
 
     /**
@@ -112,7 +112,7 @@ export class AbstractSmartContractDeployParameters {
      * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
      */
     get deployResult() {
-        throw &quot;You must implement this method&quot;
+        throw new Error(&quot;You must implement this method&quot;);
     }
 
     /**

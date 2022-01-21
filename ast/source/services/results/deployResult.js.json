@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 1239,
+  "end": 1251,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 1239,
+    "end": 1251,
     "loc": {
       "start": {
         "line": 1,
@@ -618,7 +618,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 369,
-        "end": 1238,
+        "end": 1250,
         "loc": {
           "start": {
             "line": 23,
@@ -634,7 +634,7 @@
         "declaration": {
           "type": "ClassDeclaration",
           "start": 376,
-          "end": 1238,
+          "end": 1250,
           "loc": {
             "start": {
               "line": 23,
@@ -667,7 +667,7 @@
           "body": {
             "type": "ClassBody",
             "start": 395,
-            "end": 1238,
+            "end": 1250,
             "loc": {
               "start": {
                 "line": 23,
@@ -1964,7 +1964,7 @@
               {
                 "type": "ClassMethod",
                 "start": 1165,
-                "end": 1236,
+                "end": 1248,
                 "loc": {
                   "start": {
                     "line": 56,
@@ -2003,7 +2003,7 @@
                 "body": {
                   "type": "BlockStatement",
                   "start": 1182,
-                  "end": 1236,
+                  "end": 1248,
                   "loc": {
                     "start": {
                       "line": 56,
@@ -2018,7 +2018,7 @@
                     {
                       "type": "ThrowStatement",
                       "start": 1192,
-                      "end": 1230,
+                      "end": 1242,
                       "loc": {
                         "start": {
                           "line": 57,
@@ -2026,13 +2026,13 @@
                         },
                         "end": {
                           "line": 57,
-                          "column": 46
+                          "column": 58
                         }
                       },
                       "argument": {
-                        "type": "StringLiteral",
+                        "type": "NewExpression",
                         "start": 1198,
-                        "end": 1230,
+                        "end": 1241,
                         "loc": {
                           "start": {
                             "line": 57,
@@ -2040,14 +2040,48 @@
                           },
                           "end": {
                             "line": 57,
-                            "column": 46
+                            "column": 57
                           }
                         },
-                        "extra": {
-                          "rawValue": "You must implement this method",
-                          "raw": "\"You must implement this method\""
+                        "callee": {
+                          "type": "Identifier",
+                          "start": 1202,
+                          "end": 1207,
+                          "loc": {
+                            "start": {
+                              "line": 57,
+                              "column": 18
+                            },
+                            "end": {
+                              "line": 57,
+                              "column": 23
+                            },
+                            "identifierName": "Error"
+                          },
+                          "name": "Error"
                         },
-                        "value": "You must implement this method"
+                        "arguments": [
+                          {
+                            "type": "StringLiteral",
+                            "start": 1208,
+                            "end": 1240,
+                            "loc": {
+                              "start": {
+                                "line": 57,
+                                "column": 24
+                              },
+                              "end": {
+                                "line": 57,
+                                "column": 56
+                              }
+                            },
+                            "extra": {
+                              "rawValue": "You must implement this method",
+                              "raw": "\"You must implement this method\""
+                            },
+                            "value": "You must implement this method"
+                          }
+                        ]
                       }
                     }
                   ],
@@ -5165,6 +5199,85 @@
     },
     {
       "type": {
+        "label": "new",
+        "keyword": "new",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "new",
+      "start": 1198,
+      "end": 1201,
+      "loc": {
+        "start": {
+          "line": 57,
+          "column": 14
+        },
+        "end": {
+          "line": 57,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "Error",
+      "start": 1202,
+      "end": 1207,
+      "loc": {
+        "start": {
+          "line": 57,
+          "column": 18
+        },
+        "end": {
+          "line": 57,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1207,
+      "end": 1208,
+      "loc": {
+        "start": {
+          "line": 57,
+          "column": 23
+        },
+        "end": {
+          "line": 57,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
         "label": "string",
         "beforeExpr": false,
         "startsExpr": true,
@@ -5177,16 +5290,67 @@
         "updateContext": null
       },
       "value": "You must implement this method",
-      "start": 1198,
-      "end": 1230,
+      "start": 1208,
+      "end": 1240,
       "loc": {
         "start": {
           "line": 57,
-          "column": 14
+          "column": 24
         },
         "end": {
           "line": 57,
-          "column": 46
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 1240,
+      "end": 1241,
+      "loc": {
+        "start": {
+          "line": 57,
+          "column": 56
+        },
+        "end": {
+          "line": 57,
+          "column": 57
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 1241,
+      "end": 1242,
+      "loc": {
+        "start": {
+          "line": 57,
+          "column": 57
+        },
+        "end": {
+          "line": 57,
+          "column": 58
         }
       }
     },
@@ -5202,8 +5366,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1235,
-      "end": 1236,
+      "start": 1247,
+      "end": 1248,
       "loc": {
         "start": {
           "line": 58,
@@ -5227,8 +5391,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 1237,
-      "end": 1238,
+      "start": 1249,
+      "end": 1250,
       "loc": {
         "start": {
           "line": 59,
@@ -5253,8 +5417,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 1239,
-      "end": 1239,
+      "start": 1251,
+      "end": 1251,
       "loc": {
         "start": {
           "line": 60,
