@@ -45,7 +45,7 @@ export class DeployManager {
    */
   async prepareSignAndSendDeploy(deployParameter, signer, options) {
     const signedDeploy = await signer.sign(deployParameter.makeDeploy, options);
-    return await this.sendDeploy(signedDeploy, deployParameter.deployResult);
+    return this.sendDeploy(signedDeploy, deployParameter.deployResult);
   }
 
   /**

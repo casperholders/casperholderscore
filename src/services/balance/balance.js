@@ -52,7 +52,7 @@ export class Balance {
     if (this.keyManager.activeKey === null) {
       throw new NoActiveKeyError();
     }
-    return await this.fetchBalanceOfPublicKey(this.keyManager.activeKey);
+    return this.fetchBalanceOfPublicKey(this.keyManager.activeKey);
   }
 
   /**
@@ -75,8 +75,8 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
+    let validator = validatorsInfo.auction_state.bids.filter(validatorItem => {
+      return validatorItem.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
     })[0];
 
     let stakingBalance = validator.bid.delegators.filter(delegator => {
@@ -127,8 +127,8 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
+    let validator = validatorsInfo.auction_state.bids.filter(validatorItem => {
+      return validatorItem.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
     })[0];
     if (validator) {
       return {

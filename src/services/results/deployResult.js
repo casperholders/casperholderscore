@@ -54,6 +54,6 @@ export class DeployResult {
      * Must return the name of the operation behind the deployment
      */
     static getName() {
-        throw "You must implement this method"
+        throw new Error("You must implement this method");
     }
 }

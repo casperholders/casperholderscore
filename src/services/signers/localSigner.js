@@ -21,7 +21,7 @@ export class LocalSigner extends AbstractSigner {
      */
     static async sign(deploy, options = {}) {
         try {
-            return await DeployUtil.signDeploy(deploy, options.key)
+            return DeployUtil.signDeploy(deploy, options.key);
         } catch (e) {
             console.log(e);
             throw new SignError();
