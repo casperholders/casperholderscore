@@ -2,6 +2,11 @@
 
 ![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)
 [![codecov](https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U)](https://codecov.io/gh/casperholders/casperholderscore)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
 
 The CasperHolders website use this library to handle any interaction with the CasperNetwork.
 
