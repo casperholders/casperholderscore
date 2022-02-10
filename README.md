@@ -1,4 +1,4 @@
-# CasperHolders Core（核部分）
+# CasperHolders Core
 
 ![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)
 [![codecov](https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U)](https://codecov.io/gh/casperholders/casperholderscore)
@@ -8,39 +8,39 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
 
-CasperHoldersウェブサイトは、CasperNetworkとの疎通のためのライブラリです。
+The CasperHolders website use this library to handle any interaction with the CasperNetwork.
 
-ウェブサイトの大半の理論がここにはあります。
+It contains a huge portion of the website logic.
 
-ドキュメント : [Link](https://casperholders.github.io/casperholderscore/)
+Documentation : [Link](https://casperholders.github.io/casperholderscore/)
 
-## Development（開発）
+## Development
 
-依存関係のインストール
+Install dependencies
 
 ```bash
 yarn install
 ```
 
-ビルド
+Build
 
 ```bash
 yarn build
 ```
 
-ドキュメントの生成
+Generate documentation
 
 ```bash
 yarn docs
 ```
 
-テストの実行
+Run tests
 
 ```bash
 yarn test
 ```
 
-## インストール
+## Installation
 
 ### NPM
 
@@ -54,14 +54,14 @@ npm install @casperholders/core
 yarn add @casperholders/core
 ```
 
-## サンプル
+## Examples
 
-testsフォルダーには、いくつかのサンプルライブラリがあります。  
-これは、実用ライブラリであることをご留意ください。  
-KeyManagerの様に、いくつかの抽象クラスの実装が必要となる場合があります。
+You can find some example of the lib in the tests folders.  
+However, keep in mind this is a utility lib.  
+You will have to implement some abstracts class in your project if needed like the KeyManager.
 
-## テスト
+## Tests
 
-**抽象/結果/エラークラスのテストは行いません。理論は所有していないためです。  
-CasperSignerの実装テストは行いません。なぜなら、ブラウザーテストスイートと拡張機能へのフルアクセスを要するからです。  
-Casper Signer JS SDKとCasper Signer拡張機能の統合には、かなり苦戦を強いられたことが想像できます。**
+**We don't test abstracts / results / errors classes because they don't own any logic.  
+We don't test the implementation of the CasperSigner because it requires full access to a browser test suite and the extension.  
+We assume the Casper Signer JS SDK is battle tested to interact with the Casper Signer extension**
