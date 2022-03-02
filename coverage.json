@@ -1,7 +1,7 @@
 {
-  "coverage": "99.31%",
-  "expectCount": 147,
-  "actualCount": 146,
+  "coverage": "98.78%",
+  "expectCount": 165,
+  "actualCount": 163,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 11,
@@ -19,6 +19,13 @@
       "expectCount": 6,
       "actualCount": 6,
       "undocumentLines": []
+    },
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js": {
+      "expectCount": 12,
+      "actualCount": 11,
+      "undocumentLines": [
+        35
+      ]
     },
     "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js": {
       "expectCount": 11,
@@ -53,6 +60,11 @@
     "src/services/deploys/deployManager.js": {
       "expectCount": 6,
       "actualCount": 6,
+      "undocumentLines": []
+    },
+    "src/services/deploys/keyManagement/keyManagement.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "src/services/deploys/smartContract/smartContractDeployParameters.js": {
@@ -128,6 +140,11 @@
     "src/services/results/deployResult.js": {
       "expectCount": 12,
       "actualCount": 12,
+      "undocumentLines": []
+    },
+    "src/services/results/keyManagementResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
       "undocumentLines": []
     },
     "src/services/results/smartContractResult.js": {

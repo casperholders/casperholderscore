@@ -18,6 +18,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html",
+    "<span>AbstractSmartContractModuleBytesParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/abstractSmartContractModuleBytesParameters.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/abstractsmartcontractstoredbyhashdeployparameters.js~abstractsmartcontractstoredbyhashdeployparameters",
     "class/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters.html",
     "<span>AbstractSmartContractStoredByHashDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</span>",
@@ -105,6 +111,18 @@ window.esdocSearchIndex = [
     "@casperholders/core/src/services/errors/insufficientfunds.js~insufficientfunds",
     "class/src/services/errors/insufficientFunds.js~InsufficientFunds.html",
     "<span>InsufficientFunds</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/insufficientFunds.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/keymanagement/keymanagement.js~keymanagement",
+    "class/src/services/deploys/keyManagement/keyManagement.js~KeyManagement.html",
+    "<span>KeyManagement</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/keyManagement/keyManagement.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/keymanagementresult.js~keymanagementresult",
+    "class/src/services/results/keyManagementResult.js~KeyManagementResult.html",
+    "<span>KeyManagementResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/keyManagementResult.js</span>",
     "class"
   ],
   [
@@ -636,6 +654,78 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js",
+    "file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#activekey",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-activeKey",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#activeKey",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#args",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-args",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#args",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#constructor",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-constructor-constructor",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#deployparams",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-get-deployParams",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#deployParams",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#entrypoint",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-entrypoint",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#entrypoint",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#fee",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-fee",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#fee",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#hash",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-hash",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#hash",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#network",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-network",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#network",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#payment",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-get-payment",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#payment",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#session",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-get-session",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#session",
+    "member"
+  ],
+  [
+    "src/services/deploys/abstractsmartcontractmodulebytesparameters.js~abstractsmartcontractmodulebytesparameters#smartcontractbuffer",
+    "class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-smartContractBuffer",
+    "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters#smartContractBuffer",
+    "member"
+  ],
+  [
     "src/services/deploys/abstractsmartcontractstoredbyhashdeployparameters.js",
     "file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html",
     "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js",
@@ -856,6 +946,30 @@ window.esdocSearchIndex = [
     "file/src/services/deploys/index.js.html",
     "src/services/deploys/index.js",
     "file"
+  ],
+  [
+    "src/services/deploys/keymanagement/index.js",
+    "file/src/services/deploys/keyManagement/index.js.html",
+    "src/services/deploys/keyManagement/index.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/keymanagement/keymanagement.js",
+    "file/src/services/deploys/keyManagement/keyManagement.js.html",
+    "src/services/deploys/keyManagement/keyManagement.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/keymanagement/keymanagement.js~keymanagement#constructor",
+    "class/src/services/deploys/keyManagement/keyManagement.js~KeyManagement.html#instance-constructor-constructor",
+    "src/services/deploys/keyManagement/keyManagement.js~KeyManagement#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/keymanagement/keymanagement.js~keymanagement#deployresult",
+    "class/src/services/deploys/keyManagement/keyManagement.js~KeyManagement.html#instance-get-deployResult",
+    "src/services/deploys/keyManagement/keyManagement.js~KeyManagement#deployResult",
+    "member"
   ],
   [
     "src/services/deploys/smartcontract/smartcontractdeployparameters.js",
@@ -1246,6 +1360,24 @@ window.esdocSearchIndex = [
     "file/src/services/results/index.js.html",
     "src/services/results/index.js",
     "file"
+  ],
+  [
+    "src/services/results/keymanagementresult.js",
+    "file/src/services/results/keyManagementResult.js.html",
+    "src/services/results/keyManagementResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/keymanagementresult.js~keymanagementresult#constructor",
+    "class/src/services/results/keyManagementResult.js~KeyManagementResult.html#instance-constructor-constructor",
+    "src/services/results/keyManagementResult.js~KeyManagementResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/keymanagementresult.js~keymanagementresult.getname",
+    "class/src/services/results/keyManagementResult.js~KeyManagementResult.html#static-method-getName",
+    "src/services/results/keyManagementResult.js~KeyManagementResult.getName",
+    "method"
   ],
   [
     "src/services/results/smartcontractresult.js",
