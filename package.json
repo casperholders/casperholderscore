@@ -28,7 +28,8 @@
   "dependencies": {
     "@ethersproject/bignumber": "^5.5.0",
     "big.js": "^6.1.1",
-    "casper-js-sdk": "^2.7.4"
+    "casper-js-sdk": "^2.8.0",
+    "ts-results": "^3.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
