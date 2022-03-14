@@ -94,6 +94,8 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
     smartContractBuffer;
     /** @type {string} */
     fee;
+    /** @type {number} */
+    ttl;
 
     /**
      * Constructor
@@ -102,13 +104,15 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
      * @param {string} network - Current network to execute the deployment
      * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read
      * @param {string} fee - Runtime fee for the given SmartContract operation
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(activeKey, network, smartContractBuffer, fee) {
+    constructor(activeKey, network, smartContractBuffer, fee, ttl = 1) {
         super()
         this.activeKey = activeKey;
         this.network = network;
         this.smartContractBuffer = smartContractBuffer;
         this.fee = fee;
+        this.ttl = ttl * 3600000;
     }
 
     /**
@@ -119,7 +123,9 @@ export class SmartContractDeployParameters extends AbstractSmartContractDeployPa
     get deployParams() {
         return new DeployUtil.DeployParams(
             CLPublicKey.fromHex(this.activeKey),
-            this.network
+            this.network,
+            1,
+            this.ttl
         );
     }
 

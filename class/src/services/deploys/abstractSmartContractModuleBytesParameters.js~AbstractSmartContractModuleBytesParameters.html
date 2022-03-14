@@ -135,7 +135,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, args: <span>DeployUtil.RuntimeArgs</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, args: <span>DeployUtil.RuntimeArgs</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -440,6 +440,34 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html#instance-member-ttl">ttl</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -610,11 +638,11 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     
     
     
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, args: <span>DeployUtil.RuntimeArgs</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, args: <span>DeployUtil.RuntimeArgs</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber31">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
@@ -667,6 +695,13 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Runtime fee for the given SmartContract operation</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">ttl</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Deploy time to live  in hours</p>
 </td>
     </tr>
 </tbody>
@@ -792,7 +827,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber45">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber49">source</a></span></span>
     </span>
   </h3>
 
@@ -1021,7 +1056,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber69">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
@@ -1078,7 +1113,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber57">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber63">source</a></span></span>
     </span>
   </h3>
 
@@ -1135,7 +1170,50 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber38">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-ttl">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ttl</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractModuleBytesParameters.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 

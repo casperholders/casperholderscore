@@ -106,14 +106,15 @@ export class Undelegate extends AbstractSmartContractStoredByHashDeployParameter
      * @param {string} validator - Public key in the hex format of the validator
      * @param {string} network - Current network to execute the deployment
      * @param {string} hash - Current hash of the stored SmartContract
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(amount, activeKey, validator, network, hash) {
+    constructor(amount, activeKey, validator, network, hash, ttl = 1) {
         const args = RuntimeArgs.fromMap({
             delegator: CLPublicKey.fromHex(activeKey),
             validator: CLPublicKey.fromHex(validator),
             amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount))
         })
-        super(activeKey, network, hash, entrypoint, args, fee);
+        super(activeKey, network, hash, entrypoint, args, fee, ttl);
     }
 
     /**

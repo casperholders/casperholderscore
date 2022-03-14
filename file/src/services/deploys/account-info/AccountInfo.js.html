@@ -98,12 +98,13 @@ export class AccountInfo extends AbstractSmartContractStoredByHashDeployParamete
    * @param {string} activeKey - Current active key in the public hex format
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
+   * @param {number} ttl - Deploy time to live  in hours
    */
-  constructor(url, activeKey, network, hash) {
+  constructor(url, activeKey, network, hash, ttl = 1) {
     const args = RuntimeArgs.fromMap({
       url: new CLString(url),
     });
-    super(activeKey, network, hash, entrypoint, args, 0);
+    super(activeKey, network, hash, entrypoint, args, 0, ttl);
   }
 
   /**

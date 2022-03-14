@@ -135,7 +135,7 @@ Class used to create DeployParameters for a Transfer operation</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transferID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transferID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -413,6 +413,34 @@ Class used to create DeployParameters for a Transfer operation</p>
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html#instance-member-ttl">ttl</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -583,11 +611,11 @@ Class used to create DeployParameters for a Transfer operation</p>
     
     
     
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transferID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, target: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, transferID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
@@ -640,6 +668,13 @@ Class used to create DeployParameters for a Transfer operation</p>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>TransferID of the transfer operation</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">ttl</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Deploy time to live  in hours</p>
 </td>
     </tr>
 </tbody>
@@ -765,7 +800,7 @@ Class used to create DeployParameters for a Transfer operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber52">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber56">source</a></span></span>
     </span>
   </h3>
 
@@ -822,7 +857,7 @@ Class used to create DeployParameters for a Transfer operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber87">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber93">source</a></span></span>
     </span>
   </h3>
 
@@ -922,7 +957,7 @@ Class used to create DeployParameters for a Transfer operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber78">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber84">source</a></span></span>
     </span>
   </h3>
 
@@ -979,7 +1014,7 @@ Class used to create DeployParameters for a Transfer operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber64">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber70">source</a></span></span>
     </span>
   </h3>
 
@@ -1080,6 +1115,49 @@ Class used to create DeployParameters for a Transfer operation</p>
       
       
       <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber27">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-ttl">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ttl</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/deploys/transfer/TransferDeployParameters.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
