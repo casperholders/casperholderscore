@@ -32,7 +32,15 @@ export class DeployManager {
       return new deployResult(deploy);
     }
     const hash = await this.client.casperClient.putDeploy(deploy);
-    return new deployResult(hash);
+    let amount = '0';
+    if (deploy.session.getArgByName('amount')) {
+      amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName('amount').value().toString()));
+    }
+    let cost = '0';
+    if (deploy.payment.getArgByName('amount')) {
+      cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.payment.getArgByName('amount').value().toString()));
+    }
+    return new deployResult(hash, cost, amount);
   }
 
   /**

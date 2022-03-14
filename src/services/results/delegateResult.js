@@ -8,9 +8,11 @@ export class DelegateResult extends DeployResult {
      * Constructor
      *
      * @param {string} hash - DeployHash of the deployment
+     * @param {string} cost - optional cost
+     * @param {string} amount - optional amount
      */
-    constructor(hash) {
-        super(hash, DelegateResult.getName())
+    constructor(hash, cost = '0', amount= '0') {
+        super(hash, DelegateResult.getName(), cost, amount)
     }
 
     /**
