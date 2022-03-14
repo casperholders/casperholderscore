@@ -18,6 +18,8 @@ export class AbstractSmartContractStoredByHashDeployParameters extends AbstractS
     args;
     /** @type {number} */
     fee;
+    /** @type {number} */
+    ttl;
 
     /**
      * Constructor
@@ -28,8 +30,9 @@ export class AbstractSmartContractStoredByHashDeployParameters extends AbstractS
      * @param {string} entrypoint - Entrypoint of the SmartContract
      * @param {DeployUtil.RuntimeArgs} args - Arguments of the SmartContract
      * @param {number} fee - Runtime fee for the given SmartContract operation
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(activeKey, network, hash, entrypoint, args, fee) {
+    constructor(activeKey, network, hash, entrypoint, args, fee, ttl = 1) {
         super()
         this.activeKey = activeKey;
         this.network = network;
@@ -37,6 +40,7 @@ export class AbstractSmartContractStoredByHashDeployParameters extends AbstractS
         this.entrypoint = entrypoint;
         this.args = args;
         this.fee = fee;
+        this.ttl = ttl * 3600000;
     }
 
     /**
@@ -47,7 +51,9 @@ export class AbstractSmartContractStoredByHashDeployParameters extends AbstractS
     get deployParams() {
         return new DeployUtil.DeployParams(
             CLPublicKey.fromHex(this.activeKey),
-            this.network
+            this.network,
+            1,
+            this.ttl
         );
     }
 

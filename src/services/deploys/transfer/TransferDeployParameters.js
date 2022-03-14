@@ -25,6 +25,8 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
     target;
     /** @type {string} */
     transferID;
+    /** @type {number} */
+    ttl;
 
     /**
      * Constructor
@@ -34,14 +36,16 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
      * @param {string} amount - Amount to transfer in casper
      * @param {string} target - Public key in the hex format of the receiver
      * @param {string} transferID - TransferID of the transfer operation
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(activeKey, network, amount, target, transferID) {
+    constructor(activeKey, network, amount, target, transferID, ttl = 1) {
         super()
         this.activeKey = activeKey;
         this.network = network;
         this.amount = amount;
         this.target = target;
         this.transferID = transferID;
+        this.ttl = ttl * 3600000;
     }
 
     /**
@@ -52,7 +56,9 @@ export class TransferDeployParameters extends AbstractSmartContractDeployParamet
     get deployParams() {
         return new DeployUtil.DeployParams(
             CLPublicKey.fromHex(this.activeKey),
-            this.network
+            this.network,
+            1,
+            this.ttl
         );
     }
 

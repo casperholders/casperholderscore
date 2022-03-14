@@ -29,14 +29,15 @@ export class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
      * @param {number} commission - Set the commission of the validator to the given percentage
      * @param {string} network - Current network to execute the deployment
      * @param {string} hash - Current hash of the stored SmartContract
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(amount, activeKey, commission, network, hash) {
+    constructor(amount, activeKey, commission, network, hash, ttl = 1) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
             amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
             delegation_rate: new CLU8(commission)
         })
-        super(activeKey, network, hash, entrypoint, args, fee);
+        super(activeKey, network, hash, entrypoint, args, fee, ttl);
     }
 
     /**

@@ -17,8 +17,9 @@ export class KeyManagement extends AbstractSmartContractModuleBytesParameters {
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} network - Current network to execute the deployment
      * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(deployThreshold, keyManagementThreshold, accountWeights, activeKey, network, smartContractBuffer) {
+    constructor(deployThreshold, keyManagementThreshold, accountWeights, activeKey, network, smartContractBuffer, ttl = 1) {
         let fee = 0;
         let deployThresholdValue = CLValueBuilder.option(None, new CLU8Type());
         let keyManagementThresholdValue = CLValueBuilder.option(None, new CLU8Type());
@@ -67,7 +68,7 @@ export class KeyManagement extends AbstractSmartContractModuleBytesParameters {
             accounts: accountsValue,
             weights: weightsValue,
         });
-        super(activeKey, network, smartContractBuffer, args, fee);
+        super(activeKey, network, smartContractBuffer, args, fee, ttl);
     }
 
     /**

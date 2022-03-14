@@ -28,13 +28,14 @@ export class WithdrawBid extends AbstractSmartContractStoredByHashDeployParamete
      * @param {string} activeKey - Current active key in the public hex format
      * @param {string} network - Current network to execute the deployment
      * @param {string} hash - Current hash of the stored SmartContract
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(amount, activeKey, network, hash) {
+    constructor(amount, activeKey, network, hash, ttl = 1) {
         const args = RuntimeArgs.fromMap({
             public_key: CLPublicKey.fromHex(activeKey),
             amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
         })
-        super(activeKey, network, hash, entrypoint, args, fee);
+        super(activeKey, network, hash, entrypoint, args, fee, ttl);
     }
 
     /**

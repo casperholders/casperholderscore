@@ -18,6 +18,8 @@ export class AbstractSmartContractModuleBytesParameters extends AbstractSmartCon
     args;
     /** @type {number} */
     fee;
+    /** @type {number} */
+    ttl;
 
     /**
      * Constructor
@@ -27,14 +29,16 @@ export class AbstractSmartContractModuleBytesParameters extends AbstractSmartCon
      * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read
      * @param {DeployUtil.RuntimeArgs} args - Arguments of the SmartContract
      * @param {number} fee - Runtime fee for the given SmartContract operation
+     * @param {number} ttl - Deploy time to live  in hours
      */
-    constructor(activeKey, network, smartContractBuffer, args, fee) {
+    constructor(activeKey, network, smartContractBuffer, args, fee, ttl = 1) {
         super();
         this.activeKey = activeKey;
         this.network = network;
         this.smartContractBuffer = smartContractBuffer;
         this.args = args;
         this.fee = fee;
+        this.ttl = ttl * 3600000;
     }
 
     /**
@@ -46,6 +50,8 @@ export class AbstractSmartContractModuleBytesParameters extends AbstractSmartCon
         return new DeployUtil.DeployParams(
             CLPublicKey.fromHex(this.activeKey),
             this.network,
+            1,
+            this.ttl,
         );
     }
 
