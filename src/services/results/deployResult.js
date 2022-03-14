@@ -1,4 +1,4 @@
-import { BigNumber } from '@ethersproject/bignumber';
+import Big from "big.js";
 
 /**
  * @constant
@@ -23,13 +23,13 @@ export const STATUS_KO = "Failure";
 export class DeployResult {
     /** @type {string} */
     hash;
-    /** @type {BigNumber} */
+    /** @type {string} */
     cost;
     /** @type {string} */
     status;
     /** @type {string} */
     message;
-    /** @type {BigNumber} */
+    /** @type {string} */
     amount;
     /** @type {string} */
     name;
@@ -39,13 +39,15 @@ export class DeployResult {
      *
      * @param {string} hash - DeployHash of the deployment
      * @param {string} name - Name of the operation
+     * @param {string} cost - optional cost
+     * @param {string} amount - optional amount
      */
-    constructor(hash, name) {
+    constructor(hash, name, cost = '0', amount= '0') {
         this.hash = hash;
-        this.cost = BigNumber.from(0);
+        this.cost = Big(cost).toString();
         this.status = STATUS_UNKNOWN;
         this.message = "";
-        this.amount = BigNumber.from(0);
+        this.amount = Big(amount).toString();
         this.name = name;
     }
 
