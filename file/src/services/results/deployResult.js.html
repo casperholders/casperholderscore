@@ -75,7 +75,7 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/results/deployResult.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { BigNumber } from &apos;@ethersproject/bignumber&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Big from &quot;big.js&quot;;
 
 /**
  * @constant
@@ -100,13 +100,13 @@ export const STATUS_KO = &quot;Failure&quot;;
 export class DeployResult {
     /** @type {string} */
     hash;
-    /** @type {BigNumber} */
+    /** @type {string} */
     cost;
     /** @type {string} */
     status;
     /** @type {string} */
     message;
-    /** @type {BigNumber} */
+    /** @type {string} */
     amount;
     /** @type {string} */
     name;
@@ -116,13 +116,15 @@ export class DeployResult {
      *
      * @param {string} hash - DeployHash of the deployment
      * @param {string} name - Name of the operation
+     * @param {string} cost - optional cost
+     * @param {string} amount - optional amount
      */
-    constructor(hash, name) {
+    constructor(hash, name, cost = &apos;0&apos;, amount= &apos;0&apos;) {
         this.hash = hash;
-        this.cost = BigNumber.from(0);
+        this.cost = Big(cost).toString();
         this.status = STATUS_UNKNOWN;
         this.message = &quot;&quot;;
-        this.amount = BigNumber.from(0);
+        this.amount = Big(amount).toString();
         this.name = name;
     }
 

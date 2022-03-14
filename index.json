@@ -4319,7 +4319,7 @@
     "__docId__": 242,
     "kind": "file",
     "name": "src/services/results/deployResult.js",
-    "content": "import { BigNumber } from '@ethersproject/bignumber';\n\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_UNKNOWN = \"Unknown\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_OK = \"Success\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_KO = \"Failure\";\n\n/**\n * DeployResult class\n * Object used to keep the track of a deploy result.\n */\nexport class DeployResult {\n    /** @type {string} */\n    hash;\n    /** @type {BigNumber} */\n    cost;\n    /** @type {string} */\n    status;\n    /** @type {string} */\n    message;\n    /** @type {BigNumber} */\n    amount;\n    /** @type {string} */\n    name;\n\n    /**\n     * Constructor\n     *\n     * @param {string} hash - DeployHash of the deployment\n     * @param {string} name - Name of the operation\n     */\n    constructor(hash, name) {\n        this.hash = hash;\n        this.cost = BigNumber.from(0);\n        this.status = STATUS_UNKNOWN;\n        this.message = \"\";\n        this.amount = BigNumber.from(0);\n        this.name = name;\n    }\n\n    /**\n     * Retrieve the name of the operation behind the deployment\n     * Must return the name of the operation behind the deployment\n     */\n    static getName() {\n        throw new Error(\"You must implement this method\");\n    }\n}\n",
+    "content": "import Big from \"big.js\";\n\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_UNKNOWN = \"Unknown\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_OK = \"Success\";\n/**\n * @constant\n * @type {string}\n */\nexport const STATUS_KO = \"Failure\";\n\n/**\n * DeployResult class\n * Object used to keep the track of a deploy result.\n */\nexport class DeployResult {\n    /** @type {string} */\n    hash;\n    /** @type {string} */\n    cost;\n    /** @type {string} */\n    status;\n    /** @type {string} */\n    message;\n    /** @type {string} */\n    amount;\n    /** @type {string} */\n    name;\n\n    /**\n     * Constructor\n     *\n     * @param {string} hash - DeployHash of the deployment\n     * @param {string} name - Name of the operation\n     * @param {string} cost - optional cost\n     * @param {string} amount - optional amount\n     */\n    constructor(hash, name, cost = '0', amount= '0') {\n        this.hash = hash;\n        this.cost = Big(cost).toString();\n        this.status = STATUS_UNKNOWN;\n        this.message = \"\";\n        this.amount = Big(amount).toString();\n        this.name = name;\n    }\n\n    /**\n     * Retrieve the name of the operation behind the deployment\n     * Must return the name of the operation behind the deployment\n     */\n    static getName() {\n        throw new Error(\"You must implement this method\");\n    }\n}\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/deployResult.js",
     "access": "public",
@@ -4457,7 +4457,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "BigNumber"
+        "string"
       ],
       "spread": false,
       "description": null
@@ -4514,7 +4514,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "BigNumber"
+        "string"
       ],
       "spread": false,
       "description": null
@@ -4550,7 +4550,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 43,
+    "lineNumber": 45,
     "params": [
       {
         "nullable": null,
@@ -4571,6 +4571,26 @@
         "optional": false,
         "name": "name",
         "description": "Name of the operation"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
       }
     ]
   },
@@ -4585,7 +4605,7 @@
     "longname": "src/services/results/deployResult.js~DeployResult.getName",
     "access": "public",
     "description": "Retrieve the name of the operation behind the deployment\nMust return the name of the operation behind the deployment",
-    "lineNumber": 56,
+    "lineNumber": 58,
     "params": [],
     "return": null
   },
@@ -5409,7 +5429,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.17.1\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.8.0\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"1.18.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"scripts\": {\n    \"build\": \"babel -d dist/ src/\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.8.0\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.2\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"jest\": \"^27.1.0\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,
