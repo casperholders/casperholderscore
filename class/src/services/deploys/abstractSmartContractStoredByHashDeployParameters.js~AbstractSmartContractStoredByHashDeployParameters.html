@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,7 +72,7 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {AbstractSmartContractStoredByHashDeployParameters} from &apos;<span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber8">@casperholders/core/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AbstractSmartContractStoredByHashDeployParameters from &apos;<span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber8">@casperholders/core/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
@@ -492,7 +489,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor">constructor</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span></span>
         </p>
       </div>
       <div>
@@ -614,7 +611,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
@@ -763,7 +760,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber18">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber22">source</a></span></span>
     </span>
   </h3>
 
@@ -806,7 +803,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber51">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber57">source</a></span></span>
     </span>
   </h3>
 
@@ -863,7 +860,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber16">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber19">source</a></span></span>
     </span>
   </h3>
 
@@ -906,7 +903,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
@@ -949,7 +946,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber14">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber16">source</a></span></span>
     </span>
   </h3>
 
@@ -992,7 +989,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber12">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
@@ -1035,7 +1032,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber78">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber84">source</a></span></span>
     </span>
   </h3>
 
@@ -1092,7 +1089,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber65">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber71">source</a></span></span>
     </span>
   </h3>
 
@@ -1149,7 +1146,7 @@ Abstract class used to defined specific DeployParameters for SmartContracts stor
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js.html#lineNumber28">source</a></span></span>
     </span>
   </h3>
 

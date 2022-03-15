@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,87 +72,94 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {AbstractSmartContractDeployParameters} from &quot;./abstractSmartContractDeployParameters&quot;;
-import {CLPublicKey, DeployUtil} from &quot;casper-js-sdk&quot;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { CLPublicKey, DeployUtil } from &apos;casper-js-sdk&apos;;
+import AbstractSmartContractDeployParameters from &apos;./abstractSmartContractDeployParameters&apos;;
 
 /**
  * AbstractSmartContractStoredByHashDeployParameters class
  * Abstract class used to defined specific DeployParameters for SmartContracts stored by hash on the network
  */
-export class AbstractSmartContractStoredByHashDeployParameters extends AbstractSmartContractDeployParameters {
-    /** @type {string} */
-    activeKey;
-    /** @type {string} */
-    network;
-    /** @type {string} */
-    hash;
-    /** @type {string} */
-    entrypoint;
-    /** @type {DeployUtil.RuntimeArgs} */
-    args;
-    /** @type {number} */
-    fee;
-    /** @type {number} */
-    ttl;
+export default class AbstractSmartContractStoredByHashDeployParameters extends AbstractSmartContractDeployParameters {
+  /** @type {string} */
+  activeKey;
 
-    /**
-     * Constructor
-     *
-     * @param {string} activeKey - Current active key in the public hex format
-     * @param {string} network - Current network to execute the deployment
-     * @param {string} hash - Current hash of the stored SmartContract
-     * @param {string} entrypoint - Entrypoint of the SmartContract
-     * @param {DeployUtil.RuntimeArgs} args - Arguments of the SmartContract
-     * @param {number} fee - Runtime fee for the given SmartContract operation
-     * @param {number} ttl - Deploy time to live  in hours
-     */
-    constructor(activeKey, network, hash, entrypoint, args, fee, ttl = 1) {
-        super()
-        this.activeKey = activeKey;
-        this.network = network;
-        this.hash = hash;
-        this.entrypoint = entrypoint;
-        this.args = args;
-        this.fee = fee;
-        this.ttl = ttl * 3600000;
-    }
+  /** @type {string} */
+  network;
 
-    /**
-     * Get the deployParams deploy argument
-     *
-     * @return {DeployUtil.DeployParams} - Return a DeployParams
-     */
-    get deployParams() {
-        return new DeployUtil.DeployParams(
-            CLPublicKey.fromHex(this.activeKey),
-            this.network,
-            1,
-            this.ttl
-        );
-    }
+  /** @type {string} */
+  hash;
 
-    /**
-     * Get the session deploy argument
-     *
-     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
-     */
-    get session() {
-        return DeployUtil.ExecutableDeployItem.newStoredContractByHash(
-            Uint8Array.from(Buffer.from(this.hash, &quot;hex&quot;)),
-            this.entrypoint,
-            this.args
-        );
-    }
+  /** @type {string} */
+  entrypoint;
 
-    /**
-     * Get the payment deploy argument
-     *
-     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
-     */
-    get payment() {
-        return DeployUtil.standardPayment(this.fee);
-    }
-}</code></pre>
+  /** @type {DeployUtil.RuntimeArgs} */
+  args;
+
+  /** @type {number} */
+  fee;
+
+  /** @type {number} */
+  ttl;
+
+  /**
+   * Constructor
+   *
+   * @param {string} activeKey - Current active key in the public hex format
+   * @param {string} network - Current network to execute the deployment
+   * @param {string} hash - Current hash of the stored SmartContract
+   * @param {string} entrypoint - Entrypoint of the SmartContract
+   * @param {DeployUtil.RuntimeArgs} args - Arguments of the SmartContract
+   * @param {number} fee - Runtime fee for the given SmartContract operation
+   * @param {number} ttl - Deploy time to live  in hours
+   */
+  constructor(activeKey, network, hash, entrypoint, args, fee, ttl = 1) {
+    super();
+    this.activeKey = activeKey;
+    this.network = network;
+    this.hash = hash;
+    this.entrypoint = entrypoint;
+    this.args = args;
+    this.fee = fee;
+    this.ttl = ttl * 3600000;
+  }
+
+  /**
+   * Get the deployParams deploy argument
+   *
+   * @return {DeployUtil.DeployParams} - Return a DeployParams
+   */
+  get deployParams() {
+    return new DeployUtil.DeployParams(
+      CLPublicKey.fromHex(this.activeKey),
+      this.network,
+      1,
+      this.ttl,
+    );
+  }
+
+  /**
+   * Get the session deploy argument
+   *
+   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
+   */
+  get session() {
+    return DeployUtil.ExecutableDeployItem.newStoredContractByHash(
+      Uint8Array.from(Buffer.from(this.hash, &apos;hex&apos;)),
+      this.entrypoint,
+      this.args,
+    );
+  }
+
+  /**
+   * Get the payment deploy argument
+   *
+   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
+   */
+  get payment() {
+    return DeployUtil.standardPayment(this.fee);
+  }
+}
+</code></pre>
 
 </div>
 

@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,13 +72,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {DeployManager} from &apos;<span><a href="file/src/services/deploys/deployManager.js.html#lineNumber10">@casperholders/core/src/services/deploys/deployManager.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import DeployManager from &apos;<span><a href="file/src/services/deploys/deployManager.js.html#lineNumber9">@casperholders/core/src/services/deploys/deployManager.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/services/deploys/deployManager.js.html#lineNumber10">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/services/deploys/deployManager.js.html#lineNumber9">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -206,7 +203,7 @@ Used to handle the deploy process</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-getDeployResult">getDeployResult</a></span></span><span class="code" data-ice="signature">(deployResult: <span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-getDeployResult">getDeployResult</a></span></span><span class="code" data-ice="signature">(deployResult: <span>DeployResult</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -235,7 +232,7 @@ Used to handle the deploy process</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-prepareSignAndSendDeploy">prepareSignAndSendDeploy</a></span></span><span class="code" data-ice="signature">(deployParameter: <span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span>, signer: <span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-prepareSignAndSendDeploy">prepareSignAndSendDeploy</a></span></span><span class="code" data-ice="signature">(deployParameter: <span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span>, signer: <span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -264,7 +261,7 @@ Used to handle the deploy process</p>
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-sendDeploy">sendDeploy</a></span></span><span class="code" data-ice="signature">(deploy: <span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span>, deployResult: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-sendDeploy">sendDeploy</a></span></span><span class="code" data-ice="signature">(deploy: <span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span>, deployResult: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -301,7 +298,7 @@ Used to handle the deploy process</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber19">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber18">source</a></span></span>
     </span>
   </h3>
 
@@ -365,7 +362,7 @@ Used to handle the deploy process</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber12">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
@@ -407,11 +404,11 @@ Used to handle the deploy process</p>
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">getDeployResult</span><span class="code" data-ice="signature">(deployResult: <span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+    <span class="code" data-ice="name">getDeployResult</span><span class="code" data-ice="signature">(deployResult: <span>DeployResult</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber57">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber74">source</a></span></span>
     </span>
   </h3>
 
@@ -433,7 +430,7 @@ Used to handle the deploy process</p>
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">deployResult</td>
-      <td data-ice="type" class="code"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></td>
+      <td data-ice="type" class="code"><span>DeployResult</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>DeployResult object</p>
 </td>
@@ -448,7 +445,7 @@ Used to handle the deploy process</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>Return an updated DeployResult object</p>
 </td>
         </tr>
@@ -481,11 +478,11 @@ Used to handle the deploy process</p>
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">prepareSignAndSendDeploy</span><span class="code" data-ice="signature">(deployParameter: <span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span>, signer: <span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+    <span class="code" data-ice="name">prepareSignAndSendDeploy</span><span class="code" data-ice="signature">(deployParameter: <span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span>, signer: <span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber46">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber63">source</a></span></span>
     </span>
   </h3>
 
@@ -536,7 +533,7 @@ Used to handle the deploy process</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>Return a DeployResult object</p>
 </td>
         </tr>
@@ -569,11 +566,11 @@ Used to handle the deploy process</p>
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">sendDeploy</span><span class="code" data-ice="signature">(deploy: <span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span>, deployResult: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</span>
+    <span class="code" data-ice="name">sendDeploy</span><span class="code" data-ice="signature">(deploy: <span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span>, deployResult: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/deployManager.js.html#lineNumber29">source</a></span></span>
     </span>
   </h3>
 
@@ -617,7 +614,7 @@ Used to handle the deploy process</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span>&gt;</td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>DeployResult</span>&gt;</td>
           <td class="return-desc" data-ice="returnDescription"><p>Return a DeployResult object</p>
 </td>
         </tr>

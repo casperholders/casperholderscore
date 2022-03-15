@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -76,15 +73,14 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/deployManager.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { BigNumber } from &apos;@ethersproject/bignumber&apos;;
-import { CurrencyUtils } from &apos;../helpers&apos;;
-import { STATUS_KO, STATUS_OK } from &apos;../results&apos;;
-
+import CurrencyUtils from &apos;../helpers/currencyUtils&apos;;
+import DeployResult from &apos;../results/deployResult&apos;;
 
 /**
  * DeployManager class
  * Used to handle the deploy process
  */
-export class DeployManager {
+export default class DeployManager {
   /** @type {ClientCasper} */
   client;
 
@@ -97,7 +93,7 @@ export class DeployManager {
     this.client = client;
   }
 
-  /***
+  /** *
    * Send a deployment to the network
    *
    * @param {Deploy} deploy - Signed Deploy object
@@ -106,10 +102,28 @@ export class DeployManager {
    */
   async sendDeploy(deploy, deployResult) {
     if (typeof deploy === &apos;string&apos; || deploy instanceof String) {
+      // eslint-disable-next-line new-cap
       return new deployResult(deploy);
     }
     const hash = await this.client.casperClient.putDeploy(deploy);
-    return new deployResult(hash);
+    let amount = &apos;0&apos;;
+    if (deploy.session.getArgByName(&apos;amount&apos;)) {
+      amount = CurrencyUtils.convertMotesToCasper(
+        BigNumber.from(deploy.session.getArgByName(&apos;amount&apos;)
+          .value()
+          .toString()),
+      );
+    }
+    let cost = &apos;0&apos;;
+    if (deploy.payment.getArgByName(&apos;amount&apos;)) {
+      cost = CurrencyUtils.convertMotesToCasper(
+        BigNumber.from(deploy.payment.getArgByName(&apos;amount&apos;)
+          .value()
+          .toString()),
+      );
+    }
+    // eslint-disable-next-line new-cap
+    return new deployResult(hash, cost, amount);
   }
 
   /**
@@ -133,27 +147,30 @@ export class DeployManager {
    */
   async getDeployResult(deployResult) {
     const result = await this.client.casperClient.getDeploy(deployResult.hash);
-    let deploy = result[0];
+    const deploy = result[0];
     let execResult = result[1].execution_results;
     if (execResult.length &gt; 0) {
       execResult = execResult[0].result;
     }
+    /* eslint-disable no-param-reassign */
     if (deploy.session.getArgByName(&apos;amount&apos;)) {
-      deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName(&apos;amount&apos;).value().toString()));
+      deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName(&apos;amount&apos;)
+        .value()
+        .toString()));
     }
-    if (STATUS_OK in execResult) {
-      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_OK].cost));
-      deployResult.status = STATUS_OK;
+    if (DeployResult.STATUS_OK in execResult) {
+      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[DeployResult.STATUS_OK].cost));
+      deployResult.status = DeployResult.STATUS_OK;
       return deployResult;
     }
-    if (STATUS_KO in execResult) {
-      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_KO].cost));
-      deployResult.status = STATUS_KO;
-      deployResult.message = execResult[STATUS_KO].error_message;
+    if (DeployResult.STATUS_KO in execResult) {
+      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[DeployResult.STATUS_KO].cost));
+      deployResult.status = DeployResult.STATUS_KO;
+      deployResult.message = execResult[DeployResult.STATUS_KO].error_message;
     }
+    /* eslint-enable no-param-reassign */
     return deployResult;
   }
-
 }
 </code></pre>
 

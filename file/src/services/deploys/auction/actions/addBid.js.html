@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,57 +72,59 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/auction/actions/addBid.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {CLPublicKey, CLU512, CLU8, RuntimeArgs} from &quot;casper-js-sdk&quot;;
-import {CurrencyUtils} from &quot;../../../helpers&quot;;
-import {AddBidResult} from &quot;../../../results&quot;;
-import {AbstractSmartContractStoredByHashDeployParameters} from &quot;../../abstractSmartContractStoredByHashDeployParameters&quot;;
-
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  CLPublicKey, CLU512, CLU8, RuntimeArgs,
+} from &apos;casper-js-sdk&apos;;
+import CurrencyUtils from &apos;../../../helpers/currencyUtils&apos;;
+import AddBidResult from &apos;../../../results/addBidResult&apos;;
+import AbstractSmartContractStoredByHashDeployParameters from &apos;../../abstractSmartContractStoredByHashDeployParameters&apos;;
 
 /**
  * @constant
  * @type {string}
  */
-const entrypoint = &apos;add_bid&apos;
+const entrypoint = &apos;add_bid&apos;;
 /**
  * @constant
  * @type {number}
  */
-const fee = 2500010000
+const fee = 2500010000;
 
 /**
  * AddBid class
  * Class used to create DeployParameters for a AddBid operation
  */
-export class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
+export default class AddBid extends AbstractSmartContractStoredByHashDeployParameters {
+  /**
+   * Constructor
+   *
+   * @param {string} amount - Amount of casper to add to the bid
+   * @param {string} activeKey - Current active key in the public hex format
+   * @param {number} commission - Set the commission of the validator to the given percentage
+   * @param {string} network - Current network to execute the deployment
+   * @param {string} hash - Current hash of the stored SmartContract
+   * @param {number} ttl - Deploy time to live  in hours
+   */
+  constructor(amount, activeKey, commission, network, hash, ttl = 1) {
+    const args = RuntimeArgs.fromMap({
+      public_key: CLPublicKey.fromHex(activeKey),
+      amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
+      delegation_rate: new CLU8(commission),
+    });
+    super(activeKey, network, hash, entrypoint, args, fee, ttl);
+  }
 
-    /**
-     * Constructor
-     *
-     * @param {string} amount - Amount of casper to add to the bid
-     * @param {string} activeKey - Current active key in the public hex format
-     * @param {number} commission - Set the commission of the validator to the given percentage
-     * @param {string} network - Current network to execute the deployment
-     * @param {string} hash - Current hash of the stored SmartContract
-     * @param {number} ttl - Deploy time to live  in hours
-     */
-    constructor(amount, activeKey, commission, network, hash, ttl = 1) {
-        const args = RuntimeArgs.fromMap({
-            public_key: CLPublicKey.fromHex(activeKey),
-            amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
-            delegation_rate: new CLU8(commission)
-        })
-        super(activeKey, network, hash, entrypoint, args, fee, ttl);
-    }
-
-    /**
-     * Get a DeployResult constructor
-     *
-     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
-     */
-    get deployResult() {
-        return AddBidResult
-    }
-}</code></pre>
+  /**
+   * Get a DeployResult constructor
+   *
+   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
+   */
+  // eslint-disable-next-line class-methods-use-this
+  get deployResult() {
+    return AddBidResult;
+  }
+}
+</code></pre>
 
 </div>
 

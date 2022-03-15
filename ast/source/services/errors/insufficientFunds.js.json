@@ -1,29 +1,29 @@
 {
   "type": "File",
   "start": 0,
-  "end": 420,
+  "end": 404,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 16,
-      "column": 1
+      "line": 17,
+      "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 420,
+    "end": 404,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 16,
-        "column": 1
+        "line": 17,
+        "column": 0
       }
     },
     "sourceType": "module",
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 50,
+        "end": 48,
         "loc": {
           "start": {
             "line": 1,
@@ -39,53 +39,36 @@
           },
           "end": {
             "line": 1,
-            "column": 50
+            "column": 48
           }
         },
         "specifiers": [
           {
-            "type": "ImportSpecifier",
-            "start": 8,
-            "end": 23,
+            "type": "ImportDefaultSpecifier",
+            "start": 7,
+            "end": 22,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 8
+                "column": 7
               },
               "end": {
                 "line": 1,
-                "column": 23
+                "column": 22
               }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 8,
-              "end": 23,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 23
-                },
-                "identifierName": "ExtendableError"
-              },
-              "name": "ExtendableError"
             },
             "local": {
               "type": "Identifier",
-              "start": 8,
-              "end": 23,
+              "start": 7,
+              "end": 22,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 8
+                  "column": 7
                 },
                 "end": {
                   "line": 1,
-                  "column": 23
+                  "column": 22
                 },
                 "identifierName": "ExtendableError"
               },
@@ -95,21 +78,21 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 30,
-          "end": 49,
+          "start": 28,
+          "end": 47,
           "loc": {
             "start": {
               "line": 1,
-              "column": 30
+              "column": 28
             },
             "end": {
               "line": 1,
-              "column": 49
+              "column": 47
             }
           },
           "extra": {
             "rawValue": "./extendableError",
-            "raw": "\"./extendableError\""
+            "raw": "'./extendableError'"
           },
           "value": "./extendableError"
         },
@@ -117,8 +100,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n ",
-            "start": 52,
-            "end": 153,
+            "start": 50,
+            "end": 151,
             "loc": {
               "start": {
                 "line": 3,
@@ -133,9 +116,9 @@
         ]
       },
       {
-        "type": "ExportNamedDeclaration",
-        "start": 154,
-        "end": 420,
+        "type": "ExportDefaultDeclaration",
+        "start": 152,
+        "end": 403,
         "loc": {
           "start": {
             "line": 7,
@@ -146,16 +129,14 @@
             "column": 1
           }
         },
-        "specifiers": [],
-        "source": null,
         "declaration": {
           "type": "ClassDeclaration",
-          "start": 161,
-          "end": 420,
+          "start": 167,
+          "end": 403,
           "loc": {
             "start": {
               "line": 7,
-              "column": 7
+              "column": 15
             },
             "end": {
               "line": 16,
@@ -164,16 +145,16 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 167,
-            "end": 184,
+            "start": 173,
+            "end": 190,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 13
+                "column": 21
               },
               "end": {
                 "line": 7,
-                "column": 30
+                "column": 38
               },
               "identifierName": "InsufficientFunds"
             },
@@ -182,16 +163,16 @@
           },
           "superClass": {
             "type": "Identifier",
-            "start": 193,
-            "end": 208,
+            "start": 199,
+            "end": 214,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 39
+                "column": 47
               },
               "end": {
                 "line": 7,
-                "column": 54
+                "column": 62
               },
               "identifierName": "ExtendableError"
             },
@@ -199,12 +180,12 @@
           },
           "body": {
             "type": "ClassBody",
-            "start": 209,
-            "end": 420,
+            "start": 215,
+            "end": 403,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 55
+                "column": 63
               },
               "end": {
                 "line": 16,
@@ -214,32 +195,32 @@
             "body": [
               {
                 "type": "ClassMethod",
-                "start": 299,
-                "end": 418,
+                "start": 293,
+                "end": 401,
                 "loc": {
                   "start": {
                     "line": 13,
-                    "column": 4
+                    "column": 2
                   },
                   "end": {
                     "line": 15,
-                    "column": 5
+                    "column": 3
                   }
                 },
                 "static": false,
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 299,
-                  "end": 310,
+                  "start": 293,
+                  "end": 304,
                   "loc": {
                     "start": {
                       "line": 13,
-                      "column": 4
+                      "column": 2
                     },
                     "end": {
                       "line": 13,
-                      "column": 15
+                      "column": 13
                     },
                     "identifierName": "constructor"
                   },
@@ -254,16 +235,16 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 311,
-                    "end": 314,
+                    "start": 305,
+                    "end": 308,
                     "loc": {
                       "start": {
                         "line": 13,
-                        "column": 16
+                        "column": 14
                       },
                       "end": {
                         "line": 13,
-                        "column": 19
+                        "column": 17
                       },
                       "identifierName": "min"
                     },
@@ -272,151 +253,138 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 316,
-                  "end": 418,
+                  "start": 310,
+                  "end": 401,
                   "loc": {
                     "start": {
                       "line": 13,
-                      "column": 21
+                      "column": 19
                     },
                     "end": {
                       "line": 15,
-                      "column": 5
+                      "column": 3
                     }
                   },
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 326,
-                      "end": 412,
+                      "start": 316,
+                      "end": 397,
                       "loc": {
                         "start": {
                           "line": 14,
-                          "column": 8
+                          "column": 4
                         },
                         "end": {
                           "line": 14,
-                          "column": 94
+                          "column": 85
                         }
                       },
                       "expression": {
                         "type": "CallExpression",
-                        "start": 326,
-                        "end": 411,
+                        "start": 316,
+                        "end": 396,
                         "loc": {
                           "start": {
                             "line": 14,
-                            "column": 8
+                            "column": 4
                           },
                           "end": {
                             "line": 14,
-                            "column": 93
+                            "column": 84
                           }
                         },
                         "callee": {
                           "type": "Super",
-                          "start": 326,
-                          "end": 331,
+                          "start": 316,
+                          "end": 321,
                           "loc": {
                             "start": {
                               "line": 14,
-                              "column": 8
+                              "column": 4
                             },
                             "end": {
                               "line": 14,
-                              "column": 13
+                              "column": 9
                             }
                           }
                         },
                         "arguments": [
                           {
-                            "type": "BinaryExpression",
-                            "start": 332,
-                            "end": 410,
+                            "type": "TemplateLiteral",
+                            "start": 322,
+                            "end": 395,
                             "loc": {
                               "start": {
                                 "line": 14,
-                                "column": 14
+                                "column": 10
                               },
                               "end": {
                                 "line": 14,
-                                "column": 92
+                                "column": 83
                               }
                             },
-                            "left": {
-                              "type": "BinaryExpression",
-                              "start": 332,
-                              "end": 384,
-                              "loc": {
-                                "start": {
-                                  "line": 14,
-                                  "column": 14
-                                },
-                                "end": {
-                                  "line": 14,
-                                  "column": 66
-                                }
-                              },
-                              "left": {
-                                "type": "StringLiteral",
-                                "start": 332,
-                                "end": 378,
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "start": 369,
+                                "end": 372,
                                 "loc": {
                                   "start": {
                                     "line": 14,
-                                    "column": 14
+                                    "column": 57
                                   },
                                   "end": {
                                     "line": 14,
                                     "column": 60
-                                  }
-                                },
-                                "extra": {
-                                  "rawValue": "Insufficient funds. You must have more than ",
-                                  "raw": "\"Insufficient funds. You must have more than \""
-                                },
-                                "value": "Insufficient funds. You must have more than "
-                              },
-                              "operator": "+",
-                              "right": {
-                                "type": "Identifier",
-                                "start": 381,
-                                "end": 384,
-                                "loc": {
-                                  "start": {
-                                    "line": 14,
-                                    "column": 63
-                                  },
-                                  "end": {
-                                    "line": 14,
-                                    "column": 66
                                   },
                                   "identifierName": "min"
                                 },
                                 "name": "min"
                               }
-                            },
-                            "operator": "+",
-                            "right": {
-                              "type": "StringLiteral",
-                              "start": 387,
-                              "end": 410,
-                              "loc": {
-                                "start": {
-                                  "line": 14,
-                                  "column": 69
+                            ],
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "start": 323,
+                                "end": 367,
+                                "loc": {
+                                  "start": {
+                                    "line": 14,
+                                    "column": 11
+                                  },
+                                  "end": {
+                                    "line": 14,
+                                    "column": 55
+                                  }
                                 },
-                                "end": {
-                                  "line": 14,
-                                  "column": 92
-                                }
+                                "value": {
+                                  "raw": "Insufficient funds. You must have more than ",
+                                  "cooked": "Insufficient funds. You must have more than "
+                                },
+                                "tail": false
                               },
-                              "extra": {
-                                "rawValue": " CSPR on your wallet.",
-                                "raw": "\" CSPR on your wallet.\""
-                              },
-                              "value": " CSPR on your wallet."
-                            }
+                              {
+                                "type": "TemplateElement",
+                                "start": 373,
+                                "end": 394,
+                                "loc": {
+                                  "start": {
+                                    "line": 14,
+                                    "column": 61
+                                  },
+                                  "end": {
+                                    "line": 14,
+                                    "column": 82
+                                  }
+                                },
+                                "value": {
+                                  "raw": " CSPR on your wallet.",
+                                  "cooked": " CSPR on your wallet."
+                                },
+                                "tail": true
+                              }
+                            ]
                           }
                         ]
                       }
@@ -427,17 +395,17 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Constructor\n     *\n     * @param min - Minimum casper needed\n     ",
-                    "start": 215,
-                    "end": 294,
+                    "value": "*\n   * Constructor\n   *\n   * @param min - Minimum casper needed\n   ",
+                    "start": 219,
+                    "end": 290,
                     "loc": {
                       "start": {
                         "line": 8,
-                        "column": 4
+                        "column": 2
                       },
                       "end": {
                         "line": 12,
-                        "column": 7
+                        "column": 5
                       }
                     }
                   }
@@ -449,8 +417,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n ",
-              "start": 52,
-              "end": 153,
+              "start": 50,
+              "end": 151,
               "loc": {
                 "start": {
                   "line": 3,
@@ -469,8 +437,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n ",
-            "start": 52,
-            "end": 153,
+            "start": 50,
+            "end": 151,
             "loc": {
               "start": {
                 "line": 3,
@@ -491,8 +459,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n ",
-      "start": 52,
-      "end": 153,
+      "start": 50,
+      "end": 151,
       "loc": {
         "start": {
           "line": 3,
@@ -506,17 +474,17 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor\n     *\n     * @param min - Minimum casper needed\n     ",
-      "start": 215,
-      "end": 294,
+      "value": "*\n   * Constructor\n   *\n   * @param min - Minimum casper needed\n   ",
+      "start": 219,
+      "end": 290,
       "loc": {
         "start": {
           "line": 8,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 12,
-          "column": 7
+          "column": 5
         }
       }
     }
@@ -552,31 +520,6 @@
     },
     {
       "type": {
-        "label": "{",
-        "beforeExpr": true,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 7,
-      "end": 8,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 7
-        },
-        "end": {
-          "line": 1,
-          "column": 8
-        }
-      }
-    },
-    {
-      "type": {
         "label": "name",
         "beforeExpr": false,
         "startsExpr": true,
@@ -588,41 +531,16 @@
         "binop": null
       },
       "value": "ExtendableError",
-      "start": 8,
-      "end": 23,
+      "start": 7,
+      "end": 22,
       "loc": {
         "start": {
           "line": 1,
-          "column": 8
+          "column": 7
         },
         "end": {
           "line": 1,
-          "column": 23
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 23,
-      "end": 24,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 23
-        },
-        "end": {
-          "line": 1,
-          "column": 24
+          "column": 22
         }
       }
     },
@@ -639,16 +557,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 25,
-      "end": 29,
+      "start": 23,
+      "end": 27,
       "loc": {
         "start": {
           "line": 1,
-          "column": 25
+          "column": 23
         },
         "end": {
           "line": 1,
-          "column": 29
+          "column": 27
         }
       }
     },
@@ -666,16 +584,16 @@
         "updateContext": null
       },
       "value": "./extendableError",
-      "start": 30,
-      "end": 49,
+      "start": 28,
+      "end": 47,
       "loc": {
         "start": {
           "line": 1,
-          "column": 30
+          "column": 28
         },
         "end": {
           "line": 1,
-          "column": 49
+          "column": 47
         }
       }
     },
@@ -692,24 +610,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 49,
-      "end": 50,
+      "start": 47,
+      "end": 48,
       "loc": {
         "start": {
           "line": 1,
-          "column": 49
+          "column": 47
         },
         "end": {
           "line": 1,
-          "column": 50
+          "column": 48
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n ",
-      "start": 52,
-      "end": 153,
+      "start": 50,
+      "end": 151,
       "loc": {
         "start": {
           "line": 3,
@@ -736,8 +654,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 154,
-      "end": 160,
+      "start": 152,
+      "end": 158,
       "loc": {
         "start": {
           "line": 7,
@@ -746,6 +664,34 @@
         "end": {
           "line": 7,
           "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 159,
+      "end": 166,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 7
+        },
+        "end": {
+          "line": 7,
+          "column": 14
         }
       }
     },
@@ -764,16 +710,16 @@
         "updateContext": null
       },
       "value": "class",
-      "start": 161,
-      "end": 166,
+      "start": 167,
+      "end": 172,
       "loc": {
         "start": {
           "line": 7,
-          "column": 7
+          "column": 15
         },
         "end": {
           "line": 7,
-          "column": 12
+          "column": 20
         }
       }
     },
@@ -790,16 +736,16 @@
         "binop": null
       },
       "value": "InsufficientFunds",
-      "start": 167,
-      "end": 184,
+      "start": 173,
+      "end": 190,
       "loc": {
         "start": {
           "line": 7,
-          "column": 13
+          "column": 21
         },
         "end": {
           "line": 7,
-          "column": 30
+          "column": 38
         }
       }
     },
@@ -818,16 +764,16 @@
         "updateContext": null
       },
       "value": "extends",
-      "start": 185,
-      "end": 192,
+      "start": 191,
+      "end": 198,
       "loc": {
         "start": {
           "line": 7,
-          "column": 31
+          "column": 39
         },
         "end": {
           "line": 7,
-          "column": 38
+          "column": 46
         }
       }
     },
@@ -844,16 +790,16 @@
         "binop": null
       },
       "value": "ExtendableError",
-      "start": 193,
-      "end": 208,
+      "start": 199,
+      "end": 214,
       "loc": {
         "start": {
           "line": 7,
-          "column": 39
+          "column": 47
         },
         "end": {
           "line": 7,
-          "column": 54
+          "column": 62
         }
       }
     },
@@ -869,32 +815,32 @@
         "postfix": false,
         "binop": null
       },
-      "start": 209,
-      "end": 210,
+      "start": 215,
+      "end": 216,
       "loc": {
         "start": {
           "line": 7,
-          "column": 55
+          "column": 63
         },
         "end": {
           "line": 7,
-          "column": 56
+          "column": 64
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor\n     *\n     * @param min - Minimum casper needed\n     ",
-      "start": 215,
-      "end": 294,
+      "value": "*\n   * Constructor\n   *\n   * @param min - Minimum casper needed\n   ",
+      "start": 219,
+      "end": 290,
       "loc": {
         "start": {
           "line": 8,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 12,
-          "column": 7
+          "column": 5
         }
       }
     },
@@ -911,16 +857,16 @@
         "binop": null
       },
       "value": "constructor",
-      "start": 299,
-      "end": 310,
+      "start": 293,
+      "end": 304,
       "loc": {
         "start": {
           "line": 13,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 13,
-          "column": 15
+          "column": 13
         }
       }
     },
@@ -936,16 +882,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 310,
-      "end": 311,
+      "start": 304,
+      "end": 305,
       "loc": {
         "start": {
           "line": 13,
-          "column": 15
+          "column": 13
         },
         "end": {
           "line": 13,
-          "column": 16
+          "column": 14
         }
       }
     },
@@ -962,16 +908,16 @@
         "binop": null
       },
       "value": "min",
-      "start": 311,
-      "end": 314,
+      "start": 305,
+      "end": 308,
       "loc": {
         "start": {
           "line": 13,
-          "column": 16
+          "column": 14
         },
         "end": {
           "line": 13,
-          "column": 19
+          "column": 17
         }
       }
     },
@@ -987,16 +933,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 314,
-      "end": 315,
+      "start": 308,
+      "end": 309,
       "loc": {
         "start": {
           "line": 13,
-          "column": 19
+          "column": 17
         },
         "end": {
           "line": 13,
-          "column": 20
+          "column": 18
         }
       }
     },
@@ -1012,16 +958,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 316,
-      "end": 317,
+      "start": 310,
+      "end": 311,
       "loc": {
         "start": {
           "line": 13,
-          "column": 21
+          "column": 19
         },
         "end": {
           "line": 13,
-          "column": 22
+          "column": 20
         }
       }
     },
@@ -1040,16 +986,16 @@
         "updateContext": null
       },
       "value": "super",
-      "start": 326,
-      "end": 331,
+      "start": 316,
+      "end": 321,
       "loc": {
         "start": {
           "line": 14,
-          "column": 8
+          "column": 4
         },
         "end": {
           "line": 14,
-          "column": 13
+          "column": 9
         }
       }
     },
@@ -1065,24 +1011,49 @@
         "postfix": false,
         "binop": null
       },
-      "start": 331,
-      "end": 332,
+      "start": 321,
+      "end": 322,
       "loc": {
         "start": {
           "line": 14,
-          "column": 13
+          "column": 9
         },
         "end": {
           "line": 14,
-          "column": 14
+          "column": 10
         }
       }
     },
     {
       "type": {
-        "label": "string",
+        "label": "`",
         "beforeExpr": false,
         "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 322,
+      "end": 323,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 10
+        },
+        "end": {
+          "line": 14,
+          "column": 11
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "template",
+        "beforeExpr": false,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -1092,43 +1063,41 @@
         "updateContext": null
       },
       "value": "Insufficient funds. You must have more than ",
-      "start": 332,
-      "end": 378,
+      "start": 323,
+      "end": 367,
       "loc": {
         "start": {
           "line": 14,
-          "column": 14
+          "column": 11
         },
         "end": {
           "line": 14,
-          "column": 60
+          "column": 55
         }
       }
     },
     {
       "type": {
-        "label": "+/-",
+        "label": "${",
         "beforeExpr": true,
         "startsExpr": true,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
-        "prefix": true,
+        "prefix": false,
         "postfix": false,
-        "binop": 9,
-        "updateContext": null
+        "binop": null
       },
-      "value": "+",
-      "start": 379,
-      "end": 380,
+      "start": 367,
+      "end": 369,
       "loc": {
         "start": {
           "line": 14,
-          "column": 61
+          "column": 55
         },
         "end": {
           "line": 14,
-          "column": 62
+          "column": 57
         }
       }
     },
@@ -1145,51 +1114,49 @@
         "binop": null
       },
       "value": "min",
-      "start": 381,
-      "end": 384,
+      "start": 369,
+      "end": 372,
       "loc": {
         "start": {
           "line": 14,
-          "column": 63
+          "column": 57
         },
         "end": {
           "line": 14,
-          "column": 66
+          "column": 60
         }
       }
     },
     {
       "type": {
-        "label": "+/-",
-        "beforeExpr": true,
-        "startsExpr": true,
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
-        "prefix": true,
+        "prefix": false,
         "postfix": false,
-        "binop": 9,
-        "updateContext": null
+        "binop": null
       },
-      "value": "+",
-      "start": 385,
-      "end": 386,
+      "start": 372,
+      "end": 373,
       "loc": {
         "start": {
           "line": 14,
-          "column": 67
+          "column": 60
         },
         "end": {
           "line": 14,
-          "column": 68
+          "column": 61
         }
       }
     },
     {
       "type": {
-        "label": "string",
+        "label": "template",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -1199,16 +1166,41 @@
         "updateContext": null
       },
       "value": " CSPR on your wallet.",
-      "start": 387,
-      "end": 410,
+      "start": 373,
+      "end": 394,
       "loc": {
         "start": {
           "line": 14,
-          "column": 69
+          "column": 61
         },
         "end": {
           "line": 14,
-          "column": 92
+          "column": 82
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "`",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 394,
+      "end": 395,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 82
+        },
+        "end": {
+          "line": 14,
+          "column": 83
         }
       }
     },
@@ -1224,16 +1216,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 410,
-      "end": 411,
+      "start": 395,
+      "end": 396,
       "loc": {
         "start": {
           "line": 14,
-          "column": 92
+          "column": 83
         },
         "end": {
           "line": 14,
-          "column": 93
+          "column": 84
         }
       }
     },
@@ -1250,16 +1242,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 411,
-      "end": 412,
+      "start": 396,
+      "end": 397,
       "loc": {
         "start": {
           "line": 14,
-          "column": 93
+          "column": 84
         },
         "end": {
           "line": 14,
-          "column": 94
+          "column": 85
         }
       }
     },
@@ -1275,16 +1267,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 417,
-      "end": 418,
+      "start": 400,
+      "end": 401,
       "loc": {
         "start": {
           "line": 15,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 15,
-          "column": 5
+          "column": 3
         }
       }
     },
@@ -1300,8 +1292,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 419,
-      "end": 420,
+      "start": 402,
+      "end": 403,
       "loc": {
         "start": {
           "line": 16,
@@ -1326,16 +1318,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 420,
-      "end": 420,
+      "start": 404,
+      "end": 404,
       "loc": {
         "start": {
-          "line": 16,
-          "column": 1
+          "line": 17,
+          "column": 0
         },
         "end": {
-          "line": 16,
-          "column": 1
+          "line": 17,
+          "column": 0
         }
       }
     }

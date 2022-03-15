@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,23 +72,30 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/balance/balance.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { NoActiveKeyError, NoStakeBalanceError, NoValidatorBalanceError } from &apos;../errors&apos;;
-import { CLPublicKey } from &apos;casper-js-sdk&apos;;
-import { CurrencyUtils } from &apos;../helpers&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { CLPublicKey } from &apos;casper-js-sdk&apos;;
 import { BigNumber } from &apos;@ethersproject/bignumber&apos;;
+import NoActiveKeyError from &apos;../errors/noActiveKeyError&apos;;
+import NoStakeBalanceError from &apos;../errors/noStakeBalanceError&apos;;
+import NoValidatorBalanceError from &apos;../errors/noValidatorBalanceError&apos;;
+import CurrencyUtils from &apos;../helpers/currencyUtils&apos;;
 
+/**
+ * @typedef {import(&apos;casper-js-sdk&apos;).CasperServiceByJsonRPC} ValidatorsInfoResult
+ */
 
 /**
  * Balance class
  * Service used to retrieve different balances from the Casper network
  */
-export class Balance {
-
+export default class Balance {
   /** @type {AbstractKeyManager} */
   keyManager;
 
   /** @type {ClientCasper} */
   client;
+
+  /** @type {ValidatorsInfoResult} */
+  validatorsInfo;
 
   /**
    * Constructor
@@ -109,12 +113,12 @@ export class Balance {
    * @returns {Promise&lt;*&gt;}
    */
   async getValidatorsInfo() {
-    if(this.validatorsInfo === undefined) {
+    if (this.validatorsInfo === undefined) {
       this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
       return this.validatorsInfo;
     }
     const lastBlock = await this.client.casperRPC.getLatestBlockInfo();
-    if(lastBlock.block.header.era_id !== this.validatorsInfo.auction_state.era_validators[0].era_id) {
+    if (lastBlock.block.header.era_id !== this.validatorsInfo.auction_state.era_validators[0].era_id) {
       this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     }
     return this.validatorsInfo;
@@ -138,7 +142,9 @@ export class Balance {
    * @return {Promise&lt;String&gt;} - Current balance of the public key in CSPR
    */
   async fetchBalanceOfPublicKey(publicKey) {
-    return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()));
+    return CurrencyUtils.convertMotesToCasper(
+      BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()),
+    );
   }
 
   /**
@@ -152,13 +158,13 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validatorItem =&gt; {
-      return validatorItem.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
-    })[0];
+    const validator = validatorsInfo.auction_state.bids.filter(
+      (validatorItem) =&gt; validatorItem.public_key.toLowerCase() === validatorPublicKey.toLowerCase(),
+    )[0];
 
-    let stakingBalance = validator.bid.delegators.filter(delegator =&gt; {
-      return delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
-    });
+    const stakingBalance = validator.bid.delegators.filter(
+      (delegator) =&gt; delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+    );
     if (stakingBalance.length &gt; 0) {
       return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount));
     }
@@ -175,15 +181,17 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validators = validatorsInfo.auction_state.bids.filter(validator =&gt; {
-      return validator.bid.delegators.some((delegator) =&gt; delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase());
-    });
+    const validators = validatorsInfo.auction_state.bids.filter(
+      (validator) =&gt; validator.bid.delegators.some(
+        (delegator) =&gt; delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+      ),
+    );
     if (validators.length &gt; 0) {
-      let stakeBalances = [];
+      const stakeBalances = [];
       validators.forEach((validator) =&gt; {
-        const delegator = validator.bid.delegators.filter((delegation) =&gt; {
-          return delegation.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase()
-        })[0]
+        const delegator = validator.bid.delegators.filter(
+          (delegation) =&gt; delegation.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+        )[0];
         stakeBalances.push({
           validator: validator.public_key,
           stakedTokens: CurrencyUtils.convertMotesToCasper(BigNumber.from(delegator.staked_amount)),
@@ -204,9 +212,9 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validatorItem =&gt; {
-      return validatorItem.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
-    })[0];
+    const validator = validatorsInfo.auction_state.bids.filter(
+      (validatorItem) =&gt; validatorItem.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+    )[0];
     if (validator) {
       return {
         balance: CurrencyUtils.convertMotesToCasper(BigNumber.from(validator.bid.staked_amount)),

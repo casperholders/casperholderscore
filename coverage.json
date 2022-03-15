@@ -1,14 +1,12 @@
 {
-  "coverage": "98.81%",
-  "expectCount": 169,
-  "actualCount": 167,
+  "coverage": "100%",
+  "expectCount": 157,
+  "actualCount": 157,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 11,
-      "actualCount": 10,
-      "undocumentLines": [
-        36
-      ]
+      "actualCount": 11,
+      "undocumentLines": []
     },
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -22,10 +20,8 @@
     },
     "src/services/deploys/abstractSmartContractModuleBytesParameters.js": {
       "expectCount": 13,
-      "actualCount": 12,
-      "undocumentLines": [
-        38
-      ]
+      "actualCount": 13,
+      "undocumentLines": []
     },
     "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js": {
       "expectCount": 12,
@@ -135,11 +131,6 @@
     "src/services/results/delegateResult.js": {
       "expectCount": 3,
       "actualCount": 3,
-      "undocumentLines": []
-    },
-    "src/services/results/deployResult.js": {
-      "expectCount": 12,
-      "actualCount": 12,
       "undocumentLines": []
     },
     "src/services/results/keyManagementResult.js": {

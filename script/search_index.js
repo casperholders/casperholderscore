@@ -96,12 +96,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@casperholders/core/src/services/results/deployresult.js~deployresult",
-    "class/src/services/results/deployResult.js~DeployResult.html",
-    "<span>DeployResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
-    "class"
-  ],
-  [
     "@casperholders/core/src/services/errors/extendableerror.js~extendableerror",
     "class/src/services/errors/extendableError.js~ExtendableError.html",
     "<span>ExtendableError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/extendableError.js</span>",
@@ -160,24 +154,6 @@ window.esdocSearchIndex = [
     "class/src/services/errors/noValidatorInfos.js~NoValidatorInfos.html",
     "<span>NoValidatorInfos</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/noValidatorInfos.js</span>",
     "class"
-  ],
-  [
-    "@casperholders/core/src/services/results/deployresult.js~status_ko",
-    "variable/index.html#static-variable-STATUS_KO",
-    "<span>STATUS_KO</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
-    "variable"
-  ],
-  [
-    "@casperholders/core/src/services/results/deployresult.js~status_ok",
-    "variable/index.html#static-variable-STATUS_OK",
-    "<span>STATUS_OK</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
-    "variable"
-  ],
-  [
-    "@casperholders/core/src/services/results/deployresult.js~status_unknown",
-    "variable/index.html#static-variable-STATUS_UNKNOWN",
-    "<span>STATUS_UNKNOWN</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/deployResult.js</span>",
-    "variable"
   ],
   [
     "@casperholders/core/src/services/errors/signerror.js~signerror",
@@ -516,12 +492,6 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
-    "file"
-  ],
-  [
     "src/services/balance/balance.js",
     "file/src/services/balance/balance.js.html",
     "src/services/balance/balance.js",
@@ -588,6 +558,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/balance/balance.js~validatorsinforesult",
+    "typedef/index.html#static-typedef-ValidatorsInfoResult",
+    "src/services/balance/balance.js~ValidatorsInfoResult",
+    "typedef"
+  ],
+  [
     "src/services/clients/clientcasper.js",
     "file/src/services/clients/clientCasper.js.html",
     "src/services/clients/clientCasper.js",
@@ -610,12 +586,6 @@ window.esdocSearchIndex = [
     "class/src/services/clients/clientCasper.js~ClientCasper.html#instance-constructor-constructor",
     "src/services/clients/clientCasper.js~ClientCasper#constructor",
     "method"
-  ],
-  [
-    "src/services/clients/index.js",
-    "file/src/services/clients/index.js.html",
-    "src/services/clients/index.js",
-    "file"
   ],
   [
     "src/services/deploys/abstractsmartcontractdeployparameters.js",
@@ -828,12 +798,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/services/deploys/account-info/index.js",
-    "file/src/services/deploys/account-info/index.js.html",
-    "src/services/deploys/account-info/index.js",
-    "file"
-  ],
-  [
     "src/services/deploys/auction/actions/addbid.js",
     "file/src/services/deploys/auction/actions/addBid.js.html",
     "src/services/deploys/auction/actions/addBid.js",
@@ -868,12 +832,6 @@ window.esdocSearchIndex = [
     "class/src/services/deploys/auction/actions/delegate.js~Delegate.html#instance-get-deployResult",
     "src/services/deploys/auction/actions/delegate.js~Delegate#deployResult",
     "member"
-  ],
-  [
-    "src/services/deploys/auction/actions/index.js",
-    "file/src/services/deploys/auction/actions/index.js.html",
-    "src/services/deploys/auction/actions/index.js",
-    "file"
   ],
   [
     "src/services/deploys/auction/actions/undelegate.js",
@@ -912,12 +870,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/services/deploys/auction/index.js",
-    "file/src/services/deploys/auction/index.js.html",
-    "src/services/deploys/auction/index.js",
-    "file"
-  ],
-  [
     "src/services/deploys/deploymanager.js",
     "file/src/services/deploys/deployManager.js.html",
     "src/services/deploys/deployManager.js",
@@ -952,18 +904,6 @@ window.esdocSearchIndex = [
     "class/src/services/deploys/deployManager.js~DeployManager.html#instance-method-sendDeploy",
     "src/services/deploys/deployManager.js~DeployManager#sendDeploy",
     "method"
-  ],
-  [
-    "src/services/deploys/index.js",
-    "file/src/services/deploys/index.js.html",
-    "src/services/deploys/index.js",
-    "file"
-  ],
-  [
-    "src/services/deploys/keymanagement/index.js",
-    "file/src/services/deploys/keyManagement/index.js.html",
-    "src/services/deploys/keyManagement/index.js",
-    "file"
   ],
   [
     "src/services/deploys/keymanagement/keymanagement.js",
@@ -1146,12 +1086,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/services/errors/index.js",
-    "file/src/services/errors/index.js.html",
-    "src/services/errors/index.js",
-    "file"
-  ],
-  [
     "src/services/errors/insufficientfunds.js",
     "file/src/services/errors/insufficientFunds.js.html",
     "src/services/errors/insufficientFunds.js",
@@ -1242,18 +1176,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/services/helpers/index.js",
-    "file/src/services/helpers/index.js.html",
-    "src/services/helpers/index.js",
-    "file"
-  ],
-  [
-    "src/services/index.js",
-    "file/src/services/index.js.html",
-    "src/services/index.js",
-    "file"
-  ],
-  [
     "src/services/keys/abstractkeymanager.js",
     "file/src/services/keys/abstractKeyManager.js.html",
     "src/services/keys/abstractKeyManager.js",
@@ -1264,12 +1186,6 @@ window.esdocSearchIndex = [
     "class/src/services/keys/abstractKeyManager.js~AbstractKeyManager.html#instance-get-activeKey",
     "src/services/keys/abstractKeyManager.js~AbstractKeyManager#activeKey",
     "member"
-  ],
-  [
-    "src/services/keys/index.js",
-    "file/src/services/keys/index.js.html",
-    "src/services/keys/index.js",
-    "file"
   ],
   [
     "src/services/results/accountinforesult.js",
@@ -1324,66 +1240,6 @@ window.esdocSearchIndex = [
     "class/src/services/results/delegateResult.js~DelegateResult.html#static-method-getName",
     "src/services/results/delegateResult.js~DelegateResult.getName",
     "method"
-  ],
-  [
-    "src/services/results/deployresult.js",
-    "file/src/services/results/deployResult.js.html",
-    "src/services/results/deployResult.js",
-    "file"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#amount",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-amount",
-    "src/services/results/deployResult.js~DeployResult#amount",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#constructor",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor",
-    "src/services/results/deployResult.js~DeployResult#constructor",
-    "method"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#cost",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-cost",
-    "src/services/results/deployResult.js~DeployResult#cost",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#hash",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-hash",
-    "src/services/results/deployResult.js~DeployResult#hash",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#message",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-message",
-    "src/services/results/deployResult.js~DeployResult#message",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#name",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-name",
-    "src/services/results/deployResult.js~DeployResult#name",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult#status",
-    "class/src/services/results/deployResult.js~DeployResult.html#instance-member-status",
-    "src/services/results/deployResult.js~DeployResult#status",
-    "member"
-  ],
-  [
-    "src/services/results/deployresult.js~deployresult.getname",
-    "class/src/services/results/deployResult.js~DeployResult.html#static-method-getName",
-    "src/services/results/deployResult.js~DeployResult.getName",
-    "method"
-  ],
-  [
-    "src/services/results/index.js",
-    "file/src/services/results/index.js.html",
-    "src/services/results/index.js",
-    "file"
   ],
   [
     "src/services/results/keymanagementresult.js",
@@ -1506,12 +1362,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/services/signers/index.js",
-    "file/src/services/signers/index.js.html",
-    "src/services/signers/index.js",
-    "file"
-  ],
-  [
     "src/services/signers/ledgersigner.js",
     "file/src/services/signers/ledgerSigner.js.html",
     "src/services/signers/ledgerSigner.js",
@@ -1540,11 +1390,5 @@ window.esdocSearchIndex = [
     "class/src/services/signers/localSigner.js~LocalSigner.html#static-method-sign",
     "src/services/signers/localSigner.js~LocalSigner.sign",
     "method"
-  ],
-  [
-    "src/services/validators/index.js",
-    "file/src/services/validators/index.js.html",
-    "src/services/validators/index.js",
-    "file"
   ]
 ]

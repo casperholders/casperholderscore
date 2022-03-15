@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -76,44 +73,47 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/signers/ledgerSigner.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { CLPublicKey, DeployUtil } from &apos;casper-js-sdk&apos;;
-import {AbstractSigner} from &quot;./abstractSigner&quot;;
-import {SignError} from &quot;../errors&quot;;
+import SignError from &apos;../errors/signError&apos;;
+import AbstractSigner from &apos;./abstractSigner&apos;;
 
 /**
  * LedgerSigner class
  * Used to sign a deployment with Ledger
  */
-export class LedgerSigner extends AbstractSigner {
-    /**
-     * Sign a given Deploy Object with the corresponding public key.
-     * You must pass the active public key from the user and the public key where the deploy is going to be used.
-     *
-     * @param {DeployUtil.Deploy} deploy - Deploy object
-     * @param {Object} options - Options object
-     * @param {CasperApp} options.app - CasperApp instance.
-     * @param {string} options.publicKey - Public key that sign the deploy.
-     * @param {string} options.keyPath - Public key that sign the deploy.
-     * @returns {Promise&lt;DeployUtil.Deploy&gt;} - Signed deploy object
-     */
-    static async sign(deploy, options = {}) {
-        try {
-            const responseDeploy = await options.app.sign(`m/44&apos;/506&apos;/0&apos;/0/${options.keyPath}`, DeployUtil.deployToBytes(deploy));
-            let signedDeploy = DeployUtil.setSignature(
-              deploy,
-              responseDeploy.signatureRS,
-              CLPublicKey.fromHex(options.publicKey),
-            );
-            signedDeploy = DeployUtil.validateDeploy(signedDeploy);
-            if (signedDeploy.ok) {
-                return signedDeploy.val;
-            } else {
-                throw signedDeploy.val;
-            }
-        } catch (e) {
-            console.log(e);
-            throw new SignError();
-        }
+export default class LedgerSigner extends AbstractSigner {
+  /**
+   * Sign a given Deploy Object with the corresponding public key.
+   * You must pass the active public key from the user and the public key where the deploy is going to be used.
+   *
+   * @param {DeployUtil.Deploy} deploy - Deploy object
+   * @param {Object} options - Options object
+   * @param {CasperApp} options.app - CasperApp instance.
+   * @param {string} options.publicKey - Public key that sign the deploy.
+   * @param {string} options.keyPath - Public key that sign the deploy.
+   * @returns {Promise&lt;DeployUtil.Deploy&gt;} - Signed deploy object
+   */
+  static async sign(deploy, options = {}) {
+    try {
+      const responseDeploy = await options.app.sign(
+        `m/44&apos;/506&apos;/0&apos;/0/${options.keyPath}`,
+        DeployUtil.deployToBytes(deploy),
+      );
+      let signedDeploy = DeployUtil.setSignature(
+        deploy,
+        responseDeploy.signatureRS,
+        CLPublicKey.fromHex(options.publicKey),
+      );
+      signedDeploy = DeployUtil.validateDeploy(signedDeploy);
+      if (signedDeploy.ok) {
+        return signedDeploy.val;
+      }
+      throw signedDeploy.val;
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+      throw new SignError();
     }
+  }
 }
 </code></pre>
 

@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,7 +72,7 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {AccountInfo} from &apos;<span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber16">@casperholders/core/src/services/deploys/account-info/AccountInfo.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import AccountInfo from &apos;<span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber16">@casperholders/core/src/services/deploys/account-info/AccountInfo.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
@@ -171,7 +168,7 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/account-info/AccountInfo.js~AccountInfo.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor">constructor</a></span>: <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/account-info/AccountInfo.js~AccountInfo.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span>: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -273,7 +270,7 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor">constructor</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span></span>
         </p>
       </div>
       <div>
@@ -685,7 +682,7 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber26">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber27">source</a></span></span>
     </span>
   </h3>
 
@@ -709,7 +706,8 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
       <td data-ice="name" class="code" data-depth="0">url</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Base url to a website that host the account info file. See <a href="https://github.com/make-software/casper-account-info-standard#how-does-it-work">https://github.com/make-software/casper-account-info-standard#how-does-it-work</a></p>
+      <td data-ice="description"><p>Base url to a website that host the account info file.
+See <a href="https://github.com/make-software/casper-account-info-standard#how-does-it-work">https://github.com/make-software/casper-account-info-standard#how-does-it-work</a></p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -773,11 +771,11 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
     
     
     
-    <span class="code" data-ice="name">deployResult</span><span class="code" data-ice="signature">: <span><a href="class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor">constructor</a></span>: <span>*</span></span>
+    <span class="code" data-ice="name">deployResult</span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span>: <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber48">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
@@ -797,7 +795,7 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
     <table>
       <tbody>
         <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="class/src/services/results/deployResult.js~DeployResult.html#instance-constructor-constructor">constructor</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span>DeployResult.constructor</span></td>
           <td class="return-desc" data-ice="returnDescription"><p>Return the constructor of a given DeployResult</p>
 </td>
         </tr>
@@ -837,7 +835,7 @@ Class used to create DeployParameters for a AccountInfo set_url operation</p>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/account-info/AccountInfo.js.html#lineNumber39">source</a></span></span>
     </span>
   </h3>
 

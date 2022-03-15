@@ -1,29 +1,29 @@
 {
   "type": "File",
   "start": 0,
-  "end": 520,
+  "end": 507,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 22,
-      "column": 1
+      "line": 23,
+      "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 520,
+    "end": 507,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 22,
-        "column": 1
+        "line": 23,
+        "column": 0
       }
     },
     "sourceType": "module",
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 67,
+        "end": 69,
         "loc": {
           "start": {
             "line": 1,
@@ -39,36 +39,36 @@
           },
           "end": {
             "line": 1,
-            "column": 67
+            "column": 69
           }
         },
         "specifiers": [
           {
             "type": "ImportSpecifier",
-            "start": 8,
-            "end": 20,
+            "start": 9,
+            "end": 21,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 8
+                "column": 9
               },
               "end": {
                 "line": 1,
-                "column": 20
+                "column": 21
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 8,
-              "end": 20,
+              "start": 9,
+              "end": 21,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 8
+                  "column": 9
                 },
                 "end": {
                   "line": 1,
-                  "column": 20
+                  "column": 21
                 },
                 "identifierName": "CasperClient"
               },
@@ -76,16 +76,16 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 8,
-              "end": 20,
+              "start": 9,
+              "end": 21,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 8
+                  "column": 9
                 },
                 "end": {
                   "line": 1,
-                  "column": 20
+                  "column": 21
                 },
                 "identifierName": "CasperClient"
               },
@@ -94,30 +94,30 @@
           },
           {
             "type": "ImportSpecifier",
-            "start": 22,
-            "end": 44,
+            "start": 23,
+            "end": 45,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 22
+                "column": 23
               },
               "end": {
                 "line": 1,
-                "column": 44
+                "column": 45
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 22,
-              "end": 44,
+              "start": 23,
+              "end": 45,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 22
+                  "column": 23
                 },
                 "end": {
                   "line": 1,
-                  "column": 44
+                  "column": 45
                 },
                 "identifierName": "CasperServiceByJsonRPC"
               },
@@ -125,16 +125,16 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 22,
-              "end": 44,
+              "start": 23,
+              "end": 45,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 22
+                  "column": 23
                 },
                 "end": {
                   "line": 1,
-                  "column": 44
+                  "column": 45
                 },
                 "identifierName": "CasperServiceByJsonRPC"
               },
@@ -144,21 +144,21 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 51,
-          "end": 66,
+          "start": 53,
+          "end": 68,
           "loc": {
             "start": {
               "line": 1,
-              "column": 51
+              "column": 53
             },
             "end": {
               "line": 1,
-              "column": 66
+              "column": 68
             }
           },
           "extra": {
             "rawValue": "casper-js-sdk",
-            "raw": "\"casper-js-sdk\""
+            "raw": "'casper-js-sdk'"
           },
           "value": "casper-js-sdk"
         },
@@ -166,8 +166,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * ClientCasper class\n * Contains the casper client and the casper rpc client\n ",
-            "start": 69,
-            "end": 154,
+            "start": 71,
+            "end": 156,
             "loc": {
               "start": {
                 "line": 3,
@@ -182,9 +182,9 @@
         ]
       },
       {
-        "type": "ExportNamedDeclaration",
-        "start": 155,
-        "end": 520,
+        "type": "ExportDefaultDeclaration",
+        "start": 157,
+        "end": 506,
         "loc": {
           "start": {
             "line": 7,
@@ -195,16 +195,14 @@
             "column": 1
           }
         },
-        "specifiers": [],
-        "source": null,
         "declaration": {
           "type": "ClassDeclaration",
-          "start": 162,
-          "end": 520,
+          "start": 172,
+          "end": 506,
           "loc": {
             "start": {
               "line": 7,
-              "column": 7
+              "column": 15
             },
             "end": {
               "line": 22,
@@ -213,16 +211,16 @@
           },
           "id": {
             "type": "Identifier",
-            "start": 168,
-            "end": 180,
+            "start": 178,
+            "end": 190,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 13
+                "column": 21
               },
               "end": {
                 "line": 7,
-                "column": 25
+                "column": 33
               },
               "identifierName": "ClientCasper"
             },
@@ -232,12 +230,12 @@
           "superClass": null,
           "body": {
             "type": "ClassBody",
-            "start": 181,
-            "end": 520,
+            "start": 191,
+            "end": 506,
             "loc": {
               "start": {
                 "line": 7,
-                "column": 26
+                "column": 34
               },
               "end": {
                 "line": 22,
@@ -247,54 +245,53 @@
             "body": [
               {
                 "type": "ClassProperty",
-                "start": 220,
-                "end": 232,
+                "start": 225,
+                "end": 238,
                 "loc": {
                   "start": {
-                    "line": 10,
-                    "column": 4
+                    "line": 9,
+                    "column": 2
                   },
                   "end": {
-                    "line": 10,
-                    "column": 16
+                    "line": 9,
+                    "column": 15
                   }
                 },
                 "static": false,
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 220,
-                  "end": 232,
+                  "start": 225,
+                  "end": 237,
                   "loc": {
                     "start": {
-                      "line": 10,
-                      "column": 4
+                      "line": 9,
+                      "column": 2
                     },
                     "end": {
-                      "line": 10,
-                      "column": 16
+                      "line": 9,
+                      "column": 14
                     },
                     "identifierName": "casperClient"
                   },
                   "name": "casperClient",
-                  "leadingComments": null,
-                  "trailingComments": null
+                  "leadingComments": null
                 },
                 "value": null,
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
                     "value": "* @type {CasperClient} ",
-                    "start": 188,
-                    "end": 215,
+                    "start": 195,
+                    "end": 222,
                     "loc": {
                       "start": {
-                        "line": 9,
-                        "column": 4
+                        "line": 8,
+                        "column": 2
                       },
                       "end": {
-                        "line": 9,
-                        "column": 31
+                        "line": 8,
+                        "column": 29
                       }
                     }
                   }
@@ -303,16 +300,16 @@
                   {
                     "type": "CommentBlock",
                     "value": "* @type {CasperServiceByJsonRPC} ",
-                    "start": 237,
-                    "end": 274,
+                    "start": 242,
+                    "end": 279,
                     "loc": {
                       "start": {
                         "line": 11,
-                        "column": 4
+                        "column": 2
                       },
                       "end": {
                         "line": 11,
-                        "column": 41
+                        "column": 39
                       }
                     }
                   }
@@ -320,70 +317,53 @@
               },
               {
                 "type": "ClassProperty",
-                "start": 279,
-                "end": 288,
+                "start": 282,
+                "end": 292,
                 "loc": {
                   "start": {
                     "line": 12,
-                    "column": 4
+                    "column": 2
                   },
                   "end": {
                     "line": 12,
-                    "column": 13
+                    "column": 12
                   }
                 },
                 "static": false,
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 279,
-                  "end": 288,
+                  "start": 282,
+                  "end": 291,
                   "loc": {
                     "start": {
                       "line": 12,
-                      "column": 4
+                      "column": 2
                     },
                     "end": {
                       "line": 12,
-                      "column": 13
+                      "column": 11
                     },
                     "identifierName": "casperRPC"
                   },
                   "name": "casperRPC",
-                  "leadingComments": null,
-                  "trailingComments": null
+                  "leadingComments": null
                 },
                 "value": null,
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "* @type {CasperClient} ",
-                    "start": 188,
-                    "end": 215,
-                    "loc": {
-                      "start": {
-                        "line": 9,
-                        "column": 4
-                      },
-                      "end": {
-                        "line": 9,
-                        "column": 31
-                      }
-                    }
-                  },
-                  {
-                    "type": "CommentBlock",
                     "value": "* @type {CasperServiceByJsonRPC} ",
-                    "start": 237,
-                    "end": 274,
+                    "start": 242,
+                    "end": 279,
                     "loc": {
                       "start": {
                         "line": 11,
-                        "column": 4
+                        "column": 2
                       },
                       "end": {
                         "line": 11,
-                        "column": 41
+                        "column": 39
                       }
                     }
                   }
@@ -391,17 +371,17 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Constructor\n     * @param {string} rpc - Url of the node rpc endpoint\n     ",
-                    "start": 294,
-                    "end": 382,
+                    "value": "*\n   * Constructor\n   * @param {string} rpc - Url of the node rpc endpoint\n   ",
+                    "start": 296,
+                    "end": 378,
                     "loc": {
                       "start": {
                         "line": 14,
-                        "column": 4
+                        "column": 2
                       },
                       "end": {
                         "line": 17,
-                        "column": 7
+                        "column": 5
                       }
                     }
                   }
@@ -409,32 +389,32 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 387,
-                "end": 518,
+                "start": 381,
+                "end": 504,
                 "loc": {
                   "start": {
                     "line": 18,
-                    "column": 4
+                    "column": 2
                   },
                   "end": {
                     "line": 21,
-                    "column": 5
+                    "column": 3
                   }
                 },
                 "static": false,
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 387,
-                  "end": 398,
+                  "start": 381,
+                  "end": 392,
                   "loc": {
                     "start": {
                       "line": 18,
-                      "column": 4
+                      "column": 2
                     },
                     "end": {
                       "line": 18,
-                      "column": 15
+                      "column": 13
                     },
                     "identifierName": "constructor"
                   },
@@ -449,16 +429,16 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 399,
-                    "end": 402,
+                    "start": 393,
+                    "end": 396,
                     "loc": {
                       "start": {
                         "line": 18,
-                        "column": 16
+                        "column": 14
                       },
                       "end": {
                         "line": 18,
-                        "column": 19
+                        "column": 17
                       },
                       "identifierName": "rpc"
                     },
@@ -467,89 +447,89 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 404,
-                  "end": 518,
+                  "start": 398,
+                  "end": 504,
                   "loc": {
                     "start": {
                       "line": 18,
-                      "column": 21
+                      "column": 19
                     },
                     "end": {
                       "line": 21,
-                      "column": 5
+                      "column": 3
                     }
                   },
                   "body": [
                     {
                       "type": "ExpressionStatement",
-                      "start": 414,
-                      "end": 455,
+                      "start": 404,
+                      "end": 446,
                       "loc": {
                         "start": {
                           "line": 19,
-                          "column": 8
+                          "column": 4
                         },
                         "end": {
                           "line": 19,
-                          "column": 49
+                          "column": 46
                         }
                       },
                       "expression": {
                         "type": "AssignmentExpression",
-                        "start": 414,
-                        "end": 455,
+                        "start": 404,
+                        "end": 445,
                         "loc": {
                           "start": {
                             "line": 19,
-                            "column": 8
+                            "column": 4
                           },
                           "end": {
                             "line": 19,
-                            "column": 49
+                            "column": 45
                           }
                         },
                         "operator": "=",
                         "left": {
                           "type": "MemberExpression",
-                          "start": 414,
-                          "end": 431,
+                          "start": 404,
+                          "end": 421,
                           "loc": {
                             "start": {
                               "line": 19,
-                              "column": 8
+                              "column": 4
                             },
                             "end": {
                               "line": 19,
-                              "column": 25
+                              "column": 21
                             }
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 414,
-                            "end": 418,
+                            "start": 404,
+                            "end": 408,
                             "loc": {
                               "start": {
                                 "line": 19,
-                                "column": 8
+                                "column": 4
                               },
                               "end": {
                                 "line": 19,
-                                "column": 12
+                                "column": 8
                               }
                             }
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 419,
-                            "end": 431,
+                            "start": 409,
+                            "end": 421,
                             "loc": {
                               "start": {
                                 "line": 19,
-                                "column": 13
+                                "column": 9
                               },
                               "end": {
                                 "line": 19,
-                                "column": 25
+                                "column": 21
                               },
                               "identifierName": "casperClient"
                             },
@@ -559,30 +539,30 @@
                         },
                         "right": {
                           "type": "NewExpression",
-                          "start": 434,
-                          "end": 455,
+                          "start": 424,
+                          "end": 445,
                           "loc": {
                             "start": {
                               "line": 19,
-                              "column": 28
+                              "column": 24
                             },
                             "end": {
                               "line": 19,
-                              "column": 49
+                              "column": 45
                             }
                           },
                           "callee": {
                             "type": "Identifier",
-                            "start": 438,
-                            "end": 450,
+                            "start": 428,
+                            "end": 440,
                             "loc": {
                               "start": {
                                 "line": 19,
-                                "column": 32
+                                "column": 28
                               },
                               "end": {
                                 "line": 19,
-                                "column": 44
+                                "column": 40
                               },
                               "identifierName": "CasperClient"
                             },
@@ -591,16 +571,16 @@
                           "arguments": [
                             {
                               "type": "Identifier",
-                              "start": 451,
-                              "end": 454,
+                              "start": 441,
+                              "end": 444,
                               "loc": {
                                 "start": {
                                   "line": 19,
-                                  "column": 45
+                                  "column": 41
                                 },
                                 "end": {
                                   "line": 19,
-                                  "column": 48
+                                  "column": 44
                                 },
                                 "identifierName": "rpc"
                               },
@@ -612,74 +592,74 @@
                     },
                     {
                       "type": "ExpressionStatement",
-                      "start": 464,
-                      "end": 512,
+                      "start": 451,
+                      "end": 500,
                       "loc": {
                         "start": {
                           "line": 20,
-                          "column": 8
+                          "column": 4
                         },
                         "end": {
                           "line": 20,
-                          "column": 56
+                          "column": 53
                         }
                       },
                       "expression": {
                         "type": "AssignmentExpression",
-                        "start": 464,
-                        "end": 512,
+                        "start": 451,
+                        "end": 499,
                         "loc": {
                           "start": {
                             "line": 20,
-                            "column": 8
+                            "column": 4
                           },
                           "end": {
                             "line": 20,
-                            "column": 56
+                            "column": 52
                           }
                         },
                         "operator": "=",
                         "left": {
                           "type": "MemberExpression",
-                          "start": 464,
-                          "end": 478,
+                          "start": 451,
+                          "end": 465,
                           "loc": {
                             "start": {
                               "line": 20,
-                              "column": 8
+                              "column": 4
                             },
                             "end": {
                               "line": 20,
-                              "column": 22
+                              "column": 18
                             }
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 464,
-                            "end": 468,
+                            "start": 451,
+                            "end": 455,
                             "loc": {
                               "start": {
                                 "line": 20,
-                                "column": 8
+                                "column": 4
                               },
                               "end": {
                                 "line": 20,
-                                "column": 12
+                                "column": 8
                               }
                             }
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 469,
-                            "end": 478,
+                            "start": 456,
+                            "end": 465,
                             "loc": {
                               "start": {
                                 "line": 20,
-                                "column": 13
+                                "column": 9
                               },
                               "end": {
                                 "line": 20,
-                                "column": 22
+                                "column": 18
                               },
                               "identifierName": "casperRPC"
                             },
@@ -689,30 +669,30 @@
                         },
                         "right": {
                           "type": "NewExpression",
-                          "start": 481,
-                          "end": 512,
+                          "start": 468,
+                          "end": 499,
                           "loc": {
                             "start": {
                               "line": 20,
-                              "column": 25
+                              "column": 21
                             },
                             "end": {
                               "line": 20,
-                              "column": 56
+                              "column": 52
                             }
                           },
                           "callee": {
                             "type": "Identifier",
-                            "start": 485,
-                            "end": 507,
+                            "start": 472,
+                            "end": 494,
                             "loc": {
                               "start": {
                                 "line": 20,
-                                "column": 29
+                                "column": 25
                               },
                               "end": {
                                 "line": 20,
-                                "column": 51
+                                "column": 47
                               },
                               "identifierName": "CasperServiceByJsonRPC"
                             },
@@ -721,16 +701,16 @@
                           "arguments": [
                             {
                               "type": "Identifier",
-                              "start": 508,
-                              "end": 511,
+                              "start": 495,
+                              "end": 498,
                               "loc": {
                                 "start": {
                                   "line": 20,
-                                  "column": 52
+                                  "column": 48
                                 },
                                 "end": {
                                   "line": 20,
-                                  "column": 55
+                                  "column": 51
                                 },
                                 "identifierName": "rpc"
                               },
@@ -746,17 +726,17 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Constructor\n     * @param {string} rpc - Url of the node rpc endpoint\n     ",
-                    "start": 294,
-                    "end": 382,
+                    "value": "*\n   * Constructor\n   * @param {string} rpc - Url of the node rpc endpoint\n   ",
+                    "start": 296,
+                    "end": 378,
                     "loc": {
                       "start": {
                         "line": 14,
-                        "column": 4
+                        "column": 2
                       },
                       "end": {
                         "line": 17,
-                        "column": 7
+                        "column": 5
                       }
                     }
                   }
@@ -768,8 +748,8 @@
             {
               "type": "CommentBlock",
               "value": "*\n * ClientCasper class\n * Contains the casper client and the casper rpc client\n ",
-              "start": 69,
-              "end": 154,
+              "start": 71,
+              "end": 156,
               "loc": {
                 "start": {
                   "line": 3,
@@ -788,8 +768,8 @@
           {
             "type": "CommentBlock",
             "value": "*\n * ClientCasper class\n * Contains the casper client and the casper rpc client\n ",
-            "start": 69,
-            "end": 154,
+            "start": 71,
+            "end": 156,
             "loc": {
               "start": {
                 "line": 3,
@@ -810,8 +790,8 @@
     {
       "type": "CommentBlock",
       "value": "*\n * ClientCasper class\n * Contains the casper client and the casper rpc client\n ",
-      "start": 69,
-      "end": 154,
+      "start": 71,
+      "end": 156,
       "loc": {
         "start": {
           "line": 3,
@@ -826,48 +806,48 @@
     {
       "type": "CommentBlock",
       "value": "* @type {CasperClient} ",
-      "start": 188,
-      "end": 215,
+      "start": 195,
+      "end": 222,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 4
+          "line": 8,
+          "column": 2
         },
         "end": {
-          "line": 9,
-          "column": 31
+          "line": 8,
+          "column": 29
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "* @type {CasperServiceByJsonRPC} ",
-      "start": 237,
-      "end": 274,
+      "start": 242,
+      "end": 279,
       "loc": {
         "start": {
           "line": 11,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 11,
-          "column": 41
+          "column": 39
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor\n     * @param {string} rpc - Url of the node rpc endpoint\n     ",
-      "start": 294,
-      "end": 382,
+      "value": "*\n   * Constructor\n   * @param {string} rpc - Url of the node rpc endpoint\n   ",
+      "start": 296,
+      "end": 378,
       "loc": {
         "start": {
           "line": 14,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 17,
-          "column": 7
+          "column": 5
         }
       }
     }
@@ -939,16 +919,16 @@
         "binop": null
       },
       "value": "CasperClient",
-      "start": 8,
-      "end": 20,
+      "start": 9,
+      "end": 21,
       "loc": {
         "start": {
           "line": 1,
-          "column": 8
+          "column": 9
         },
         "end": {
           "line": 1,
-          "column": 20
+          "column": 21
         }
       }
     },
@@ -965,16 +945,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 20,
-      "end": 21,
+      "start": 21,
+      "end": 22,
       "loc": {
         "start": {
           "line": 1,
-          "column": 20
+          "column": 21
         },
         "end": {
           "line": 1,
-          "column": 21
+          "column": 22
         }
       }
     },
@@ -991,16 +971,16 @@
         "binop": null
       },
       "value": "CasperServiceByJsonRPC",
-      "start": 22,
-      "end": 44,
+      "start": 23,
+      "end": 45,
       "loc": {
         "start": {
           "line": 1,
-          "column": 22
+          "column": 23
         },
         "end": {
           "line": 1,
-          "column": 44
+          "column": 45
         }
       }
     },
@@ -1016,16 +996,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 44,
-      "end": 45,
+      "start": 46,
+      "end": 47,
       "loc": {
         "start": {
           "line": 1,
-          "column": 44
+          "column": 46
         },
         "end": {
           "line": 1,
-          "column": 45
+          "column": 47
         }
       }
     },
@@ -1042,16 +1022,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 46,
-      "end": 50,
+      "start": 48,
+      "end": 52,
       "loc": {
         "start": {
           "line": 1,
-          "column": 46
+          "column": 48
         },
         "end": {
           "line": 1,
-          "column": 50
+          "column": 52
         }
       }
     },
@@ -1069,16 +1049,16 @@
         "updateContext": null
       },
       "value": "casper-js-sdk",
-      "start": 51,
-      "end": 66,
+      "start": 53,
+      "end": 68,
       "loc": {
         "start": {
           "line": 1,
-          "column": 51
+          "column": 53
         },
         "end": {
           "line": 1,
-          "column": 66
+          "column": 68
         }
       }
     },
@@ -1095,24 +1075,24 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 66,
-      "end": 67,
+      "start": 68,
+      "end": 69,
       "loc": {
         "start": {
           "line": 1,
-          "column": 66
+          "column": 68
         },
         "end": {
           "line": 1,
-          "column": 67
+          "column": 69
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "*\n * ClientCasper class\n * Contains the casper client and the casper rpc client\n ",
-      "start": 69,
-      "end": 154,
+      "start": 71,
+      "end": 156,
       "loc": {
         "start": {
           "line": 3,
@@ -1139,8 +1119,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 155,
-      "end": 161,
+      "start": 157,
+      "end": 163,
       "loc": {
         "start": {
           "line": 7,
@@ -1149,6 +1129,34 @@
         "end": {
           "line": 7,
           "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 164,
+      "end": 171,
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 7
+        },
+        "end": {
+          "line": 7,
+          "column": 14
         }
       }
     },
@@ -1167,16 +1175,16 @@
         "updateContext": null
       },
       "value": "class",
-      "start": 162,
-      "end": 167,
+      "start": 172,
+      "end": 177,
       "loc": {
         "start": {
           "line": 7,
-          "column": 7
+          "column": 15
         },
         "end": {
           "line": 7,
-          "column": 12
+          "column": 20
         }
       }
     },
@@ -1193,16 +1201,16 @@
         "binop": null
       },
       "value": "ClientCasper",
-      "start": 168,
-      "end": 180,
+      "start": 178,
+      "end": 190,
       "loc": {
         "start": {
           "line": 7,
-          "column": 13
+          "column": 21
         },
         "end": {
           "line": 7,
-          "column": 25
+          "column": 33
         }
       }
     },
@@ -1218,32 +1226,32 @@
         "postfix": false,
         "binop": null
       },
-      "start": 181,
-      "end": 182,
+      "start": 191,
+      "end": 192,
       "loc": {
         "start": {
           "line": 7,
-          "column": 26
+          "column": 34
         },
         "end": {
           "line": 7,
-          "column": 27
+          "column": 35
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "* @type {CasperClient} ",
-      "start": 188,
-      "end": 215,
+      "start": 195,
+      "end": 222,
       "loc": {
         "start": {
-          "line": 9,
-          "column": 4
+          "line": 8,
+          "column": 2
         },
         "end": {
-          "line": 9,
-          "column": 31
+          "line": 8,
+          "column": 29
         }
       }
     },
@@ -1260,32 +1268,58 @@
         "binop": null
       },
       "value": "casperClient",
-      "start": 220,
-      "end": 232,
+      "start": 225,
+      "end": 237,
       "loc": {
         "start": {
-          "line": 10,
-          "column": 4
+          "line": 9,
+          "column": 2
         },
         "end": {
-          "line": 10,
-          "column": 16
+          "line": 9,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 237,
+      "end": 238,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 14
+        },
+        "end": {
+          "line": 9,
+          "column": 15
         }
       }
     },
     {
       "type": "CommentBlock",
       "value": "* @type {CasperServiceByJsonRPC} ",
-      "start": 237,
-      "end": 274,
+      "start": 242,
+      "end": 279,
       "loc": {
         "start": {
           "line": 11,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 11,
-          "column": 41
+          "column": 39
         }
       }
     },
@@ -1302,32 +1336,58 @@
         "binop": null
       },
       "value": "casperRPC",
-      "start": 279,
-      "end": 288,
+      "start": 282,
+      "end": 291,
       "loc": {
         "start": {
           "line": 12,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 12,
-          "column": 13
+          "column": 11
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 291,
+      "end": 292,
+      "loc": {
+        "start": {
+          "line": 12,
+          "column": 11
+        },
+        "end": {
+          "line": 12,
+          "column": 12
         }
       }
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Constructor\n     * @param {string} rpc - Url of the node rpc endpoint\n     ",
-      "start": 294,
-      "end": 382,
+      "value": "*\n   * Constructor\n   * @param {string} rpc - Url of the node rpc endpoint\n   ",
+      "start": 296,
+      "end": 378,
       "loc": {
         "start": {
           "line": 14,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 17,
-          "column": 7
+          "column": 5
         }
       }
     },
@@ -1344,16 +1404,16 @@
         "binop": null
       },
       "value": "constructor",
-      "start": 387,
-      "end": 398,
+      "start": 381,
+      "end": 392,
       "loc": {
         "start": {
           "line": 18,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 18,
-          "column": 15
+          "column": 13
         }
       }
     },
@@ -1369,16 +1429,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 398,
-      "end": 399,
+      "start": 392,
+      "end": 393,
       "loc": {
         "start": {
           "line": 18,
-          "column": 15
+          "column": 13
         },
         "end": {
           "line": 18,
-          "column": 16
+          "column": 14
         }
       }
     },
@@ -1395,16 +1455,16 @@
         "binop": null
       },
       "value": "rpc",
-      "start": 399,
-      "end": 402,
+      "start": 393,
+      "end": 396,
       "loc": {
         "start": {
           "line": 18,
-          "column": 16
+          "column": 14
         },
         "end": {
           "line": 18,
-          "column": 19
+          "column": 17
         }
       }
     },
@@ -1420,16 +1480,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 402,
-      "end": 403,
+      "start": 396,
+      "end": 397,
       "loc": {
         "start": {
           "line": 18,
-          "column": 19
+          "column": 17
         },
         "end": {
           "line": 18,
-          "column": 20
+          "column": 18
         }
       }
     },
@@ -1445,16 +1505,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 404,
-      "end": 405,
+      "start": 398,
+      "end": 399,
       "loc": {
         "start": {
           "line": 18,
-          "column": 21
+          "column": 19
         },
         "end": {
           "line": 18,
-          "column": 22
+          "column": 20
         }
       }
     },
@@ -1473,16 +1533,16 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 414,
-      "end": 418,
+      "start": 404,
+      "end": 408,
       "loc": {
         "start": {
           "line": 19,
-          "column": 8
+          "column": 4
         },
         "end": {
           "line": 19,
-          "column": 12
+          "column": 8
         }
       }
     },
@@ -1499,16 +1559,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 418,
-      "end": 419,
+      "start": 408,
+      "end": 409,
       "loc": {
         "start": {
           "line": 19,
-          "column": 12
+          "column": 8
         },
         "end": {
           "line": 19,
-          "column": 13
+          "column": 9
         }
       }
     },
@@ -1525,16 +1585,16 @@
         "binop": null
       },
       "value": "casperClient",
-      "start": 419,
-      "end": 431,
+      "start": 409,
+      "end": 421,
       "loc": {
         "start": {
           "line": 19,
-          "column": 13
+          "column": 9
         },
         "end": {
           "line": 19,
-          "column": 25
+          "column": 21
         }
       }
     },
@@ -1552,16 +1612,16 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 432,
-      "end": 433,
+      "start": 422,
+      "end": 423,
       "loc": {
         "start": {
           "line": 19,
-          "column": 26
+          "column": 22
         },
         "end": {
           "line": 19,
-          "column": 27
+          "column": 23
         }
       }
     },
@@ -1580,16 +1640,16 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 434,
-      "end": 437,
+      "start": 424,
+      "end": 427,
       "loc": {
         "start": {
           "line": 19,
-          "column": 28
+          "column": 24
         },
         "end": {
           "line": 19,
-          "column": 31
+          "column": 27
         }
       }
     },
@@ -1606,16 +1666,16 @@
         "binop": null
       },
       "value": "CasperClient",
-      "start": 438,
-      "end": 450,
+      "start": 428,
+      "end": 440,
       "loc": {
         "start": {
           "line": 19,
-          "column": 32
+          "column": 28
         },
         "end": {
           "line": 19,
-          "column": 44
+          "column": 40
         }
       }
     },
@@ -1631,16 +1691,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 450,
-      "end": 451,
+      "start": 440,
+      "end": 441,
       "loc": {
         "start": {
           "line": 19,
-          "column": 44
+          "column": 40
         },
         "end": {
           "line": 19,
-          "column": 45
+          "column": 41
         }
       }
     },
@@ -1657,16 +1717,16 @@
         "binop": null
       },
       "value": "rpc",
-      "start": 451,
-      "end": 454,
+      "start": 441,
+      "end": 444,
       "loc": {
         "start": {
           "line": 19,
-          "column": 45
+          "column": 41
         },
         "end": {
           "line": 19,
-          "column": 48
+          "column": 44
         }
       }
     },
@@ -1682,16 +1742,42 @@
         "postfix": false,
         "binop": null
       },
-      "start": 454,
-      "end": 455,
+      "start": 444,
+      "end": 445,
       "loc": {
         "start": {
           "line": 19,
-          "column": 48
+          "column": 44
         },
         "end": {
           "line": 19,
-          "column": 49
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 445,
+      "end": 446,
+      "loc": {
+        "start": {
+          "line": 19,
+          "column": 45
+        },
+        "end": {
+          "line": 19,
+          "column": 46
         }
       }
     },
@@ -1710,16 +1796,16 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 464,
-      "end": 468,
+      "start": 451,
+      "end": 455,
       "loc": {
         "start": {
           "line": 20,
-          "column": 8
+          "column": 4
         },
         "end": {
           "line": 20,
-          "column": 12
+          "column": 8
         }
       }
     },
@@ -1736,16 +1822,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 468,
-      "end": 469,
+      "start": 455,
+      "end": 456,
       "loc": {
         "start": {
           "line": 20,
-          "column": 12
+          "column": 8
         },
         "end": {
           "line": 20,
-          "column": 13
+          "column": 9
         }
       }
     },
@@ -1762,16 +1848,16 @@
         "binop": null
       },
       "value": "casperRPC",
-      "start": 469,
-      "end": 478,
+      "start": 456,
+      "end": 465,
       "loc": {
         "start": {
           "line": 20,
-          "column": 13
+          "column": 9
         },
         "end": {
           "line": 20,
-          "column": 22
+          "column": 18
         }
       }
     },
@@ -1789,16 +1875,16 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 479,
-      "end": 480,
+      "start": 466,
+      "end": 467,
       "loc": {
         "start": {
           "line": 20,
-          "column": 23
+          "column": 19
         },
         "end": {
           "line": 20,
-          "column": 24
+          "column": 20
         }
       }
     },
@@ -1817,16 +1903,16 @@
         "updateContext": null
       },
       "value": "new",
-      "start": 481,
-      "end": 484,
+      "start": 468,
+      "end": 471,
       "loc": {
         "start": {
           "line": 20,
-          "column": 25
+          "column": 21
         },
         "end": {
           "line": 20,
-          "column": 28
+          "column": 24
         }
       }
     },
@@ -1843,16 +1929,16 @@
         "binop": null
       },
       "value": "CasperServiceByJsonRPC",
-      "start": 485,
-      "end": 507,
+      "start": 472,
+      "end": 494,
       "loc": {
         "start": {
           "line": 20,
-          "column": 29
+          "column": 25
         },
         "end": {
           "line": 20,
-          "column": 51
+          "column": 47
         }
       }
     },
@@ -1868,16 +1954,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 507,
-      "end": 508,
+      "start": 494,
+      "end": 495,
       "loc": {
         "start": {
           "line": 20,
-          "column": 51
+          "column": 47
         },
         "end": {
           "line": 20,
-          "column": 52
+          "column": 48
         }
       }
     },
@@ -1894,16 +1980,16 @@
         "binop": null
       },
       "value": "rpc",
-      "start": 508,
-      "end": 511,
+      "start": 495,
+      "end": 498,
       "loc": {
         "start": {
           "line": 20,
-          "column": 52
+          "column": 48
         },
         "end": {
           "line": 20,
-          "column": 55
+          "column": 51
         }
       }
     },
@@ -1919,16 +2005,42 @@
         "postfix": false,
         "binop": null
       },
-      "start": 511,
-      "end": 512,
+      "start": 498,
+      "end": 499,
       "loc": {
         "start": {
           "line": 20,
-          "column": 55
+          "column": 51
         },
         "end": {
           "line": 20,
-          "column": 56
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 499,
+      "end": 500,
+      "loc": {
+        "start": {
+          "line": 20,
+          "column": 52
+        },
+        "end": {
+          "line": 20,
+          "column": 53
         }
       }
     },
@@ -1944,16 +2056,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 517,
-      "end": 518,
+      "start": 503,
+      "end": 504,
       "loc": {
         "start": {
           "line": 21,
-          "column": 4
+          "column": 2
         },
         "end": {
           "line": 21,
-          "column": 5
+          "column": 3
         }
       }
     },
@@ -1969,8 +2081,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 519,
-      "end": 520,
+      "start": 505,
+      "end": 506,
       "loc": {
         "start": {
           "line": 22,
@@ -1995,16 +2107,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 520,
-      "end": 520,
+      "start": 507,
+      "end": 507,
       "loc": {
         "start": {
-          "line": 22,
-          "column": 1
+          "line": 23,
+          "column": 0
         },
         "end": {
-          "line": 22,
-          "column": 1
+          "line": 23,
+          "column": 0
         }
       }
     }

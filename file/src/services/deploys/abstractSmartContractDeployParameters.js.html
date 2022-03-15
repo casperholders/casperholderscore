@@ -30,6 +30,7 @@
   <ul>
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-balance">services/balance</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/balance/balance.js~Balance.html">Balance</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-ValidatorsInfoResult">ValidatorsInfoResult</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-clients">services/clients</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/clients/clientCasper.js~ClientCasper.html">ClientCasper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys">services/deploys</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters.html">AbstractSmartContractModuleBytesParameters</a></span></span></li>
@@ -55,15 +56,11 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-results">services/results</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/accountInfoResult.js~AccountInfoResult.html">AccountInfoResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/addBidResult.js~AddBidResult.html">AddBidResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/delegateResult.js~DelegateResult.html">DelegateResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/deployResult.js~DeployResult.html">DeployResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/keyManagementResult.js~KeyManagementResult.html">KeyManagementResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/smartContractResult.js~SmartContractResult.html">SmartContractResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/transferResult.js~TransferResult.html">TransferResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/undelegateResult.js~UndelegateResult.html">UndelegateResult</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/results/withdrawBidResult.js~WithdrawBidResult.html">WithdrawBidResult</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_KO">STATUS_KO</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_OK">STATUS_OK</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-STATUS_UNKNOWN">STATUS_UNKNOWN</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-signers">services/signers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/abstractSigner.js~AbstractSigner.html">AbstractSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
@@ -75,58 +72,63 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/abstractSmartContractDeployParameters.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {DeployUtil} from &quot;casper-js-sdk&quot;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { DeployUtil } from &apos;casper-js-sdk&apos;;
 
 /**
  * AbstractSmartContractDeployParameters class
  * Abstract class used to define specifics DeployParameters
  */
-export class AbstractSmartContractDeployParameters {
-    /**
-     * Get the deployParams deploy argument
-     *
-     * @return {DeployUtil.DeployParams} - Return a DeployParams
-     */
-    get deployParams() {
-        throw new Error(&quot;You must implement this method&quot;);
-    }
+export default class AbstractSmartContractDeployParameters {
+  /**
+   * Get the deployParams deploy argument
+   *
+   * @return {DeployUtil.DeployParams} - Return a DeployParams
+   */
+  // eslint-disable-next-line class-methods-use-this
+  get deployParams() {
+    throw new Error(&apos;You must implement this method&apos;);
+  }
 
-    /**
-     * Get the session deploy argument
-     *
-     * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
-     */
-    get session() {
-        throw new Error(&quot;You must implement this method&quot;);
-    }
+  /**
+   * Get the session deploy argument
+   *
+   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
+   */
+  // eslint-disable-next-line class-methods-use-this
+  get session() {
+    throw new Error(&apos;You must implement this method&apos;);
+  }
 
-    /**
-     * Get the payment deploy argument
-     *
-     * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
-     */
-    get payment() {
-        throw new Error(&quot;You must implement this method&quot;);
-    }
+  /**
+   * Get the payment deploy argument
+   *
+   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
+   */
+  // eslint-disable-next-line class-methods-use-this
+  get payment() {
+    throw new Error(&apos;You must implement this method&apos;);
+  }
 
-    /**
-     * Get a DeployResult constructor
-     *
-     * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
-     */
-    get deployResult() {
-        throw new Error(&quot;You must implement this method&quot;);
-    }
+  /**
+   * Get a DeployResult constructor
+   *
+   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
+   */
+  // eslint-disable-next-line class-methods-use-this
+  get deployResult() {
+    throw new Error(&apos;You must implement this method&apos;);
+  }
 
-    /**
-     * Create a unsigned Deploy object
-     *
-     * @return {Deploy} - Return a deploy object
-     */
-    get makeDeploy() {
-        return DeployUtil.makeDeploy(this.deployParams, this.session, this.payment)
-    }
-}</code></pre>
+  /**
+   * Create a unsigned Deploy object
+   *
+   * @return {Deploy} - Return a deploy object
+   */
+  get makeDeploy() {
+    return DeployUtil.makeDeploy(this.deployParams, this.session, this.payment);
+  }
+}
+</code></pre>
 
 </div>
 
