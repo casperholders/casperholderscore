@@ -1,8 +1,11 @@
 {
   "name": "@casperholders/core",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Library for the casperholders website",
-  "files": [ "src/", "dist/" ],
+  "files": [
+    "src/",
+    "dist/"
+  ],
   "scripts": {
     "build": "babel -d dist/ src/",
     "docs": "esdoc",
