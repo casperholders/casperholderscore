@@ -1,20 +1,27 @@
-import { NoActiveKeyError, NoStakeBalanceError, NoValidatorBalanceError } from '../errors';
 import { CLPublicKey } from 'casper-js-sdk';
-import { CurrencyUtils } from '../helpers';
 import { BigNumber } from '@ethersproject/bignumber';
+import NoActiveKeyError from '../errors/noActiveKeyError';
+import NoStakeBalanceError from '../errors/noStakeBalanceError';
+import NoValidatorBalanceError from '../errors/noValidatorBalanceError';
+import CurrencyUtils from '../helpers/currencyUtils';
 
+/**
+ * @typedef {import('casper-js-sdk').CasperServiceByJsonRPC} ValidatorsInfoResult
+ */
 
 /**
  * Balance class
  * Service used to retrieve different balances from the Casper network
  */
-export class Balance {
-
+export default class Balance {
   /** @type {AbstractKeyManager} */
   keyManager;
 
   /** @type {ClientCasper} */
   client;
+
+  /** @type {ValidatorsInfoResult} */
+  validatorsInfo;
 
   /**
    * Constructor
@@ -32,12 +39,12 @@ export class Balance {
    * @returns {Promise<*>}
    */
   async getValidatorsInfo() {
-    if(this.validatorsInfo === undefined) {
+    if (this.validatorsInfo === undefined) {
       this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
       return this.validatorsInfo;
     }
     const lastBlock = await this.client.casperRPC.getLatestBlockInfo();
-    if(lastBlock.block.header.era_id !== this.validatorsInfo.auction_state.era_validators[0].era_id) {
+    if (lastBlock.block.header.era_id !== this.validatorsInfo.auction_state.era_validators[0].era_id) {
       this.validatorsInfo = await this.client.casperRPC.getValidatorsInfo();
     }
     return this.validatorsInfo;
@@ -61,7 +68,9 @@ export class Balance {
    * @return {Promise<String>} - Current balance of the public key in CSPR
    */
   async fetchBalanceOfPublicKey(publicKey) {
-    return CurrencyUtils.convertMotesToCasper(BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()));
+    return CurrencyUtils.convertMotesToCasper(
+      BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()),
+    );
   }
 
   /**
@@ -75,13 +84,13 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validatorItem => {
-      return validatorItem.public_key.toLowerCase() === validatorPublicKey.toLowerCase();
-    })[0];
+    const validator = validatorsInfo.auction_state.bids.filter(
+      (validatorItem) => validatorItem.public_key.toLowerCase() === validatorPublicKey.toLowerCase(),
+    )[0];
 
-    let stakingBalance = validator.bid.delegators.filter(delegator => {
-      return delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
-    });
+    const stakingBalance = validator.bid.delegators.filter(
+      (delegator) => delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+    );
     if (stakingBalance.length > 0) {
       return CurrencyUtils.convertMotesToCasper(BigNumber.from(stakingBalance[0].staked_amount));
     }
@@ -98,15 +107,17 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validators = validatorsInfo.auction_state.bids.filter(validator => {
-      return validator.bid.delegators.some((delegator) => delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase());
-    });
+    const validators = validatorsInfo.auction_state.bids.filter(
+      (validator) => validator.bid.delegators.some(
+        (delegator) => delegator.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+      ),
+    );
     if (validators.length > 0) {
-      let stakeBalances = [];
+      const stakeBalances = [];
       validators.forEach((validator) => {
-        const delegator = validator.bid.delegators.filter((delegation) => {
-          return delegation.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase()
-        })[0]
+        const delegator = validator.bid.delegators.filter(
+          (delegation) => delegation.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+        )[0];
         stakeBalances.push({
           validator: validator.public_key,
           stakedTokens: CurrencyUtils.convertMotesToCasper(BigNumber.from(delegator.staked_amount)),
@@ -127,9 +138,9 @@ export class Balance {
       throw new NoActiveKeyError();
     }
     const validatorsInfo = await this.getValidatorsInfo();
-    let validator = validatorsInfo.auction_state.bids.filter(validatorItem => {
-      return validatorItem.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase();
-    })[0];
+    const validator = validatorsInfo.auction_state.bids.filter(
+      (validatorItem) => validatorItem.public_key.toLowerCase() === this.keyManager.activeKey.toLowerCase(),
+    )[0];
     if (validator) {
       return {
         balance: CurrencyUtils.convertMotesToCasper(BigNumber.from(validator.bid.staked_amount)),

@@ -1,12 +1,11 @@
 import { CLPublicKey } from 'casper-js-sdk';
-import { NoValidatorInfos } from '../errors/noValidatorInfos';
+import NoValidatorInfos from '../errors/noValidatorInfos';
 
 /**
  * Validators Class
  * Used to retrieve validator metadata
  */
-export class Validators {
-
+export default class Validators {
   /** @type {ClientCasper} */
   client;
 
@@ -43,7 +42,8 @@ export class Validators {
    */
   async getValidatorInfo(publicKey, contractHash, network) {
     try {
-      const url = (await this.getValidatorUrl(publicKey, contractHash, network)) + '/.well-known/casper/account-info.' + network + '.json';
+      const validatorUrl = await this.getValidatorUrl(publicKey, contractHash);
+      const url = `${validatorUrl}/.well-known/casper/account-info.${network}.json`;
       return await (await fetch(url)).json();
     } catch (e) {
       throw new NoValidatorInfos();
@@ -54,15 +54,21 @@ export class Validators {
    * Retrieve validator url
    * @param {String} publicKey - Public key of the validator
    * @param {String} contractHash - Hash of the Account Info contract
-   * @param {String} network - Name of the network to query
    * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised
    */
-  async getValidatorUrl(publicKey, contractHash, network) {
+  async getValidatorUrl(publicKey, contractHash) {
     try {
       const clpublicKey = CLPublicKey.fromHex(publicKey);
-      const accountHash = clpublicKey.toAccountHashStr().replace('account-hash-', '');
+      const accountHash = clpublicKey.toAccountHashStr()
+        .replace('account-hash-', '');
       await this.getDictUref(contractHash);
-      return (await this.client.casperRPC.getDictionaryItemByURef(this.stateRootHash, accountHash, this.dictUref)).CLValue.data;
+      return (
+        await this.client.casperRPC.getDictionaryItemByURef(
+          this.stateRootHash,
+          accountHash,
+          this.dictUref,
+        )
+      ).CLValue.data;
     } catch (e) {
       throw new NoValidatorInfos();
     }
@@ -74,10 +80,21 @@ export class Validators {
    * @returns {Promise<void>}
    */
   async getDictUref(contractHash) {
-    if (!this.fetching && (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT)) {
+    if (
+      !this.fetching
+      && (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT)
+    ) {
       this.fetching = true;
-      this.stateRootHash = await this.client.casperRPC.getStateRootHash((await this.client.casperRPC.getLatestBlockInfo()).block.hash);
-      this.dictUref = (await this.client.casperRPC.getBlockState(this.stateRootHash, 'hash-' + contractHash, [])).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
+      this.stateRootHash = await this.client.casperRPC.getStateRootHash(
+        (await this.client.casperRPC.getLatestBlockInfo()).block.hash,
+      );
+      this.dictUref = (
+        await this.client.casperRPC.getBlockState(
+          this.stateRootHash,
+          `hash-${contractHash}`,
+          [],
+        )
+      ).Contract.namedKeys.filter((item) => item.name === 'account-info-urls')[0].key;
       this.lastFetch = Math.floor(Date.now() / 1000);
       this.fetching = false;
     }
@@ -87,12 +104,11 @@ export class Validators {
    * Test if user have set url of their accounts
    * @param {String} publicKey - Public key of the validator
    * @param {String} contractHash - Hash of the Account Info contract
-   * @param {String} network - Name of the network to query
    * @throws NoValidatorInfos - If we can't retrieve the Validator infos this error is raised
    */
-  async isUrlSet(publicKey, contractHash, network) {
+  async isUrlSet(publicKey, contractHash) {
     try {
-      return !!(await this.getValidatorUrl(publicKey, contractHash, network));
+      return !!(await this.getValidatorUrl(publicKey, contractHash));
     } catch (e) {
       return false;
     }

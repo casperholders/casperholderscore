@@ -40,6 +40,12 @@ Run tests
 yarn test
 ```
 
+Run lint
+
+```bash
+yarn lint
+```
+
 ## Installation
 
 ### NPM

@@ -1,13 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { CurrencyUtils } from '../helpers';
-import { STATUS_KO, STATUS_OK } from '../results';
-
+import CurrencyUtils from '../helpers/currencyUtils';
+import DeployResult from '../results/deployResult';
 
 /**
  * DeployManager class
  * Used to handle the deploy process
  */
-export class DeployManager {
+export default class DeployManager {
   /** @type {ClientCasper} */
   client;
 
@@ -20,7 +19,7 @@ export class DeployManager {
     this.client = client;
   }
 
-  /***
+  /** *
    * Send a deployment to the network
    *
    * @param {Deploy} deploy - Signed Deploy object
@@ -29,17 +28,27 @@ export class DeployManager {
    */
   async sendDeploy(deploy, deployResult) {
     if (typeof deploy === 'string' || deploy instanceof String) {
+      // eslint-disable-next-line new-cap
       return new deployResult(deploy);
     }
     const hash = await this.client.casperClient.putDeploy(deploy);
     let amount = '0';
     if (deploy.session.getArgByName('amount')) {
-      amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName('amount').value().toString()));
+      amount = CurrencyUtils.convertMotesToCasper(
+        BigNumber.from(deploy.session.getArgByName('amount')
+          .value()
+          .toString()),
+      );
     }
     let cost = '0';
     if (deploy.payment.getArgByName('amount')) {
-      cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.payment.getArgByName('amount').value().toString()));
+      cost = CurrencyUtils.convertMotesToCasper(
+        BigNumber.from(deploy.payment.getArgByName('amount')
+          .value()
+          .toString()),
+      );
     }
+    // eslint-disable-next-line new-cap
     return new deployResult(hash, cost, amount);
   }
 
@@ -64,25 +73,28 @@ export class DeployManager {
    */
   async getDeployResult(deployResult) {
     const result = await this.client.casperClient.getDeploy(deployResult.hash);
-    let deploy = result[0];
+    const deploy = result[0];
     let execResult = result[1].execution_results;
     if (execResult.length > 0) {
       execResult = execResult[0].result;
     }
+    /* eslint-disable no-param-reassign */
     if (deploy.session.getArgByName('amount')) {
-      deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName('amount').value().toString()));
+      deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName('amount')
+        .value()
+        .toString()));
     }
-    if (STATUS_OK in execResult) {
-      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_OK].cost));
-      deployResult.status = STATUS_OK;
+    if (DeployResult.STATUS_OK in execResult) {
+      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[DeployResult.STATUS_OK].cost));
+      deployResult.status = DeployResult.STATUS_OK;
       return deployResult;
     }
-    if (STATUS_KO in execResult) {
-      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[STATUS_KO].cost));
-      deployResult.status = STATUS_KO;
-      deployResult.message = execResult[STATUS_KO].error_message;
+    if (DeployResult.STATUS_KO in execResult) {
+      deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[DeployResult.STATUS_KO].cost));
+      deployResult.status = DeployResult.STATUS_KO;
+      deployResult.message = execResult[DeployResult.STATUS_KO].error_message;
     }
+    /* eslint-enable no-param-reassign */
     return deployResult;
   }
-
 }

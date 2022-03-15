@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel -d dist/ src/",
     "docs": "esdoc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src tests"
   },
   "repository": {
     "type": "git",
@@ -34,12 +35,18 @@
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/eslint-plugin": "^7.17.7",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.8",
     "babel-loader": "^8.2.2",
     "core-js": "3",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
     "jest": "^27.1.0"
   },
   "jest": {
