@@ -12,7 +12,47 @@ The CasperHolders website use this library to handle any interaction with the Ca
 
 It contains a huge portion of the website logic.
 
-Documentation : [Link](https://casperholders.github.io/casperholderscore/)
+[API Documentation](https://casperholders.github.io/casperholderscore/)
+
+> Version 1 & 2 are deprecated. Version 3 is actively maintained.
+
+## Installation
+
+### NPM
+
+```bash
+npm install @casperholders/core
+```
+
+### Yarn
+
+```bash
+yarn add @casperholders/core
+```
+
+## Example usage
+
+```javascript
+import { ClientCasper } from '@casperholders/core';
+
+export default new ClientCasper('rpcurl');
+```
+
+When you use this lib in module mode you must transpile it. Example with a vue project:
+
+```javascript
+module.exports = {
+  // ...
+  transpileDependencies: [
+    '@casperholders/core',
+  ],
+  // ...
+}
+```
+
+You can find some example of the lib in the tests folders.  
+However, keep in mind this is a utility lib.  
+You will have to implement some abstracts class in your project if needed like the KeyManager.
 
 ## Development
 
@@ -45,26 +85,6 @@ Run lint
 ```bash
 yarn lint
 ```
-
-## Installation
-
-### NPM
-
-```bash
-npm install @casperholders/core
-```
-
-### Yarn
-
-```bash
-yarn add @casperholders/core
-```
-
-## Examples
-
-You can find some example of the lib in the tests folders.  
-However, keep in mind this is a utility lib.  
-You will have to implement some abstracts class in your project if needed like the KeyManager.
 
 ## Tests
 
