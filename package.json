@@ -3,6 +3,7 @@
   "version": "2.1.4",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
+  "module": "src/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "develop": "webpack --mode development --watch",
