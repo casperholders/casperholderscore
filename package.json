@@ -1,8 +1,11 @@
 {
   "name": "@casperholders/core",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Library for the casperholders website",
-  "files": [ "src/", "dist/" ],
+  "files": [
+    "src/",
+    "dist/"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "develop": "webpack --mode development --watch",
