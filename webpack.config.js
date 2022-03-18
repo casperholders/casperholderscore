@@ -18,6 +18,7 @@ module.exports = {
       root: 'casper-js-sdk',
     },
   },
+  devtool: 'source-map',
   module: {
     rules: [
       {
