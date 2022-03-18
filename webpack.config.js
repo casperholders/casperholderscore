@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'index.js',
-    globalObject: 'casperholderscore',
+    globalObject: 'this',
     libraryTarget: 'umd',
     library: '@casperholders/core',
   },
