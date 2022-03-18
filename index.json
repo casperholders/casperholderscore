@@ -4520,6 +4520,17 @@
   {
     "__docId__": 248,
     "kind": "file",
+    "name": "src/services/results/deployResultsMap.js",
+    "content": "import {\n  AccountInfoResult,\n  AddBidResult,\n  DelegateResult,\n  KeyManagementResult,\n  SmartContractResult,\n  TransferResult,\n  UndelegateResult,\n  WithdrawBidResult,\n} from './index';\n\nexport default new Map(\n  [\n    [AccountInfoResult.getName(), AccountInfoResult],\n    [AddBidResult.getName(), AddBidResult],\n    [DelegateResult.getName(), DelegateResult],\n    [KeyManagementResult.getName(), KeyManagementResult],\n    [SmartContractResult.getName(), SmartContractResult],\n    [TransferResult.getName(), TransferResult],\n    [UndelegateResult.getName(), UndelegateResult],\n    [WithdrawBidResult.getName(), WithdrawBidResult],\n  ],\n);\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/deployResultsMap.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 249,
+    "kind": "file",
     "name": "src/services/results/index.js",
     "content": "export { default as AccountInfoResult } from './accountInfoResult';\nexport { default as AddBidResult } from './addBidResult';\nexport { default as DelegateResult } from './delegateResult';\nexport { default as DeployResult } from './deployResult';\nexport { default as KeyManagementResult } from './keyManagementResult';\nexport { default as SmartContractResult } from './smartContractResult';\nexport { default as TransferResult } from './transferResult';\nexport { default as UndelegateResult } from './undelegateResult';\nexport { default as WithdrawBidResult } from './withdrawBidResult';\n",
     "static": true,
@@ -4529,7 +4540,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 249,
+    "__docId__": 250,
     "kind": "file",
     "name": "src/services/results/keyManagementResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * KeyManagementResult class\n */\nexport default class KeyManagementResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, KeyManagementResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Key Management Operation';\n  }\n}\n",
@@ -4540,7 +4551,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 250,
+    "__docId__": 251,
     "kind": "class",
     "name": "KeyManagementResult",
     "memberof": "src/services/results/keyManagementResult.js",
@@ -4558,7 +4569,7 @@
     ]
   },
   {
-    "__docId__": 251,
+    "__docId__": 252,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -4603,7 +4614,7 @@
     ]
   },
   {
-    "__docId__": 252,
+    "__docId__": 253,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -4625,7 +4636,7 @@
     "params": []
   },
   {
-    "__docId__": 253,
+    "__docId__": 254,
     "kind": "file",
     "name": "src/services/results/smartContractResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * SmartContractResult class\n */\nexport default class SmartContractResult extends DeployResult {\n  /**\n   * Constructor\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, SmartContractResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Smart Contract Operation';\n  }\n}\n",
@@ -4636,7 +4647,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 254,
+    "__docId__": 255,
     "kind": "class",
     "name": "SmartContractResult",
     "memberof": "src/services/results/smartContractResult.js",
@@ -4654,7 +4665,7 @@
     ]
   },
   {
-    "__docId__": 255,
+    "__docId__": 256,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -4699,7 +4710,7 @@
     ]
   },
   {
-    "__docId__": 256,
+    "__docId__": 257,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -4721,7 +4732,7 @@
     "params": []
   },
   {
-    "__docId__": 257,
+    "__docId__": 258,
     "kind": "file",
     "name": "src/services/results/transferResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * TransferResult class\n */\nexport default class TransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, TransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Transfer Operation';\n  }\n}\n",
@@ -4732,7 +4743,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 258,
+    "__docId__": 259,
     "kind": "class",
     "name": "TransferResult",
     "memberof": "src/services/results/transferResult.js",
@@ -4750,7 +4761,7 @@
     ]
   },
   {
-    "__docId__": 259,
+    "__docId__": 260,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -4795,7 +4806,7 @@
     ]
   },
   {
-    "__docId__": 260,
+    "__docId__": 261,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -4817,7 +4828,7 @@
     "params": []
   },
   {
-    "__docId__": 261,
+    "__docId__": 262,
     "kind": "file",
     "name": "src/services/results/undelegateResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * UndelegateResult class\n */\nexport default class UndelegateResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, UndelegateResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Unstake Operation';\n  }\n}\n",
@@ -4828,7 +4839,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 262,
+    "__docId__": 263,
     "kind": "class",
     "name": "UndelegateResult",
     "memberof": "src/services/results/undelegateResult.js",
@@ -4846,7 +4857,7 @@
     ]
   },
   {
-    "__docId__": 263,
+    "__docId__": 264,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -4891,7 +4902,7 @@
     ]
   },
   {
-    "__docId__": 264,
+    "__docId__": 265,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -4913,7 +4924,7 @@
     "params": []
   },
   {
-    "__docId__": 265,
+    "__docId__": 266,
     "kind": "file",
     "name": "src/services/results/withdrawBidResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * WithdrawBidResult class\n */\nexport default class WithdrawBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, WithdrawBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Withdraw bid Operation';\n  }\n}\n",
@@ -4924,7 +4935,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 266,
+    "__docId__": 267,
     "kind": "class",
     "name": "WithdrawBidResult",
     "memberof": "src/services/results/withdrawBidResult.js",
@@ -4942,7 +4953,7 @@
     ]
   },
   {
-    "__docId__": 267,
+    "__docId__": 268,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -4987,7 +4998,7 @@
     ]
   },
   {
-    "__docId__": 268,
+    "__docId__": 269,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -5009,7 +5020,7 @@
     "params": []
   },
   {
-    "__docId__": 269,
+    "__docId__": 270,
     "kind": "file",
     "name": "src/services/signers/abstractSigner.js",
     "content": "/**\n * @typedef {import('casper-js-sdk').DeployUtil.Deploy} Deploy\n */\n\n/**\n * AbstractSigner class\n * Abstract class used as a skeleton to implement deployment signing.\n */\nexport default class AbstractSigner {\n  /**\n   * Abstract method to sign a deployment.\n   *\n   * @param {Deploy} deploy - Deploy object\n   * @param {Object} options - Generic options object used to pass additional arguments\n   * needed for the different signing methods\n   * @return {Promise<Deploy>} - Signed deploy object\n   */\n  // eslint-disable-next-line no-unused-vars\n  static async sign(deploy, options = {}) {\n    throw new Error('You must implement this function');\n  }\n}\n",
@@ -5020,7 +5031,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 270,
+    "__docId__": 271,
     "kind": "typedef",
     "name": "Deploy",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -5037,7 +5048,7 @@
     }
   },
   {
-    "__docId__": 271,
+    "__docId__": 272,
     "kind": "class",
     "name": "AbstractSigner",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -5052,7 +5063,7 @@
     "interface": false
   },
   {
-    "__docId__": 272,
+    "__docId__": 273,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/abstractSigner.js~AbstractSigner",
@@ -5095,7 +5106,7 @@
     }
   },
   {
-    "__docId__": 273,
+    "__docId__": 274,
     "kind": "file",
     "name": "src/services/signers/casperSigner.js",
     "content": "import { DeployUtil, Signer } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * CasperSigner class\n * Used to sign a deployment with the Casper Signer extension\n */\nexport default class CasperSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {string} options.activeKey - Public key of the user.\n   * @param {string} options.to - Public key of the targeted wallet.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const signedJsonDeploy = await Signer.sign(DeployUtil.deployToJson(deploy), options.activeKey, options.to);\n      const signedDeploy = await DeployUtil.deployFromJson(signedJsonDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5106,7 +5117,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 274,
+    "__docId__": 275,
     "kind": "class",
     "name": "CasperSigner",
     "memberof": "src/services/signers/casperSigner.js",
@@ -5124,7 +5135,7 @@
     ]
   },
   {
-    "__docId__": 275,
+    "__docId__": 276,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/casperSigner.js~CasperSigner",
@@ -5193,7 +5204,7 @@
     }
   },
   {
-    "__docId__": 276,
+    "__docId__": 277,
     "kind": "file",
     "name": "src/services/signers/index.js",
     "content": "export { default as AbstractSigner } from './abstractSigner';\nexport { default as CasperSigner } from './casperSigner';\nexport { default as LedgerSigner } from './ledgerSigner';\nexport { default as LocalSigner } from './localSigner';\nexport { default as TorusSigner } from './torusSigner';\n",
@@ -5204,7 +5215,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 277,
+    "__docId__": 278,
     "kind": "file",
     "name": "src/services/signers/ledgerSigner.js",
     "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * LedgerSigner class\n * Used to sign a deployment with Ledger\n */\nexport default class LedgerSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {CasperApp} options.app - CasperApp instance.\n   * @param {string} options.publicKey - Public key that sign the deploy.\n   * @param {string} options.keyPath - Public key that sign the deploy.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const responseDeploy = await options.app.sign(\n        `m/44'/506'/0'/0/${options.keyPath}`,\n        DeployUtil.deployToBytes(deploy),\n      );\n      let signedDeploy = DeployUtil.setSignature(\n        deploy,\n        responseDeploy.signatureRS,\n        CLPublicKey.fromHex(options.publicKey),\n      );\n      signedDeploy = DeployUtil.validateDeploy(signedDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5215,7 +5226,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 278,
+    "__docId__": 279,
     "kind": "class",
     "name": "LedgerSigner",
     "memberof": "src/services/signers/ledgerSigner.js",
@@ -5233,7 +5244,7 @@
     ]
   },
   {
-    "__docId__": 279,
+    "__docId__": 280,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/ledgerSigner.js~LedgerSigner",
@@ -5312,7 +5323,7 @@
     }
   },
   {
-    "__docId__": 280,
+    "__docId__": 281,
     "kind": "file",
     "name": "src/services/signers/localSigner.js",
     "content": "import { DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * @typedef { import('casper-js-sdk/dist/lib/Keys').AsymmetricKey } AsymmetricKey\n */\n\n/**\n * LocalSigner class\n * Used to sign a deployment with local keys\n */\nexport default class LocalSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding key.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {AsymmetricKey} options.key - AsymmetricKey of the user.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      return DeployUtil.signDeploy(deploy, options.key);\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5323,7 +5334,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 281,
+    "__docId__": 282,
     "kind": "typedef",
     "name": "AsymmetricKey",
     "memberof": "src/services/signers/localSigner.js",
@@ -5340,7 +5351,7 @@
     }
   },
   {
-    "__docId__": 282,
+    "__docId__": 283,
     "kind": "class",
     "name": "LocalSigner",
     "memberof": "src/services/signers/localSigner.js",
@@ -5358,7 +5369,7 @@
     ]
   },
   {
-    "__docId__": 283,
+    "__docId__": 284,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/localSigner.js~LocalSigner",
@@ -5418,7 +5429,7 @@
   },
   {
     "kind": "index",
-    "content": "# CasperHolders Core\n\n![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)\n[![codecov](https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U)](https://codecov.io/gh/casperholders/casperholderscore)\n[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n\nThe CasperHolders website use this library to handle any interaction with the CasperNetwork.\n\nIt contains a huge portion of the website logic.\n\nDocumentation : [Link](https://casperholders.github.io/casperholderscore/)\n\n## Development\n\nInstall dependencies\n\n```bash\nyarn install\n```\n\nBuild\n\n```bash\nyarn build\n```\n\nGenerate documentation\n\n```bash\nyarn docs\n```\n\nRun tests\n\n```bash\nyarn test\n```\n\nRun lint\n\n```bash\nyarn lint\n```\n\n## Installation\n\n### NPM\n\n```bash\nnpm install @casperholders/core\n```\n\n### Yarn\n\n```bash\nyarn add @casperholders/core\n```\n\n## Examples\n\nYou can find some example of the lib in the tests folders.  \nHowever, keep in mind this is a utility lib.  \nYou will have to implement some abstracts class in your project if needed like the KeyManager.\n\n## Tests\n\n**We don't test abstracts / results / errors classes because they don't own any logic.  \nWe don't test the implementation of the CasperSigner because it requires full access to a browser test suite and the extension.  \nWe assume the Casper Signer JS SDK is battle tested to interact with the Casper Signer extension**\n",
+    "content": "# CasperHolders Core\n\n![Documentation](https://casperholders.github.io/casperholderscore/badge.svg)\n[![codecov](https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U)](https://codecov.io/gh/casperholders/casperholderscore)\n[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)\n\nThe CasperHolders website use this library to handle any interaction with the CasperNetwork.\n\nIt contains a huge portion of the website logic.\n\n[API Documentation](https://casperholders.github.io/casperholderscore/)\n\n> Version 1 & 2 are deprecated. Version 3 is actively maintained.\n\n## Installation\n\n### NPM\n\n```bash\nnpm install @casperholders/core\n```\n\n### Yarn\n\n```bash\nyarn add @casperholders/core\n```\n\n## Example usage\n\n```javascript\nimport { ClientCasper } from '@casperholders/core';\n\nexport default new ClientCasper('rpcurl');\n```\n\nWhen you use this lib in module mode you must transpile it. Example with a vue project:\n\n```javascript\nmodule.exports = {\n  // ...\n  transpileDependencies: [\n    '@casperholders/core',\n  ],\n  // ...\n}\n```\n\nYou can find some example of the lib in the tests folders.  \nHowever, keep in mind this is a utility lib.  \nYou will have to implement some abstracts class in your project if needed like the KeyManager.\n\n## Development\n\nInstall dependencies\n\n```bash\nyarn install\n```\n\nBuild\n\n```bash\nyarn build\n```\n\nGenerate documentation\n\n```bash\nyarn docs\n```\n\nRun tests\n\n```bash\nyarn test\n```\n\nRun lint\n\n```bash\nyarn lint\n```\n\n## Tests\n\n**We don't test abstracts / results / errors classes because they don't own any logic.  \nWe don't test the implementation of the CasperSigner because it requires full access to a browser test suite and the extension.  \nWe assume the Casper Signer JS SDK is battle tested to interact with the Casper Signer extension**\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/README.md",
     "name": "./README.md",
     "static": true,
@@ -5426,7 +5437,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"2.1.5\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.8.0\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"3.0.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.8.0\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,

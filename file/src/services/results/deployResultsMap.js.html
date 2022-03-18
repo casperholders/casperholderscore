@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home | @casperholders/core</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/services/results/deployResultsMap.js | @casperholders/core</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -71,54 +71,32 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="casperholders-core">CasperHolders Core</h1><p><img src="https://casperholders.github.io/casperholderscore/badge.svg" alt="Documentation">
-<a href="https://codecov.io/gh/casperholders/casperholderscore"><img src="https://codecov.io/gh/casperholders/casperholderscore/branch/main/graph/badge.svg?token=6OTNGQO12U" alt="codecov"></a>
-<a href="https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore"><img src="https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&amp;metric=ncloc" alt="Lines of Code"></a>
-<a href="https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore"><img src="https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&amp;metric=sqale_rating" alt="Maintainability Rating"></a>
-<a href="https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore"><img src="https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&amp;metric=alert_status" alt="Quality Gate Status"></a>
-<a href="https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore"><img src="https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&amp;metric=reliability_rating" alt="Reliability Rating"></a>
-<a href="https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore"><img src="https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&amp;metric=security_rating" alt="Security Rating"></a></p>
-<p>The CasperHolders website use this library to handle any interaction with the CasperNetwork.</p>
-<p>It contains a huge portion of the website logic.</p>
-<p><a href="https://casperholders.github.io/casperholderscore/">API Documentation</a></p>
-<blockquote>
-<p>Version 1 &amp; 2 are deprecated. Version 3 is actively maintained.</p>
-</blockquote>
-<h2 id="installation">Installation</h2><h3 id="npm">NPM</h3><pre><code class="lang-bash"><code class="source-code prettyprint">npm install @casperholders/core</code>
-</code></pre>
-<h3 id="yarn">Yarn</h3><pre><code class="lang-bash"><code class="source-code prettyprint">yarn add @casperholders/core</code>
-</code></pre>
-<h2 id="example-usage">Example usage</h2><pre><code class="lang-javascript"><code class="source-code prettyprint">import { ClientCasper } from &apos;@casperholders/core&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/services/results/deployResultsMap.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  AccountInfoResult,
+  AddBidResult,
+  DelegateResult,
+  KeyManagementResult,
+  SmartContractResult,
+  TransferResult,
+  UndelegateResult,
+  WithdrawBidResult,
+} from &apos;./index&apos;;
 
-export default new ClientCasper(&apos;rpcurl&apos;);</code>
-</code></pre>
-<p>When you use this lib in module mode you must transpile it. Example with a vue project:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">module.exports = {
-  // ...
-  transpileDependencies: [
-    &apos;@casperholders/core&apos;,
+export default new Map(
+  [
+    [AccountInfoResult.getName(), AccountInfoResult],
+    [AddBidResult.getName(), AddBidResult],
+    [DelegateResult.getName(), DelegateResult],
+    [KeyManagementResult.getName(), KeyManagementResult],
+    [SmartContractResult.getName(), SmartContractResult],
+    [TransferResult.getName(), TransferResult],
+    [UndelegateResult.getName(), UndelegateResult],
+    [WithdrawBidResult.getName(), WithdrawBidResult],
   ],
-  // ...
-}</code>
+);
 </code></pre>
-<p>You can find some example of the lib in the tests folders.<br>However, keep in mind this is a utility lib.<br>You will have to implement some abstracts class in your project if needed like the KeyManager.</p>
-<h2 id="development">Development</h2><p>Install dependencies</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">yarn install</code>
-</code></pre>
-<p>Build</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">yarn build</code>
-</code></pre>
-<p>Generate documentation</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">yarn docs</code>
-</code></pre>
-<p>Run tests</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">yarn test</code>
-</code></pre>
-<p>Run lint</p>
-<pre><code class="lang-bash"><code class="source-code prettyprint">yarn lint</code>
-</code></pre>
-<h2 id="tests">Tests</h2><p><strong>We don&apos;t test abstracts / results / errors classes because they don&apos;t own any logic.<br>We don&apos;t test the implementation of the CasperSigner because it requires full access to a browser test suite and the extension.<br>We assume the Casper Signer JS SDK is battle tested to interact with the Casper Signer extension</strong></p>
-</div>
+
 </div>
 
 <footer class="footer">

@@ -1278,6 +1278,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/results/deployresultsmap.js",
+    "file/src/services/results/deployResultsMap.js.html",
+    "src/services/results/deployResultsMap.js",
+    "file"
+  ],
+  [
     "src/services/results/index.js",
     "file/src/services/results/index.js.html",
     "src/services/results/index.js",
