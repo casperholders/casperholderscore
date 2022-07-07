@@ -7,3 +7,4 @@ export { default as KeyManagement } from './keyManagement/keyManagement';
 export { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';
 export { default as TransferDeployParameters } from './transfer/TransferDeployParameters';
 export * from './auction';
+export * from './erc20';
