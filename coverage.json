@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 157,
-  "actualCount": 157,
+  "expectCount": 173,
+  "actualCount": 173,
   "files": {
     "src/services/balance/balance.js": {
       "expectCount": 11,
@@ -56,6 +56,16 @@
     "src/services/deploys/deployManager.js": {
       "expectCount": 6,
       "actualCount": 6,
+      "undocumentLines": []
+    },
+    "src/services/deploys/erc20/actions/erc20Approve.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/erc20/actions/erc20Transfer.js": {
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     },
     "src/services/deploys/keyManagement/keyManagement.js": {
@@ -129,6 +139,16 @@
       "undocumentLines": []
     },
     "src/services/results/delegateResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/erc20/erc20ApproveResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/erc20/erc20TransferResult.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []

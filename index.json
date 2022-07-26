@@ -2919,8 +2919,406 @@
   {
     "__docId__": 160,
     "kind": "file",
+    "name": "src/services/deploys/erc20/actions/erc20Approve.js",
+    "content": "import { CLPublicKey, CLU256, RuntimeArgs } from 'casper-js-sdk';\nimport Erc20ApproveResult from '../../../results/erc20/erc20ApproveResult';\nimport AbstractSmartContractStoredByHashDeployParameters\n  from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'approve';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 400000000;\n\n/**\n * Erc20Approve class\n * Class used to create DeployParameters for an ERC20 Approve operation\n */\nexport default class Erc20Approve extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} amount - Amount of tokens that will be allowed to transfer\n   * @param {string} spender - Public key in the hex format of the spender\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, amount, spender, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({\n      spender: CLPublicKey.fromHex(spender),\n      amount: new CLU256(amount),\n    });\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return Erc20ApproveResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/erc20/actions/erc20Approve.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 161,
+    "kind": "variable",
+    "name": "entrypoint",
+    "memberof": "src/services/deploys/erc20/actions/erc20Approve.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Approve.js~entrypoint",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Approve.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 162,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/erc20/actions/erc20Approve.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Approve.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Approve.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 163,
+    "kind": "class",
+    "name": "Erc20Approve",
+    "memberof": "src/services/deploys/erc20/actions/erc20Approve.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Approve.js",
+    "importStyle": "Erc20Approve",
+    "description": "Erc20Approve class\nClass used to create DeployParameters for an ERC20 Approve operation",
+    "lineNumber": 22,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
+    ]
+  },
+  {
+    "__docId__": 164,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 33,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "Amount of tokens that will be allowed to transfer"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "spender",
+        "description": "Public key in the hex format of the spender"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 165,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 47,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 166,
+    "kind": "file",
+    "name": "src/services/deploys/erc20/actions/erc20Transfer.js",
+    "content": "import { CLPublicKey, CLU256, RuntimeArgs } from 'casper-js-sdk';\nimport Erc20TransferResult from '../../../results/erc20/erc20TransferResult';\nimport AbstractSmartContractStoredByHashDeployParameters\n  from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'transfer';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 500000000;\n\n/**\n * Erc20Transfer class\n * Class used to create DeployParameters for an ERC20 Transfer operation\n */\nexport default class Erc20Transfer extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} amount - Amount of tokens that will be transferred\n   * @param {string} recipient - Public key in the hex format of the recipient\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, amount, recipient, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({\n      recipient: CLPublicKey.fromHex(recipient),\n      amount: new CLU256(amount),\n    });\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return Erc20TransferResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/erc20/actions/erc20Transfer.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 167,
+    "kind": "variable",
+    "name": "entrypoint",
+    "memberof": "src/services/deploys/erc20/actions/erc20Transfer.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Transfer.js~entrypoint",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Transfer.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 168,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/erc20/actions/erc20Transfer.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Transfer.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Transfer.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 169,
+    "kind": "class",
+    "name": "Erc20Transfer",
+    "memberof": "src/services/deploys/erc20/actions/erc20Transfer.js",
+    "static": true,
+    "longname": "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/erc20/actions/erc20Transfer.js",
+    "importStyle": "Erc20Transfer",
+    "description": "Erc20Transfer class\nClass used to create DeployParameters for an ERC20 Transfer operation",
+    "lineNumber": 22,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
+    ]
+  },
+  {
+    "__docId__": 170,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 33,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "Amount of tokens that will be transferred"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "recipient",
+        "description": "Public key in the hex format of the recipient"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 171,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 47,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 172,
+    "kind": "file",
+    "name": "src/services/deploys/erc20/actions/index.js",
+    "content": "export { default as Erc20Approve } from './erc20Approve';\nexport { default as Erc20Transfer } from './erc20Transfer';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/erc20/actions/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 173,
+    "kind": "file",
+    "name": "src/services/deploys/erc20/index.js",
+    "content": "export * from './actions';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/erc20/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 174,
+    "kind": "file",
     "name": "src/services/deploys/index.js",
-    "content": "export { default as AbstractSmartContractDeployParameters } from './abstractSmartContractDeployParameters';\nexport { default as AbstractSmartContractModuleBytesParameters } from './abstractSmartContractModuleBytesParameters';\nexport { default as AbstractSmartContractStoredByHashDeployParameters } from './abstractSmartContractStoredByHashDeployParameters';\nexport { default as AccountInfo } from './account-info/AccountInfo';\nexport { default as DeployManager } from './deployManager';\nexport { default as KeyManagement } from './keyManagement/keyManagement';\nexport { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';\nexport { default as TransferDeployParameters } from './transfer/TransferDeployParameters';\nexport * from './auction';\n",
+    "content": "export { default as AbstractSmartContractDeployParameters } from './abstractSmartContractDeployParameters';\nexport { default as AbstractSmartContractModuleBytesParameters } from './abstractSmartContractModuleBytesParameters';\nexport { default as AbstractSmartContractStoredByHashDeployParameters } from './abstractSmartContractStoredByHashDeployParameters';\nexport { default as AccountInfo } from './account-info/AccountInfo';\nexport { default as DeployManager } from './deployManager';\nexport { default as KeyManagement } from './keyManagement/keyManagement';\nexport { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';\nexport { default as TransferDeployParameters } from './transfer/TransferDeployParameters';\nexport * from './auction';\nexport * from './erc20';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/index.js",
     "access": "public",
@@ -2928,7 +3326,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 161,
+    "__docId__": 175,
     "kind": "file",
     "name": "src/services/deploys/keyManagement/keyManagement.js",
     "content": "import {\n  CLByteArrayType, CLListType, CLU8Type, CLValueBuilder, RuntimeArgs,\n} from 'casper-js-sdk';\nimport { None, Some } from 'ts-results';\nimport KeyManagementResult from '../../results/keyManagementResult';\nimport AbstractSmartContractModuleBytesParameters from '../abstractSmartContractModuleBytesParameters';\n\n/**\n * KeyManagement class\n * Class used to create DeployParameters for a KeyManagement set_all operation\n */\nexport default class KeyManagement extends AbstractSmartContractModuleBytesParameters {\n  /**\n   * Constructor\n   *\n   * @param {number} deployThreshold - Deploy threshold\n   * @param {number} keyManagementThreshold - Key Management threshold\n   * @param {Array} accountWeights - Array of objects with account hashes and weights\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(\n    deployThreshold,\n    keyManagementThreshold,\n    accountWeights,\n    activeKey,\n    network,\n    smartContractBuffer,\n    ttl = 1,\n  ) {\n    let fee = 0;\n    let deployThresholdValue = CLValueBuilder.option(None, new CLU8Type());\n    let keyManagementThresholdValue = CLValueBuilder.option(None, new CLU8Type());\n    let accountsValue = CLValueBuilder.option(None, new CLListType(new CLByteArrayType(32)));\n    let weightsValue = CLValueBuilder.option(None, new CLListType(new CLU8Type()));\n    if (deployThreshold) {\n      deployThresholdValue = CLValueBuilder.option(\n        Some(\n          CLValueBuilder.u8(deployThreshold),\n        ),\n        new CLU8Type(),\n      );\n      fee += 200000000;\n    }\n    if (keyManagementThreshold) {\n      keyManagementThresholdValue = CLValueBuilder.option(\n        Some(\n          CLValueBuilder.u8(keyManagementThreshold),\n        ),\n        new CLU8Type(),\n      );\n      fee += 200000000;\n    }\n    if (accountWeights) {\n      accountsValue = CLValueBuilder.option(\n        Some(\n          CLValueBuilder.list(\n            accountWeights.map((x) => CLValueBuilder.byteArray(x.accountHash)),\n          ),\n        ),\n        new CLListType(new CLByteArrayType(32)),\n      );\n      weightsValue = CLValueBuilder.option(\n        Some(\n          CLValueBuilder.list(\n            accountWeights.map((x) => CLValueBuilder.u8(x.weight)),\n          ),\n        ),\n        new CLListType(new CLU8Type()),\n      );\n      fee += 200000000 * accountWeights.length;\n    }\n    const args = RuntimeArgs.fromMap({\n      deployment_threshold: deployThresholdValue,\n      key_management_threshold: keyManagementThresholdValue,\n      accounts: accountsValue,\n      weights: weightsValue,\n    });\n    super(activeKey, network, smartContractBuffer, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return KeyManagementResult;\n  }\n}\n",
@@ -2939,7 +3337,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 162,
+    "__docId__": 176,
     "kind": "class",
     "name": "KeyManagement",
     "memberof": "src/services/deploys/keyManagement/keyManagement.js",
@@ -2957,7 +3355,7 @@
     ]
   },
   {
-    "__docId__": 163,
+    "__docId__": 177,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/keyManagement/keyManagement.js~KeyManagement",
@@ -3042,7 +3440,7 @@
     ]
   },
   {
-    "__docId__": 164,
+    "__docId__": 178,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/keyManagement/keyManagement.js~KeyManagement",
@@ -3068,7 +3466,7 @@
     }
   },
   {
-    "__docId__": 165,
+    "__docId__": 179,
     "kind": "file",
     "name": "src/services/deploys/smartContract/smartContractDeployParameters.js",
     "content": "import { CLPublicKey, DeployUtil, RuntimeArgs } from 'casper-js-sdk';\nimport CurrencyUtils from '../../helpers/currencyUtils';\nimport SmartContractResult from '../../results/smartContractResult';\nimport AbstractSmartContractDeployParameters from '../abstractSmartContractDeployParameters';\n\n/**\n * SmartContractDeployParameters class\n * Class used to define the parameters of a deployment to send a smart contract on the network\n */\nexport default class SmartContractDeployParameters extends AbstractSmartContractDeployParameters {\n  /** @type {string} */\n  activeKey;\n\n  /** @type {string} */\n  network;\n\n  /** @type {Buffer} */\n  smartContractBuffer;\n\n  /** @type {string} */\n  fee;\n\n  /** @type {number} */\n  ttl;\n\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read\n   * @param {string} fee - Runtime fee for the given SmartContract operation\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(activeKey, network, smartContractBuffer, fee, ttl = 1) {\n    super();\n    this.activeKey = activeKey;\n    this.network = network;\n    this.smartContractBuffer = smartContractBuffer;\n    this.fee = fee;\n    this.ttl = ttl * 3600000;\n  }\n\n  /**\n   * Get the deployParams deploy argument\n   *\n   * @return {DeployUtil.DeployParams} - Return a DeployParams\n   */\n  get deployParams() {\n    return new DeployUtil.DeployParams(\n      CLPublicKey.fromHex(this.activeKey),\n      this.network,\n      1,\n      this.ttl,\n    );\n  }\n\n  /**\n   * Get the session deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n   */\n  get session() {\n    return DeployUtil.ExecutableDeployItem.newModuleBytes(\n      new Uint8Array(this.smartContractBuffer),\n      RuntimeArgs.fromMap({}),\n    );\n  }\n\n  /**\n   * Get the payment deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n   */\n  get payment() {\n    return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(this.fee));\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return SmartContractResult;\n  }\n}\n",
@@ -3079,7 +3477,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 166,
+    "__docId__": 180,
     "kind": "class",
     "name": "SmartContractDeployParameters",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js",
@@ -3097,7 +3495,7 @@
     ]
   },
   {
-    "__docId__": 167,
+    "__docId__": 181,
     "kind": "member",
     "name": "activeKey",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3116,7 +3514,7 @@
     }
   },
   {
-    "__docId__": 168,
+    "__docId__": 182,
     "kind": "member",
     "name": "network",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3135,7 +3533,7 @@
     }
   },
   {
-    "__docId__": 169,
+    "__docId__": 183,
     "kind": "member",
     "name": "smartContractBuffer",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3154,7 +3552,7 @@
     }
   },
   {
-    "__docId__": 170,
+    "__docId__": 184,
     "kind": "member",
     "name": "fee",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3173,7 +3571,7 @@
     }
   },
   {
-    "__docId__": 171,
+    "__docId__": 185,
     "kind": "member",
     "name": "ttl",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3192,7 +3590,7 @@
     }
   },
   {
-    "__docId__": 172,
+    "__docId__": 186,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3257,7 +3655,7 @@
     ]
   },
   {
-    "__docId__": 178,
+    "__docId__": 192,
     "kind": "get",
     "name": "deployParams",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3283,7 +3681,7 @@
     }
   },
   {
-    "__docId__": 179,
+    "__docId__": 193,
     "kind": "get",
     "name": "session",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3309,7 +3707,7 @@
     }
   },
   {
-    "__docId__": 180,
+    "__docId__": 194,
     "kind": "get",
     "name": "payment",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3335,7 +3733,7 @@
     }
   },
   {
-    "__docId__": 181,
+    "__docId__": 195,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -3361,7 +3759,7 @@
     }
   },
   {
-    "__docId__": 182,
+    "__docId__": 196,
     "kind": "file",
     "name": "src/services/deploys/transfer/TransferDeployParameters.js",
     "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport CurrencyUtils from '../../helpers/currencyUtils';\nimport TransferResult from '../../results/transferResult';\nimport AbstractSmartContractDeployParameters from '../abstractSmartContractDeployParameters';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 100000000;\n\n/**\n * TransferDeployParameters class\n * Class used to create DeployParameters for a Transfer operation\n */\nexport default class TransferDeployParameters extends AbstractSmartContractDeployParameters {\n  /** @type {string} */\n  activeKey;\n\n  /** @type {string} */\n  network;\n\n  /** @type {string} */\n  amount;\n\n  /** @type {string} */\n  target;\n\n  /** @type {string} */\n  transferID;\n\n  /** @type {number} */\n  ttl;\n\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} amount - Amount to transfer in casper\n   * @param {string} target - Public key in the hex format of the receiver\n   * @param {string} transferID - TransferID of the transfer operation\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(activeKey, network, amount, target, transferID, ttl = 1) {\n    super();\n    this.activeKey = activeKey;\n    this.network = network;\n    this.amount = amount;\n    this.target = target;\n    this.transferID = transferID;\n    this.ttl = ttl * 3600000;\n  }\n\n  /**\n   * Get the deployParams deploy argument\n   *\n   * @return {DeployUtil.DeployParams} - Return a DeployParams\n   */\n  get deployParams() {\n    return new DeployUtil.DeployParams(\n      CLPublicKey.fromHex(this.activeKey),\n      this.network,\n      1,\n      this.ttl,\n    );\n  }\n\n  /**\n   * Get the session deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n   */\n  get session() {\n    return DeployUtil.ExecutableDeployItem.newTransfer(\n      CurrencyUtils.convertCasperToMotes(this.amount),\n      CLPublicKey.fromHex(this.target),\n      undefined,\n      this.transferID,\n    );\n  }\n\n  /**\n   * Get the payment deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get payment() {\n    return DeployUtil.standardPayment(fee);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {TransferResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return TransferResult;\n  }\n}\n",
@@ -3372,7 +3770,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 183,
+    "__docId__": 197,
     "kind": "variable",
     "name": "fee",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js",
@@ -3401,7 +3799,7 @@
     "ignore": true
   },
   {
-    "__docId__": 184,
+    "__docId__": 198,
     "kind": "class",
     "name": "TransferDeployParameters",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js",
@@ -3419,7 +3817,7 @@
     ]
   },
   {
-    "__docId__": 185,
+    "__docId__": 199,
     "kind": "member",
     "name": "activeKey",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3438,7 +3836,7 @@
     }
   },
   {
-    "__docId__": 186,
+    "__docId__": 200,
     "kind": "member",
     "name": "network",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3457,7 +3855,7 @@
     }
   },
   {
-    "__docId__": 187,
+    "__docId__": 201,
     "kind": "member",
     "name": "amount",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3476,7 +3874,7 @@
     }
   },
   {
-    "__docId__": 188,
+    "__docId__": 202,
     "kind": "member",
     "name": "target",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3495,7 +3893,7 @@
     }
   },
   {
-    "__docId__": 189,
+    "__docId__": 203,
     "kind": "member",
     "name": "transferID",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3514,7 +3912,7 @@
     }
   },
   {
-    "__docId__": 190,
+    "__docId__": 204,
     "kind": "member",
     "name": "ttl",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3533,7 +3931,7 @@
     }
   },
   {
-    "__docId__": 191,
+    "__docId__": 205,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3608,7 +4006,7 @@
     ]
   },
   {
-    "__docId__": 198,
+    "__docId__": 212,
     "kind": "get",
     "name": "deployParams",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3634,7 +4032,7 @@
     }
   },
   {
-    "__docId__": 199,
+    "__docId__": 213,
     "kind": "get",
     "name": "session",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3660,7 +4058,7 @@
     }
   },
   {
-    "__docId__": 200,
+    "__docId__": 214,
     "kind": "get",
     "name": "payment",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3686,7 +4084,7 @@
     }
   },
   {
-    "__docId__": 201,
+    "__docId__": 215,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -3712,7 +4110,7 @@
     }
   },
   {
-    "__docId__": 202,
+    "__docId__": 216,
     "kind": "file",
     "name": "src/services/errors/extendableError.js",
     "content": "/**\n * ExtendableError class\n * Generic error class used as a wrapper to define specific errors\n */\nexport default class ExtendableError extends Error {\n  /** @type {string} */\n  name;\n\n  /** @type {string} */\n  stack;\n\n  /**\n     * Constructor\n     *\n     * @param {string} message - Error message\n     */\n  constructor(message) {\n    super(message);\n    this.name = this.constructor.name;\n    if (typeof Error.captureStackTrace === 'function') {\n      Error.captureStackTrace(this, this.constructor);\n    } else {\n      this.stack = (new Error(message)).stack;\n    }\n  }\n}\n",
@@ -3723,7 +4121,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 203,
+    "__docId__": 217,
     "kind": "class",
     "name": "ExtendableError",
     "memberof": "src/services/errors/extendableError.js",
@@ -3741,7 +4139,7 @@
     ]
   },
   {
-    "__docId__": 204,
+    "__docId__": 218,
     "kind": "member",
     "name": "name",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -3760,7 +4158,7 @@
     }
   },
   {
-    "__docId__": 205,
+    "__docId__": 219,
     "kind": "member",
     "name": "stack",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -3779,7 +4177,7 @@
     }
   },
   {
-    "__docId__": 206,
+    "__docId__": 220,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -3804,7 +4202,7 @@
     ]
   },
   {
-    "__docId__": 209,
+    "__docId__": 223,
     "kind": "file",
     "name": "src/services/errors/index.js",
     "content": "export { default as ExtendableError } from './extendableError';\nexport { default as InsufficientFunds } from './insufficientFunds';\nexport { default as NoActiveKeyError } from './noActiveKeyError';\nexport { default as NoStakeBalanceError } from './noStakeBalanceError';\nexport { default as NoValidatorBalanceError } from './noValidatorBalanceError';\nexport { default as NoValidatorInfos } from './noValidatorInfos';\nexport { default as SignError } from './signError';\n",
@@ -3815,7 +4213,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 210,
+    "__docId__": 224,
     "kind": "file",
     "name": "src/services/errors/insufficientFunds.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n */\nexport default class InsufficientFunds extends ExtendableError {\n  /**\n   * Constructor\n   *\n   * @param min - Minimum casper needed\n   */\n  constructor(min) {\n    super(`Insufficient funds. You must have more than ${min} CSPR on your wallet.`);\n  }\n}\n",
@@ -3826,7 +4224,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 211,
+    "__docId__": 225,
     "kind": "class",
     "name": "InsufficientFunds",
     "memberof": "src/services/errors/insufficientFunds.js",
@@ -3844,7 +4242,7 @@
     ]
   },
   {
-    "__docId__": 212,
+    "__docId__": 226,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/insufficientFunds.js~InsufficientFunds",
@@ -3869,7 +4267,7 @@
     ]
   },
   {
-    "__docId__": 213,
+    "__docId__": 227,
     "kind": "file",
     "name": "src/services/errors/noActiveKeyError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n */\nexport default class NoActiveKeyError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Not connected.');\n  }\n}\n",
@@ -3880,7 +4278,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 214,
+    "__docId__": 228,
     "kind": "class",
     "name": "NoActiveKeyError",
     "memberof": "src/services/errors/noActiveKeyError.js",
@@ -3898,7 +4296,7 @@
     ]
   },
   {
-    "__docId__": 215,
+    "__docId__": 229,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noActiveKeyError.js~NoActiveKeyError",
@@ -3911,7 +4309,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 216,
+    "__docId__": 230,
     "kind": "file",
     "name": "src/services/errors/noStakeBalanceError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoStakeBalanceError class\n * Error thrown when the user doesn't have a staking balance\n */\nexport default class NoStakeBalanceError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('No staking funds.');\n  }\n}\n",
@@ -3922,7 +4320,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 217,
+    "__docId__": 231,
     "kind": "class",
     "name": "NoStakeBalanceError",
     "memberof": "src/services/errors/noStakeBalanceError.js",
@@ -3940,7 +4338,7 @@
     ]
   },
   {
-    "__docId__": 218,
+    "__docId__": 232,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noStakeBalanceError.js~NoStakeBalanceError",
@@ -3953,7 +4351,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 219,
+    "__docId__": 233,
     "kind": "file",
     "name": "src/services/errors/noValidatorBalanceError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoValidatorBalanceError class\n * Error thrown when the current user doesn't have a validator balance\n */\nexport default class NoValidatorBalanceError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network.');\n  }\n}\n",
@@ -3964,7 +4362,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 220,
+    "__docId__": 234,
     "kind": "class",
     "name": "NoValidatorBalanceError",
     "memberof": "src/services/errors/noValidatorBalanceError.js",
@@ -3982,7 +4380,7 @@
     ]
   },
   {
-    "__docId__": 221,
+    "__docId__": 235,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noValidatorBalanceError.js~NoValidatorBalanceError",
@@ -3995,7 +4393,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 222,
+    "__docId__": 236,
     "kind": "file",
     "name": "src/services/errors/noValidatorInfos.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoValidatorInfos class\n * Error thrown when we can't retrieve validator metadata\n */\nexport default class NoValidatorInfos extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Unable to retrieve the validator metadata.');\n  }\n}\n",
@@ -4006,7 +4404,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 223,
+    "__docId__": 237,
     "kind": "class",
     "name": "NoValidatorInfos",
     "memberof": "src/services/errors/noValidatorInfos.js",
@@ -4024,7 +4422,7 @@
     ]
   },
   {
-    "__docId__": 224,
+    "__docId__": 238,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noValidatorInfos.js~NoValidatorInfos",
@@ -4037,7 +4435,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 225,
+    "__docId__": 239,
     "kind": "file",
     "name": "src/services/errors/signError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * SignError class\n * Error thrown when there's a error with the deploy signature process\n */\nexport default class SignError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Failed to sign the contract. Please retry if you canceled the operation.');\n  }\n}\n",
@@ -4048,7 +4446,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 226,
+    "__docId__": 240,
     "kind": "class",
     "name": "SignError",
     "memberof": "src/services/errors/signError.js",
@@ -4066,7 +4464,7 @@
     ]
   },
   {
-    "__docId__": 227,
+    "__docId__": 241,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/signError.js~SignError",
@@ -4079,7 +4477,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 228,
+    "__docId__": 242,
     "kind": "file",
     "name": "src/services/helpers/currencyUtils.js",
     "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport { BigNumber } from '@ethersproject/bignumber';\nimport Big from 'big.js';\n\n/**\n * CurrencyUtils class. Helper to convert CSPR and motes.\n */\nexport default class CurrencyUtils {\n  /**\n   * Convert motes to casper\n   *\n   * @param {BigNumber} motesAmount - Amount in motes\n   * @return {String}\n   */\n  static convertMotesToCasper(motesAmount) {\n    return Big(motesAmount.toString())\n      .div(1000000000)\n      .toString();\n  }\n\n  /**\n   * Convert casper to motes\n   *\n   * @param {String} casperAmount - Amount in casper\n   * @return {BigNumber}\n   */\n  static convertCasperToMotes(casperAmount) {\n    return BigNumber.from(Big(casperAmount)\n      .times(1000000000)\n      .toString());\n  }\n}\n",
@@ -4090,7 +4488,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 229,
+    "__docId__": 243,
     "kind": "class",
     "name": "CurrencyUtils",
     "memberof": "src/services/helpers/currencyUtils.js",
@@ -4105,7 +4503,7 @@
     "interface": false
   },
   {
-    "__docId__": 230,
+    "__docId__": 244,
     "kind": "method",
     "name": "convertMotesToCasper",
     "memberof": "src/services/helpers/currencyUtils.js~CurrencyUtils",
@@ -4138,7 +4536,7 @@
     }
   },
   {
-    "__docId__": 231,
+    "__docId__": 245,
     "kind": "method",
     "name": "convertCasperToMotes",
     "memberof": "src/services/helpers/currencyUtils.js~CurrencyUtils",
@@ -4171,7 +4569,7 @@
     }
   },
   {
-    "__docId__": 232,
+    "__docId__": 246,
     "kind": "file",
     "name": "src/services/index.js",
     "content": "export { default as Balance } from './balance/balance';\nexport { default as ClientCasper } from './clients/clientCasper';\nexport { default as CurrencyUtils } from './helpers/currencyUtils';\nexport { default as AbstractKeyManager } from './keys/abstractKeyManager';\nexport { default as Validators } from './validators/validators';\nexport * from './deploys';\nexport * from './errors';\nexport * from './results';\nexport * from './signers';\n",
@@ -4182,7 +4580,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 233,
+    "__docId__": 247,
     "kind": "file",
     "name": "src/services/keys/abstractKeyManager.js",
     "content": "/**\n * AbstractKeyManager class\n * Used to define multiple key managers\n */\nexport default class AbstractKeyManager {\n  /**\n   * Retrieve the current active key\n   *\n   * @return string - Must return a public key hex\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get activeKey() {\n    throw new Error('You must implement this function');\n  }\n}\n",
@@ -4193,7 +4591,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 234,
+    "__docId__": 248,
     "kind": "class",
     "name": "AbstractKeyManager",
     "memberof": "src/services/keys/abstractKeyManager.js",
@@ -4208,7 +4606,7 @@
     "interface": false
   },
   {
-    "__docId__": 235,
+    "__docId__": 249,
     "kind": "get",
     "name": "activeKey",
     "memberof": "src/services/keys/abstractKeyManager.js~AbstractKeyManager",
@@ -4230,7 +4628,7 @@
     "type": null
   },
   {
-    "__docId__": 236,
+    "__docId__": 250,
     "kind": "file",
     "name": "src/services/results/accountInfoResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * AccountInfoResult class\n */\nexport default class AccountInfoResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, AccountInfoResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Account Info Operation';\n  }\n}\n",
@@ -4241,7 +4639,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 237,
+    "__docId__": 251,
     "kind": "class",
     "name": "AccountInfoResult",
     "memberof": "src/services/results/accountInfoResult.js",
@@ -4259,7 +4657,7 @@
     ]
   },
   {
-    "__docId__": 238,
+    "__docId__": 252,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/accountInfoResult.js~AccountInfoResult",
@@ -4304,7 +4702,7 @@
     ]
   },
   {
-    "__docId__": 239,
+    "__docId__": 253,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/accountInfoResult.js~AccountInfoResult",
@@ -4326,7 +4724,7 @@
     "params": []
   },
   {
-    "__docId__": 240,
+    "__docId__": 254,
     "kind": "file",
     "name": "src/services/results/addBidResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * AddBidResult class\n */\nexport default class AddBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, AddBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Add bid Operation';\n  }\n}\n",
@@ -4337,7 +4735,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 241,
+    "__docId__": 255,
     "kind": "class",
     "name": "AddBidResult",
     "memberof": "src/services/results/addBidResult.js",
@@ -4355,7 +4753,7 @@
     ]
   },
   {
-    "__docId__": 242,
+    "__docId__": 256,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/addBidResult.js~AddBidResult",
@@ -4400,7 +4798,7 @@
     ]
   },
   {
-    "__docId__": 243,
+    "__docId__": 257,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/addBidResult.js~AddBidResult",
@@ -4422,7 +4820,7 @@
     "params": []
   },
   {
-    "__docId__": 244,
+    "__docId__": 258,
     "kind": "file",
     "name": "src/services/results/delegateResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * DelegateResult class\n */\nexport default class DelegateResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, DelegateResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Staking Operation';\n  }\n}\n",
@@ -4433,7 +4831,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 245,
+    "__docId__": 259,
     "kind": "class",
     "name": "DelegateResult",
     "memberof": "src/services/results/delegateResult.js",
@@ -4451,7 +4849,7 @@
     ]
   },
   {
-    "__docId__": 246,
+    "__docId__": 260,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/delegateResult.js~DelegateResult",
@@ -4496,7 +4894,7 @@
     ]
   },
   {
-    "__docId__": 247,
+    "__docId__": 261,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/delegateResult.js~DelegateResult",
@@ -4518,7 +4916,7 @@
     "params": []
   },
   {
-    "__docId__": 248,
+    "__docId__": 262,
     "kind": "file",
     "name": "src/services/results/deployResultsMap.js",
     "content": "import {\n  AccountInfoResult,\n  AddBidResult,\n  DelegateResult,\n  KeyManagementResult,\n  SmartContractResult,\n  TransferResult,\n  UndelegateResult,\n  WithdrawBidResult,\n} from './index';\n\nexport default new Map(\n  [\n    [AccountInfoResult.getName(), AccountInfoResult],\n    [AddBidResult.getName(), AddBidResult],\n    [DelegateResult.getName(), DelegateResult],\n    [KeyManagementResult.getName(), KeyManagementResult],\n    [SmartContractResult.getName(), SmartContractResult],\n    [TransferResult.getName(), TransferResult],\n    [UndelegateResult.getName(), UndelegateResult],\n    [WithdrawBidResult.getName(), WithdrawBidResult],\n  ],\n);\n",
@@ -4529,10 +4927,213 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 249,
+    "__docId__": 263,
+    "kind": "file",
+    "name": "src/services/results/erc20/erc20ApproveResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * Erc20ApproveResult class\n */\nexport default class Erc20ApproveResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, Erc20ApproveResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'ERC20 Approve Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/erc20/erc20ApproveResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 264,
+    "kind": "class",
+    "name": "Erc20ApproveResult",
+    "memberof": "src/services/results/erc20/erc20ApproveResult.js",
+    "static": true,
+    "longname": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/erc20/erc20ApproveResult.js",
+    "importStyle": "Erc20ApproveResult",
+    "description": "Erc20ApproveResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 265,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 266,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 267,
+    "kind": "file",
+    "name": "src/services/results/erc20/erc20TransferResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * Erc20TransferResult class\n */\nexport default class Erc20TransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, Erc20TransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'ERC20 Transfer Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/erc20/erc20TransferResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 268,
+    "kind": "class",
+    "name": "Erc20TransferResult",
+    "memberof": "src/services/results/erc20/erc20TransferResult.js",
+    "static": true,
+    "longname": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/erc20/erc20TransferResult.js",
+    "importStyle": "Erc20TransferResult",
+    "description": "Erc20TransferResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 269,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 270,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 271,
+    "kind": "file",
+    "name": "src/services/results/erc20/index.js",
+    "content": "export { default as Erc20ApproveResult } from './erc20ApproveResult';\nexport { default as Erc20TransferResult } from './erc20TransferResult';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/erc20/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 272,
     "kind": "file",
     "name": "src/services/results/index.js",
-    "content": "export { default as AccountInfoResult } from './accountInfoResult';\nexport { default as AddBidResult } from './addBidResult';\nexport { default as DelegateResult } from './delegateResult';\nexport { default as DeployResult } from './deployResult';\nexport { default as KeyManagementResult } from './keyManagementResult';\nexport { default as SmartContractResult } from './smartContractResult';\nexport { default as TransferResult } from './transferResult';\nexport { default as UndelegateResult } from './undelegateResult';\nexport { default as WithdrawBidResult } from './withdrawBidResult';\n",
+    "content": "export { default as AccountInfoResult } from './accountInfoResult';\nexport { default as AddBidResult } from './addBidResult';\nexport { default as DelegateResult } from './delegateResult';\nexport { default as DeployResult } from './deployResult';\nexport { default as KeyManagementResult } from './keyManagementResult';\nexport { default as SmartContractResult } from './smartContractResult';\nexport { default as TransferResult } from './transferResult';\nexport { default as UndelegateResult } from './undelegateResult';\nexport { default as WithdrawBidResult } from './withdrawBidResult';\nexport * from './erc20';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/index.js",
     "access": "public",
@@ -4540,7 +5141,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 250,
+    "__docId__": 273,
     "kind": "file",
     "name": "src/services/results/keyManagementResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * KeyManagementResult class\n */\nexport default class KeyManagementResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, KeyManagementResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Key Management Operation';\n  }\n}\n",
@@ -4551,7 +5152,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 251,
+    "__docId__": 274,
     "kind": "class",
     "name": "KeyManagementResult",
     "memberof": "src/services/results/keyManagementResult.js",
@@ -4569,7 +5170,7 @@
     ]
   },
   {
-    "__docId__": 252,
+    "__docId__": 275,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -4614,7 +5215,7 @@
     ]
   },
   {
-    "__docId__": 253,
+    "__docId__": 276,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -4636,7 +5237,7 @@
     "params": []
   },
   {
-    "__docId__": 254,
+    "__docId__": 277,
     "kind": "file",
     "name": "src/services/results/smartContractResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * SmartContractResult class\n */\nexport default class SmartContractResult extends DeployResult {\n  /**\n   * Constructor\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, SmartContractResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Smart Contract Operation';\n  }\n}\n",
@@ -4647,7 +5248,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 255,
+    "__docId__": 278,
     "kind": "class",
     "name": "SmartContractResult",
     "memberof": "src/services/results/smartContractResult.js",
@@ -4665,7 +5266,7 @@
     ]
   },
   {
-    "__docId__": 256,
+    "__docId__": 279,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -4710,7 +5311,7 @@
     ]
   },
   {
-    "__docId__": 257,
+    "__docId__": 280,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -4732,7 +5333,7 @@
     "params": []
   },
   {
-    "__docId__": 258,
+    "__docId__": 281,
     "kind": "file",
     "name": "src/services/results/transferResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * TransferResult class\n */\nexport default class TransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, TransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Transfer Operation';\n  }\n}\n",
@@ -4743,7 +5344,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 259,
+    "__docId__": 282,
     "kind": "class",
     "name": "TransferResult",
     "memberof": "src/services/results/transferResult.js",
@@ -4761,7 +5362,7 @@
     ]
   },
   {
-    "__docId__": 260,
+    "__docId__": 283,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -4806,7 +5407,7 @@
     ]
   },
   {
-    "__docId__": 261,
+    "__docId__": 284,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -4828,7 +5429,7 @@
     "params": []
   },
   {
-    "__docId__": 262,
+    "__docId__": 285,
     "kind": "file",
     "name": "src/services/results/undelegateResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * UndelegateResult class\n */\nexport default class UndelegateResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, UndelegateResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Unstake Operation';\n  }\n}\n",
@@ -4839,7 +5440,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 263,
+    "__docId__": 286,
     "kind": "class",
     "name": "UndelegateResult",
     "memberof": "src/services/results/undelegateResult.js",
@@ -4857,7 +5458,7 @@
     ]
   },
   {
-    "__docId__": 264,
+    "__docId__": 287,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -4902,7 +5503,7 @@
     ]
   },
   {
-    "__docId__": 265,
+    "__docId__": 288,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -4924,7 +5525,7 @@
     "params": []
   },
   {
-    "__docId__": 266,
+    "__docId__": 289,
     "kind": "file",
     "name": "src/services/results/withdrawBidResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * WithdrawBidResult class\n */\nexport default class WithdrawBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, WithdrawBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Withdraw bid Operation';\n  }\n}\n",
@@ -4935,7 +5536,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 267,
+    "__docId__": 290,
     "kind": "class",
     "name": "WithdrawBidResult",
     "memberof": "src/services/results/withdrawBidResult.js",
@@ -4953,7 +5554,7 @@
     ]
   },
   {
-    "__docId__": 268,
+    "__docId__": 291,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -4998,7 +5599,7 @@
     ]
   },
   {
-    "__docId__": 269,
+    "__docId__": 292,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -5020,7 +5621,7 @@
     "params": []
   },
   {
-    "__docId__": 270,
+    "__docId__": 293,
     "kind": "file",
     "name": "src/services/signers/abstractSigner.js",
     "content": "/**\n * @typedef {import('casper-js-sdk').DeployUtil.Deploy} Deploy\n */\n\n/**\n * AbstractSigner class\n * Abstract class used as a skeleton to implement deployment signing.\n */\nexport default class AbstractSigner {\n  /**\n   * Abstract method to sign a deployment.\n   *\n   * @param {Deploy} deploy - Deploy object\n   * @param {Object} options - Generic options object used to pass additional arguments\n   * needed for the different signing methods\n   * @return {Promise<Deploy>} - Signed deploy object\n   */\n  // eslint-disable-next-line no-unused-vars\n  static async sign(deploy, options = {}) {\n    throw new Error('You must implement this function');\n  }\n}\n",
@@ -5031,7 +5632,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 271,
+    "__docId__": 294,
     "kind": "typedef",
     "name": "Deploy",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -5048,7 +5649,7 @@
     }
   },
   {
-    "__docId__": 272,
+    "__docId__": 295,
     "kind": "class",
     "name": "AbstractSigner",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -5063,7 +5664,7 @@
     "interface": false
   },
   {
-    "__docId__": 273,
+    "__docId__": 296,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/abstractSigner.js~AbstractSigner",
@@ -5106,7 +5707,7 @@
     }
   },
   {
-    "__docId__": 274,
+    "__docId__": 297,
     "kind": "file",
     "name": "src/services/signers/casperSigner.js",
     "content": "import { DeployUtil, Signer } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * CasperSigner class\n * Used to sign a deployment with the Casper Signer extension\n */\nexport default class CasperSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {string} options.activeKey - Public key of the user.\n   * @param {string} options.to - Public key of the targeted wallet.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const signedJsonDeploy = await Signer.sign(DeployUtil.deployToJson(deploy), options.activeKey, options.to);\n      const signedDeploy = await DeployUtil.deployFromJson(signedJsonDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5117,7 +5718,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 275,
+    "__docId__": 298,
     "kind": "class",
     "name": "CasperSigner",
     "memberof": "src/services/signers/casperSigner.js",
@@ -5135,7 +5736,7 @@
     ]
   },
   {
-    "__docId__": 276,
+    "__docId__": 299,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/casperSigner.js~CasperSigner",
@@ -5204,7 +5805,7 @@
     }
   },
   {
-    "__docId__": 277,
+    "__docId__": 300,
     "kind": "file",
     "name": "src/services/signers/index.js",
     "content": "export { default as AbstractSigner } from './abstractSigner';\nexport { default as CasperSigner } from './casperSigner';\nexport { default as LedgerSigner } from './ledgerSigner';\nexport { default as LocalSigner } from './localSigner';\nexport { default as TorusSigner } from './torusSigner';\n",
@@ -5215,7 +5816,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 278,
+    "__docId__": 301,
     "kind": "file",
     "name": "src/services/signers/ledgerSigner.js",
     "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * LedgerSigner class\n * Used to sign a deployment with Ledger\n */\nexport default class LedgerSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {CasperApp} options.app - CasperApp instance.\n   * @param {string} options.publicKey - Public key that sign the deploy.\n   * @param {string} options.keyPath - Public key that sign the deploy.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const responseDeploy = await options.app.sign(\n        `m/44'/506'/0'/0/${options.keyPath}`,\n        DeployUtil.deployToBytes(deploy),\n      );\n      let signedDeploy = DeployUtil.setSignature(\n        deploy,\n        responseDeploy.signatureRS,\n        CLPublicKey.fromHex(options.publicKey),\n      );\n      signedDeploy = DeployUtil.validateDeploy(signedDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5226,7 +5827,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 279,
+    "__docId__": 302,
     "kind": "class",
     "name": "LedgerSigner",
     "memberof": "src/services/signers/ledgerSigner.js",
@@ -5244,7 +5845,7 @@
     ]
   },
   {
-    "__docId__": 280,
+    "__docId__": 303,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/ledgerSigner.js~LedgerSigner",
@@ -5323,7 +5924,7 @@
     }
   },
   {
-    "__docId__": 281,
+    "__docId__": 304,
     "kind": "file",
     "name": "src/services/signers/localSigner.js",
     "content": "import { DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * @typedef { import('casper-js-sdk/dist/lib/Keys').AsymmetricKey } AsymmetricKey\n */\n\n/**\n * LocalSigner class\n * Used to sign a deployment with local keys\n */\nexport default class LocalSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding key.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {AsymmetricKey} options.key - AsymmetricKey of the user.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      return DeployUtil.signDeploy(deploy, options.key);\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -5334,7 +5935,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 282,
+    "__docId__": 305,
     "kind": "typedef",
     "name": "AsymmetricKey",
     "memberof": "src/services/signers/localSigner.js",
@@ -5351,7 +5952,7 @@
     }
   },
   {
-    "__docId__": 283,
+    "__docId__": 306,
     "kind": "class",
     "name": "LocalSigner",
     "memberof": "src/services/signers/localSigner.js",
@@ -5369,7 +5970,7 @@
     ]
   },
   {
-    "__docId__": 284,
+    "__docId__": 307,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/localSigner.js~LocalSigner",
@@ -5437,7 +6038,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"3.0.1\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.9.1\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"3.1.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"big.js\": \"^6.1.1\",\n    \"casper-js-sdk\": \"^2.9.1\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,

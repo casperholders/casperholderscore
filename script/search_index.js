@@ -96,6 +96,30 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/erc20/actions/erc20approve.js~erc20approve",
+    "class/src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve.html",
+    "<span>Erc20Approve</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/erc20/actions/erc20Approve.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/erc20/erc20approveresult.js~erc20approveresult",
+    "class/src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult.html",
+    "<span>Erc20ApproveResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/erc20/erc20ApproveResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/erc20/actions/erc20transfer.js~erc20transfer",
+    "class/src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer.html",
+    "<span>Erc20Transfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/erc20/actions/erc20Transfer.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/erc20/erc20transferresult.js~erc20transferresult",
+    "class/src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult.html",
+    "<span>Erc20TransferResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/erc20/erc20TransferResult.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/errors/extendableerror.js~extendableerror",
     "class/src/services/errors/extendableError.js~ExtendableError.html",
     "<span>ExtendableError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/extendableError.js</span>",
@@ -924,6 +948,54 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/services/deploys/erc20/actions/erc20approve.js",
+    "file/src/services/deploys/erc20/actions/erc20Approve.js.html",
+    "src/services/deploys/erc20/actions/erc20Approve.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/erc20approve.js~erc20approve#constructor",
+    "class/src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve.html#instance-constructor-constructor",
+    "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/erc20/actions/erc20approve.js~erc20approve#deployresult",
+    "class/src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve.html#instance-get-deployResult",
+    "src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/erc20/actions/erc20transfer.js",
+    "file/src/services/deploys/erc20/actions/erc20Transfer.js.html",
+    "src/services/deploys/erc20/actions/erc20Transfer.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/erc20transfer.js~erc20transfer#constructor",
+    "class/src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer.html#instance-constructor-constructor",
+    "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/erc20/actions/erc20transfer.js~erc20transfer#deployresult",
+    "class/src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer.html#instance-get-deployResult",
+    "src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/erc20/actions/index.js",
+    "file/src/services/deploys/erc20/actions/index.js.html",
+    "src/services/deploys/erc20/actions/index.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/erc20/index.js",
+    "file/src/services/deploys/erc20/index.js.html",
+    "src/services/deploys/erc20/index.js",
+    "file"
+  ],
+  [
     "src/services/deploys/index.js",
     "file/src/services/deploys/index.js.html",
     "src/services/deploys/index.js",
@@ -1281,6 +1353,48 @@ window.esdocSearchIndex = [
     "src/services/results/deployresultsmap.js",
     "file/src/services/results/deployResultsMap.js.html",
     "src/services/results/deployResultsMap.js",
+    "file"
+  ],
+  [
+    "src/services/results/erc20/erc20approveresult.js",
+    "file/src/services/results/erc20/erc20ApproveResult.js.html",
+    "src/services/results/erc20/erc20ApproveResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/erc20/erc20approveresult.js~erc20approveresult#constructor",
+    "class/src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult.html#instance-constructor-constructor",
+    "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/erc20/erc20approveresult.js~erc20approveresult.getname",
+    "class/src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult.html#static-method-getName",
+    "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/erc20/erc20transferresult.js",
+    "file/src/services/results/erc20/erc20TransferResult.js.html",
+    "src/services/results/erc20/erc20TransferResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/erc20/erc20transferresult.js~erc20transferresult#constructor",
+    "class/src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult.html#instance-constructor-constructor",
+    "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/erc20/erc20transferresult.js~erc20transferresult.getname",
+    "class/src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult.html#static-method-getName",
+    "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/erc20/index.js",
+    "file/src/services/results/erc20/index.js.html",
+    "src/services/results/erc20/index.js",
     "file"
   ],
   [
