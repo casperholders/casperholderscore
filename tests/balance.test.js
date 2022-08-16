@@ -27,6 +27,36 @@ test('Test balance', async () => {
     .toBe(1000);
 });
 
+test('Test erc20 balance', async () => {
+  keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
+  balanceService.keyManager = keyManager;
+  try {
+    const balance = await balanceService.fetchBalanceOfErc20(
+      '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
+    );
+    console.log(balance);
+    expect(balance)
+      .toBe('2.75');
+  } catch (e) {
+    console.log(e);
+    expect(true).toBe(false);
+  }
+});
+
+test('Test erc20 no balance', async () => {
+  keyManager = new DummyKeyManager('0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21');
+  balanceService.keyManager = keyManager;
+  try {
+    const balance = await balanceService.fetchBalanceOfErc20(
+      '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
+    );
+    expect(balance)
+      .toBe('0');
+  } catch (e) {
+    expect(true).toBe(false);
+  }
+});
+
 test('Test stake balance', async () => {
   keyManager = new DummyKeyManager('01c534307e2c7a4839e01ebefae81517fb26d928e3a86802c48b9d47454625bf14');
   balanceService.keyManager = keyManager;

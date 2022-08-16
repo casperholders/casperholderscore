@@ -1,4 +1,5 @@
-import { CLPublicKey } from 'casper-js-sdk';
+import Big from 'big.js';
+import { CLKey, CLPublicKey, CLValueParsers } from 'casper-js-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import NoActiveKeyError from '../errors/noActiveKeyError';
 import NoStakeBalanceError from '../errors/noStakeBalanceError';
@@ -71,6 +72,64 @@ export default class Balance {
     return CurrencyUtils.convertMotesToCasper(
       BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()),
     );
+  }
+
+  async fetchBalanceOfErc20(contractHash) {
+    try {
+      const key = new CLKey(CLPublicKey.fromHex(this.keyManager.activeKey));
+      const keyBytes = CLValueParsers.toBytes(key).unwrap();
+      const itemKey = Buffer.from(keyBytes).toString('base64');
+      const { block } = await this.client.casperRPC.getLatestBlockInfo();
+      let stateRootHash = '';
+      if (block) {
+        stateRootHash = block.header.state_root_hash;
+      } else {
+        return '0';
+      }
+
+      const contractData = await this.client.casperRPC.getBlockState(
+        stateRootHash,
+        `hash-${contractHash}`,
+        [],
+      );
+
+      const { namedKeys } = contractData.Contract;
+      const listOfNamedKeys = [
+        'decimals',
+        'balances',
+        'allowances',
+      ];
+
+      const namedKeysParsed = namedKeys.reduce((acc, val) => {
+        if (listOfNamedKeys.includes(val.name)) {
+          const camelCased = val.name.replace(/_([a-z])/g, (g) => g[1].toUpperCase());
+          return { ...acc, [camelCased]: val.key };
+        }
+        return acc;
+      }, {});
+
+      const storedValueBalance = await this.client.casperRPC.getDictionaryItemByURef(
+        stateRootHash,
+        itemKey,
+        namedKeysParsed.balances,
+      );
+
+      const storedValueDecimals = await this.client.casperRPC.getBlockState(
+        stateRootHash,
+        namedKeysParsed.decimals,
+        [],
+      );
+
+      if (storedValueBalance && storedValueBalance.CLValue.isCLValue) {
+        const rawValue = Big(storedValueBalance.CLValue.value().toString());
+        const rawDecimals = storedValueDecimals.CLValue.value();
+        return (rawDecimals ? rawValue.div(Big(10).pow(rawDecimals.toNumber())) : rawValue).toString();
+      }
+    } catch (e) {
+      console.log(e);
+      return '0';
+    }
+    return '0';
   }
 
   /**
