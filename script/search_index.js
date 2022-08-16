@@ -54,12 +54,6 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@casperholders/core/src/services/balance/balance.js~balance",
-    "class/src/services/balance/balance.js~Balance.html",
-    "<span>Balance</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/balance/balance.js</span>",
-    "class"
-  ],
-  [
     "@casperholders/core/src/services/signers/caspersigner.js~caspersigner",
     "class/src/services/signers/casperSigner.js~CasperSigner.html",
     "<span>CasperSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/casperSigner.js</span>",
@@ -520,78 +514,6 @@ window.esdocSearchIndex = [
     "file/src/index.js.html",
     "src/index.js",
     "file"
-  ],
-  [
-    "src/services/balance/balance.js",
-    "file/src/services/balance/balance.js.html",
-    "src/services/balance/balance.js",
-    "file"
-  ],
-  [
-    "src/services/balance/balance.js~balance#client",
-    "class/src/services/balance/balance.js~Balance.html#instance-member-client",
-    "src/services/balance/balance.js~Balance#client",
-    "member"
-  ],
-  [
-    "src/services/balance/balance.js~balance#constructor",
-    "class/src/services/balance/balance.js~Balance.html#instance-constructor-constructor",
-    "src/services/balance/balance.js~Balance#constructor",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#fetchallstakebalance",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchAllStakeBalance",
-    "src/services/balance/balance.js~Balance#fetchAllStakeBalance",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#fetchbalance",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchBalance",
-    "src/services/balance/balance.js~Balance#fetchBalance",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#fetchbalanceofpublickey",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchBalanceOfPublicKey",
-    "src/services/balance/balance.js~Balance#fetchBalanceOfPublicKey",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#fetchstakebalance",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchStakeBalance",
-    "src/services/balance/balance.js~Balance#fetchStakeBalance",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#fetchvalidatorbalance",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-fetchValidatorBalance",
-    "src/services/balance/balance.js~Balance#fetchValidatorBalance",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#getvalidatorsinfo",
-    "class/src/services/balance/balance.js~Balance.html#instance-method-getValidatorsInfo",
-    "src/services/balance/balance.js~Balance#getValidatorsInfo",
-    "method"
-  ],
-  [
-    "src/services/balance/balance.js~balance#keymanager",
-    "class/src/services/balance/balance.js~Balance.html#instance-member-keyManager",
-    "src/services/balance/balance.js~Balance#keyManager",
-    "member"
-  ],
-  [
-    "src/services/balance/balance.js~balance#validatorsinfo",
-    "class/src/services/balance/balance.js~Balance.html#instance-member-validatorsInfo",
-    "src/services/balance/balance.js~Balance#validatorsInfo",
-    "member"
-  ],
-  [
-    "src/services/balance/balance.js~validatorsinforesult",
-    "typedef/index.html#static-typedef-ValidatorsInfoResult",
-    "src/services/balance/balance.js~ValidatorsInfoResult",
-    "typedef"
   ],
   [
     "src/services/clients/clientcasper.js",

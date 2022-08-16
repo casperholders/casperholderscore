@@ -1,13 +1,8 @@
 {
   "coverage": "100%",
-  "expectCount": 173,
-  "actualCount": 173,
+  "expectCount": 162,
+  "actualCount": 162,
   "files": {
-    "src/services/balance/balance.js": {
-      "expectCount": 11,
-      "actualCount": 11,
-      "undocumentLines": []
-    },
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
       "actualCount": 4,
