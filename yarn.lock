@@ -996,7 +996,7 @@
     "@ethersproject/logger" "^5.6.0"
     bn.js "^4.11.9"
 
-"@ethersproject/bytes@^5.0.5", "@ethersproject/bytes@^5.6.0":
+"@ethersproject/bytes@^5.0.5", "@ethersproject/bytes@^5.6.0", "@ethersproject/bytes@^5.6.1":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@ethersproject/bytes/-/bytes-5.6.1.tgz#24f916e411f82a8a60412344bf4a813b917eefe7"
   integrity sha512-NwQt7cKn5+ZE4uDn+X5RAXLp46E1chXoaMmrxAyA0rblpxz8t58lVkrHXoRIn0lz1joQElQ8410GqhTqMOwc6g==
@@ -2099,7 +2099,7 @@ bip66@^1.1.5:
   dependencies:
     safe-buffer "^5.0.1"
 
-blakejs@^1.1.0:
+blakejs@^1.1.0, blakejs@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/blakejs/-/blakejs-1.2.1.tgz#5057e4206eadb4a97f7c0b6e197a505042fc3814"
   integrity sha512-QXUSXI3QVc/gJME0dBpXrag1kbzOqCjCX8/b54ntNyW6sjtoqxqRk3LTmXzaJoh71zMsDCjM+47jS7XiwN/+fQ==
@@ -2242,7 +2242,7 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-casper-js-sdk@^2.8.0:
+casper-js-sdk@^2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/casper-js-sdk/-/casper-js-sdk-2.9.1.tgz#bbadfe10a0f7e6471c88560e17c16afd1df7f1bd"
   integrity sha512-UO0meYMucBqoNfplhSys4ELis0e0HDcJRpJa5/e1TIEfCwHGSt30PbHoJ/UXWzWR3nk4YSddQJ3coHCF7IrZoA==

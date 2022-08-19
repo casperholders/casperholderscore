@@ -57,6 +57,37 @@ test('Test erc20 no balance', async () => {
   }
 });
 
+test('Test erc20 allowance', async () => {
+  keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
+  balanceService.keyManager = keyManager;
+  try {
+    const balance = await balanceService.fetchAllowanceOfErc20(
+      '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
+      '23cd4354304f4eb1dd6739cba66d41579936e2cec1553096d97aa4efb6b661e6',
+    );
+    expect(balance)
+      .toBe('115792089237316195423570985008687907853269984665640564039457584007911129639935');
+  } catch (e) {
+    console.log(e);
+    expect(true).toBe(false);
+  }
+});
+
+test('Test erc20 no allowance', async () => {
+  keyManager = new DummyKeyManager('0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21');
+  balanceService.keyManager = keyManager;
+  try {
+    const balance = await balanceService.fetchAllowanceOfErc20(
+      '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
+      '0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21',
+    );
+    expect(balance)
+      .toBe('0');
+  } catch (e) {
+    expect(true).toBe(false);
+  }
+});
+
 test('Test stake balance', async () => {
   keyManager = new DummyKeyManager('01c534307e2c7a4839e01ebefae81517fb26d928e3a86802c48b9d47454625bf14');
   balanceService.keyManager = keyManager;

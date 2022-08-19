@@ -1,6 +1,10 @@
+import { concat } from '@ethersproject/bytes';
 import Big from 'big.js';
-import { CLKey, CLPublicKey, CLValueParsers } from 'casper-js-sdk';
+import {
+  CLAccountHash, CLByteArray, CLKey, CLPublicKey, CLValueParsers, decodeBase16,
+} from 'casper-js-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
+import * as blake from 'blakejs';
 import NoActiveKeyError from '../errors/noActiveKeyError';
 import NoStakeBalanceError from '../errors/noStakeBalanceError';
 import NoValidatorBalanceError from '../errors/noValidatorBalanceError';
@@ -72,6 +76,54 @@ export default class Balance {
     return CurrencyUtils.convertMotesToCasper(
       BigNumber.from((await this.client.casperClient.balanceOfByPublicKey(CLPublicKey.fromHex(publicKey))).toString()),
     );
+  }
+
+  async fetchAllowanceOfErc20(contractHash, spender) {
+    try {
+      const key = new CLKey(CLPublicKey.fromHex(this.keyManager.activeKey));
+      const keyBytes = CLValueParsers.toBytes(key).unwrap();
+      const spenderKey = new CLKey(new CLByteArray(decodeBase16(spender)));
+      const spenderKeyBytes = CLValueParsers.toBytes(spenderKey).unwrap();
+      const finalBytes = concat([keyBytes, spenderKeyBytes]);
+      const blaked = blake.blake2b(finalBytes, undefined, 32);
+      const encodedBytes = Buffer.from(blaked).toString('hex');
+      const { block } = await this.client.casperRPC.getLatestBlockInfo();
+      let stateRootHash = '';
+      if (block) {
+        stateRootHash = block.header.state_root_hash;
+      } else {
+        return '0';
+      }
+
+      const contractData = await this.client.casperRPC.getBlockState(
+        stateRootHash,
+        `hash-${contractHash}`,
+        [],
+      );
+
+      const { namedKeys } = contractData.Contract;
+      const listOfNamedKeys = [
+        'allowances',
+      ];
+
+      const namedKeysParsed = namedKeys.reduce((acc, val) => {
+        if (listOfNamedKeys.includes(val.name)) {
+          const camelCased = val.name.replace(/_([a-z])/g, (g) => g[1].toUpperCase());
+          return { ...acc, [camelCased]: val.key };
+        }
+        return acc;
+      }, {});
+
+      const allowance = await this.client.casperRPC.getDictionaryItemByURef(
+        stateRootHash,
+        encodedBytes,
+        namedKeysParsed.allowances,
+      );
+      return allowance.CLValue.value().toString();
+    } catch (e) {
+      console.log(e);
+      return '0';
+    }
   }
 
   async fetchBalanceOfErc20(contractHash) {
