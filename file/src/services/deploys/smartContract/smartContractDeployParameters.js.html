@@ -42,7 +42,8 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-erc20-actions">services/deploys/erc20/actions</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve.html">Erc20Approve</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer.html">Erc20Transfer</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-keymanagement">services/deploys/keyManagement</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/keyManagement/keyManagement.js~KeyManagement.html">KeyManagement</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-smartcontract">services/deploys/smartContract</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html">SmartContractDeployParameters</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-smartcontract">services/deploys/smartContract</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html">GenericContractDeployParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html">SmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-transfer">services/deploys/transfer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html">TransferDeployParameters</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-errors">services/errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/errors/extendableError.js~ExtendableError.html">ExtendableError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/errors/insufficientFunds.js~InsufficientFunds.html">InsufficientFunds</a></span></span></li>
@@ -99,6 +100,9 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
   /** @type {number} */
   ttl;
 
+  /** @type {object} */
+  args;
+
   /**
    * Constructor
    *
@@ -106,15 +110,17 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
    * @param {string} network - Current network to execute the deployment
    * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read
    * @param {string} fee - Runtime fee for the given SmartContract operation
+   * @param {object} args
    * @param {number} ttl - Deploy time to live  in hours
    */
-  constructor(activeKey, network, smartContractBuffer, fee, ttl = 1) {
+  constructor(activeKey, network, smartContractBuffer, fee, args = {}, ttl = 1) {
     super();
     this.activeKey = activeKey;
     this.network = network;
     this.smartContractBuffer = smartContractBuffer;
     this.fee = fee;
     this.ttl = ttl * 3600000;
+    this.args = args;
   }
 
   /**
@@ -139,7 +145,7 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
   get session() {
     return DeployUtil.ExecutableDeployItem.newModuleBytes(
       new Uint8Array(this.smartContractBuffer),
-      RuntimeArgs.fromMap({}),
+      RuntimeArgs.fromMap(this.args),
     );
   }
 

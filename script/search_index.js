@@ -120,6 +120,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/smartcontract/genericcontractdeployparameters.js~genericcontractdeployparameters",
+    "class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html",
+    "<span>GenericContractDeployParameters</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/smartContract/genericContractDeployParameters.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/errors/insufficientfunds.js~insufficientfunds",
     "class/src/services/errors/insufficientFunds.js~InsufficientFunds.html",
     "<span>InsufficientFunds</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/insufficientFunds.js</span>",
@@ -942,6 +948,24 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/smartcontract/genericcontractdeployparameters.js",
+    "file/src/services/deploys/smartContract/genericContractDeployParameters.js.html",
+    "src/services/deploys/smartContract/genericContractDeployParameters.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/smartcontract/genericcontractdeployparameters.js~genericcontractdeployparameters#constructor",
+    "class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html#instance-constructor-constructor",
+    "src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/smartcontract/genericcontractdeployparameters.js~genericcontractdeployparameters#deployresult",
+    "class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html#instance-get-deployResult",
+    "src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters#deployResult",
+    "member"
+  ],
+  [
     "src/services/deploys/smartcontract/smartcontractdeployparameters.js",
     "file/src/services/deploys/smartContract/smartContractDeployParameters.js.html",
     "src/services/deploys/smartContract/smartContractDeployParameters.js",
@@ -951,6 +975,12 @@ window.esdocSearchIndex = [
     "src/services/deploys/smartcontract/smartcontractdeployparameters.js~smartcontractdeployparameters#activekey",
     "class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-member-activeKey",
     "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#activeKey",
+    "member"
+  ],
+  [
+    "src/services/deploys/smartcontract/smartcontractdeployparameters.js~smartcontractdeployparameters#args",
+    "class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-member-args",
+    "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters#args",
     "member"
   ],
   [

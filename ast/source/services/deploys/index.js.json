@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 810,
+  "end": 920,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 11,
+      "line": 12,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 810,
+    "end": 920,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 11,
+        "line": 12,
         "column": 0
       }
     },
@@ -640,7 +640,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 667,
-        "end": 757,
+        "end": 776,
         "loc": {
           "start": {
             "line": 8,
@@ -648,7 +648,7 @@
           },
           "end": {
             "line": 8,
-            "column": 90
+            "column": 109
           }
         },
         "declaration": null,
@@ -656,7 +656,7 @@
           {
             "type": "ExportSpecifier",
             "start": 676,
-            "end": 711,
+            "end": 718,
             "loc": {
               "start": {
                 "line": 8,
@@ -664,7 +664,7 @@
               },
               "end": {
                 "line": 8,
-                "column": 44
+                "column": 51
               }
             },
             "local": {
@@ -687,7 +687,7 @@
             "exported": {
               "type": "Identifier",
               "start": 687,
-              "end": 711,
+              "end": 718,
               "loc": {
                 "start": {
                   "line": 8,
@@ -695,6 +695,93 @@
                 },
                 "end": {
                   "line": 8,
+                  "column": 51
+                },
+                "identifierName": "GenericContractDeployParameters"
+              },
+              "name": "GenericContractDeployParameters"
+            }
+          }
+        ],
+        "source": {
+          "type": "StringLiteral",
+          "start": 726,
+          "end": 775,
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 59
+            },
+            "end": {
+              "line": 8,
+              "column": 108
+            }
+          },
+          "extra": {
+            "rawValue": "./smartContract/genericContractDeployParameters",
+            "raw": "'./smartContract/genericContractDeployParameters'"
+          },
+          "value": "./smartContract/genericContractDeployParameters"
+        }
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 777,
+        "end": 867,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 0
+          },
+          "end": {
+            "line": 9,
+            "column": 90
+          }
+        },
+        "declaration": null,
+        "specifiers": [
+          {
+            "type": "ExportSpecifier",
+            "start": 786,
+            "end": 821,
+            "loc": {
+              "start": {
+                "line": 9,
+                "column": 9
+              },
+              "end": {
+                "line": 9,
+                "column": 44
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 786,
+              "end": 793,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 9
+                },
+                "end": {
+                  "line": 9,
+                  "column": 16
+                },
+                "identifierName": "default"
+              },
+              "name": "default"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 797,
+              "end": 821,
+              "loc": {
+                "start": {
+                  "line": 9,
+                  "column": 20
+                },
+                "end": {
+                  "line": 9,
                   "column": 44
                 },
                 "identifierName": "TransferDeployParameters"
@@ -705,15 +792,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 719,
-          "end": 756,
+          "start": 829,
+          "end": 866,
           "loc": {
             "start": {
-              "line": 8,
+              "line": 9,
               "column": 52
             },
             "end": {
-              "line": 8,
+              "line": 9,
               "column": 89
             }
           },
@@ -726,29 +813,29 @@
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 758,
-        "end": 784,
+        "start": 868,
+        "end": 894,
         "loc": {
           "start": {
-            "line": 9,
+            "line": 10,
             "column": 0
           },
           "end": {
-            "line": 9,
+            "line": 10,
             "column": 26
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 772,
-          "end": 783,
+          "start": 882,
+          "end": 893,
           "loc": {
             "start": {
-              "line": 9,
+              "line": 10,
               "column": 14
             },
             "end": {
-              "line": 9,
+              "line": 10,
               "column": 25
             }
           },
@@ -761,29 +848,29 @@
       },
       {
         "type": "ExportAllDeclaration",
-        "start": 785,
-        "end": 809,
+        "start": 895,
+        "end": 919,
         "loc": {
           "start": {
-            "line": 10,
+            "line": 11,
             "column": 0
           },
           "end": {
-            "line": 10,
+            "line": 11,
             "column": 24
           }
         },
         "source": {
           "type": "StringLiteral",
-          "start": 799,
-          "end": 808,
+          "start": 909,
+          "end": 918,
           "loc": {
             "start": {
-              "line": 10,
+              "line": 11,
               "column": 14
             },
             "end": {
-              "line": 10,
+              "line": 11,
               "column": 23
             }
           },
@@ -2577,9 +2664,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "TransferDeployParameters",
+      "value": "GenericContractDeployParameters",
       "start": 687,
-      "end": 711,
+      "end": 718,
       "loc": {
         "start": {
           "line": 8,
@@ -2587,6 +2674,243 @@
         },
         "end": {
           "line": 8,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 719,
+      "end": 720,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 52
+        },
+        "end": {
+          "line": 8,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 721,
+      "end": 725,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 54
+        },
+        "end": {
+          "line": 8,
+          "column": 58
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./smartContract/genericContractDeployParameters",
+      "start": 726,
+      "end": 775,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 59
+        },
+        "end": {
+          "line": 8,
+          "column": 108
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 775,
+      "end": 776,
+      "loc": {
+        "start": {
+          "line": 8,
+          "column": 108
+        },
+        "end": {
+          "line": 8,
+          "column": 109
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 777,
+      "end": 783,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 784,
+      "end": 785,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 7
+        },
+        "end": {
+          "line": 9,
+          "column": 8
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 786,
+      "end": 793,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 9
+        },
+        "end": {
+          "line": 9,
+          "column": 16
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "as",
+      "start": 794,
+      "end": 796,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 17
+        },
+        "end": {
+          "line": 9,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "TransferDeployParameters",
+      "start": 797,
+      "end": 821,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 20
+        },
+        "end": {
+          "line": 9,
           "column": 44
         }
       }
@@ -2603,15 +2927,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 712,
-      "end": 713,
+      "start": 822,
+      "end": 823,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 45
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 46
         }
       }
@@ -2629,15 +2953,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 714,
-      "end": 718,
+      "start": 824,
+      "end": 828,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 47
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 51
         }
       }
@@ -2656,15 +2980,15 @@
         "updateContext": null
       },
       "value": "./transfer/TransferDeployParameters",
-      "start": 719,
-      "end": 756,
+      "start": 829,
+      "end": 866,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 52
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 89
         }
       }
@@ -2682,15 +3006,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 756,
-      "end": 757,
+      "start": 866,
+      "end": 867,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 89
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 90
         }
       }
@@ -2710,15 +3034,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 758,
-      "end": 764,
+      "start": 868,
+      "end": 874,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 0
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 6
         }
       }
@@ -2737,15 +3061,15 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 765,
-      "end": 766,
+      "start": 875,
+      "end": 876,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 7
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 8
         }
       }
@@ -2763,15 +3087,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 767,
-      "end": 771,
+      "start": 877,
+      "end": 881,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 9
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 13
         }
       }
@@ -2790,15 +3114,15 @@
         "updateContext": null
       },
       "value": "./auction",
-      "start": 772,
-      "end": 783,
+      "start": 882,
+      "end": 893,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 14
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 25
         }
       }
@@ -2816,15 +3140,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 783,
-      "end": 784,
+      "start": 893,
+      "end": 894,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 25
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 26
         }
       }
@@ -2844,15 +3168,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 785,
-      "end": 791,
+      "start": 895,
+      "end": 901,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 0
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 6
         }
       }
@@ -2871,15 +3195,15 @@
         "updateContext": null
       },
       "value": "*",
-      "start": 792,
-      "end": 793,
+      "start": 902,
+      "end": 903,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 7
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 8
         }
       }
@@ -2897,15 +3221,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 794,
-      "end": 798,
+      "start": 904,
+      "end": 908,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 9
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 13
         }
       }
@@ -2924,15 +3248,15 @@
         "updateContext": null
       },
       "value": "./erc20",
-      "start": 799,
-      "end": 808,
+      "start": 909,
+      "end": 918,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 14
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 23
         }
       }
@@ -2950,15 +3274,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 808,
-      "end": 809,
+      "start": 918,
+      "end": 919,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 23
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 24
         }
       }
@@ -2976,15 +3300,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 810,
-      "end": 810,
+      "start": 920,
+      "end": 920,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 0
         }
       }

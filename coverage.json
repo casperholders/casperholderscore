@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 162,
-  "actualCount": 162,
+  "expectCount": 166,
+  "actualCount": 166,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -68,9 +68,14 @@
       "actualCount": 3,
       "undocumentLines": []
     },
+    "src/services/deploys/smartContract/genericContractDeployParameters.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
     "src/services/deploys/smartContract/smartContractDeployParameters.js": {
-      "expectCount": 11,
-      "actualCount": 11,
+      "expectCount": 12,
+      "actualCount": 12,
       "undocumentLines": []
     },
     "src/services/deploys/transfer/TransferDeployParameters.js": {

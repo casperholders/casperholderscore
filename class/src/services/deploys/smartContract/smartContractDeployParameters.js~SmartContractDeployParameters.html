@@ -42,7 +42,8 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-erc20-actions">services/deploys/erc20/actions</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/erc20Approve.js~Erc20Approve.html">Erc20Approve</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/erc20Transfer.js~Erc20Transfer.html">Erc20Transfer</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-keymanagement">services/deploys/keyManagement</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/keyManagement/keyManagement.js~KeyManagement.html">KeyManagement</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-smartcontract">services/deploys/smartContract</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html">SmartContractDeployParameters</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-smartcontract">services/deploys/smartContract</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html">GenericContractDeployParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html">SmartContractDeployParameters</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-deploys-transfer">services/deploys/transfer</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters.html">TransferDeployParameters</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services-errors">services/errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/errors/extendableError.js~ExtendableError.html">ExtendableError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/errors/insufficientFunds.js~InsufficientFunds.html">InsufficientFunds</a></span></span></li>
@@ -134,7 +135,7 @@ Class used to define the parameters of a deployment to send a smart contract on 
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, args: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -171,6 +172,34 @@ Class used to define the parameters of a deployment to send a smart contract on 
           
           
           <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-member-activeKey">activeKey</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters.html#instance-member-args">args</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
         </p>
       </div>
       <div>
@@ -582,11 +611,11 @@ Class used to define the parameters of a deployment to send a smart contract on 
     
     
     
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, smartContractBuffer: <span>Buffer</span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, args: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber35">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber39">source</a></span></span>
     </span>
   </h3>
 
@@ -633,6 +662,12 @@ Class used to define the parameters of a deployment to send a smart contract on 
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Runtime fee for the given SmartContract operation</p>
 </td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">args</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">ttl</td>
@@ -710,6 +745,49 @@ Class used to define the parameters of a deployment to send a smart contract on 
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-args">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">args</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber27">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-get-deployParams">
     <span class="access" data-ice="access">public</span>
     
@@ -721,7 +799,7 @@ Class used to define the parameters of a deployment to send a smart contract on 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber49">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber54">source</a></span></span>
     </span>
   </h3>
 
@@ -778,7 +856,7 @@ Class used to define the parameters of a deployment to send a smart contract on 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber85">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber90">source</a></span></span>
     </span>
   </h3>
 
@@ -921,7 +999,7 @@ Class used to define the parameters of a deployment to send a smart contract on 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber80">source</a></span></span>
     </span>
   </h3>
 
@@ -978,7 +1056,7 @@ Class used to define the parameters of a deployment to send a smart contract on 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber63">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/smartContractDeployParameters.js.html#lineNumber68">source</a></span></span>
     </span>
   </h3>
 
