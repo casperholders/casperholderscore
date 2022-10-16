@@ -5,6 +5,7 @@ export { default as AccountInfo } from './account-info/AccountInfo';
 export { default as DeployManager } from './deployManager';
 export { default as KeyManagement } from './keyManagement/keyManagement';
 export { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';
+export { default as GenericContractDeployParameters } from './smartContract/genericContractDeployParameters';
 export { default as TransferDeployParameters } from './transfer/TransferDeployParameters';
 export * from './auction';
 export * from './erc20';

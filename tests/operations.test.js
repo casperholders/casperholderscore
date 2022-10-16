@@ -1,4 +1,4 @@
-import { DeployUtil, Keys } from 'casper-js-sdk';
+import { CLString, DeployUtil, Keys } from 'casper-js-sdk';
 import ClientCasper from '../src/services/clients/clientCasper';
 import AccountInfo from '../src/services/deploys/account-info/AccountInfo';
 import AddBid from '../src/services/deploys/auction/actions/addBid';
@@ -6,6 +6,7 @@ import Delegate from '../src/services/deploys/auction/actions/delegate';
 import Undelegate from '../src/services/deploys/auction/actions/undelegate';
 import WithdrawBid from '../src/services/deploys/auction/actions/withdrawBid';
 import KeyManagement from '../src/services/deploys/keyManagement/keyManagement';
+import GenericContractDeployParameters from '../src/services/deploys/smartContract/genericContractDeployParameters';
 import SmartContractDeployParameters from '../src/services/deploys/smartContract/smartContractDeployParameters';
 import TransferDeployParameters from '../src/services/deploys/transfer/TransferDeployParameters';
 import LocalSigner from '../src/services/signers/localSigner';
@@ -73,8 +74,28 @@ test('Smart Contract operation', async () => {
     'casper-test',
     Buffer.from(''),
     '1',
+    {
+      test: new CLString('test'),
+    },
   );
   const deploy = smartContractDeployParameters.makeDeploy;
+  const result = DeployUtil.validateDeploy(deploy);
+  expect(result.ok)
+    .toBe(true);
+});
+
+test('Generic Smart Contract operation', async () => {
+  const genericContractDeployParameters = new GenericContractDeployParameters(
+    '0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21',
+    'casper-test',
+    'contract-hash',
+    'entrypoint',
+    '1',
+    {
+      test: new CLString('test'),
+    },
+  );
+  const deploy = genericContractDeployParameters.makeDeploy;
   const result = DeployUtil.validateDeploy(deploy);
   expect(result.ok)
     .toBe(true);

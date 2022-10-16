@@ -23,6 +23,9 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
   /** @type {number} */
   ttl;
 
+  /** @type {object} */
+  args;
+
   /**
    * Constructor
    *
@@ -30,15 +33,17 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
    * @param {string} network - Current network to execute the deployment
    * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read
    * @param {string} fee - Runtime fee for the given SmartContract operation
+   * @param {object} args
    * @param {number} ttl - Deploy time to live  in hours
    */
-  constructor(activeKey, network, smartContractBuffer, fee, ttl = 1) {
+  constructor(activeKey, network, smartContractBuffer, fee, args = {}, ttl = 1) {
     super();
     this.activeKey = activeKey;
     this.network = network;
     this.smartContractBuffer = smartContractBuffer;
     this.fee = fee;
     this.ttl = ttl * 3600000;
+    this.args = args;
   }
 
   /**
@@ -63,7 +68,7 @@ export default class SmartContractDeployParameters extends AbstractSmartContract
   get session() {
     return DeployUtil.ExecutableDeployItem.newModuleBytes(
       new Uint8Array(this.smartContractBuffer),
-      RuntimeArgs.fromMap({}),
+      RuntimeArgs.fromMap(this.args),
     );
   }
 
