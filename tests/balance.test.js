@@ -30,6 +30,7 @@ test('Test balance', async () => {
 test('Test erc20 balance', async () => {
   keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
   balanceService.keyManager = keyManager;
+  // Casper implementation
   try {
     const balance = await balanceService.fetchBalanceOfErc20(
       '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
@@ -39,7 +40,21 @@ test('Test erc20 balance', async () => {
       .toBeGreaterThan(0.0);
   } catch (e) {
     console.log(e);
-    expect(true).toBe(false);
+    expect(true)
+      .toBe(false);
+  }
+  // Rengolabs uniswap implementation
+  try {
+    const balance = await balanceService.fetchBalanceOfErc20(
+      '9aef66efbac45daf71f92f3446422a00fd3adaaf206a1c29d80f26bc513c105d',
+    );
+    console.log(parseFloat(balance));
+    expect(parseFloat(balance))
+      .toBeGreaterThan(0.0);
+  } catch (e) {
+    console.log(e);
+    expect(true)
+      .toBe(false);
   }
 });
 
@@ -53,7 +68,8 @@ test('Test erc20 no balance', async () => {
     expect(balance)
       .toBe('0');
   } catch (e) {
-    expect(true).toBe(false);
+    expect(true)
+      .toBe(false);
   }
 });
 
@@ -69,7 +85,8 @@ test('Test erc20 allowance', async () => {
       .toBe('115792089237316195423570985008687907853269984665640564039457584007911129639935');
   } catch (e) {
     console.log(e);
-    expect(true).toBe(false);
+    expect(true)
+      .toBe(false);
   }
 });
 
@@ -84,7 +101,8 @@ test('Test erc20 no allowance', async () => {
     expect(balance)
       .toBe('0');
   } catch (e) {
-    expect(true).toBe(false);
+    expect(true)
+      .toBe(false);
   }
 });
 

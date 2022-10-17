@@ -1,10 +1,16 @@
+import { BigNumber } from '@ethersproject/bignumber';
 import { concat } from '@ethersproject/bytes';
 import Big from 'big.js';
-import {
-  CLAccountHash, CLByteArray, CLKey, CLPublicKey, CLValueParsers, decodeBase16,
-} from 'casper-js-sdk';
-import { BigNumber } from '@ethersproject/bignumber';
 import * as blake from 'blakejs';
+import {
+  CLByteArray,
+  CLKey,
+  CLOptionType,
+  CLPublicKey,
+  CLU256Type,
+  CLValueParsers,
+  decodeBase16,
+} from 'casper-js-sdk';
 import NoActiveKeyError from '../errors/noActiveKeyError';
 import NoStakeBalanceError from '../errors/noStakeBalanceError';
 import NoValidatorBalanceError from '../errors/noValidatorBalanceError';
@@ -81,12 +87,15 @@ export default class Balance {
   async fetchAllowanceOfErc20(contractHash, spender) {
     try {
       const key = new CLKey(CLPublicKey.fromHex(this.keyManager.activeKey));
-      const keyBytes = CLValueParsers.toBytes(key).unwrap();
+      const keyBytes = CLValueParsers.toBytes(key)
+        .unwrap();
       const spenderKey = new CLKey(new CLByteArray(decodeBase16(spender)));
-      const spenderKeyBytes = CLValueParsers.toBytes(spenderKey).unwrap();
+      const spenderKeyBytes = CLValueParsers.toBytes(spenderKey)
+        .unwrap();
       const finalBytes = concat([keyBytes, spenderKeyBytes]);
       const blaked = blake.blake2b(finalBytes, undefined, 32);
-      const encodedBytes = Buffer.from(blaked).toString('hex');
+      const encodedBytes = Buffer.from(blaked)
+        .toString('hex');
       const { block } = await this.client.casperRPC.getLatestBlockInfo();
       let stateRootHash = '';
       if (block) {
@@ -109,7 +118,10 @@ export default class Balance {
       const namedKeysParsed = namedKeys.reduce((acc, val) => {
         if (listOfNamedKeys.includes(val.name)) {
           const camelCased = val.name.replace(/_([a-z])/g, (g) => g[1].toUpperCase());
-          return { ...acc, [camelCased]: val.key };
+          return {
+            ...acc,
+            [camelCased]: val.key,
+          };
         }
         return acc;
       }, {});
@@ -119,7 +131,8 @@ export default class Balance {
         encodedBytes,
         namedKeysParsed.allowances,
       );
-      return allowance.CLValue.value().toString();
+      return allowance.CLValue.value()
+        .toString();
     } catch (e) {
       console.log(e);
       return '0';
@@ -129,8 +142,13 @@ export default class Balance {
   async fetchBalanceOfErc20(contractHash) {
     try {
       const key = new CLKey(CLPublicKey.fromHex(this.keyManager.activeKey));
-      const keyBytes = CLValueParsers.toBytes(key).unwrap();
-      const itemKey = Buffer.from(keyBytes).toString('base64');
+      const keyBytes = CLValueParsers.toBytes(key)
+        .unwrap();
+      const itemKey = Buffer.from(keyBytes)
+        .toString('base64');
+      const itemKeyUniswap = Buffer.from(CLPublicKey.fromHex(this.keyManager.activeKey)
+        .toAccountHash())
+        .toString('hex');
       const { block } = await this.client.casperRPC.getLatestBlockInfo();
       let stateRootHash = '';
       if (block) {
@@ -155,16 +173,28 @@ export default class Balance {
       const namedKeysParsed = namedKeys.reduce((acc, val) => {
         if (listOfNamedKeys.includes(val.name)) {
           const camelCased = val.name.replace(/_([a-z])/g, (g) => g[1].toUpperCase());
-          return { ...acc, [camelCased]: val.key };
+          return {
+            ...acc,
+            [camelCased]: val.key,
+          };
         }
         return acc;
       }, {});
 
-      const storedValueBalance = await this.client.casperRPC.getDictionaryItemByURef(
-        stateRootHash,
-        itemKey,
-        namedKeysParsed.balances,
-      );
+      let storedValueBalance;
+      try {
+        storedValueBalance = await this.client.casperRPC.getDictionaryItemByURef(
+          stateRootHash,
+          itemKey,
+          namedKeysParsed.balances,
+        );
+      } catch (e) {
+        storedValueBalance = await this.client.casperRPC.getDictionaryItemByURef(
+          stateRootHash,
+          itemKeyUniswap,
+          namedKeysParsed.balances,
+        );
+      }
 
       const storedValueDecimals = await this.client.casperRPC.getBlockState(
         stateRootHash,
@@ -173,9 +203,18 @@ export default class Balance {
       );
 
       if (storedValueBalance && storedValueBalance.CLValue.isCLValue) {
-        const rawValue = Big(storedValueBalance.CLValue.value().toString());
+        let rawValue;
+        if (storedValueBalance.CLValue.clType()
+          .toString() === new CLOptionType(new CLU256Type()).toString()
+          && storedValueBalance.CLValue.value().some) {
+          rawValue = Big(storedValueBalance.CLValue.value().val.value());
+        } else {
+          rawValue = Big(storedValueBalance.CLValue.value()
+            .toString());
+        }
         const rawDecimals = storedValueDecimals.CLValue.value();
-        return (rawDecimals ? rawValue.div(Big(10).pow(rawDecimals.toNumber())) : rawValue).toString();
+        return (rawDecimals ? rawValue.div(Big(10)
+          .pow(rawDecimals.toNumber())) : rawValue).toString();
       }
     } catch (e) {
       console.log(e);
