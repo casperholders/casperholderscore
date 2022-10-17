@@ -27,7 +27,7 @@ test('Test balance', async () => {
     .toBe(1000);
 });
 
-test('Test erc20 balance', async () => {
+test('Test erc20 balance casper', async () => {
   keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
   balanceService.keyManager = keyManager;
   // Casper implementation
@@ -35,7 +35,6 @@ test('Test erc20 balance', async () => {
     const balance = await balanceService.fetchBalanceOfErc20(
       '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
     );
-    console.log(parseFloat(balance));
     expect(parseFloat(balance))
       .toBeGreaterThan(0.0);
   } catch (e) {
@@ -43,12 +42,16 @@ test('Test erc20 balance', async () => {
     expect(true)
       .toBe(false);
   }
+});
+
+test('Test erc20 balance rengolabs', async () => {
+  keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
+  balanceService.keyManager = keyManager;
   // Rengolabs uniswap implementation
   try {
     const balance = await balanceService.fetchBalanceOfErc20(
       '9aef66efbac45daf71f92f3446422a00fd3adaaf206a1c29d80f26bc513c105d',
     );
-    console.log(parseFloat(balance));
     expect(parseFloat(balance))
       .toBeGreaterThan(0.0);
   } catch (e) {
