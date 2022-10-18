@@ -1,7 +1,8 @@
-import { CLPublicKey, CLU256, RuntimeArgs } from 'casper-js-sdk';
+import {
+  CLKey, CLPublicKey, CLU256, RuntimeArgs,
+} from 'casper-js-sdk';
 import Erc20TransferResult from '../../../results/erc20/erc20TransferResult';
-import AbstractSmartContractStoredByHashDeployParameters
-  from '../../abstractSmartContractStoredByHashDeployParameters';
+import AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';
 
 /**
  * @constant
@@ -32,7 +33,7 @@ export default class Erc20Transfer extends AbstractSmartContractStoredByHashDepl
    */
   constructor(activeKey, amount, recipient, network, hash, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      recipient: CLPublicKey.fromHex(recipient),
+      recipient: new CLKey(CLPublicKey.fromHex(recipient)),
       amount: new CLU256(amount),
     });
     super(activeKey, network, hash, entrypoint, args, fee, ttl);
