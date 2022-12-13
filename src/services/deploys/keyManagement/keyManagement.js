@@ -42,7 +42,7 @@ export default class KeyManagement extends AbstractSmartContractModuleBytesParam
         ),
         new CLU8Type(),
       );
-      fee += 200000000;
+      fee += 1000000000;
     }
     if (keyManagementThreshold) {
       keyManagementThresholdValue = CLValueBuilder.option(
@@ -51,7 +51,7 @@ export default class KeyManagement extends AbstractSmartContractModuleBytesParam
         ),
         new CLU8Type(),
       );
-      fee += 200000000;
+      fee += 1000000000;
     }
     if (accountWeights) {
       accountsValue = CLValueBuilder.option(
@@ -70,7 +70,7 @@ export default class KeyManagement extends AbstractSmartContractModuleBytesParam
         ),
         new CLListType(new CLU8Type()),
       );
-      fee += 200000000 * accountWeights.length;
+      fee += 1000000000 * accountWeights.length;
     }
     const args = RuntimeArgs.fromMap({
       deployment_threshold: deployThresholdValue,
