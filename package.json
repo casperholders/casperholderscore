@@ -1,6 +1,6 @@
 {
   "name": "@casperholders/core",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "description": "Library for the casperholders website",
   "main": "dist/index.js",
   "module": "src/index.js",
