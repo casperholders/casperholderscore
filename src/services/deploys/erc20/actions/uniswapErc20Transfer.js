@@ -14,13 +14,13 @@ const entrypoint = 'transfer';
  * @constant
  * @type {number}
  */
-const fee = 500000000;
+const fee = 4000000000;
 
 /**
- * Erc20Transfer class
- * Class used to create DeployParameters for an ERC20 Transfer operation
+ * UniswapErc20Transfer class
+ * Class used to create DeployParameters for an Uniswap ERC20 Transfer operation
  */
-export default class Erc20Transfer extends AbstractSmartContractStoredByHashDeployParameters {
+export default class UniswapErc20Transfer extends AbstractSmartContractStoredByHashDeployParameters {
   /**
    * Constructor
    *
