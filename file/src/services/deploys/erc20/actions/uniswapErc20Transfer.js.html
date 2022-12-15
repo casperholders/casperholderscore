@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js | @casperholders/core</title>
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">src/services/deploys/erc20/actions/uniswapErc20Transfer.js | @casperholders/core</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -75,92 +75,56 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { CLPublicKey, DeployUtil } from &apos;casper-js-sdk&apos;;
-import AbstractSmartContractDeployParameters from &apos;./abstractSmartContractDeployParameters&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/erc20/actions/uniswapErc20Transfer.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+  CLKey, CLPublicKey, CLU256, RuntimeArgs,
+} from &apos;casper-js-sdk&apos;;
+import Erc20TransferResult from &apos;../../../results/erc20/erc20TransferResult&apos;;
+import AbstractSmartContractStoredByHashDeployParameters from &apos;../../abstractSmartContractStoredByHashDeployParameters&apos;;
 
 /**
- * AbstractSmartContractStoredByHashDeployParameters class
- * Abstract class used to defined specific DeployParameters for SmartContracts stored by hash on the network
+ * @constant
+ * @type {string}
  */
-export default class AbstractSmartContractStoredByHashDeployParameters extends AbstractSmartContractDeployParameters {
-  /** @type {string} */
-  activeKey;
+const entrypoint = &apos;transfer&apos;;
 
-  /** @type {string} */
-  network;
+/**
+ * @constant
+ * @type {number}
+ */
+const fee = 4000000000;
 
-  /** @type {string} */
-  hash;
-
-  /** @type {string} */
-  entrypoint;
-
-  /** @type {DeployUtil.RuntimeArgs} */
-  args;
-
-  /** @type {number} */
-  fee;
-
-  /** @type {number} */
-  ttl;
-
+/**
+ * UniswapErc20Transfer class
+ * Class used to create DeployParameters for an Uniswap ERC20 Transfer operation
+ */
+export default class UniswapErc20Transfer extends AbstractSmartContractStoredByHashDeployParameters {
   /**
    * Constructor
    *
    * @param {string} activeKey - Current active key in the public hex format
+   * @param {string} amount - Amount of tokens that will be transferred
+   * @param {string} recipient - Public key in the hex format of the recipient
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
-   * @param {string} entrypoint - Entrypoint of the SmartContract
-   * @param {DeployUtil.RuntimeArgs} args - Arguments of the SmartContract
-   * @param {number} fee - Runtime fee for the given SmartContract operation
-   * @param {number} ttl - Deploy time to live  in hours
+   * @param {number} ttl - Deploy time to live in hours
    */
-  constructor(activeKey, network, hash, entrypoint, args, fee, ttl = 1) {
-    super();
-    this.activeKey = activeKey;
-    this.network = network;
-    this.hash = hash;
-    this.entrypoint = entrypoint;
-    this.args = args;
-    this.fee = fee;
-    this.ttl = ttl * 3600000;
+  constructor(activeKey, amount, recipient, network, hash, ttl = 1) {
+    const args = RuntimeArgs.fromMap({
+      recipient: new CLKey(CLPublicKey.fromHex(recipient)),
+      amount: new CLU256(amount),
+    });
+    super(activeKey, network, hash, entrypoint, args, fee, ttl);
   }
 
   /**
-   * Get the deployParams deploy argument
+   * Get a DeployResult constructor
    *
-   * @return {DeployUtil.DeployParams} - Return a DeployParams
+   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult
    */
-  get deployParams() {
-    return new DeployUtil.DeployParams(
-      CLPublicKey.fromHex(this.activeKey),
-      this.network,
-      1,
-      this.ttl,
-    );
-  }
-
-  /**
-   * Get the session deploy argument
-   *
-   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network
-   */
-  get session() {
-    return DeployUtil.ExecutableDeployItem.newStoredContractByHash(
-      Uint8Array.from(Buffer.from(this.hash, &apos;hex&apos;)),
-      this.entrypoint,
-      this.args,
-    );
-  }
-
-  /**
-   * Get the payment deploy argument
-   *
-   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment
-   */
-  get payment() {
-    return DeployUtil.standardPayment(this.fee);
+  // eslint-disable-next-line class-methods-use-this
+  get deployResult() {
+    return Erc20TransferResult;
   }
 }
 </code></pre>

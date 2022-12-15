@@ -222,6 +222,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/erc20/actions/uniswaperc20transfer.js~uniswaperc20transfer",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer.html",
+    "<span>UniswapErc20Transfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/erc20/actions/uniswapErc20Transfer.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/auction/actions/withdrawbid.js~withdrawbid",
     "class/src/services/deploys/auction/actions/withdrawBid.js~WithdrawBid.html",
     "<span>WithdrawBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/auction/actions/withdrawBid.js</span>",
@@ -916,6 +922,24 @@ window.esdocSearchIndex = [
     "file/src/services/deploys/erc20/actions/index.js.html",
     "src/services/deploys/erc20/actions/index.js",
     "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20transfer.js",
+    "file/src/services/deploys/erc20/actions/uniswapErc20Transfer.js.html",
+    "src/services/deploys/erc20/actions/uniswapErc20Transfer.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20transfer.js~uniswaperc20transfer#constructor",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer.html#instance-constructor-constructor",
+    "src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20transfer.js~uniswaperc20transfer#deployresult",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer.html#instance-get-deployResult",
+    "src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer#deployResult",
+    "member"
   ],
   [
     "src/services/deploys/erc20/index.js",

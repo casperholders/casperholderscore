@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 166,
-  "actualCount": 166,
+  "expectCount": 171,
+  "actualCount": 171,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -59,6 +59,11 @@
       "undocumentLines": []
     },
     "src/services/deploys/erc20/actions/erc20Transfer.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/erc20/actions/uniswapErc20Transfer.js": {
       "expectCount": 5,
       "actualCount": 5,
       "undocumentLines": []
