@@ -14,7 +14,7 @@ const entrypoint = 'transfer';
  * @constant
  * @type {number}
  */
-const fee = 500000000;
+const fee = 600000000;
 
 /**
  * Erc20Transfer class
