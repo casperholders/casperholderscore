@@ -587,10 +587,10 @@
                 }
               },
               "extra": {
-                "rawValue": 500000000,
-                "raw": "500000000"
+                "rawValue": 600000000,
+                "raw": "600000000"
               },
-              "value": 500000000
+              "value": 600000000
             },
             "leadingComments": null
           }
@@ -2658,7 +2658,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": 500000000,
+      "value": 600000000,
       "start": 398,
       "end": 407,
       "loc": {
