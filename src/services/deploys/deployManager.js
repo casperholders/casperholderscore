@@ -78,9 +78,9 @@ export default class DeployManager {
     }
     /* eslint-disable no-param-reassign */
     if (deploy.session.getArgByName('amount')) {
-      deployResult.amount = CurrencyUtils.convertMotesToCasper(BigNumber.from(deploy.session.getArgByName('amount')
+      deployResult.amount = BigNumber.from(deploy.session.getArgByName('amount')
         .value()
-        .toString()));
+        .toString()).toString();
     }
     if (DeployResult.STATUS_OK in execResult) {
       deployResult.cost = CurrencyUtils.convertMotesToCasper(BigNumber.from(execResult[DeployResult.STATUS_OK].cost));
