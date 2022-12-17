@@ -34,11 +34,9 @@ export default class DeployManager {
     const hash = await this.client.casperClient.putDeploy(deploy);
     let amount = '0';
     if (deploy.session.getArgByName('amount')) {
-      amount = CurrencyUtils.convertMotesToCasper(
-        BigNumber.from(deploy.session.getArgByName('amount')
-          .value()
-          .toString()),
-      );
+      amount = BigNumber.from(deploy.session.getArgByName('amount')
+        .value()
+        .toString());
     }
     let cost = '0';
     if (deploy.payment.getArgByName('amount')) {
