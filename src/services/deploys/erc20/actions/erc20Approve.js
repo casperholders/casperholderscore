@@ -1,5 +1,5 @@
 import {
-  CLKey, CLPublicKey, CLU256, RuntimeArgs,
+  CLU256, RuntimeArgs,
 } from 'casper-js-sdk';
 import Erc20ApproveResult from '../../../results/erc20/erc20ApproveResult';
 import AbstractSmartContractStoredByHashDeployParameters
@@ -27,14 +27,14 @@ export default class Erc20Approve extends AbstractSmartContractStoredByHashDeplo
    *
    * @param {string} activeKey - Current active key in the public hex format
    * @param {string} amount - Amount of tokens that will be allowed to transfer
-   * @param {string} spender - Public key in the hex format of the spender
+   * @param {CLKey} spender - CLKey of the spender
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
    * @param {number} ttl - Deploy time to live in hours
    */
   constructor(activeKey, amount, spender, network, hash, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      spender: new CLKey(CLPublicKey.fromHex(spender)),
+      spender,
       amount: new CLU256(amount),
     });
     super(activeKey, network, hash, entrypoint, args, fee, ttl);
