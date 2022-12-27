@@ -132,13 +132,14 @@ export default class Balance {
         namedKeysParsed.allowances,
       );
 
-      if (allowance.CLValue.clType().toString()
-        === new CLOptionType(new CLU256Type()).toString()
-        && allowance.CLValue.value().some) {
-        return allowance.CLValue.value()
+      if (
+        allowance.CLValue.clType()
+          .toString()
+        === new CLOptionType(new CLU256Type()).toString()) {
+        return allowance.CLValue.value().some ? allowance.CLValue.value()
           .val
           .value()
-          .toString();
+          .toString() : '0';
       }
 
       return allowance.CLValue.value()
