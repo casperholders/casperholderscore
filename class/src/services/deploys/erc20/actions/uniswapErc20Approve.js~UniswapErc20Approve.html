@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../../">
-  <title data-ice="title">GenericContractDeployParameters | @casperholders/core</title>
+  <base data-ice="baseUrl" href="../../../../../../">
+  <title data-ice="title">UniswapErc20Approve | @casperholders/core</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -77,23 +77,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import GenericContractDeployParameters from &apos;<span><a href="file/src/services/deploys/smartContract/genericContractDeployParameters.js.html#lineNumber10">@casperholders/core/src/services/deploys/smartContract/genericContractDeployParameters.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import UniswapErc20Approve from &apos;<span><a href="file/src/services/deploys/erc20/actions/uniswapErc20Approve.js.html#lineNumber24">@casperholders/core/src/services/deploys/erc20/actions/uniswapErc20Approve.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/services/deploys/smartContract/genericContractDeployParameters.js.html#lineNumber10">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/services/deploys/erc20/actions/uniswapErc20Approve.js.html#lineNumber24">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">GenericContractDeployParameters</h1>
+  <h1 data-ice="name">UniswapErc20Approve</h1>
 
   
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span> &#x2192; <span><a href="class/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters.html">AbstractSmartContractStoredByHashDeployParameters</a></span> &#x2192; GenericContractDeployParameters</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/services/deploys/abstractSmartContractDeployParameters.js~AbstractSmartContractDeployParameters.html">AbstractSmartContractDeployParameters</a></span> &#x2192; <span><a href="class/src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters.html">AbstractSmartContractStoredByHashDeployParameters</a></span> &#x2192; UniswapErc20Approve</div></div>
   
   
   
@@ -103,8 +103,8 @@
 
   
   
-  <div class="description" data-ice="description"><p>GenericContractDeployParameters class
-Class used to define the parameters of a generic deployment to send on the network</p>
+  <div class="description" data-ice="description"><p>Erc20Approve class
+Class used to create DeployParameters for an ERC20 Approve operation</p>
 </div>
   
 
@@ -137,7 +137,7 @@ Class used to define the parameters of a generic deployment to send on the netwo
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, contractHash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, entrypoint: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, args: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, spender: <span>CLKey</span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, hash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
         </p>
       </div>
       <div>
@@ -173,7 +173,7 @@ Class used to define the parameters of a generic deployment to send on the netwo
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span>: <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="class/src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve.html#instance-get-deployResult">deployResult</a></span></span><span class="code" data-ice="signature">: <span>DeployResult.constructor</span>: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -648,11 +648,11 @@ Class used to define the parameters of a generic deployment to send on the netwo
     
     
     
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, contractHash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, entrypoint: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, fee: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, args: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(activeKey: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, amount: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, spender: <span>CLKey</span>, network: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, hash: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, ttl: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/genericContractDeployParameters.js.html#lineNumber22">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/erc20/actions/uniswapErc20Approve.js.html#lineNumber35">source</a></span></span>
     </span>
   </h3>
 
@@ -680,6 +680,20 @@ Class used to define the parameters of a generic deployment to send on the netwo
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">amount</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Amount of tokens that will be allowed to transfer</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">spender</td>
+      <td data-ice="type" class="code"><span>CLKey</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>CLKey of the spender</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">network</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
@@ -687,37 +701,17 @@ Class used to define the parameters of a generic deployment to send on the netwo
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">contractHash</td>
+      <td data-ice="name" class="code" data-depth="0">hash</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>SmartContract hash</p>
+      <td data-ice="description"><p>Current hash of the stored SmartContract</p>
 </td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">entrypoint</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>SmartContract entrypoint</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">fee</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Runtime fee for the given SmartContract operation</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">args</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">ttl</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Deploy time to live  in hours</p>
+      <td data-ice="description"><p>Deploy time to live in hours</p>
 </td>
     </tr>
 </tbody>
@@ -757,7 +751,7 @@ Class used to define the parameters of a generic deployment to send on the netwo
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/services/deploys/smartContract/genericContractDeployParameters.js.html#lineNumber40">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/services/deploys/erc20/actions/uniswapErc20Approve.js.html#lineNumber49">source</a></span></span>
     </span>
   </h3>
 

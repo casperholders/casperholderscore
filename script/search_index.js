@@ -222,6 +222,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/erc20/actions/uniswaperc20approve.js~uniswaperc20approve",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve.html",
+    "<span>UniswapErc20Approve</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/erc20/actions/uniswapErc20Approve.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/erc20/actions/uniswaperc20transfer.js~uniswaperc20transfer",
     "class/src/services/deploys/erc20/actions/uniswapErc20Transfer.js~UniswapErc20Transfer.html",
     "<span>UniswapErc20Transfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/erc20/actions/uniswapErc20Transfer.js</span>",
@@ -922,6 +928,24 @@ window.esdocSearchIndex = [
     "file/src/services/deploys/erc20/actions/index.js.html",
     "src/services/deploys/erc20/actions/index.js",
     "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20approve.js",
+    "file/src/services/deploys/erc20/actions/uniswapErc20Approve.js.html",
+    "src/services/deploys/erc20/actions/uniswapErc20Approve.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20approve.js~uniswaperc20approve#constructor",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve.html#instance-constructor-constructor",
+    "src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/erc20/actions/uniswaperc20approve.js~uniswaperc20approve#deployresult",
+    "class/src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve.html#instance-get-deployResult",
+    "src/services/deploys/erc20/actions/uniswapErc20Approve.js~UniswapErc20Approve#deployResult",
+    "member"
   ],
   [
     "src/services/deploys/erc20/actions/uniswaperc20transfer.js",
