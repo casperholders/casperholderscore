@@ -131,12 +131,22 @@ export default class Balance {
         encodedBytes,
         namedKeysParsed.allowances,
       );
+
+      if (allowance.CLValue.clType().toString()
+        === new CLOptionType(new CLU256Type()).toString()
+        && allowance.CLValue.value().some) {
+        return allowance.CLValue.value()
+          .val
+          .value()
+          .toString();
+      }
+
       return allowance.CLValue.value()
         .toString();
     } catch (e) {
       console.log(e);
-      return '0';
     }
+    return '0';
   }
 
   async fetchBalanceOfErc20(contractHash) {
@@ -207,7 +217,9 @@ export default class Balance {
         if (storedValueBalance.CLValue.clType()
           .toString() === new CLOptionType(new CLU256Type()).toString()
           && storedValueBalance.CLValue.value().some) {
-          rawValue = Big(storedValueBalance.CLValue.value().val.value());
+          rawValue = Big(storedValueBalance.CLValue.value()
+            .val
+            .value());
         } else {
           rawValue = Big(storedValueBalance.CLValue.value()
             .toString());

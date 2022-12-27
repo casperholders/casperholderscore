@@ -1,3 +1,4 @@
+import Big from 'big.js';
 import Balance from '../src/services/balance/balance';
 import ClientCasper from '../src/services/clients/clientCasper';
 import AbstractKeyManager from '../src/services/keys/abstractKeyManager';
@@ -84,8 +85,25 @@ test('Test erc20 allowance', async () => {
       '9af628fe541a8ad58e020a79f7260228dc58745e295f5dfa2dedd497064e31df',
       '23cd4354304f4eb1dd6739cba66d41579936e2cec1553096d97aa4efb6b661e6',
     );
-    expect(balance)
-      .toBe('115792089237316195423570985008687907853269984665640564039457584007911129639935');
+    expect(Big(balance).gt(0))
+      .toBe(true);
+  } catch (e) {
+    console.log(e);
+    expect(true)
+      .toBe(false);
+  }
+});
+
+test('Test uniswap erc20 allowance', async () => {
+  keyManager = new DummyKeyManager('01270a577d2d106c4d29402775f3dffcb9f04aad542579dd4d1cfad20572ebcb7c');
+  balanceService.keyManager = keyManager;
+  try {
+    const balance = await balanceService.fetchAllowanceOfErc20(
+      '35750604fe052d00244162dd0534e581e35494aa242ebae7a209c24ec490ca21',
+      '23cd4354304f4eb1dd6739cba66d41579936e2cec1553096d97aa4efb6b661e6',
+    );
+    expect(Big(balance).gt(0))
+      .toBe(true);
   } catch (e) {
     console.log(e);
     expect(true)
