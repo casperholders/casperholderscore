@@ -17,7 +17,7 @@ const entrypoint = 'approve';
  * @constant
  * @type {number}
  */
-const fee = 400000000;
+const fee = 1000000000;
 
 /**
  * NftBurn class
