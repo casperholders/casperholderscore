@@ -9,3 +9,4 @@ export { default as GenericContractDeployParameters } from './smartContract/gene
 export { default as TransferDeployParameters } from './transfer/TransferDeployParameters';
 export * from './auction';
 export * from './erc20';
+export * from './nft';

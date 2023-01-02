@@ -8,3 +8,4 @@ export { default as TransferResult } from './transferResult';
 export { default as UndelegateResult } from './undelegateResult';
 export { default as WithdrawBidResult } from './withdrawBidResult';
 export * from './erc20';
+export * from './nft';
