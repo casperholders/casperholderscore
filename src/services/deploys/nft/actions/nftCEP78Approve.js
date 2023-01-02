@@ -1,17 +1,12 @@
-import {
-  CLKey,
-  CLList, CLPublicKey,
-  CLU256, RuntimeArgs,
-} from 'casper-js-sdk';
-import { NftBurnResult } from '../../../results';
-import AbstractSmartContractStoredByHashDeployParameters
-  from '../../abstractSmartContractStoredByHashDeployParameters';
+import { CLU64, RuntimeArgs } from 'casper-js-sdk';
+import { NftApproveResult } from '../../../results';
+import AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';
 
 /**
  * @constant
  * @type {string}
  */
-const entrypoint = 'burn';
+const entrypoint = 'approve';
 
 /**
  * @constant
@@ -20,23 +15,24 @@ const entrypoint = 'burn';
 const fee = 1000000000;
 
 /**
- * NftBurn class
- * Class used to create DeployParameters for an NFT Burn operation
+ * NftCEP78Approve class
+ * Class used to create DeployParameters for an NFT Approve operation
  */
-export default class NftBurn extends AbstractSmartContractStoredByHashDeployParameters {
+export default class NftCEP78Approve extends AbstractSmartContractStoredByHashDeployParameters {
   /**
    * Constructor
    *
    * @param {string} activeKey - Current active key in the public hex format
-   * @param {number} tokenId - Token ID of the nft that will be burned
+   * @param {number} tokenId - Token ID of the nft that will be approved
+   * @param {CLKey} spender - CLKey of the spender
    * @param {string} network - Current network to execute the deployment
    * @param {string} hash - Current hash of the stored SmartContract
    * @param {number} ttl - Deploy time to live in hours
    */
-  constructor(activeKey, tokenId, network, hash, ttl = 1) {
+  constructor(activeKey, tokenId, spender, network, hash, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      owner: new CLKey(CLPublicKey.fromHex(activeKey)),
-      token_ids: new CLList([new CLU256(tokenId)]),
+      spender,
+      token_id: new CLU64(tokenId),
     });
     super(activeKey, network, hash, entrypoint, args, fee, ttl);
   }
@@ -48,6 +44,6 @@ export default class NftBurn extends AbstractSmartContractStoredByHashDeployPara
    */
   // eslint-disable-next-line class-methods-use-this
   get deployResult() {
-    return NftBurnResult;
+    return NftApproveResult;
   }
 }

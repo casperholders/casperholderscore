@@ -1,11 +1,6 @@
-import {
-  CLKey,
-  CLList, CLPublicKey,
-  CLU256, RuntimeArgs,
-} from 'casper-js-sdk';
+import { CLU64, RuntimeArgs } from 'casper-js-sdk';
 import { NftBurnResult } from '../../../results';
-import AbstractSmartContractStoredByHashDeployParameters
-  from '../../abstractSmartContractStoredByHashDeployParameters';
+import AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';
 
 /**
  * @constant
@@ -20,10 +15,10 @@ const entrypoint = 'burn';
 const fee = 1000000000;
 
 /**
- * NftBurn class
+ * NftCEP78Burn class
  * Class used to create DeployParameters for an NFT Burn operation
  */
-export default class NftBurn extends AbstractSmartContractStoredByHashDeployParameters {
+export default class NftCEP78Burn extends AbstractSmartContractStoredByHashDeployParameters {
   /**
    * Constructor
    *
@@ -35,8 +30,7 @@ export default class NftBurn extends AbstractSmartContractStoredByHashDeployPara
    */
   constructor(activeKey, tokenId, network, hash, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      owner: new CLKey(CLPublicKey.fromHex(activeKey)),
-      token_ids: new CLList([new CLU256(tokenId)]),
+      token_id: new CLU64(tokenId),
     });
     super(activeKey, network, hash, entrypoint, args, fee, ttl);
   }
