@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 200,
-  "actualCount": 200,
+  "expectCount": 215,
+  "actualCount": 215,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -84,6 +84,21 @@
       "undocumentLines": []
     },
     "src/services/deploys/nft/actions/nftBurn.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftCEP78Approve.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftCEP78Burn.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftCEP78Transfer.js": {
       "expectCount": 5,
       "actualCount": 5,
       "undocumentLines": []

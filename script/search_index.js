@@ -180,6 +180,24 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/nft/actions/nftcep78approve.js~nftcep78approve",
+    "class/src/services/deploys/nft/actions/nftCEP78Approve.js~NftCEP78Approve.html",
+    "<span>NftCEP78Approve</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftCEP78Approve.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft/actions/nftcep78burn.js~nftcep78burn",
+    "class/src/services/deploys/nft/actions/nftCEP78Burn.js~NftCEP78Burn.html",
+    "<span>NftCEP78Burn</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftCEP78Burn.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft/actions/nftcep78transfer.js~nftcep78transfer",
+    "class/src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer.html",
+    "<span>NftCEP78Transfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftCEP78Transfer.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/nft/actions/nfttransfer.js~nfttransfer",
     "class/src/services/deploys/nft/actions/nftTransfer.js~NftTransfer.html",
     "<span>NftTransfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftTransfer.js</span>",
@@ -1071,6 +1089,60 @@ window.esdocSearchIndex = [
     "src/services/deploys/nft/actions/nftburn.js~nftburn#deployresult",
     "class/src/services/deploys/nft/actions/nftBurn.js~NftBurn.html#instance-get-deployResult",
     "src/services/deploys/nft/actions/nftBurn.js~NftBurn#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78approve.js",
+    "file/src/services/deploys/nft/actions/nftCEP78Approve.js.html",
+    "src/services/deploys/nft/actions/nftCEP78Approve.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78approve.js~nftcep78approve#constructor",
+    "class/src/services/deploys/nft/actions/nftCEP78Approve.js~NftCEP78Approve.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftCEP78Approve.js~NftCEP78Approve#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78approve.js~nftcep78approve#deployresult",
+    "class/src/services/deploys/nft/actions/nftCEP78Approve.js~NftCEP78Approve.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftCEP78Approve.js~NftCEP78Approve#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78burn.js",
+    "file/src/services/deploys/nft/actions/nftCEP78Burn.js.html",
+    "src/services/deploys/nft/actions/nftCEP78Burn.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78burn.js~nftcep78burn#constructor",
+    "class/src/services/deploys/nft/actions/nftCEP78Burn.js~NftCEP78Burn.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftCEP78Burn.js~NftCEP78Burn#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78burn.js~nftcep78burn#deployresult",
+    "class/src/services/deploys/nft/actions/nftCEP78Burn.js~NftCEP78Burn.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftCEP78Burn.js~NftCEP78Burn#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78transfer.js",
+    "file/src/services/deploys/nft/actions/nftCEP78Transfer.js.html",
+    "src/services/deploys/nft/actions/nftCEP78Transfer.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78transfer.js~nftcep78transfer#constructor",
+    "class/src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftcep78transfer.js~nftcep78transfer#deployresult",
+    "class/src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer#deployResult",
     "member"
   ],
   [
