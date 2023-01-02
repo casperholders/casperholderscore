@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 176,
-  "actualCount": 176,
+  "expectCount": 200,
+  "actualCount": 200,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -76,6 +76,21 @@
     "src/services/deploys/keyManagement/keyManagement.js": {
       "expectCount": 3,
       "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftApprove.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftBurn.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft/actions/nftTransfer.js": {
+      "expectCount": 5,
+      "actualCount": 5,
       "undocumentLines": []
     },
     "src/services/deploys/smartContract/genericContractDeployParameters.js": {
@@ -164,6 +179,21 @@
       "undocumentLines": []
     },
     "src/services/results/keyManagementResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft/nftApproveResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft/nftBurnResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft/nftTransferResult.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []

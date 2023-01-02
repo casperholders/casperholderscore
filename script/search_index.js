@@ -156,6 +156,42 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/nft/actions/nftapprove.js~nftapprove",
+    "class/src/services/deploys/nft/actions/nftApprove.js~NftApprove.html",
+    "<span>NftApprove</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftApprove.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft/nftapproveresult.js~nftapproveresult",
+    "class/src/services/results/nft/nftApproveResult.js~NftApproveResult.html",
+    "<span>NftApproveResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft/nftApproveResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft/actions/nftburn.js~nftburn",
+    "class/src/services/deploys/nft/actions/nftBurn.js~NftBurn.html",
+    "<span>NftBurn</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftBurn.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft/nftburnresult.js~nftburnresult",
+    "class/src/services/results/nft/nftBurnResult.js~NftBurnResult.html",
+    "<span>NftBurnResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft/nftBurnResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft/actions/nfttransfer.js~nfttransfer",
+    "class/src/services/deploys/nft/actions/nftTransfer.js~NftTransfer.html",
+    "<span>NftTransfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftTransfer.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft/nfttransferresult.js~nfttransferresult",
+    "class/src/services/results/nft/nftTransferResult.js~NftTransferResult.html",
+    "<span>NftTransferResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft/nftTransferResult.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/errors/noactivekeyerror.js~noactivekeyerror",
     "class/src/services/errors/noActiveKeyError.js~NoActiveKeyError.html",
     "<span>NoActiveKeyError</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/errors/noActiveKeyError.js</span>",
@@ -996,6 +1032,72 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/nft/actions/index.js",
+    "file/src/services/deploys/nft/actions/index.js.html",
+    "src/services/deploys/nft/actions/index.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftapprove.js",
+    "file/src/services/deploys/nft/actions/nftApprove.js.html",
+    "src/services/deploys/nft/actions/nftApprove.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftapprove.js~nftapprove#constructor",
+    "class/src/services/deploys/nft/actions/nftApprove.js~NftApprove.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftApprove.js~NftApprove#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftapprove.js~nftapprove#deployresult",
+    "class/src/services/deploys/nft/actions/nftApprove.js~NftApprove.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftApprove.js~NftApprove#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftburn.js",
+    "file/src/services/deploys/nft/actions/nftBurn.js.html",
+    "src/services/deploys/nft/actions/nftBurn.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftburn.js~nftburn#constructor",
+    "class/src/services/deploys/nft/actions/nftBurn.js~NftBurn.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftBurn.js~NftBurn#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nftburn.js~nftburn#deployresult",
+    "class/src/services/deploys/nft/actions/nftBurn.js~NftBurn.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftBurn.js~NftBurn#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/actions/nfttransfer.js",
+    "file/src/services/deploys/nft/actions/nftTransfer.js.html",
+    "src/services/deploys/nft/actions/nftTransfer.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft/actions/nfttransfer.js~nfttransfer#constructor",
+    "class/src/services/deploys/nft/actions/nftTransfer.js~NftTransfer.html#instance-constructor-constructor",
+    "src/services/deploys/nft/actions/nftTransfer.js~NftTransfer#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft/actions/nfttransfer.js~nfttransfer#deployresult",
+    "class/src/services/deploys/nft/actions/nftTransfer.js~NftTransfer.html#instance-get-deployResult",
+    "src/services/deploys/nft/actions/nftTransfer.js~NftTransfer#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft/index.js",
+    "file/src/services/deploys/nft/index.js.html",
+    "src/services/deploys/nft/index.js",
+    "file"
+  ],
+  [
     "src/services/deploys/smartcontract/genericcontractdeployparameters.js",
     "file/src/services/deploys/smartContract/genericContractDeployParameters.js.html",
     "src/services/deploys/smartContract/genericContractDeployParameters.js",
@@ -1419,6 +1521,66 @@ window.esdocSearchIndex = [
     "src/services/results/keymanagementresult.js~keymanagementresult.getname",
     "class/src/services/results/keyManagementResult.js~KeyManagementResult.html#static-method-getName",
     "src/services/results/keyManagementResult.js~KeyManagementResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft/index.js",
+    "file/src/services/results/nft/index.js.html",
+    "src/services/results/nft/index.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft/nftapproveresult.js",
+    "file/src/services/results/nft/nftApproveResult.js.html",
+    "src/services/results/nft/nftApproveResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft/nftapproveresult.js~nftapproveresult#constructor",
+    "class/src/services/results/nft/nftApproveResult.js~NftApproveResult.html#instance-constructor-constructor",
+    "src/services/results/nft/nftApproveResult.js~NftApproveResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft/nftapproveresult.js~nftapproveresult.getname",
+    "class/src/services/results/nft/nftApproveResult.js~NftApproveResult.html#static-method-getName",
+    "src/services/results/nft/nftApproveResult.js~NftApproveResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft/nftburnresult.js",
+    "file/src/services/results/nft/nftBurnResult.js.html",
+    "src/services/results/nft/nftBurnResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft/nftburnresult.js~nftburnresult#constructor",
+    "class/src/services/results/nft/nftBurnResult.js~NftBurnResult.html#instance-constructor-constructor",
+    "src/services/results/nft/nftBurnResult.js~NftBurnResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft/nftburnresult.js~nftburnresult.getname",
+    "class/src/services/results/nft/nftBurnResult.js~NftBurnResult.html#static-method-getName",
+    "src/services/results/nft/nftBurnResult.js~NftBurnResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft/nfttransferresult.js",
+    "file/src/services/results/nft/nftTransferResult.js.html",
+    "src/services/results/nft/nftTransferResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft/nfttransferresult.js~nfttransferresult#constructor",
+    "class/src/services/results/nft/nftTransferResult.js~NftTransferResult.html#instance-constructor-constructor",
+    "src/services/results/nft/nftTransferResult.js~NftTransferResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft/nfttransferresult.js~nfttransferresult.getname",
+    "class/src/services/results/nft/nftTransferResult.js~NftTransferResult.html#static-method-getName",
+    "src/services/results/nft/nftTransferResult.js~NftTransferResult.getName",
     "method"
   ],
   [
