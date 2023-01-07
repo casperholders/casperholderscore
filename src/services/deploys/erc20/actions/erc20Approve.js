@@ -15,7 +15,7 @@ const entrypoint = 'approve';
  * @constant
  * @type {number}
  */
-const fee = 400000000;
+const fee = 2000000000;
 
 /**
  * Erc20Approve class
