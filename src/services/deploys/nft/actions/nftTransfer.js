@@ -16,7 +16,7 @@ const entrypoint = 'transfer';
  * @constant
  * @type {number}
  */
-const fee = 1000000000;
+const fee = 11000000000;
 
 /**
  * NftTransfer class

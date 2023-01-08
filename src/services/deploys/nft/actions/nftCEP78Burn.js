@@ -12,7 +12,7 @@ const entrypoint = 'burn';
  * @constant
  * @type {number}
  */
-const fee = 1000000000;
+const fee = 3000000000;
 
 /**
  * NftCEP78Burn class
