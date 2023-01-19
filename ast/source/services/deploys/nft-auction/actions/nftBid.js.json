@@ -1501,7 +1501,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {number} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
+                    "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
                     "start": 497,
                     "end": 943,
                     "loc": {
@@ -1754,7 +1754,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {number} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
+      "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
       "start": 497,
       "end": 943,
       "loc": {
@@ -2790,7 +2790,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {number} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
+      "value": "*\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   ",
       "start": 497,
       "end": 943,
       "loc": {
