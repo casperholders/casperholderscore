@@ -10,3 +10,4 @@ export { default as TransferDeployParameters } from './transfer/TransferDeployPa
 export * from './auction';
 export * from './erc20';
 export * from './nft';
+export * from './nft-auction';

@@ -9,3 +9,4 @@ export { default as UndelegateResult } from './undelegateResult';
 export { default as WithdrawBidResult } from './withdrawBidResult';
 export * from './erc20';
 export * from './nft';
+export * from './nft-auction';
