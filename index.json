@@ -3403,7 +3403,7 @@
     "__docId__": 169,
     "kind": "file",
     "name": "src/services/deploys/index.js",
-    "content": "export { default as AbstractSmartContractDeployParameters } from './abstractSmartContractDeployParameters';\nexport { default as AbstractSmartContractModuleBytesParameters } from './abstractSmartContractModuleBytesParameters';\nexport { default as AbstractSmartContractStoredByHashDeployParameters } from './abstractSmartContractStoredByHashDeployParameters';\nexport { default as AccountInfo } from './account-info/AccountInfo';\nexport { default as DeployManager } from './deployManager';\nexport { default as KeyManagement } from './keyManagement/keyManagement';\nexport { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';\nexport { default as GenericContractDeployParameters } from './smartContract/genericContractDeployParameters';\nexport { default as TransferDeployParameters } from './transfer/TransferDeployParameters';\nexport * from './auction';\nexport * from './erc20';\nexport * from './nft';\n",
+    "content": "export { default as AbstractSmartContractDeployParameters } from './abstractSmartContractDeployParameters';\nexport { default as AbstractSmartContractModuleBytesParameters } from './abstractSmartContractModuleBytesParameters';\nexport { default as AbstractSmartContractStoredByHashDeployParameters } from './abstractSmartContractStoredByHashDeployParameters';\nexport { default as AccountInfo } from './account-info/AccountInfo';\nexport { default as DeployManager } from './deployManager';\nexport { default as KeyManagement } from './keyManagement/keyManagement';\nexport { default as SmartContractDeployParameters } from './smartContract/smartContractDeployParameters';\nexport { default as GenericContractDeployParameters } from './smartContract/genericContractDeployParameters';\nexport { default as TransferDeployParameters } from './transfer/TransferDeployParameters';\nexport * from './auction';\nexport * from './erc20';\nexport * from './nft';\nexport * from './nft-auction';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/index.js",
     "access": "public",
@@ -4683,6 +4683,960 @@
   {
     "__docId__": 212,
     "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/index.js",
+    "content": "export { default as NftBid } from './nftBid';\nexport { default as NftCancelAuction } from './nftCancelAuction';\nexport { default as NftCancelBid } from './nftCancelBid';\nexport { default as NftFinalize } from './nftFinalize';\nexport { default as NftSell } from './nftSell';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 213,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/nftBid.js",
+    "content": "import {\n  CLByteArray, CLString, CLU512, RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftBidResult from '../../../results/nft-auction/nftBidResult';\nimport AbstractSmartContractModuleBytesParameters from '../../abstractSmartContractModuleBytesParameters';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 27000000000;\n\n/**\n * NftBid class\n * Class used to create DeployParameters for a Bid on a NFT auction\n */\nexport default class NftBid extends AbstractSmartContractModuleBytesParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {number} amount - Amount of the bid\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, amount, network, hash, smartContractBuffer, ttl = 1) {\n    const args = RuntimeArgs.fromMap({\n      amount: new CLU512(amount),\n      auction_contract: new CLByteArray(\n        Uint8Array.from(\n          Buffer.from(hash, 'hex'),\n        ),\n      ),\n      purse_name: new CLString('casperholders_auctions'),\n    });\n    super(activeKey, network, smartContractBuffer, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftBidResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftBid.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 214,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/nft-auction/actions/nftBid.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftBid.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftBid.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 215,
+    "kind": "class",
+    "name": "NftBid",
+    "memberof": "src/services/deploys/nft-auction/actions/nftBid.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftBid.js~NftBid",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftBid.js",
+    "importStyle": "NftBid",
+    "description": "NftBid class\nClass used to create DeployParameters for a Bid on a NFT auction",
+    "lineNumber": 17,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters"
+    ]
+  },
+  {
+    "__docId__": 216,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/nft-auction/actions/nftBid.js~NftBid",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftBid.js~NftBid#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 28,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "Amount of the bid"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored auction SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Buffer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "smartContractBuffer",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 217,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/nft-auction/actions/nftBid.js~NftBid",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftBid.js~NftBid#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 47,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 218,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "content": "import {\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftCancelAuctionResult from '../../../results/nft-auction/nftCancelAuctionResult';\nimport NftCancelBidResult from '../../../results/nft-auction/nftCancelBidResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'cancel_auction';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 15000000000;\n\n/**\n * NftCancelAuction class\n * Class used to create DeployParameters for cancelling an NFT Auction\n */\nexport default class NftCancelAuction extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({});\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftCancelBidResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 219,
+    "kind": "variable",
+    "name": "entrypoint",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~entrypoint",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 12,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 220,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 221,
+    "kind": "class",
+    "name": "NftCancelAuction",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "importStyle": "NftCancelAuction",
+    "description": "NftCancelAuction class\nClass used to create DeployParameters for cancelling an NFT Auction",
+    "lineNumber": 24,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
+    ]
+  },
+  {
+    "__docId__": 222,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 33,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 223,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 44,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 224,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "content": "import {\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftCancelAuctionResult from '../../../results/nft-auction/nftCancelAuctionResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'cancel_bid';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 15000000000;\n\n/**\n * NftCancelBid class\n * Class used to create DeployParameters for cancelling a bid on an NFT Auction\n */\nexport default class NftCancelBid extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({});\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftCancelAuctionResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 225,
+    "kind": "variable",
+    "name": "entrypoint",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelBid.js~entrypoint",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 226,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelBid.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 227,
+    "kind": "class",
+    "name": "NftCancelBid",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "importStyle": "NftCancelBid",
+    "description": "NftCancelBid class\nClass used to create DeployParameters for cancelling a bid on an NFT Auction",
+    "lineNumber": 23,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
+    ]
+  },
+  {
+    "__docId__": 228,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 32,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 229,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 43,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 230,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "content": "import {\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftFinalizeResult from '../../../results/nft-auction/nftFinalizeResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'finalize';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 30000000000;\n\n/**\n * NftFinalize class\n * Class used to create DeployParameters for finalizing an NFT Auction\n */\nexport default class NftFinalize extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({});\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftFinalizeResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 231,
+    "kind": "variable",
+    "name": "entrypoint",
+    "memberof": "src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftFinalize.js~entrypoint",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 232,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftFinalize.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 17,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 233,
+    "kind": "class",
+    "name": "NftFinalize",
+    "memberof": "src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "importStyle": "NftFinalize",
+    "description": "NftFinalize class\nClass used to create DeployParameters for finalizing an NFT Auction",
+    "lineNumber": 23,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
+    ]
+  },
+  {
+    "__docId__": 234,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 32,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 235,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 43,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 236,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/actions/nftSell.js",
+    "content": "import {\n  CLByteArray,\n  CLKey,\n  CLOption,\n  CLPublicKey,\n  CLString,\n  CLTypeBuilder,\n  CLU256,\n  CLU32,\n  CLU512,\n  CLU64,\n  CLValueBuilder,\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport { None, Some } from 'ts-results';\nimport NftSellResult from '../../../results/nft-auction/nftSellResult';\nimport AbstractSmartContractModuleBytesParameters from '../../abstractSmartContractModuleBytesParameters';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 200000000000;\n\n/**\n * NftSell class\n * Class used to create DeployParameters for creating a NFT auction\n */\nexport default class NftSell extends AbstractSmartContractModuleBytesParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} beneficiaryAccount - Account who will receive the account winner bid\n   * @param {string} tokenPackage - Contract package hex\n   * @param {string} reservePrice - In CSPR\n   * @param {string} tokenId\n   * @param {string} startTime - Timestamp UTC format\n   * @param {string} cancellationTime - Timestamp UTC format\n   * @param {string} endTime - Timestamp UTC format\n   * @param {string} bidderCountCap\n   * @param {string} auctionTimerExtension - In seconds\n   * @param {string} minimumBidStep\n   * @param {string} marketplaceAccount - Public Key in the public hex format\n   * @param {string} marketplaceCommission - In 1000th of the price\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored auction SmartContract\n   * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(\n    activeKey,\n    beneficiaryAccount,\n    tokenPackage,\n    reservePrice,\n    tokenId,\n    startTime,\n    cancellationTime,\n    endTime,\n    bidderCountCap,\n    auctionTimerExtension,\n    minimumBidStep,\n    marketplaceAccount,\n    marketplaceCommission,\n    network,\n    hash,\n    smartContractBuffer,\n    ttl = 1,\n  ) {\n    const args = RuntimeArgs.fromMap({\n      beneficiary_account: new CLKey(CLPublicKey.fromHex(beneficiaryAccount)),\n      token_contract_hash: CLValueBuilder.key(\n        CLValueBuilder.byteArray(\n          Buffer.from(tokenPackage, 'hex'),\n        ),\n      ),\n      format: new CLString('ENGLISH'),\n      starting_price: new CLOption(\n        None,\n        CLTypeBuilder.u512(),\n      ),\n      reserve_price: new CLU512(reservePrice),\n      token_id: new CLU256(tokenId),\n      start_time: new CLU64(startTime),\n      cancellation_time: new CLU64(cancellationTime),\n      end_time: new CLU64(endTime),\n      name: new CLString('testAuction'),\n      bidder_count_cap: new CLOption(\n        bidderCountCap !== '' ? Some(new CLU64(bidderCountCap)) : None,\n        CLTypeBuilder.u64(),\n      ),\n      auction_timer_extension: new CLOption(\n        auctionTimerExtension !== '' ? Some(new CLU64(auctionTimerExtension)) : None,\n        CLTypeBuilder.u64(),\n      ),\n      minimum_bid_step: new CLOption(\n        minimumBidStep !== '' ? Some(new CLU512(minimumBidStep)) : None,\n        CLTypeBuilder.u512(),\n      ),\n      marketplace_account: new CLByteArray(\n        Buffer.from(\n          CLPublicKey.fromHex(marketplaceAccount)\n            .toAccountRawHashStr(),\n          'hex',\n        ),\n      ),\n      marketplace_commission: new CLU32(marketplaceCommission),\n    });\n    super(activeKey, network, smartContractBuffer, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftSellResult;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftSell.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 237,
+    "kind": "variable",
+    "name": "fee",
+    "memberof": "src/services/deploys/nft-auction/actions/nftSell.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftSell.js~fee",
+    "access": "public",
+    "export": false,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftSell.js",
+    "importStyle": null,
+    "description": "",
+    "lineNumber": 23,
+    "unknown": [
+      {
+        "tagName": "@constant",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 238,
+    "kind": "class",
+    "name": "NftSell",
+    "memberof": "src/services/deploys/nft-auction/actions/nftSell.js",
+    "static": true,
+    "longname": "src/services/deploys/nft-auction/actions/nftSell.js~NftSell",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftSell.js",
+    "importStyle": "NftSell",
+    "description": "NftSell class\nClass used to create DeployParameters for creating a NFT auction",
+    "lineNumber": 29,
+    "interface": false,
+    "extends": [
+      "src/services/deploys/abstractSmartContractModuleBytesParameters.js~AbstractSmartContractModuleBytesParameters"
+    ]
+  },
+  {
+    "__docId__": 239,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/deploys/nft-auction/actions/nftSell.js~NftSell",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftSell.js~NftSell#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "activeKey",
+        "description": "Current active key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beneficiaryAccount",
+        "description": "Account who will receive the account winner bid"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tokenPackage",
+        "description": "Contract package hex"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "reservePrice",
+        "description": "In CSPR"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tokenId",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "startTime",
+        "description": "Timestamp UTC format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cancellationTime",
+        "description": "Timestamp UTC format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "endTime",
+        "description": "Timestamp UTC format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "bidderCountCap",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "auctionTimerExtension",
+        "description": "In seconds"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "minimumBidStep",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "marketplaceAccount",
+        "description": "Public Key in the public hex format"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "marketplaceCommission",
+        "description": "In 1000th of the price"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "network",
+        "description": "Current network to execute the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "Current hash of the stored auction SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Buffer"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "smartContractBuffer",
+        "description": "Current hash of the stored SmartContract"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ttl",
+        "description": "Deploy time to live in hours"
+      }
+    ]
+  },
+  {
+    "__docId__": 240,
+    "kind": "get",
+    "name": "deployResult",
+    "memberof": "src/services/deploys/nft-auction/actions/nftSell.js~NftSell",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/deploys/nft-auction/actions/nftSell.js~NftSell#deployResult",
+    "access": "public",
+    "description": "Get a DeployResult constructor",
+    "lineNumber": 118,
+    "return": {
+      "nullable": null,
+      "types": [
+        "DeployResult.constructor"
+      ],
+      "spread": false,
+      "description": "Return the constructor of a given DeployResult"
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 241,
+    "kind": "file",
+    "name": "src/services/deploys/nft-auction/index.js",
+    "content": "export * from './actions';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 242,
+    "kind": "file",
     "name": "src/services/deploys/smartContract/genericContractDeployParameters.js",
     "content": "import { RuntimeArgs } from 'casper-js-sdk';\nimport CurrencyUtils from '../../helpers/currencyUtils';\nimport SmartContractResult from '../../results/smartContractResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * GenericContractDeployParameters class\n * Class used to define the parameters of a generic deployment to send on the network\n */\nexport default class GenericContractDeployParameters extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} contractHash - SmartContract hash\n   * @param {string} entrypoint - SmartContract entrypoint\n   * @param {string} fee - Runtime fee for the given SmartContract operation\n   * @param {object} args\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(activeKey, network, contractHash, entrypoint, fee, args = {}, ttl = 1) {\n    super(\n      activeKey,\n      network,\n      contractHash,\n      entrypoint,\n      RuntimeArgs.fromMap(args),\n      CurrencyUtils.convertCasperToMotes(fee),\n      ttl,\n    );\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return SmartContractResult;\n  }\n}\n",
     "static": true,
@@ -4692,7 +5646,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 213,
+    "__docId__": 243,
     "kind": "class",
     "name": "GenericContractDeployParameters",
     "memberof": "src/services/deploys/smartContract/genericContractDeployParameters.js",
@@ -4710,7 +5664,7 @@
     ]
   },
   {
-    "__docId__": 214,
+    "__docId__": 244,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters",
@@ -4795,7 +5749,7 @@
     ]
   },
   {
-    "__docId__": 215,
+    "__docId__": 245,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/smartContract/genericContractDeployParameters.js~GenericContractDeployParameters",
@@ -4821,7 +5775,7 @@
     }
   },
   {
-    "__docId__": 216,
+    "__docId__": 246,
     "kind": "file",
     "name": "src/services/deploys/smartContract/smartContractDeployParameters.js",
     "content": "import { CLPublicKey, DeployUtil, RuntimeArgs } from 'casper-js-sdk';\nimport CurrencyUtils from '../../helpers/currencyUtils';\nimport SmartContractResult from '../../results/smartContractResult';\nimport AbstractSmartContractDeployParameters from '../abstractSmartContractDeployParameters';\n\n/**\n * SmartContractDeployParameters class\n * Class used to define the parameters of a deployment to send a smart contract on the network\n */\nexport default class SmartContractDeployParameters extends AbstractSmartContractDeployParameters {\n  /** @type {string} */\n  activeKey;\n\n  /** @type {string} */\n  network;\n\n  /** @type {Buffer} */\n  smartContractBuffer;\n\n  /** @type {string} */\n  fee;\n\n  /** @type {number} */\n  ttl;\n\n  /** @type {object} */\n  args;\n\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {Buffer} smartContractBuffer - Buffer of the SmartContract previously read\n   * @param {string} fee - Runtime fee for the given SmartContract operation\n   * @param {object} args\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(activeKey, network, smartContractBuffer, fee, args = {}, ttl = 1) {\n    super();\n    this.activeKey = activeKey;\n    this.network = network;\n    this.smartContractBuffer = smartContractBuffer;\n    this.fee = fee;\n    this.ttl = ttl * 3600000;\n    this.args = args;\n  }\n\n  /**\n   * Get the deployParams deploy argument\n   *\n   * @return {DeployUtil.DeployParams} - Return a DeployParams\n   */\n  get deployParams() {\n    return new DeployUtil.DeployParams(\n      CLPublicKey.fromHex(this.activeKey),\n      this.network,\n      1,\n      this.ttl,\n    );\n  }\n\n  /**\n   * Get the session deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n   */\n  get session() {\n    return DeployUtil.ExecutableDeployItem.newModuleBytes(\n      new Uint8Array(this.smartContractBuffer),\n      RuntimeArgs.fromMap(this.args),\n    );\n  }\n\n  /**\n   * Get the payment deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n   */\n  get payment() {\n    return DeployUtil.standardPayment(CurrencyUtils.convertCasperToMotes(this.fee));\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return SmartContractResult;\n  }\n}\n",
@@ -4832,7 +5786,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 217,
+    "__docId__": 247,
     "kind": "class",
     "name": "SmartContractDeployParameters",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js",
@@ -4850,7 +5804,7 @@
     ]
   },
   {
-    "__docId__": 218,
+    "__docId__": 248,
     "kind": "member",
     "name": "activeKey",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4869,7 +5823,7 @@
     }
   },
   {
-    "__docId__": 219,
+    "__docId__": 249,
     "kind": "member",
     "name": "network",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4888,7 +5842,7 @@
     }
   },
   {
-    "__docId__": 220,
+    "__docId__": 250,
     "kind": "member",
     "name": "smartContractBuffer",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4907,7 +5861,7 @@
     }
   },
   {
-    "__docId__": 221,
+    "__docId__": 251,
     "kind": "member",
     "name": "fee",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4926,7 +5880,7 @@
     }
   },
   {
-    "__docId__": 222,
+    "__docId__": 252,
     "kind": "member",
     "name": "ttl",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4945,7 +5899,7 @@
     }
   },
   {
-    "__docId__": 223,
+    "__docId__": 253,
     "kind": "member",
     "name": "args",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -4964,7 +5918,7 @@
     }
   },
   {
-    "__docId__": 224,
+    "__docId__": 254,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -5039,7 +5993,7 @@
     ]
   },
   {
-    "__docId__": 231,
+    "__docId__": 261,
     "kind": "get",
     "name": "deployParams",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -5065,7 +6019,7 @@
     }
   },
   {
-    "__docId__": 232,
+    "__docId__": 262,
     "kind": "get",
     "name": "session",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -5091,7 +6045,7 @@
     }
   },
   {
-    "__docId__": 233,
+    "__docId__": 263,
     "kind": "get",
     "name": "payment",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -5117,7 +6071,7 @@
     }
   },
   {
-    "__docId__": 234,
+    "__docId__": 264,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/smartContract/smartContractDeployParameters.js~SmartContractDeployParameters",
@@ -5143,7 +6097,7 @@
     }
   },
   {
-    "__docId__": 235,
+    "__docId__": 265,
     "kind": "file",
     "name": "src/services/deploys/transfer/TransferDeployParameters.js",
     "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport CurrencyUtils from '../../helpers/currencyUtils';\nimport TransferResult from '../../results/transferResult';\nimport AbstractSmartContractDeployParameters from '../abstractSmartContractDeployParameters';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 100000000;\n\n/**\n * TransferDeployParameters class\n * Class used to create DeployParameters for a Transfer operation\n */\nexport default class TransferDeployParameters extends AbstractSmartContractDeployParameters {\n  /** @type {string} */\n  activeKey;\n\n  /** @type {string} */\n  network;\n\n  /** @type {string} */\n  amount;\n\n  /** @type {string} */\n  target;\n\n  /** @type {string} */\n  transferID;\n\n  /** @type {number} */\n  ttl;\n\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} amount - Amount to transfer in casper\n   * @param {string} target - Public key in the hex format of the receiver\n   * @param {string} transferID - TransferID of the transfer operation\n   * @param {number} ttl - Deploy time to live  in hours\n   */\n  constructor(activeKey, network, amount, target, transferID, ttl = 1) {\n    super();\n    this.activeKey = activeKey;\n    this.network = network;\n    this.amount = amount;\n    this.target = target;\n    this.transferID = transferID;\n    this.ttl = ttl * 3600000;\n  }\n\n  /**\n   * Get the deployParams deploy argument\n   *\n   * @return {DeployUtil.DeployParams} - Return a DeployParams\n   */\n  get deployParams() {\n    return new DeployUtil.DeployParams(\n      CLPublicKey.fromHex(this.activeKey),\n      this.network,\n      1,\n      this.ttl,\n    );\n  }\n\n  /**\n   * Get the session deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a session with a SmartContract stored by hash on the network\n   */\n  get session() {\n    return DeployUtil.ExecutableDeployItem.newTransfer(\n      CurrencyUtils.convertCasperToMotes(this.amount),\n      CLPublicKey.fromHex(this.target),\n      undefined,\n      this.transferID,\n    );\n  }\n\n  /**\n   * Get the payment deploy argument\n   *\n   * @return {DeployUtil.ExecutableDeployItem} - Return a standard payment\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get payment() {\n    return DeployUtil.standardPayment(fee);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {TransferResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return TransferResult;\n  }\n}\n",
@@ -5154,7 +6108,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 236,
+    "__docId__": 266,
     "kind": "variable",
     "name": "fee",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js",
@@ -5183,7 +6137,7 @@
     "ignore": true
   },
   {
-    "__docId__": 237,
+    "__docId__": 267,
     "kind": "class",
     "name": "TransferDeployParameters",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js",
@@ -5201,7 +6155,7 @@
     ]
   },
   {
-    "__docId__": 238,
+    "__docId__": 268,
     "kind": "member",
     "name": "activeKey",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5220,7 +6174,7 @@
     }
   },
   {
-    "__docId__": 239,
+    "__docId__": 269,
     "kind": "member",
     "name": "network",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5239,7 +6193,7 @@
     }
   },
   {
-    "__docId__": 240,
+    "__docId__": 270,
     "kind": "member",
     "name": "amount",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5258,7 +6212,7 @@
     }
   },
   {
-    "__docId__": 241,
+    "__docId__": 271,
     "kind": "member",
     "name": "target",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5277,7 +6231,7 @@
     }
   },
   {
-    "__docId__": 242,
+    "__docId__": 272,
     "kind": "member",
     "name": "transferID",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5296,7 +6250,7 @@
     }
   },
   {
-    "__docId__": 243,
+    "__docId__": 273,
     "kind": "member",
     "name": "ttl",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5315,7 +6269,7 @@
     }
   },
   {
-    "__docId__": 244,
+    "__docId__": 274,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5390,7 +6344,7 @@
     ]
   },
   {
-    "__docId__": 251,
+    "__docId__": 281,
     "kind": "get",
     "name": "deployParams",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5416,7 +6370,7 @@
     }
   },
   {
-    "__docId__": 252,
+    "__docId__": 282,
     "kind": "get",
     "name": "session",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5442,7 +6396,7 @@
     }
   },
   {
-    "__docId__": 253,
+    "__docId__": 283,
     "kind": "get",
     "name": "payment",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5468,7 +6422,7 @@
     }
   },
   {
-    "__docId__": 254,
+    "__docId__": 284,
     "kind": "get",
     "name": "deployResult",
     "memberof": "src/services/deploys/transfer/TransferDeployParameters.js~TransferDeployParameters",
@@ -5494,7 +6448,7 @@
     }
   },
   {
-    "__docId__": 255,
+    "__docId__": 285,
     "kind": "file",
     "name": "src/services/errors/extendableError.js",
     "content": "/**\n * ExtendableError class\n * Generic error class used as a wrapper to define specific errors\n */\nexport default class ExtendableError extends Error {\n  /** @type {string} */\n  name;\n\n  /** @type {string} */\n  stack;\n\n  /**\n     * Constructor\n     *\n     * @param {string} message - Error message\n     */\n  constructor(message) {\n    super(message);\n    this.name = this.constructor.name;\n    if (typeof Error.captureStackTrace === 'function') {\n      Error.captureStackTrace(this, this.constructor);\n    } else {\n      this.stack = (new Error(message)).stack;\n    }\n  }\n}\n",
@@ -5505,7 +6459,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 256,
+    "__docId__": 286,
     "kind": "class",
     "name": "ExtendableError",
     "memberof": "src/services/errors/extendableError.js",
@@ -5523,7 +6477,7 @@
     ]
   },
   {
-    "__docId__": 257,
+    "__docId__": 287,
     "kind": "member",
     "name": "name",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -5542,7 +6496,7 @@
     }
   },
   {
-    "__docId__": 258,
+    "__docId__": 288,
     "kind": "member",
     "name": "stack",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -5561,7 +6515,7 @@
     }
   },
   {
-    "__docId__": 259,
+    "__docId__": 289,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/extendableError.js~ExtendableError",
@@ -5586,7 +6540,7 @@
     ]
   },
   {
-    "__docId__": 262,
+    "__docId__": 292,
     "kind": "file",
     "name": "src/services/errors/index.js",
     "content": "export { default as ExtendableError } from './extendableError';\nexport { default as InsufficientFunds } from './insufficientFunds';\nexport { default as NoActiveKeyError } from './noActiveKeyError';\nexport { default as NoStakeBalanceError } from './noStakeBalanceError';\nexport { default as NoValidatorBalanceError } from './noValidatorBalanceError';\nexport { default as NoValidatorInfos } from './noValidatorInfos';\nexport { default as SignError } from './signError';\n",
@@ -5597,7 +6551,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 263,
+    "__docId__": 293,
     "kind": "file",
     "name": "src/services/errors/insufficientFunds.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * InsufficientFunds class\n * Error thrown when the user as insufficient funds in his balance\n */\nexport default class InsufficientFunds extends ExtendableError {\n  /**\n   * Constructor\n   *\n   * @param min - Minimum casper needed\n   */\n  constructor(min) {\n    super(`Insufficient funds. You must have more than ${min} CSPR on your wallet.`);\n  }\n}\n",
@@ -5608,7 +6562,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 264,
+    "__docId__": 294,
     "kind": "class",
     "name": "InsufficientFunds",
     "memberof": "src/services/errors/insufficientFunds.js",
@@ -5626,7 +6580,7 @@
     ]
   },
   {
-    "__docId__": 265,
+    "__docId__": 295,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/insufficientFunds.js~InsufficientFunds",
@@ -5651,7 +6605,7 @@
     ]
   },
   {
-    "__docId__": 266,
+    "__docId__": 296,
     "kind": "file",
     "name": "src/services/errors/noActiveKeyError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoActiveKeyError class\n * Error thrown when the user is not connected\n */\nexport default class NoActiveKeyError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Not connected.');\n  }\n}\n",
@@ -5662,7 +6616,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 267,
+    "__docId__": 297,
     "kind": "class",
     "name": "NoActiveKeyError",
     "memberof": "src/services/errors/noActiveKeyError.js",
@@ -5680,7 +6634,7 @@
     ]
   },
   {
-    "__docId__": 268,
+    "__docId__": 298,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noActiveKeyError.js~NoActiveKeyError",
@@ -5693,7 +6647,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 269,
+    "__docId__": 299,
     "kind": "file",
     "name": "src/services/errors/noStakeBalanceError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoStakeBalanceError class\n * Error thrown when the user doesn't have a staking balance\n */\nexport default class NoStakeBalanceError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('No staking funds.');\n  }\n}\n",
@@ -5704,7 +6658,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 270,
+    "__docId__": 300,
     "kind": "class",
     "name": "NoStakeBalanceError",
     "memberof": "src/services/errors/noStakeBalanceError.js",
@@ -5722,7 +6676,7 @@
     ]
   },
   {
-    "__docId__": 271,
+    "__docId__": 301,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noStakeBalanceError.js~NoStakeBalanceError",
@@ -5735,7 +6689,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 272,
+    "__docId__": 302,
     "kind": "file",
     "name": "src/services/errors/noValidatorBalanceError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoValidatorBalanceError class\n * Error thrown when the current user doesn't have a validator balance\n */\nexport default class NoValidatorBalanceError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Unable to retrieve your Validator balance. Make sure that you are correctly bonded to the network.');\n  }\n}\n",
@@ -5746,7 +6700,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 273,
+    "__docId__": 303,
     "kind": "class",
     "name": "NoValidatorBalanceError",
     "memberof": "src/services/errors/noValidatorBalanceError.js",
@@ -5764,7 +6718,7 @@
     ]
   },
   {
-    "__docId__": 274,
+    "__docId__": 304,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noValidatorBalanceError.js~NoValidatorBalanceError",
@@ -5777,7 +6731,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 275,
+    "__docId__": 305,
     "kind": "file",
     "name": "src/services/errors/noValidatorInfos.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * NoValidatorInfos class\n * Error thrown when we can't retrieve validator metadata\n */\nexport default class NoValidatorInfos extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Unable to retrieve the validator metadata.');\n  }\n}\n",
@@ -5788,7 +6742,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 276,
+    "__docId__": 306,
     "kind": "class",
     "name": "NoValidatorInfos",
     "memberof": "src/services/errors/noValidatorInfos.js",
@@ -5806,7 +6760,7 @@
     ]
   },
   {
-    "__docId__": 277,
+    "__docId__": 307,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/noValidatorInfos.js~NoValidatorInfos",
@@ -5819,7 +6773,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 278,
+    "__docId__": 308,
     "kind": "file",
     "name": "src/services/errors/signError.js",
     "content": "import ExtendableError from './extendableError';\n\n/**\n * SignError class\n * Error thrown when there's a error with the deploy signature process\n */\nexport default class SignError extends ExtendableError {\n  /**\n   * Constructor\n   */\n  constructor() {\n    super('Failed to sign the contract. Please retry if you canceled the operation.');\n  }\n}\n",
@@ -5830,7 +6784,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 279,
+    "__docId__": 309,
     "kind": "class",
     "name": "SignError",
     "memberof": "src/services/errors/signError.js",
@@ -5848,7 +6802,7 @@
     ]
   },
   {
-    "__docId__": 280,
+    "__docId__": 310,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/errors/signError.js~SignError",
@@ -5861,7 +6815,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 281,
+    "__docId__": 311,
     "kind": "file",
     "name": "src/services/helpers/currencyUtils.js",
     "content": "/**\n * CurrencyUtils class\n * Used to convert from/to casper/motes\n */\nimport { BigNumber } from '@ethersproject/bignumber';\nimport Big from 'big.js';\n\n/**\n * CurrencyUtils class. Helper to convert CSPR and motes.\n */\nexport default class CurrencyUtils {\n  /**\n   * Convert motes to casper\n   *\n   * @param {BigNumber} motesAmount - Amount in motes\n   * @return {String}\n   */\n  static convertMotesToCasper(motesAmount) {\n    return Big(motesAmount.toString())\n      .div(1000000000)\n      .toString();\n  }\n\n  /**\n   * Convert casper to motes\n   *\n   * @param {String} casperAmount - Amount in casper\n   * @return {BigNumber}\n   */\n  static convertCasperToMotes(casperAmount) {\n    return BigNumber.from(Big(casperAmount)\n      .times(1000000000)\n      .toString());\n  }\n}\n",
@@ -5872,7 +6826,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 282,
+    "__docId__": 312,
     "kind": "class",
     "name": "CurrencyUtils",
     "memberof": "src/services/helpers/currencyUtils.js",
@@ -5887,7 +6841,7 @@
     "interface": false
   },
   {
-    "__docId__": 283,
+    "__docId__": 313,
     "kind": "method",
     "name": "convertMotesToCasper",
     "memberof": "src/services/helpers/currencyUtils.js~CurrencyUtils",
@@ -5920,7 +6874,7 @@
     }
   },
   {
-    "__docId__": 284,
+    "__docId__": 314,
     "kind": "method",
     "name": "convertCasperToMotes",
     "memberof": "src/services/helpers/currencyUtils.js~CurrencyUtils",
@@ -5953,7 +6907,7 @@
     }
   },
   {
-    "__docId__": 285,
+    "__docId__": 315,
     "kind": "file",
     "name": "src/services/index.js",
     "content": "export { default as Balance } from './balance/balance';\nexport { default as ClientCasper } from './clients/clientCasper';\nexport { default as CurrencyUtils } from './helpers/currencyUtils';\nexport { default as AbstractKeyManager } from './keys/abstractKeyManager';\nexport { default as Validators } from './validators/validators';\nexport * from './deploys';\nexport * from './errors';\nexport * from './results';\nexport * from './signers';\n",
@@ -5964,7 +6918,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 286,
+    "__docId__": 316,
     "kind": "file",
     "name": "src/services/keys/abstractKeyManager.js",
     "content": "/**\n * AbstractKeyManager class\n * Used to define multiple key managers\n */\nexport default class AbstractKeyManager {\n  /**\n   * Retrieve the current active key\n   *\n   * @return string - Must return a public key hex\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get activeKey() {\n    throw new Error('You must implement this function');\n  }\n}\n",
@@ -5975,7 +6929,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 287,
+    "__docId__": 317,
     "kind": "class",
     "name": "AbstractKeyManager",
     "memberof": "src/services/keys/abstractKeyManager.js",
@@ -5990,7 +6944,7 @@
     "interface": false
   },
   {
-    "__docId__": 288,
+    "__docId__": 318,
     "kind": "get",
     "name": "activeKey",
     "memberof": "src/services/keys/abstractKeyManager.js~AbstractKeyManager",
@@ -6012,7 +6966,7 @@
     "type": null
   },
   {
-    "__docId__": 289,
+    "__docId__": 319,
     "kind": "file",
     "name": "src/services/results/accountInfoResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * AccountInfoResult class\n */\nexport default class AccountInfoResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, AccountInfoResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Account Info Operation';\n  }\n}\n",
@@ -6023,7 +6977,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 290,
+    "__docId__": 320,
     "kind": "class",
     "name": "AccountInfoResult",
     "memberof": "src/services/results/accountInfoResult.js",
@@ -6041,7 +6995,7 @@
     ]
   },
   {
-    "__docId__": 291,
+    "__docId__": 321,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/accountInfoResult.js~AccountInfoResult",
@@ -6086,7 +7040,7 @@
     ]
   },
   {
-    "__docId__": 292,
+    "__docId__": 322,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/accountInfoResult.js~AccountInfoResult",
@@ -6108,7 +7062,7 @@
     "params": []
   },
   {
-    "__docId__": 293,
+    "__docId__": 323,
     "kind": "file",
     "name": "src/services/results/addBidResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * AddBidResult class\n */\nexport default class AddBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, AddBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Add bid Operation';\n  }\n}\n",
@@ -6119,7 +7073,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 294,
+    "__docId__": 324,
     "kind": "class",
     "name": "AddBidResult",
     "memberof": "src/services/results/addBidResult.js",
@@ -6137,7 +7091,7 @@
     ]
   },
   {
-    "__docId__": 295,
+    "__docId__": 325,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/addBidResult.js~AddBidResult",
@@ -6182,7 +7136,7 @@
     ]
   },
   {
-    "__docId__": 296,
+    "__docId__": 326,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/addBidResult.js~AddBidResult",
@@ -6204,7 +7158,7 @@
     "params": []
   },
   {
-    "__docId__": 297,
+    "__docId__": 327,
     "kind": "file",
     "name": "src/services/results/delegateResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * DelegateResult class\n */\nexport default class DelegateResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, DelegateResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Staking Operation';\n  }\n}\n",
@@ -6215,7 +7169,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 298,
+    "__docId__": 328,
     "kind": "class",
     "name": "DelegateResult",
     "memberof": "src/services/results/delegateResult.js",
@@ -6233,7 +7187,7 @@
     ]
   },
   {
-    "__docId__": 299,
+    "__docId__": 329,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/delegateResult.js~DelegateResult",
@@ -6278,7 +7232,7 @@
     ]
   },
   {
-    "__docId__": 300,
+    "__docId__": 330,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/delegateResult.js~DelegateResult",
@@ -6300,7 +7254,7 @@
     "params": []
   },
   {
-    "__docId__": 301,
+    "__docId__": 331,
     "kind": "file",
     "name": "src/services/results/deployResultsMap.js",
     "content": "import {\n  AccountInfoResult,\n  AddBidResult,\n  DelegateResult,\n  KeyManagementResult,\n  SmartContractResult,\n  TransferResult,\n  UndelegateResult,\n  WithdrawBidResult,\n} from './index';\n\nexport default new Map(\n  [\n    [AccountInfoResult.getName(), AccountInfoResult],\n    [AddBidResult.getName(), AddBidResult],\n    [DelegateResult.getName(), DelegateResult],\n    [KeyManagementResult.getName(), KeyManagementResult],\n    [SmartContractResult.getName(), SmartContractResult],\n    [TransferResult.getName(), TransferResult],\n    [UndelegateResult.getName(), UndelegateResult],\n    [WithdrawBidResult.getName(), WithdrawBidResult],\n  ],\n);\n",
@@ -6311,7 +7265,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 302,
+    "__docId__": 332,
     "kind": "file",
     "name": "src/services/results/erc20/erc20ApproveResult.js",
     "content": "import DeployResult from '../deployResult';\n\n/**\n * Erc20ApproveResult class\n */\nexport default class Erc20ApproveResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, Erc20ApproveResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'ERC20 Approve Operation';\n  }\n}\n",
@@ -6322,7 +7276,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 303,
+    "__docId__": 333,
     "kind": "class",
     "name": "Erc20ApproveResult",
     "memberof": "src/services/results/erc20/erc20ApproveResult.js",
@@ -6340,7 +7294,7 @@
     ]
   },
   {
-    "__docId__": 304,
+    "__docId__": 334,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult",
@@ -6385,7 +7339,7 @@
     ]
   },
   {
-    "__docId__": 305,
+    "__docId__": 335,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/erc20/erc20ApproveResult.js~Erc20ApproveResult",
@@ -6407,7 +7361,7 @@
     "params": []
   },
   {
-    "__docId__": 306,
+    "__docId__": 336,
     "kind": "file",
     "name": "src/services/results/erc20/erc20TransferResult.js",
     "content": "import DeployResult from '../deployResult';\n\n/**\n * Erc20TransferResult class\n */\nexport default class Erc20TransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, Erc20TransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'ERC20 Transfer Operation';\n  }\n}\n",
@@ -6418,7 +7372,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 307,
+    "__docId__": 337,
     "kind": "class",
     "name": "Erc20TransferResult",
     "memberof": "src/services/results/erc20/erc20TransferResult.js",
@@ -6436,7 +7390,7 @@
     ]
   },
   {
-    "__docId__": 308,
+    "__docId__": 338,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult",
@@ -6481,7 +7435,7 @@
     ]
   },
   {
-    "__docId__": 309,
+    "__docId__": 339,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/erc20/erc20TransferResult.js~Erc20TransferResult",
@@ -6503,7 +7457,7 @@
     "params": []
   },
   {
-    "__docId__": 310,
+    "__docId__": 340,
     "kind": "file",
     "name": "src/services/results/erc20/index.js",
     "content": "export { default as Erc20ApproveResult } from './erc20ApproveResult';\nexport { default as Erc20TransferResult } from './erc20TransferResult';\n",
@@ -6514,10 +7468,10 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 311,
+    "__docId__": 341,
     "kind": "file",
     "name": "src/services/results/index.js",
-    "content": "export { default as AccountInfoResult } from './accountInfoResult';\nexport { default as AddBidResult } from './addBidResult';\nexport { default as DelegateResult } from './delegateResult';\nexport { default as DeployResult } from './deployResult';\nexport { default as KeyManagementResult } from './keyManagementResult';\nexport { default as SmartContractResult } from './smartContractResult';\nexport { default as TransferResult } from './transferResult';\nexport { default as UndelegateResult } from './undelegateResult';\nexport { default as WithdrawBidResult } from './withdrawBidResult';\nexport * from './erc20';\nexport * from './nft';\n",
+    "content": "export { default as AccountInfoResult } from './accountInfoResult';\nexport { default as AddBidResult } from './addBidResult';\nexport { default as DelegateResult } from './delegateResult';\nexport { default as DeployResult } from './deployResult';\nexport { default as KeyManagementResult } from './keyManagementResult';\nexport { default as SmartContractResult } from './smartContractResult';\nexport { default as TransferResult } from './transferResult';\nexport { default as UndelegateResult } from './undelegateResult';\nexport { default as WithdrawBidResult } from './withdrawBidResult';\nexport * from './erc20';\nexport * from './nft';\nexport * from './nft-auction';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/index.js",
     "access": "public",
@@ -6525,7 +7479,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 312,
+    "__docId__": 342,
     "kind": "file",
     "name": "src/services/results/keyManagementResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * KeyManagementResult class\n */\nexport default class KeyManagementResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, KeyManagementResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Key Management Operation';\n  }\n}\n",
@@ -6536,7 +7490,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 313,
+    "__docId__": 343,
     "kind": "class",
     "name": "KeyManagementResult",
     "memberof": "src/services/results/keyManagementResult.js",
@@ -6554,7 +7508,7 @@
     ]
   },
   {
-    "__docId__": 314,
+    "__docId__": 344,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -6599,7 +7553,7 @@
     ]
   },
   {
-    "__docId__": 315,
+    "__docId__": 345,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/keyManagementResult.js~KeyManagementResult",
@@ -6621,7 +7575,7 @@
     "params": []
   },
   {
-    "__docId__": 316,
+    "__docId__": 346,
     "kind": "file",
     "name": "src/services/results/nft/index.js",
     "content": "export { default as NftApproveResult } from './nftApproveResult';\nexport { default as NftTransferResult } from './nftTransferResult';\nexport { default as NftBurnResult } from './nftBurnResult';\n",
@@ -6632,7 +7586,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 317,
+    "__docId__": 347,
     "kind": "file",
     "name": "src/services/results/nft/nftApproveResult.js",
     "content": "import DeployResult from '../deployResult';\n\n/**\n * NftApproveResult class\n */\nexport default class NftApproveResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftApproveResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Approve Operation';\n  }\n}\n",
@@ -6643,7 +7597,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 318,
+    "__docId__": 348,
     "kind": "class",
     "name": "NftApproveResult",
     "memberof": "src/services/results/nft/nftApproveResult.js",
@@ -6661,7 +7615,7 @@
     ]
   },
   {
-    "__docId__": 319,
+    "__docId__": 349,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/nft/nftApproveResult.js~NftApproveResult",
@@ -6706,7 +7660,7 @@
     ]
   },
   {
-    "__docId__": 320,
+    "__docId__": 350,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/nft/nftApproveResult.js~NftApproveResult",
@@ -6728,7 +7682,7 @@
     "params": []
   },
   {
-    "__docId__": 321,
+    "__docId__": 351,
     "kind": "file",
     "name": "src/services/results/nft/nftBurnResult.js",
     "content": "import DeployResult from '../deployResult';\n\n/**\n * NftBurnResult class\n */\nexport default class NftBurnResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftBurnResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Burn Operation';\n  }\n}\n",
@@ -6739,7 +7693,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 322,
+    "__docId__": 352,
     "kind": "class",
     "name": "NftBurnResult",
     "memberof": "src/services/results/nft/nftBurnResult.js",
@@ -6757,7 +7711,7 @@
     ]
   },
   {
-    "__docId__": 323,
+    "__docId__": 353,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/nft/nftBurnResult.js~NftBurnResult",
@@ -6802,7 +7756,7 @@
     ]
   },
   {
-    "__docId__": 324,
+    "__docId__": 354,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/nft/nftBurnResult.js~NftBurnResult",
@@ -6824,7 +7778,7 @@
     "params": []
   },
   {
-    "__docId__": 325,
+    "__docId__": 355,
     "kind": "file",
     "name": "src/services/results/nft/nftTransferResult.js",
     "content": "import DeployResult from '../deployResult';\n\n/**\n * NftTransferResult class\n */\nexport default class NftTransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftTransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Transfer Operation';\n  }\n}\n",
@@ -6835,7 +7789,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 326,
+    "__docId__": 356,
     "kind": "class",
     "name": "NftTransferResult",
     "memberof": "src/services/results/nft/nftTransferResult.js",
@@ -6853,7 +7807,7 @@
     ]
   },
   {
-    "__docId__": 327,
+    "__docId__": 357,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/nft/nftTransferResult.js~NftTransferResult",
@@ -6898,7 +7852,7 @@
     ]
   },
   {
-    "__docId__": 328,
+    "__docId__": 358,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/nft/nftTransferResult.js~NftTransferResult",
@@ -6920,7 +7874,498 @@
     "params": []
   },
   {
-    "__docId__": 329,
+    "__docId__": 359,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/index.js",
+    "content": "export { default as NftBidResult } from './nftBidResult';\nexport { default as NftCancelAuctionResult } from './nftCancelAuctionResult';\nexport { default as NftCancelBidResult } from './nftCancelBidResult';\nexport { default as NftFinalizeResult } from './nftFinalizeResult';\nexport { default as NftSellResult } from './nftSellResult';\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 360,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/nftBidResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * NftBidResult class\n */\nexport default class NftBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Bid Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/nftBidResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 361,
+    "kind": "class",
+    "name": "NftBidResult",
+    "memberof": "src/services/results/nft-auction/nftBidResult.js",
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftBidResult.js~NftBidResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/nft-auction/nftBidResult.js",
+    "importStyle": "NftBidResult",
+    "description": "NftBidResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 362,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/nft-auction/nftBidResult.js~NftBidResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/nft-auction/nftBidResult.js~NftBidResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 363,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/nft-auction/nftBidResult.js~NftBidResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftBidResult.js~NftBidResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 364,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/nftCancelAuctionResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * NftCancelAuctionResult class\n */\nexport default class NftCancelAuctionResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftCancelAuctionResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Cancel Auction Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/nftCancelAuctionResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 365,
+    "kind": "class",
+    "name": "NftCancelAuctionResult",
+    "memberof": "src/services/results/nft-auction/nftCancelAuctionResult.js",
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/nft-auction/nftCancelAuctionResult.js",
+    "importStyle": "NftCancelAuctionResult",
+    "description": "NftCancelAuctionResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 366,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 367,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 368,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/nftCancelBidResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * NftCancelBidResult class\n */\nexport default class NftCancelBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftCancelBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Cancel Bid Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/nftCancelBidResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 369,
+    "kind": "class",
+    "name": "NftCancelBidResult",
+    "memberof": "src/services/results/nft-auction/nftCancelBidResult.js",
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/nft-auction/nftCancelBidResult.js",
+    "importStyle": "NftCancelBidResult",
+    "description": "NftCancelBidResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 370,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 371,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 372,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/nftFinalizeResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * NftCancelBidResult class\n */\nexport default class NftFinalizeResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftFinalizeResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Finalize Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/nftFinalizeResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 373,
+    "kind": "class",
+    "name": "NftFinalizeResult",
+    "memberof": "src/services/results/nft-auction/nftFinalizeResult.js",
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/nft-auction/nftFinalizeResult.js",
+    "importStyle": "NftFinalizeResult",
+    "description": "NftCancelBidResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 374,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 375,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 376,
+    "kind": "file",
+    "name": "src/services/results/nft-auction/nftSellResult.js",
+    "content": "import DeployResult from '../deployResult';\n\n/**\n * NftSellResult class\n */\nexport default class NftSellResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, NftSellResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Nft Sell Operation';\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/results/nft-auction/nftSellResult.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 377,
+    "kind": "class",
+    "name": "NftSellResult",
+    "memberof": "src/services/results/nft-auction/nftSellResult.js",
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftSellResult.js~NftSellResult",
+    "access": "public",
+    "export": true,
+    "importPath": "@casperholders/core/src/services/results/nft-auction/nftSellResult.js",
+    "importStyle": "NftSellResult",
+    "description": "NftSellResult class",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/services/results/deployResult.js~DeployResult"
+    ]
+  },
+  {
+    "__docId__": 378,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/services/results/nft-auction/nftSellResult.js~NftSellResult",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/services/results/nft-auction/nftSellResult.js~NftSellResult#constructor",
+    "access": "public",
+    "description": "Constructor",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "hash",
+        "description": "DeployHash of the deployment"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cost",
+        "description": "optional cost"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "amount",
+        "description": "optional amount"
+      }
+    ]
+  },
+  {
+    "__docId__": 379,
+    "kind": "method",
+    "name": "getName",
+    "memberof": "src/services/results/nft-auction/nftSellResult.js~NftSellResult",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/services/results/nft-auction/nftSellResult.js~NftSellResult.getName",
+    "access": "public",
+    "description": "Retrieve the name of the operation behind the deployment",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "the name of the operation behind the deployment"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 380,
     "kind": "file",
     "name": "src/services/results/smartContractResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * SmartContractResult class\n */\nexport default class SmartContractResult extends DeployResult {\n  /**\n   * Constructor\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, SmartContractResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Smart Contract Operation';\n  }\n}\n",
@@ -6931,7 +8376,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 330,
+    "__docId__": 381,
     "kind": "class",
     "name": "SmartContractResult",
     "memberof": "src/services/results/smartContractResult.js",
@@ -6949,7 +8394,7 @@
     ]
   },
   {
-    "__docId__": 331,
+    "__docId__": 382,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -6994,7 +8439,7 @@
     ]
   },
   {
-    "__docId__": 332,
+    "__docId__": 383,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/smartContractResult.js~SmartContractResult",
@@ -7016,7 +8461,7 @@
     "params": []
   },
   {
-    "__docId__": 333,
+    "__docId__": 384,
     "kind": "file",
     "name": "src/services/results/transferResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * TransferResult class\n */\nexport default class TransferResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, TransferResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Transfer Operation';\n  }\n}\n",
@@ -7027,7 +8472,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 334,
+    "__docId__": 385,
     "kind": "class",
     "name": "TransferResult",
     "memberof": "src/services/results/transferResult.js",
@@ -7045,7 +8490,7 @@
     ]
   },
   {
-    "__docId__": 335,
+    "__docId__": 386,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -7090,7 +8535,7 @@
     ]
   },
   {
-    "__docId__": 336,
+    "__docId__": 387,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/transferResult.js~TransferResult",
@@ -7112,7 +8557,7 @@
     "params": []
   },
   {
-    "__docId__": 337,
+    "__docId__": 388,
     "kind": "file",
     "name": "src/services/results/undelegateResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * UndelegateResult class\n */\nexport default class UndelegateResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, UndelegateResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Unstake Operation';\n  }\n}\n",
@@ -7123,7 +8568,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 338,
+    "__docId__": 389,
     "kind": "class",
     "name": "UndelegateResult",
     "memberof": "src/services/results/undelegateResult.js",
@@ -7141,7 +8586,7 @@
     ]
   },
   {
-    "__docId__": 339,
+    "__docId__": 390,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -7186,7 +8631,7 @@
     ]
   },
   {
-    "__docId__": 340,
+    "__docId__": 391,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/undelegateResult.js~UndelegateResult",
@@ -7208,7 +8653,7 @@
     "params": []
   },
   {
-    "__docId__": 341,
+    "__docId__": 392,
     "kind": "file",
     "name": "src/services/results/withdrawBidResult.js",
     "content": "import DeployResult from './deployResult';\n\n/**\n * WithdrawBidResult class\n */\nexport default class WithdrawBidResult extends DeployResult {\n  /**\n   * Constructor\n   *\n   * @param {string} hash - DeployHash of the deployment\n   * @param {string} cost - optional cost\n   * @param {string} amount - optional amount\n   */\n  constructor(hash, cost = '0', amount = '0') {\n    super(hash, WithdrawBidResult.getName(), cost, amount);\n  }\n\n  /**\n   * Retrieve the name of the operation behind the deployment\n   *\n   * @return {string} - the name of the operation behind the deployment\n   */\n  static getName() {\n    return 'Withdraw bid Operation';\n  }\n}\n",
@@ -7219,7 +8664,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 342,
+    "__docId__": 393,
     "kind": "class",
     "name": "WithdrawBidResult",
     "memberof": "src/services/results/withdrawBidResult.js",
@@ -7237,7 +8682,7 @@
     ]
   },
   {
-    "__docId__": 343,
+    "__docId__": 394,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -7282,7 +8727,7 @@
     ]
   },
   {
-    "__docId__": 344,
+    "__docId__": 395,
     "kind": "method",
     "name": "getName",
     "memberof": "src/services/results/withdrawBidResult.js~WithdrawBidResult",
@@ -7304,7 +8749,7 @@
     "params": []
   },
   {
-    "__docId__": 345,
+    "__docId__": 396,
     "kind": "file",
     "name": "src/services/signers/abstractSigner.js",
     "content": "/**\n * @typedef {import('casper-js-sdk').DeployUtil.Deploy} Deploy\n */\n\n/**\n * AbstractSigner class\n * Abstract class used as a skeleton to implement deployment signing.\n */\nexport default class AbstractSigner {\n  /**\n   * Abstract method to sign a deployment.\n   *\n   * @param {Deploy} deploy - Deploy object\n   * @param {Object} options - Generic options object used to pass additional arguments\n   * needed for the different signing methods\n   * @return {Promise<Deploy>} - Signed deploy object\n   */\n  // eslint-disable-next-line no-unused-vars\n  static async sign(deploy, options = {}) {\n    throw new Error('You must implement this function');\n  }\n}\n",
@@ -7315,7 +8760,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 346,
+    "__docId__": 397,
     "kind": "typedef",
     "name": "Deploy",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -7332,7 +8777,7 @@
     }
   },
   {
-    "__docId__": 347,
+    "__docId__": 398,
     "kind": "class",
     "name": "AbstractSigner",
     "memberof": "src/services/signers/abstractSigner.js",
@@ -7347,7 +8792,7 @@
     "interface": false
   },
   {
-    "__docId__": 348,
+    "__docId__": 399,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/abstractSigner.js~AbstractSigner",
@@ -7390,7 +8835,7 @@
     }
   },
   {
-    "__docId__": 349,
+    "__docId__": 400,
     "kind": "file",
     "name": "src/services/signers/casperSigner.js",
     "content": "import { DeployUtil, Signer } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * CasperSigner class\n * Used to sign a deployment with the Casper Signer extension\n */\nexport default class CasperSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {string} options.activeKey - Public key of the user.\n   * @param {string} options.to - Public key of the targeted wallet.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const signedJsonDeploy = await Signer.sign(DeployUtil.deployToJson(deploy), options.activeKey, options.to);\n      const signedDeploy = await DeployUtil.deployFromJson(signedJsonDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -7401,7 +8846,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 350,
+    "__docId__": 401,
     "kind": "class",
     "name": "CasperSigner",
     "memberof": "src/services/signers/casperSigner.js",
@@ -7419,7 +8864,7 @@
     ]
   },
   {
-    "__docId__": 351,
+    "__docId__": 402,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/casperSigner.js~CasperSigner",
@@ -7488,7 +8933,7 @@
     }
   },
   {
-    "__docId__": 352,
+    "__docId__": 403,
     "kind": "file",
     "name": "src/services/signers/index.js",
     "content": "export { default as AbstractSigner } from './abstractSigner';\nexport { default as CasperSigner } from './casperSigner';\nexport { default as LedgerSigner } from './ledgerSigner';\nexport { default as LocalSigner } from './localSigner';\nexport { default as TorusSigner } from './torusSigner';\n",
@@ -7499,7 +8944,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 353,
+    "__docId__": 404,
     "kind": "file",
     "name": "src/services/signers/ledgerSigner.js",
     "content": "import { CLPublicKey, DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * LedgerSigner class\n * Used to sign a deployment with Ledger\n */\nexport default class LedgerSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding public key.\n   * You must pass the active public key from the user and the public key where the deploy is going to be used.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {CasperApp} options.app - CasperApp instance.\n   * @param {string} options.publicKey - Public key that sign the deploy.\n   * @param {string} options.keyPath - Public key that sign the deploy.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      const responseDeploy = await options.app.sign(\n        `m/44'/506'/0'/0/${options.keyPath}`,\n        DeployUtil.deployToBytes(deploy),\n      );\n      let signedDeploy = DeployUtil.setSignature(\n        deploy,\n        responseDeploy.signatureRS,\n        CLPublicKey.fromHex(options.publicKey),\n      );\n      signedDeploy = DeployUtil.validateDeploy(signedDeploy);\n      if (signedDeploy.ok) {\n        return signedDeploy.val;\n      }\n      throw signedDeploy.val;\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -7510,7 +8955,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 354,
+    "__docId__": 405,
     "kind": "class",
     "name": "LedgerSigner",
     "memberof": "src/services/signers/ledgerSigner.js",
@@ -7528,7 +8973,7 @@
     ]
   },
   {
-    "__docId__": 355,
+    "__docId__": 406,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/ledgerSigner.js~LedgerSigner",
@@ -7607,7 +9052,7 @@
     }
   },
   {
-    "__docId__": 356,
+    "__docId__": 407,
     "kind": "file",
     "name": "src/services/signers/localSigner.js",
     "content": "import { DeployUtil } from 'casper-js-sdk';\nimport SignError from '../errors/signError';\nimport AbstractSigner from './abstractSigner';\n\n/**\n * @typedef { import('casper-js-sdk/dist/lib/Keys').AsymmetricKey } AsymmetricKey\n */\n\n/**\n * LocalSigner class\n * Used to sign a deployment with local keys\n */\nexport default class LocalSigner extends AbstractSigner {\n  /**\n   * Sign a given Deploy Object with the corresponding key.\n   *\n   * @param {DeployUtil.Deploy} deploy - Deploy object\n   * @param {Object} options - Options object\n   * @param {AsymmetricKey} options.key - AsymmetricKey of the user.\n   * @returns {Promise<DeployUtil.Deploy>} - Signed deploy object\n   */\n  static async sign(deploy, options = {}) {\n    try {\n      return DeployUtil.signDeploy(deploy, options.key);\n    } catch (e) {\n      // eslint-disable-next-line no-console\n      console.log(e);\n      throw new SignError();\n    }\n  }\n}\n",
@@ -7618,7 +9063,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 357,
+    "__docId__": 408,
     "kind": "typedef",
     "name": "AsymmetricKey",
     "memberof": "src/services/signers/localSigner.js",
@@ -7635,7 +9080,7 @@
     }
   },
   {
-    "__docId__": 358,
+    "__docId__": 409,
     "kind": "class",
     "name": "LocalSigner",
     "memberof": "src/services/signers/localSigner.js",
@@ -7653,7 +9098,7 @@
     ]
   },
   {
-    "__docId__": 359,
+    "__docId__": 410,
     "kind": "method",
     "name": "sign",
     "memberof": "src/services/signers/localSigner.js~LocalSigner",
@@ -7721,7 +9166,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"3.13.3\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"@ethersproject/bytes\": \"^5.6.1\",\n    \"big.js\": \"^6.1.1\",\n    \"blakejs\": \"^1.2.1\",\n    \"casper-js-sdk\": \"^2.9.1\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@casperholders/core\",\n  \"version\": \"3.14.0\",\n  \"description\": \"Library for the casperholders website\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"src/index.js\",\n  \"scripts\": {\n    \"build\": \"webpack --mode production\",\n    \"develop\": \"webpack --mode development --watch\",\n    \"docs\": \"esdoc\",\n    \"test\": \"jest\",\n    \"lint\": \"eslint src tests\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/KillianH/casperholderscore.git\"\n  },\n  \"keywords\": [\n    \"casper\",\n    \"blockchain\",\n    \"smartcontract\",\n    \"devxdao\",\n    \"casperlabs\"\n  ],\n  \"author\": \"Killian Hascoet\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/KillianH/casperholderscore/issues\"\n  },\n  \"homepage\": \"https://github.com/KillianH/casperholderscore\",\n  \"dependencies\": {\n    \"@ethersproject/bignumber\": \"^5.5.0\",\n    \"@ethersproject/bytes\": \"^5.6.1\",\n    \"big.js\": \"^6.1.1\",\n    \"blakejs\": \"^1.2.1\",\n    \"casper-js-sdk\": \"^2.9.1\",\n    \"ts-results\": \"^3.3.0\"\n  },\n  \"devDependencies\": {\n    \"@babel/cli\": \"^7.14.8\",\n    \"@babel/core\": \"^7.14.8\",\n    \"@babel/eslint-parser\": \"^7.17.0\",\n    \"@babel/eslint-plugin\": \"^7.17.7\",\n    \"@babel/polyfill\": \"^7.12.1\",\n    \"@babel/preset-env\": \"^7.14.8\",\n    \"babel-loader\": \"^8.2.3\",\n    \"barreler\": \"^0.0.5\",\n    \"core-js\": \"3\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^8.11.0\",\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\n    \"eslint-plugin-import\": \"^2.25.4\",\n    \"eslint-plugin-jest\": \"^26.1.1\",\n    \"jest\": \"^27.1.0\",\n    \"webpack\": \"^5.70.0\",\n    \"webpack-cli\": \"^4.9.2\"\n  },\n  \"jest\": {\n    \"testEnvironment\": \"node\",\n    \"collectCoverage\": true,\n    \"coveragePathIgnorePatterns\": [\n      \"/node_modules/\",\n      \"abstract*\",\n      \"index.js\",\n      \"/src/services/results/\",\n      \"/src/services/errors/\",\n      \"ledgerSigner.js\",\n      \"casperSigner.js\",\n      \"torusSigner.js\"\n    ]\n  }\n}\n",
     "longname": "/home/runner/work/casperholderscore/casperholderscore/package.json",
     "name": "package.json",
     "static": true,

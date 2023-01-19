@@ -1,7 +1,7 @@
 {
   "coverage": "100%",
-  "expectCount": 215,
-  "actualCount": 215,
+  "expectCount": 253,
+  "actualCount": 253,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -108,6 +108,31 @@
       "actualCount": 5,
       "undocumentLines": []
     },
+    "src/services/deploys/nft-auction/actions/nftBid.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft-auction/actions/nftCancelAuction.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft-auction/actions/nftCancelBid.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft-auction/actions/nftFinalize.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/services/deploys/nft-auction/actions/nftSell.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
     "src/services/deploys/smartContract/genericContractDeployParameters.js": {
       "expectCount": 3,
       "actualCount": 3,
@@ -209,6 +234,31 @@
       "undocumentLines": []
     },
     "src/services/results/nft/nftTransferResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft-auction/nftBidResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft-auction/nftCancelAuctionResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft-auction/nftCancelBidResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft-auction/nftFinalizeResult.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/services/results/nft-auction/nftSellResult.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []

@@ -168,6 +168,18 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/deploys/nft-auction/actions/nftbid.js~nftbid",
+    "class/src/services/deploys/nft-auction/actions/nftBid.js~NftBid.html",
+    "<span>NftBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft-auction/actions/nftBid.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft-auction/nftbidresult.js~nftbidresult",
+    "class/src/services/results/nft-auction/nftBidResult.js~NftBidResult.html",
+    "<span>NftBidResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft-auction/nftBidResult.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/nft/actions/nftburn.js~nftburn",
     "class/src/services/deploys/nft/actions/nftBurn.js~NftBurn.html",
     "<span>NftBurn</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftBurn.js</span>",
@@ -195,6 +207,54 @@ window.esdocSearchIndex = [
     "@casperholders/core/src/services/deploys/nft/actions/nftcep78transfer.js~nftcep78transfer",
     "class/src/services/deploys/nft/actions/nftCEP78Transfer.js~NftCEP78Transfer.html",
     "<span>NftCEP78Transfer</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftCEP78Transfer.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft-auction/actions/nftcancelauction.js~nftcancelauction",
+    "class/src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction.html",
+    "<span>NftCancelAuction</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft-auction/nftcancelauctionresult.js~nftcancelauctionresult",
+    "class/src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult.html",
+    "<span>NftCancelAuctionResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft-auction/nftCancelAuctionResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft-auction/actions/nftcancelbid.js~nftcancelbid",
+    "class/src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid.html",
+    "<span>NftCancelBid</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelBid.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft-auction/nftcancelbidresult.js~nftcancelbidresult",
+    "class/src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult.html",
+    "<span>NftCancelBidResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft-auction/nftCancelBidResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft-auction/actions/nftfinalize.js~nftfinalize",
+    "class/src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize.html",
+    "<span>NftFinalize</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft-auction/actions/nftFinalize.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft-auction/nftfinalizeresult.js~nftfinalizeresult",
+    "class/src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult.html",
+    "<span>NftFinalizeResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft-auction/nftFinalizeResult.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/deploys/nft-auction/actions/nftsell.js~nftsell",
+    "class/src/services/deploys/nft-auction/actions/nftSell.js~NftSell.html",
+    "<span>NftSell</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft-auction/actions/nftSell.js</span>",
+    "class"
+  ],
+  [
+    "@casperholders/core/src/services/results/nft-auction/nftsellresult.js~nftsellresult",
+    "class/src/services/results/nft-auction/nftSellResult.js~NftSellResult.html",
+    "<span>NftSellResult</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/results/nft-auction/nftSellResult.js</span>",
     "class"
   ],
   [
@@ -1050,6 +1110,108 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/services/deploys/nft-auction/actions/index.js",
+    "file/src/services/deploys/nft-auction/actions/index.js.html",
+    "src/services/deploys/nft-auction/actions/index.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftbid.js",
+    "file/src/services/deploys/nft-auction/actions/nftBid.js.html",
+    "src/services/deploys/nft-auction/actions/nftBid.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftbid.js~nftbid#constructor",
+    "class/src/services/deploys/nft-auction/actions/nftBid.js~NftBid.html#instance-constructor-constructor",
+    "src/services/deploys/nft-auction/actions/nftBid.js~NftBid#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftbid.js~nftbid#deployresult",
+    "class/src/services/deploys/nft-auction/actions/nftBid.js~NftBid.html#instance-get-deployResult",
+    "src/services/deploys/nft-auction/actions/nftBid.js~NftBid#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelauction.js",
+    "file/src/services/deploys/nft-auction/actions/nftCancelAuction.js.html",
+    "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelauction.js~nftcancelauction#constructor",
+    "class/src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction.html#instance-constructor-constructor",
+    "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelauction.js~nftcancelauction#deployresult",
+    "class/src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction.html#instance-get-deployResult",
+    "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelbid.js",
+    "file/src/services/deploys/nft-auction/actions/nftCancelBid.js.html",
+    "src/services/deploys/nft-auction/actions/nftCancelBid.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelbid.js~nftcancelbid#constructor",
+    "class/src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid.html#instance-constructor-constructor",
+    "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftcancelbid.js~nftcancelbid#deployresult",
+    "class/src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid.html#instance-get-deployResult",
+    "src/services/deploys/nft-auction/actions/nftCancelBid.js~NftCancelBid#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftfinalize.js",
+    "file/src/services/deploys/nft-auction/actions/nftFinalize.js.html",
+    "src/services/deploys/nft-auction/actions/nftFinalize.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftfinalize.js~nftfinalize#constructor",
+    "class/src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize.html#instance-constructor-constructor",
+    "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftfinalize.js~nftfinalize#deployresult",
+    "class/src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize.html#instance-get-deployResult",
+    "src/services/deploys/nft-auction/actions/nftFinalize.js~NftFinalize#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftsell.js",
+    "file/src/services/deploys/nft-auction/actions/nftSell.js.html",
+    "src/services/deploys/nft-auction/actions/nftSell.js",
+    "file"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftsell.js~nftsell#constructor",
+    "class/src/services/deploys/nft-auction/actions/nftSell.js~NftSell.html#instance-constructor-constructor",
+    "src/services/deploys/nft-auction/actions/nftSell.js~NftSell#constructor",
+    "method"
+  ],
+  [
+    "src/services/deploys/nft-auction/actions/nftsell.js~nftsell#deployresult",
+    "class/src/services/deploys/nft-auction/actions/nftSell.js~NftSell.html#instance-get-deployResult",
+    "src/services/deploys/nft-auction/actions/nftSell.js~NftSell#deployResult",
+    "member"
+  ],
+  [
+    "src/services/deploys/nft-auction/index.js",
+    "file/src/services/deploys/nft-auction/index.js.html",
+    "src/services/deploys/nft-auction/index.js",
+    "file"
+  ],
+  [
     "src/services/deploys/nft/actions/index.js",
     "file/src/services/deploys/nft/actions/index.js.html",
     "src/services/deploys/nft/actions/index.js",
@@ -1593,6 +1755,102 @@ window.esdocSearchIndex = [
     "src/services/results/keymanagementresult.js~keymanagementresult.getname",
     "class/src/services/results/keyManagementResult.js~KeyManagementResult.html#static-method-getName",
     "src/services/results/keyManagementResult.js~KeyManagementResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/index.js",
+    "file/src/services/results/nft-auction/index.js.html",
+    "src/services/results/nft-auction/index.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftbidresult.js",
+    "file/src/services/results/nft-auction/nftBidResult.js.html",
+    "src/services/results/nft-auction/nftBidResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftbidresult.js~nftbidresult#constructor",
+    "class/src/services/results/nft-auction/nftBidResult.js~NftBidResult.html#instance-constructor-constructor",
+    "src/services/results/nft-auction/nftBidResult.js~NftBidResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftbidresult.js~nftbidresult.getname",
+    "class/src/services/results/nft-auction/nftBidResult.js~NftBidResult.html#static-method-getName",
+    "src/services/results/nft-auction/nftBidResult.js~NftBidResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelauctionresult.js",
+    "file/src/services/results/nft-auction/nftCancelAuctionResult.js.html",
+    "src/services/results/nft-auction/nftCancelAuctionResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelauctionresult.js~nftcancelauctionresult#constructor",
+    "class/src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult.html#instance-constructor-constructor",
+    "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelauctionresult.js~nftcancelauctionresult.getname",
+    "class/src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult.html#static-method-getName",
+    "src/services/results/nft-auction/nftCancelAuctionResult.js~NftCancelAuctionResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelbidresult.js",
+    "file/src/services/results/nft-auction/nftCancelBidResult.js.html",
+    "src/services/results/nft-auction/nftCancelBidResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelbidresult.js~nftcancelbidresult#constructor",
+    "class/src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult.html#instance-constructor-constructor",
+    "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftcancelbidresult.js~nftcancelbidresult.getname",
+    "class/src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult.html#static-method-getName",
+    "src/services/results/nft-auction/nftCancelBidResult.js~NftCancelBidResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftfinalizeresult.js",
+    "file/src/services/results/nft-auction/nftFinalizeResult.js.html",
+    "src/services/results/nft-auction/nftFinalizeResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftfinalizeresult.js~nftfinalizeresult#constructor",
+    "class/src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult.html#instance-constructor-constructor",
+    "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftfinalizeresult.js~nftfinalizeresult.getname",
+    "class/src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult.html#static-method-getName",
+    "src/services/results/nft-auction/nftFinalizeResult.js~NftFinalizeResult.getName",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftsellresult.js",
+    "file/src/services/results/nft-auction/nftSellResult.js.html",
+    "src/services/results/nft-auction/nftSellResult.js",
+    "file"
+  ],
+  [
+    "src/services/results/nft-auction/nftsellresult.js~nftsellresult#constructor",
+    "class/src/services/results/nft-auction/nftSellResult.js~NftSellResult.html#instance-constructor-constructor",
+    "src/services/results/nft-auction/nftSellResult.js~NftSellResult#constructor",
+    "method"
+  ],
+  [
+    "src/services/results/nft-auction/nftsellresult.js~nftsellresult.getname",
+    "class/src/services/results/nft-auction/nftSellResult.js~NftSellResult.html#static-method-getName",
+    "src/services/results/nft-auction/nftSellResult.js~NftSellResult.getName",
     "method"
   ],
   [
