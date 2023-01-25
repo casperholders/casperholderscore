@@ -1,7 +1,6 @@
 import {
   RuntimeArgs,
 } from 'casper-js-sdk';
-import NftCancelAuctionResult from '../../../results/nft-auction/nftCancelAuctionResult';
 import NftCancelBidResult from '../../../results/nft-auction/nftCancelBidResult';
 import AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';
 
