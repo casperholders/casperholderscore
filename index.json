@@ -4854,7 +4854,7 @@
     "__docId__": 218,
     "kind": "file",
     "name": "src/services/deploys/nft-auction/actions/nftCancelAuction.js",
-    "content": "import {\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftCancelAuctionResult from '../../../results/nft-auction/nftCancelAuctionResult';\nimport NftCancelBidResult from '../../../results/nft-auction/nftCancelBidResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'cancel_auction';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 15000000000;\n\n/**\n * NftCancelAuction class\n * Class used to create DeployParameters for cancelling an NFT Auction\n */\nexport default class NftCancelAuction extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({});\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftCancelBidResult;\n  }\n}\n",
+    "content": "import {\n  RuntimeArgs,\n} from 'casper-js-sdk';\nimport NftCancelBidResult from '../../../results/nft-auction/nftCancelBidResult';\nimport AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';\n\n/**\n * @constant\n * @type {string}\n */\nconst entrypoint = 'cancel_auction';\n\n/**\n * @constant\n * @type {number}\n */\nconst fee = 15000000000;\n\n/**\n * NftCancelAuction class\n * Class used to create DeployParameters for cancelling an NFT Auction\n */\nexport default class NftCancelAuction extends AbstractSmartContractStoredByHashDeployParameters {\n  /**\n   * Constructor\n   *\n   * @param {string} activeKey - Current active key in the public hex format\n   * @param {string} network - Current network to execute the deployment\n   * @param {string} hash - Current hash of the stored SmartContract\n   * @param {number} ttl - Deploy time to live in hours\n   */\n  constructor(activeKey, network, hash, ttl = 1) {\n    const args = RuntimeArgs.fromMap({});\n    super(activeKey, network, hash, entrypoint, args, fee, ttl);\n  }\n\n  /**\n   * Get a DeployResult constructor\n   *\n   * @return {DeployResult.constructor} - Return the constructor of a given DeployResult\n   */\n  // eslint-disable-next-line class-methods-use-this\n  get deployResult() {\n    return NftCancelBidResult;\n  }\n}\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
     "access": "public",
@@ -4873,7 +4873,7 @@
     "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 12,
+    "lineNumber": 11,
     "unknown": [
       {
         "tagName": "@constant",
@@ -4902,7 +4902,7 @@
     "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
     "importStyle": null,
     "description": "",
-    "lineNumber": 18,
+    "lineNumber": 17,
     "unknown": [
       {
         "tagName": "@constant",
@@ -4931,7 +4931,7 @@
     "importPath": "@casperholders/core/src/services/deploys/nft-auction/actions/nftCancelAuction.js",
     "importStyle": "NftCancelAuction",
     "description": "NftCancelAuction class\nClass used to create DeployParameters for cancelling an NFT Auction",
-    "lineNumber": 24,
+    "lineNumber": 23,
     "interface": false,
     "extends": [
       "src/services/deploys/abstractSmartContractStoredByHashDeployParameters.js~AbstractSmartContractStoredByHashDeployParameters"
@@ -4948,7 +4948,7 @@
     "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#constructor",
     "access": "public",
     "description": "Constructor",
-    "lineNumber": 33,
+    "lineNumber": 32,
     "params": [
       {
         "nullable": null,
@@ -5003,7 +5003,7 @@
     "longname": "src/services/deploys/nft-auction/actions/nftCancelAuction.js~NftCancelAuction#deployResult",
     "access": "public",
     "description": "Get a DeployResult constructor",
-    "lineNumber": 44,
+    "lineNumber": 43,
     "return": {
       "nullable": null,
       "types": [
