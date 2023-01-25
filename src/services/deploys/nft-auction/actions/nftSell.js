@@ -44,7 +44,6 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
    * @param {string} marketplaceAccount - Public Key in the public hex format
    * @param {string} marketplaceCommission - In 1000th of the price
    * @param {string} network - Current network to execute the deployment
-   * @param {string} hash - Current hash of the stored auction SmartContract
    * @param {Buffer} smartContractBuffer - Current hash of the stored SmartContract
    * @param {number} ttl - Deploy time to live in hours
    */
@@ -63,7 +62,6 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
     marketplaceAccount,
     marketplaceCommission,
     network,
-    hash,
     smartContractBuffer,
     ttl = 1,
   ) {
