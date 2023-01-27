@@ -99,7 +99,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
   RuntimeArgs,
 } from &apos;casper-js-sdk&apos;;
-import NftCancelBidResult from &apos;../../../results/nft-auction/nftCancelBidResult&apos;;
+import { NftCancelAuctionResult } from &apos;../../../results&apos;;
 import AbstractSmartContractStoredByHashDeployParameters from &apos;../../abstractSmartContractStoredByHashDeployParameters&apos;;
 
 /**
@@ -139,7 +139,7 @@ export default class NftCancelAuction extends AbstractSmartContractStoredByHashD
    */
   // eslint-disable-next-line class-methods-use-this
   get deployResult() {
-    return NftCancelBidResult;
+    return NftCancelAuctionResult;
   }
 }
 </code></pre>
