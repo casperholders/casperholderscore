@@ -1,7 +1,7 @@
 import {
   RuntimeArgs,
 } from 'casper-js-sdk';
-import NftCancelBidResult from '../../../results/nft-auction/nftCancelBidResult';
+import { NftCancelAuctionResult } from '../../../results';
 import AbstractSmartContractStoredByHashDeployParameters from '../../abstractSmartContractStoredByHashDeployParameters';
 
 /**
@@ -41,6 +41,6 @@ export default class NftCancelAuction extends AbstractSmartContractStoredByHashD
    */
   // eslint-disable-next-line class-methods-use-this
   get deployResult() {
-    return NftCancelBidResult;
+    return NftCancelAuctionResult;
   }
 }
