@@ -8,9 +8,9 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=casperholders_casperholderscore&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=casperholders_casperholderscore)
 
-The CasperHolders website use this library to handle any interaction with the CasperNetwork.
+The CasperHolders website / mobile app use this library to handle any interaction with the CasperNetwork.
 
-It contains a huge portion of the website logic.
+It contains a huge portion of the website & mobile app logic.
 
 [API Documentation](https://casperholders.github.io/casperholderscore/)
 
