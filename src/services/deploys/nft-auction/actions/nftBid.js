@@ -9,7 +9,7 @@ import AbstractSmartContractModuleBytesParameters from '../../abstractSmartContr
  * @constant
  * @type {number}
  */
-const fee = 27000000000;
+const fee = 35000000000;
 
 /**
  * NftBid class
