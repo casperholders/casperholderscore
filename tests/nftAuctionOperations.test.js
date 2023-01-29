@@ -66,10 +66,7 @@ test('NFT Sell Operation', async () => {
     '1',
     '1',
     '1',
-    '0168e3a352e7bab76c85fb77f7c641d77096dae55845c79655522c24e9cc1ffe21',
-    '1',
     'casper-test',
-    'aee8a7ff16b770382aedf1a4cc83948613f315dc4f9560165f4feaa80fde5ac1',
     Buffer.from(''),
   );
   const deploy = nftSellDeployParameters.makeDeploy;

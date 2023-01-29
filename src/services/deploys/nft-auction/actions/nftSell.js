@@ -61,8 +61,6 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
     bidderCountCap,
     auctionTimerExtension,
     minimumBidStep,
-    marketplaceAccount,
-    marketplaceCommission,
     network,
     smartContractBuffer,
     ttl = 1,
@@ -97,14 +95,6 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
         minimumBidStep !== '' ? Some(new CLU512(CurrencyUtils.convertCasperToMotes(minimumBidStep))) : None,
         CLTypeBuilder.u512(),
       ),
-      marketplace_account: new CLByteArray(
-        Buffer.from(
-          CLPublicKey.fromHex(marketplaceAccount)
-            .toAccountRawHashStr(),
-          'hex',
-        ),
-      ),
-      marketplace_commission: new CLU32(marketplaceCommission),
     });
     super(activeKey, network, smartContractBuffer, args, fee, ttl);
   }
