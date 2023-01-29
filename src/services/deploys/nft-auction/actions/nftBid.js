@@ -1,6 +1,7 @@
 import {
   CLByteArray, CLString, CLU512, RuntimeArgs,
 } from 'casper-js-sdk';
+import CurrencyUtils from '../../../helpers/currencyUtils';
 import NftBidResult from '../../../results/nft-auction/nftBidResult';
 import AbstractSmartContractModuleBytesParameters from '../../abstractSmartContractModuleBytesParameters';
 
@@ -27,7 +28,7 @@ export default class NftBid extends AbstractSmartContractModuleBytesParameters {
    */
   constructor(activeKey, amount, network, hash, smartContractBuffer, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      amount: new CLU512(amount),
+      amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
       auction_contract: new CLByteArray(
         Uint8Array.from(
           Buffer.from(hash, 'hex'),
