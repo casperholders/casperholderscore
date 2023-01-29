@@ -94,7 +94,7 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
         CLTypeBuilder.u64(),
       ),
       minimum_bid_step: new CLOption(
-        minimumBidStep !== '' ? Some(new CLU512(minimumBidStep)) : None,
+        minimumBidStep !== '' ? Some(new CLU512(CurrencyUtils.convertCasperToMotes(minimumBidStep))) : None,
         CLTypeBuilder.u512(),
       ),
       marketplace_account: new CLByteArray(
