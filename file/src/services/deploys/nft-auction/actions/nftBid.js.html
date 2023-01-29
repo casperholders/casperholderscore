@@ -99,6 +99,7 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
   CLByteArray, CLString, CLU512, RuntimeArgs,
 } from &apos;casper-js-sdk&apos;;
+import CurrencyUtils from &apos;../../../helpers/currencyUtils&apos;;
 import NftBidResult from &apos;../../../results/nft-auction/nftBidResult&apos;;
 import AbstractSmartContractModuleBytesParameters from &apos;../../abstractSmartContractModuleBytesParameters&apos;;
 
@@ -125,7 +126,7 @@ export default class NftBid extends AbstractSmartContractModuleBytesParameters {
    */
   constructor(activeKey, amount, network, hash, smartContractBuffer, ttl = 1) {
     const args = RuntimeArgs.fromMap({
-      amount: new CLU512(amount),
+      amount: new CLU512(CurrencyUtils.convertCasperToMotes(amount)),
       auction_contract: new CLByteArray(
         Uint8Array.from(
           Buffer.from(hash, &apos;hex&apos;),

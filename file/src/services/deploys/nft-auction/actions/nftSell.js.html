@@ -96,7 +96,8 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/nft-auction/actions/nftSell.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Big from &apos;big.js&apos;;
+import {
   CLByteArray,
   CLKey,
   CLOption,
@@ -111,6 +112,7 @@
   RuntimeArgs,
 } from &apos;casper-js-sdk&apos;;
 import { None, Some } from &apos;ts-results&apos;;
+import CurrencyUtils from &apos;../../../helpers/currencyUtils&apos;;
 import NftSellResult from &apos;../../../results/nft-auction/nftSellResult&apos;;
 import AbstractSmartContractModuleBytesParameters from &apos;../../abstractSmartContractModuleBytesParameters&apos;;
 
@@ -175,7 +177,7 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
         None,
         CLTypeBuilder.u512(),
       ),
-      reserve_price: new CLU512(reservePrice),
+      reserve_price: new CLU512(CurrencyUtils.convertCasperToMotes(reservePrice)),
       token_id: new CLU256(tokenId),
       start_time: new CLU64(startTime),
       cancellation_time: new CLU64(cancellationTime),
@@ -186,7 +188,7 @@ export default class NftSell extends AbstractSmartContractModuleBytesParameters 
         CLTypeBuilder.u64(),
       ),
       auction_timer_extension: new CLOption(
-        auctionTimerExtension !== &apos;&apos; ? Some(new CLU64(auctionTimerExtension)) : None,
+        auctionTimerExtension !== &apos;&apos; ? Some(new CLU64(Big(auctionTimerExtension).times(1000).toString())) : None,
         CLTypeBuilder.u64(),
       ),
       minimum_bid_step: new CLOption(
