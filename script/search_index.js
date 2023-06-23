@@ -156,6 +156,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@casperholders/core/src/services/signers/metamasksigner.js~metamasksigner",
+    "class/src/services/signers/metamaskSigner.js~MetaMaskSigner.html",
+    "<span>MetaMaskSigner</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/signers/metamaskSigner.js</span>",
+    "class"
+  ],
+  [
     "@casperholders/core/src/services/deploys/nft/actions/nftapprove.js~nftapprove",
     "class/src/services/deploys/nft/actions/nftApprove.js~NftApprove.html",
     "<span>NftApprove</span> <span class=\"search-result-import-path\">@casperholders/core/src/services/deploys/nft/actions/nftApprove.js</span>",
@@ -2049,6 +2055,18 @@ window.esdocSearchIndex = [
     "src/services/signers/localsigner.js~localsigner.sign",
     "class/src/services/signers/localSigner.js~LocalSigner.html#static-method-sign",
     "src/services/signers/localSigner.js~LocalSigner.sign",
+    "method"
+  ],
+  [
+    "src/services/signers/metamasksigner.js",
+    "file/src/services/signers/metamaskSigner.js.html",
+    "src/services/signers/metamaskSigner.js",
+    "file"
+  ],
+  [
+    "src/services/signers/metamasksigner.js~metamasksigner.sign",
+    "class/src/services/signers/metamaskSigner.js~MetaMaskSigner.html#static-method-sign",
+    "src/services/signers/metamaskSigner.js~MetaMaskSigner.sign",
     "method"
   ]
 ]

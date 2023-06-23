@@ -1,7 +1,7 @@
 {
-  "coverage": "100%",
-  "expectCount": 253,
-  "actualCount": 253,
+  "coverage": "99.6%",
+  "expectCount": 255,
+  "actualCount": 254,
   "files": {
     "src/services/clients/clientCasper.js": {
       "expectCount": 4,
@@ -302,6 +302,13 @@
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
+    },
+    "src/services/signers/metamaskSigner.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        5
+      ]
     }
   }
 }

@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../../../">
-  <title data-ice="title">src/services/deploys/nft/actions/index.js | @casperholders/core</title>
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/services/signers/metamaskSigner.js | @casperholders/core</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -96,13 +96,35 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/nft/actions/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export { default as NftApprove } from &apos;./nftApprove&apos;;
-export { default as NftTransfer } from &apos;./nftTransfer&apos;;
-export { default as NftBurn } from &apos;./nftBurn&apos;;
-export { default as NftCEP78Approve } from &apos;./nftCEP78Approve&apos;;
-export { default as NftCEP78Transfer } from &apos;./nftCEP78Transfer&apos;;
-export { default as NftCEP78Burn } from &apos;./nftCEP78Burn&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/services/signers/metamaskSigner.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { signDeploy } from &apos;@casperholders/casper-snap-helper&apos;;
+import SignError from &apos;../errors/signError&apos;;
+import AbstractSigner from &apos;./abstractSigner&apos;;
+
+export default class MetaMaskSigner extends AbstractSigner {
+  /**
+   * Sign a given Deploy Object with the corresponding public key.
+   * You must pass the active public key from the user and the public key
+   * where the deploy is going to be used.
+   *
+   * @param {Deploy} deploy - Deploy object
+   * @param {Object} options - Options object
+   * @param {string} options.snapID - ID of the MetaMask Casper Snap.
+   * @param {string} options.addressIndex - Index of the address.
+   * @param {string} options.publicKey - Public key that sign the deploy.
+   * @param {string} options.signingTxnText - Message explanation for the user displayed in MetaMask
+   * @returns {Promise&lt;DeployUtil.Deploy&gt;} - Signed deploy object
+   */
+  static async sign(deploy, options = {}) {
+    try {
+      return signDeploy(deploy, options);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+      throw new SignError();
+    }
+  }
+}
 </code></pre>
 
 </div>

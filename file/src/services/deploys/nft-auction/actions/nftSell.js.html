@@ -89,6 +89,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/casperSigner.js~CasperSigner.html">CasperSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/ledgerSigner.js~LedgerSigner.html">LedgerSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/localSigner.js~LocalSigner.html">LocalSigner</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/services/signers/metamaskSigner.js~MetaMaskSigner.html">MetaMaskSigner</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Deploy">Deploy</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-AsymmetricKey">AsymmetricKey</a></span></span></li>
 </ul>
@@ -98,14 +99,12 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/services/deploys/nft-auction/actions/nftSell.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Big from &apos;big.js&apos;;
 import {
-  CLByteArray,
   CLKey,
   CLOption,
   CLPublicKey,
   CLString,
   CLTypeBuilder,
   CLU256,
-  CLU32,
   CLU512,
   CLU64,
   CLValueBuilder,
