@@ -20,10 +20,18 @@ export default class LedgerSigner extends AbstractSigner {
    */
   static async sign(deploy, options = {}) {
     try {
-      const responseDeploy = await options.app.sign(
-        `m/44'/506'/0'/0/${options.keyPath}`,
-        DeployUtil.deployToBytes(deploy),
-      );
+      let responseDeploy;
+      if (deploy.session.isModuleBytes()) {
+        responseDeploy = await options.app.signRawWasm(
+          `m/44'/506'/0'/0/${options.keyPath}`,
+          DeployUtil.deployToBytes(deploy),
+        );
+      } else {
+        responseDeploy = await options.app.sign(
+          `m/44'/506'/0'/0/${options.keyPath}`,
+          DeployUtil.deployToBytes(deploy),
+        );
+      }
       let signedDeploy = DeployUtil.setSignature(
         deploy,
         responseDeploy.signatureRS,
