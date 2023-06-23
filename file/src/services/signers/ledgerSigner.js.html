@@ -121,7 +121,7 @@ export default class LedgerSigner extends AbstractSigner {
     try {
       let responseDeploy;
       if (deploy.session.isModuleBytes()) {
-        responseDeploy = await options.app.signRawWasm(
+        responseDeploy = await options.app.signWasmDeploy(
           `m/44&apos;/506&apos;/0&apos;/0/${options.keyPath}`,
           DeployUtil.deployToBytes(deploy),
         );
