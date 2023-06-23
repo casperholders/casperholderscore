@@ -145,6 +145,7 @@ export default class Balance {
       return allowance.CLValue.value()
         .toString();
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
     }
     return '0';
@@ -230,6 +231,7 @@ export default class Balance {
           .pow(rawDecimals.toNumber())) : rawValue).toString();
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
       return '0';
     }

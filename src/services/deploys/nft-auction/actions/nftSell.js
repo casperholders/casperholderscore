@@ -1,13 +1,11 @@
 import Big from 'big.js';
 import {
-  CLByteArray,
   CLKey,
   CLOption,
   CLPublicKey,
   CLString,
   CLTypeBuilder,
   CLU256,
-  CLU32,
   CLU512,
   CLU64,
   CLValueBuilder,

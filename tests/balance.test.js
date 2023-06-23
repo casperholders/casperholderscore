@@ -39,6 +39,7 @@ test('Test erc20 balance casper', async () => {
     expect(parseFloat(balance))
       .toBeGreaterThan(0.0);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     expect(true)
       .toBe(false);
@@ -56,6 +57,7 @@ test('Test erc20 balance rengolabs', async () => {
     expect(parseFloat(balance))
       .toBeGreaterThan(0.0);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     expect(true)
       .toBe(false);
@@ -88,6 +90,7 @@ test('Test erc20 allowance', async () => {
     expect(Big(balance).gt(0))
       .toBe(true);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     expect(true)
       .toBe(false);
@@ -105,6 +108,7 @@ test('Test uniswap erc20 allowance', async () => {
     expect(Big(balance).gt(0))
       .toBe(true);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     expect(true)
       .toBe(false);

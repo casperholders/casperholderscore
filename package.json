@@ -29,12 +29,13 @@
   },
   "homepage": "https://github.com/KillianH/casperholderscore",
   "dependencies": {
+    "@casperholders/casper-snap-helper": "^1.0.6",
     "@ethersproject/bignumber": "^5.7.0",
     "@ethersproject/bytes": "^5.7.0",
     "big.js": "^6.2.1",
     "blakejs": "^1.2.1",
-    "casper-js-sdk": "^2.10.2",
-    "ts-results": "^3.3.0"
+    "casper-js-sdk": "^2.13.2",
+    "ts-results": "npm:@casperlabs/ts-results@^3.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
