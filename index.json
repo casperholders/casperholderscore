@@ -8926,7 +8926,7 @@
     "__docId__": 403,
     "kind": "file",
     "name": "src/services/signers/index.js",
-    "content": "export { default as AbstractSigner } from './abstractSigner';\nexport { default as CasperSigner } from './casperSigner';\nexport { default as LedgerSigner } from './ledgerSigner';\nexport { default as LocalSigner } from './localSigner';\nexport { default as TorusSigner } from './torusSigner';\nexport { default as MetaMaskSigner } from './metamaskSigner';\n",
+    "content": "export { default as AbstractSigner } from './abstractSigner';\nexport { default as CasperSigner } from './casperSigner';\nexport { default as LedgerSigner } from './ledgerSigner';\nexport { default as LocalSigner } from './localSigner';\nexport { default as TorusSigner } from './torusSigner';\nexport { default as MetaMaskSigner } from './metamaskSigner';\nexport { default as CasperWalletSigner } from './casperWalletSigner';\n",
     "static": true,
     "longname": "/home/runner/work/casperholderscore/casperholderscore/src/services/signers/index.js",
     "access": "public",
