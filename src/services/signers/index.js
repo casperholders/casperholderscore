@@ -4,3 +4,4 @@ export { default as LedgerSigner } from './ledgerSigner';
 export { default as LocalSigner } from './localSigner';
 export { default as TorusSigner } from './torusSigner';
 export { default as MetaMaskSigner } from './metamaskSigner';
+export { default as CasperWalletSigner } from './casperWalletSigner';
