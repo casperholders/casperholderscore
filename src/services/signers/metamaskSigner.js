@@ -1,4 +1,4 @@
-import { signDeploy } from '@casperholders/casper-snap-helper';
+import { signDeploy } from 'casper-manager-helper';
 import SignError from '../errors/signError';
 import AbstractSigner from './abstractSigner';
 
