@@ -1372,7 +1372,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@open-rpc/client-js@^1.6.2":
+"@open-rpc/client-js@^1.8.1":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@open-rpc/client-js/-/client-js-1.8.1.tgz#73b5a5bf237f24b14c3c89205b1fca3aea213213"
   integrity sha512-vV+Hetl688nY/oWI9IFY0iKDrWuLdYhf7OIKI6U1DcnJV7r4gAgwRJjEr1QVYszUc0gjkHoQJzqevmXMGLyA0g==
@@ -2355,10 +2355,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==
 
-casper-js-sdk@2.13.1:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/casper-js-sdk/-/casper-js-sdk-2.13.1.tgz#edafc86e1501bba259f6e8da62d80d7a0bdd3d90"
-  integrity sha512-7YFf3UNO3Xjb57GX/eVjPa53+FSGDn+ymU/ZwFX7H6dwunF1iinULu+J5FUSHyD/u+yAx2V2tJdjLoZHF9mCTw==
+casper-js-sdk@2.14.0, casper-js-sdk@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/casper-js-sdk/-/casper-js-sdk-2.14.0.tgz#1bdb752897bc883c4763b24ed30e2874a0218f1d"
+  integrity sha512-eggGYEodyenTz1KuXqfhjFPDxSWz5Z2D1ZfEdRCqngGqVXeMV1SxmjddrAuZ1+Oj0Xi1WUynYv8nbb9Yk+lmMg==
   dependencies:
     "@ethersproject/bignumber" "^5.0.8"
     "@ethersproject/bytes" "^5.0.5"
@@ -2366,7 +2366,7 @@ casper-js-sdk@2.13.1:
     "@noble/ed25519" "^1.7.3"
     "@noble/hashes" "^1.2.0"
     "@noble/secp256k1" "^1.7.1"
-    "@open-rpc/client-js" "^1.6.2"
+    "@open-rpc/client-js" "^1.8.1"
     "@scure/bip32" "^1.1.5"
     "@scure/bip39" "^1.2.0"
     "@types/ws" "^8.2.2"
@@ -2379,38 +2379,14 @@ casper-js-sdk@2.13.1:
     ts-results "npm:@casperlabs/ts-results@^3.3.4"
     typedjson "^1.6.0-rc2"
 
-casper-js-sdk@^2.13.2:
-  version "2.13.2"
-  resolved "https://registry.yarnpkg.com/casper-js-sdk/-/casper-js-sdk-2.13.2.tgz#6a46ed17d01154068d413b285681fdc5bd0e2be6"
-  integrity sha512-42tkYnz3JBCdpM0AfXiTJjEKc4pWbVMU044BNvBi+9cE3G57p6Ica1VgnftMAwK4uY+6EAhiVo2VW+UZghwF4w==
-  dependencies:
-    "@ethersproject/bignumber" "^5.0.8"
-    "@ethersproject/bytes" "^5.0.5"
-    "@ethersproject/constants" "^5.0.5"
-    "@noble/ed25519" "^1.7.3"
-    "@noble/hashes" "^1.2.0"
-    "@noble/secp256k1" "^1.7.1"
-    "@open-rpc/client-js" "^1.6.2"
-    "@scure/bip32" "^1.1.5"
-    "@scure/bip39" "^1.2.0"
-    "@types/ws" "^8.2.2"
-    glob "^7.1.6"
-    humanize-duration "^3.24.0"
-    key-encoder "^2.0.3"
-    lodash "^4.17.21"
-    node-fetch "^2.6.11"
-    reflect-metadata "^0.1.13"
-    ts-results "npm:@casperlabs/ts-results@^3.3.4"
-    typedjson "^1.6.0-rc2"
-
-casper-manager-helper@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/casper-manager-helper/-/casper-manager-helper-1.0.2.tgz#1cae6fbc46d00a2438ad0c22a526ae0f6838fdac"
-  integrity sha512-S5//GzTuMSCFZvm06p73wGuF8p2j3PooZjloax+Q1Yv9MwBnmVR58gQUfa3Z6ZH06Yl5DigwHk+JO/csfws/CQ==
+casper-manager-helper@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/casper-manager-helper/-/casper-manager-helper-1.0.3.tgz#ce537e635e0d7102c3fdafa83b5d544c2cc2c7fe"
+  integrity sha512-XmvupekS07L3LP7zR9Udbbn9gX5PwQ+mpNQaOfmfas1z1F+HAjl9cTF4phmKQ4L178enAPWBlrDR89hGWvhARA==
   dependencies:
     "@metamask/providers" "10.2.1"
     buffer "5.7.1"
-    casper-js-sdk "2.13.1"
+    casper-js-sdk "2.14.0"
 
 chalk@^1.1.3:
   version "1.1.3"

@@ -85,9 +85,7 @@ export default class Validators {
       && (this.lastFetch === 0 || (Math.floor(Date.now() / 1000)) - this.lastFetch > this.CACHE_TIMEOUT)
     ) {
       this.fetching = true;
-      this.stateRootHash = await this.client.casperRPC.getStateRootHash(
-        (await this.client.casperRPC.getLatestBlockInfo()).block.hash,
-      );
+      this.stateRootHash = await this.client.casperRPC.getStateRootHash();
       this.dictUref = (
         await this.client.casperRPC.getBlockState(
           this.stateRootHash,

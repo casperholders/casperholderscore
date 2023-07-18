@@ -2,7 +2,7 @@ import ClientCasper from '../src/services/clients/clientCasper';
 import NoValidatorInfos from '../src/services/errors/noValidatorInfos';
 import Validators from '../src/services/validators/validators';
 
-const casperClient = new ClientCasper('https://node.testnet.casperholders.com');
+const casperClient = new ClientCasper('http://node.testnet.casperholders.com:7777');
 
 test('Should throw a noValidatorInfos error', async () => {
   try {
@@ -92,7 +92,6 @@ test('Url should be set', async () => {
   const res = await validatorsService.isUrlSet(
     '016f6ed70e4a5acec750dc087674e5de2ad7b6d9595945c4059c5ca1a47d4dd3ab',
     '2f36a35edcbaabe17aba805e3fae42699a2bb80c2e0c15189756fdc4895356f8',
-    'casper-test',
   );
   expect(res)
     .toBe(true);

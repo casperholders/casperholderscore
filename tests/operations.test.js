@@ -11,7 +11,7 @@ import SmartContractDeployParameters from '../src/services/deploys/smartContract
 import TransferDeployParameters from '../src/services/deploys/transfer/TransferDeployParameters';
 import LocalSigner from '../src/services/signers/localSigner';
 
-const casperClient = new ClientCasper('https://node.testnet.casperholders.com');
+const casperClient = new ClientCasper('http://node.testnet.casperholders.com:7777');
 
 test('Add bid operation', async () => {
   const addBid = new AddBid(

@@ -16,7 +16,7 @@ class DummyKeyManager extends AbstractKeyManager {
   }
 }
 
-const casperClient = new ClientCasper('https://node.testnet.casperholders.com');
+const casperClient = new ClientCasper('http://node.testnet.casperholders.com:7777');
 let keyManager = new DummyKeyManager(null);
 const balanceService = new Balance(keyManager, casperClient);
 
